@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Bloomz_Test_Run]">
+  <parameter name="DeviceName" value="Samsung Duos"/>
+  <test name="Sanity_Test_1(failed)">
+    <parameter name="DeviceName" value="Moto G"/>
+    <classes>
+      <class name="com.bloomz.tests.SanityTest">
+        <methods>
+          <include name="testAppInstallation"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.bloomz.tests.SanityTest -->
+    </classes>
+  </test> <!-- Sanity_Test_1(failed) -->
+  <test name="Sanity_Test_2(failed)">
+    <parameter name="DeviceName" value="Samsung Duos"/>
+    <classes>
+      <class name="com.bloomz.tests.SanityTest">
+        <methods>
+          <include name="testAppInstallation"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.bloomz.tests.SanityTest -->
+    </classes>
+  </test> <!-- Sanity_Test_2(failed) -->
+</suite> <!-- Failed suite [Bloomz_Test_Run] -->

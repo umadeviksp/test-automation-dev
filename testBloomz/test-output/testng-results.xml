@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="147696" started-at="2015-06-12T20:38:27Z" finished-at="2015-06-12T20:40:55Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="147696" started-at="2015-06-12T20:38:27Z" finished-at="2015-06-12T20:40:55Z">
+      <class name="com.bloomz.tests.BVTTests">
+        <test-method status="PASS" signature="loadConfig()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="loadConfig" is-config="true" duration-ms="83" started-at="2015-06-13T02:08:27Z" finished-at="2015-06-13T02:08:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfig -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="setUp" is-config="true" duration-ms="10164" started-at="2015-06-13T02:08:27Z" finished-at="2015-06-13T02:08:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSignUpForTeacher()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="testSignUpForTeacher" duration-ms="134598" started-at="2015-06-13T02:08:37Z" finished-at="2015-06-13T02:10:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignUpForTeacher -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="tearDown" is-config="true" duration-ms="2657" started-at="2015-06-13T02:10:52Z" finished-at="2015-06-13T02:10:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bloomz.tests.BVTTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
