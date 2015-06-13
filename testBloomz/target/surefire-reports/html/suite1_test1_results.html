@@ -12,11 +12,355 @@
 <body>
 <h1>BVT_Test</h1>
 <p>
-  Test duration: 1305.282s
+  Test duration: 1616.677s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.bloomz.tests.BVTTests</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testAppBackgroundedAndForegrounded
+      </td>
+  <td class="duration">
+    120.163s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/menuBtn<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+Session ID: defa31c9-e162-4d24-9201-f795d548d182<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)<br />
+              com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+              com.bloomz.pages.HomePage.goToFlyOutMenu(HomePage.java:117)<br />
+              com.bloomz.tests.BVTTests.testAppBackgroundedAndForegrounded(BVTTests.java:209)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:606)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+              org.testng.TestNG.run(TestNG.java:1057)<br />
+              org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+              org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+              org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 132 milliseconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+*** Element info: {Using=id, value=net.bloomz:id/menuBtn}<br/>
+Session ID: defa31c9-e162-4d24-9201-f795d548d182<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</a><br />
+        <div class="stackTrace" id="exception-1">
+                      sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)<br />
+                      sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.lang.reflect.Constructor.newInstance(Constructor.java:526)<br />
+                      org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)<br />
+                      org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)<br />
+                      io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)<br />
+                      org.openqa.selenium.By$ById.findElement(By.java:214)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)<br />
+                      com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+                      com.bloomz.pages.HomePage.goToFlyOutMenu(HomePage.java:117)<br />
+                      com.bloomz.tests.BVTTests.testAppBackgroundedAndForegrounded(BVTTests.java:209)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:606)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+                      org.testng.TestNG.run(TestNG.java:1057)<br />
+                      org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+                      org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+                      org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExistingAccountPostsByScrolling
+      </td>
+  <td class="duration">
+    88.724s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+Session ID: 3a319dd7-e899-4a13-8c00-ceb955ea3fb9<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)<br />
+              com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+              com.bloomz.pages.HomePage.&lt;init&gt;(HomePage.java:43)<br />
+              com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)<br />
+              com.bloomz.tests.BVTTests.testExistingAccountPostsByScrolling(BVTTests.java:221)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:606)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+              org.testng.TestNG.run(TestNG.java:1057)<br />
+              org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+              org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+              org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 1.93 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+*** Element info: {Using=id, value=net.bloomz:id/HomeListView}<br/>
+Session ID: 3a319dd7-e899-4a13-8c00-ceb955ea3fb9<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</a><br />
+        <div class="stackTrace" id="exception-3">
+                      sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)<br />
+                      sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.lang.reflect.Constructor.newInstance(Constructor.java:526)<br />
+                      org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)<br />
+                      org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)<br />
+                      io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)<br />
+                      org.openqa.selenium.By$ById.findElement(By.java:214)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)<br />
+                      com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+                      com.bloomz.pages.HomePage.&lt;init&gt;(HomePage.java:43)<br />
+                      com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)<br />
+                      com.bloomz.tests.BVTTests.testExistingAccountPostsByScrolling(BVTTests.java:221)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:606)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+                      org.testng.TestNG.run(TestNG.java:1057)<br />
+                      org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+                      org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+                      org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExistingAccountWithHomeTab
+      </td>
+  <td class="duration">
+    94.995s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+Session ID: 116aa928-0955-4211-bec8-4f6dfc674d51<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</b></a><br />
+    <div class="stackTrace" id="exception-4">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)<br />
+              com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+              com.bloomz.pages.HomePage.&lt;init&gt;(HomePage.java:43)<br />
+              com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)<br />
+              com.bloomz.tests.BVTTests.testExistingAccountWithHomeTab(BVTTests.java:122)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:606)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+              org.testng.TestNG.run(TestNG.java:1057)<br />
+              org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+              org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+              org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 4.19 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;<br/>
+System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;<br/>
+*** Element info: {Using=id, value=net.bloomz:id/HomeListView}<br/>
+Session ID: 116aa928-0955-4211-bec8-4f6dfc674d51<br/>
+Driver info: io.appium.java_client.android.AndroidDriver<br/>
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]</a><br />
+        <div class="stackTrace" id="exception-5">
+                      sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)<br />
+                      sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.lang.reflect.Constructor.newInstance(Constructor.java:526)<br />
+                      org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)<br />
+                      org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)<br />
+                      io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)<br />
+                      org.openqa.selenium.By$ById.findElement(By.java:214)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)<br />
+                      com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)<br />
+                      com.bloomz.pages.HomePage.&lt;init&gt;(HomePage.java:43)<br />
+                      com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)<br />
+                      com.bloomz.tests.BVTTests.testExistingAccountWithHomeTab(BVTTests.java:122)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:606)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:348)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:254)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+                      org.testng.TestNG.run(TestNG.java:1057)<br />
+                      org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br />
+                      org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br />
+                      org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
@@ -27,24 +371,10 @@
             
 <tr>
   <td class="method">
-                  testAppBackgroundedAndForegrounded
-      </td>
-  <td class="duration">
-    89.598s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
                   testAppInstallation
       </td>
   <td class="duration">
-    0.975s
+    1.841s
   </td>
   <td class="result">
         
@@ -58,7 +388,7 @@
                   testAppLauch
       </td>
   <td class="duration">
-    6.018s
+    6.422s
   </td>
   <td class="result">
         
@@ -72,21 +402,7 @@
                   testExistingAccountCalenderEventsByScrolling
       </td>
   <td class="duration">
-    81.569s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  testExistingAccountPostsByScrolling
-      </td>
-  <td class="duration">
-    75.281s
+    79.965s
   </td>
   <td class="result">
         
@@ -100,7 +416,7 @@
                   testExistingAccountWithCalendarEventsTab
       </td>
   <td class="duration">
-    73.219s
+    163.817s
   </td>
   <td class="result">
         
@@ -114,21 +430,7 @@
                   testExistingAccountWithContactsTab
       </td>
   <td class="duration">
-    70.987s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  testExistingAccountWithHomeTab
-      </td>
-  <td class="duration">
-    76.219s
+    72.779s
   </td>
   <td class="result">
         
@@ -142,7 +444,7 @@
                   testExistingAccountWithMessageTab
       </td>
   <td class="duration">
-    74.446s
+    83.406s
   </td>
   <td class="result">
         
@@ -156,7 +458,7 @@
                   testExistingAccountWithVolunteerTab
       </td>
   <td class="duration">
-    74.421s
+    74.524s
   </td>
   <td class="result">
         
@@ -170,7 +472,7 @@
                   testLaunchClassFromFlyOutMenu
       </td>
   <td class="duration">
-    84.490s
+    125.815s
   </td>
   <td class="result">
         
@@ -184,7 +486,7 @@
                   testSignInWithValidInputs
       </td>
   <td class="duration">
-    74.326s
+    75.810s
   </td>
   <td class="result">
         
@@ -198,7 +500,7 @@
                   testSignUpForRoomParent
       </td>
   <td class="duration">
-    143.234s
+    146.170s
   </td>
   <td class="result">
         
@@ -212,7 +514,7 @@
                   testSignUpForTeacher
       </td>
   <td class="duration">
-    126.823s
+    132.541s
   </td>
   <td class="result">
         
@@ -226,7 +528,7 @@
                   testSwitchTabInClassScreen
       </td>
   <td class="duration">
-    109.234s
+    122.169s
   </td>
   <td class="result">
         

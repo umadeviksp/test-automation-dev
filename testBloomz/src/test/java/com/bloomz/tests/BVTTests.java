@@ -19,7 +19,7 @@ public class BVTTests extends BaseTest {
 	@Test
 	public void testAppInstallation() {
 
-		Assert.assertTrue(appiumDriver.isAppInstalled("net.bloomz"),
+		Assert.assertTrue(appiumDriver.isAppInstalled(appPackage),
 				"App is not Installed");
 
 	}
@@ -31,7 +31,7 @@ public class BVTTests extends BaseTest {
 	public void testAppLauch() {
 		String activity = getActivityName();
 		Assert.assertTrue(activity
-				.equals("md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity"),
+				.equals(appActivity),
 				"SplashActivity is not present");
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		Assert.assertTrue(
@@ -80,8 +80,9 @@ public class BVTTests extends BaseTest {
 				.onBoardUser(userType1, generateRandomString(10),
 						generateRandomString(10),
 						generateRandomString(8) + "@test.com",
-						passwordForUserOnBoard, zipCode).userOnBoardFlow(userType1)
-				.goToFlyOutMenu().goToAccountSettings().logoutAccount();
+						passwordForUserOnBoard, zipCode)
+				.userOnBoardFlow(userType1).goToFlyOutMenu()
+				.goToAccountSettings().logoutAccount();
 
 	}
 
@@ -101,7 +102,7 @@ public class BVTTests extends BaseTest {
 				.goBackToOnBoardingPage()
 				.goToImNewPage()
 				.goToRoomParentOnBoarding()
-				.onBoardUser(userType2 , generateRandomString(10),
+				.onBoardUser(userType2, generateRandomString(10),
 						generateRandomString(10),
 						generateRandomString(8) + "@test.com",
 						passwordForUserOnBoard, zipCode)
@@ -118,8 +119,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		String postComments = homePage.getUserPost();
 		UserProfileFlyOutMenu userProfileFlyOutMenu = homePage.goToFlyOutMenu();
 		String userProfileName = userProfileFlyOutMenu.getUserProfileName();
@@ -138,8 +139,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		homePage.navigateToCalendarTab();
 		homePage.goToFlyOutMenu().goToAccountSettings().logoutAccount();
 
@@ -154,8 +155,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		homePage.navigateToMesaageTab();
 		homePage.goToFlyOutMenu().goToAccountSettings().logoutAccount();
 
@@ -170,8 +171,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		homePage.navigateToVolunteerTab();
 		homePage.goToFlyOutMenu().goToAccountSettings().logoutAccount();
 
@@ -186,8 +187,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		homePage.navigateToContactsTab();
 		homePage.goToFlyOutMenu().goToAccountSettings().logoutAccount();
 
@@ -202,8 +203,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		homePage.putAppInBackgroundAndRelaunchIt();
 		homePage.goToFlyOutMenu().goToAccountSettings().logoutAccount();
 
@@ -217,8 +218,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		String postBeforeScroll = homePage.getUserPostComment();
 		String postAfterScroll = homePage.swipeUpAndGetUserPostComment();
 		Assert.assertFalse(postBeforeScroll.equals(postAfterScroll),
@@ -235,8 +236,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		CalendarTab calendarTab = homePage.navigateToCalendarTab();
 		String eventDateBeforeScroll = calendarTab.getEventDate();
 		System.out.println(eventDateBeforeScroll);
@@ -256,8 +257,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		UserProfileFlyOutMenu flyOutMenu = homePage.goToFlyOutMenu();
 		flyOutMenu.navigateToClassRoom();
 		flyOutMenu.clickBack();
@@ -273,8 +274,8 @@ public class BVTTests extends BaseTest {
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		SignInPage signInPage = landingPage.goToSignInPage();
 		signInPage.setEnviroment(stagingUrl);
-		HomePage homePage = signInPage.loginWtihValidCredential(
-				emailId, password);
+		HomePage homePage = signInPage.loginWtihValidCredential(emailId,
+				password);
 		UserProfileFlyOutMenu flyOutMenu = homePage.goToFlyOutMenu();
 		flyOutMenu.navigateToClassRoom().naviagteToCalnedarTab()
 				.naviagteToPhotosTab().naviagteToVolunteerTab()

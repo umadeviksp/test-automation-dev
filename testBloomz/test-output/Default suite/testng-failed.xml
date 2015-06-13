@@ -6,9 +6,9 @@
       <class name="com.bloomz.tests.BVTTests">
         <methods>
           <include name="tearDown"/>
+          <include name="testExistingAccountPostsByScrolling"/>
           <include name="loadConfig"/>
           <include name="setUp"/>
-          <include name="testSignUpForTeacher"/>
         </methods>
       </class> <!-- com.bloomz.tests.BVTTests -->
     </classes>

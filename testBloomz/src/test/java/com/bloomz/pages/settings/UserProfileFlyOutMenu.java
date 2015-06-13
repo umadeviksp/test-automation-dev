@@ -9,7 +9,7 @@ import com.bloomz.pages.ClassPage;
 
 public class UserProfileFlyOutMenu extends BasePage {
 
-	By settingButtonLocator = By.id("net.bloomz:id/llSetting");
+	By settingButtonLocator = By.id("net.bloomz:id/txtSetting");
 	By profileNameLocator = By.id("net.bloomz:id/txtProfileName");
 	By homeButtonLocator = By.id("net.bloomz:id/caption");
 	By classLocator = By.id("net.bloomz:id/txtTitle");

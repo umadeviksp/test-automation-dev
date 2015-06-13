@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import com.bloomz.tests.BaseTest;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -21,11 +25,14 @@ public class DataSet {
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public static void getEnvironmentData(EnvironmentSetting environmentSetting)
+	public static void getEnvironmentData(
+			EnvironmentSetting environmentSetting, String filePath)
 			throws IOException {
 
 		File file = new File("src/test/resources/EnviromentDataSet.csv");
 		String absolutePath = file.getAbsolutePath();
+
+
 		// Build reader instance
 		BufferedReader br = null;
 		String line = "";
@@ -33,7 +40,7 @@ public class DataSet {
 
 		try {
 
-			br = new BufferedReader(new FileReader(absolutePath));
+			br = new BufferedReader(new FileReader(filePath));
 			while ((line = br.readLine()) != null) {
 				// use comma as separator
 				String[] country = line.split(cvsSplitBy);
@@ -72,11 +79,12 @@ public class DataSet {
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public static void getUserInputData(UserInputData userInputData)
-			throws IOException {
+	public static void getUserInputData(UserInputData userInputData,
+			String filePath) throws IOException {
 
 		File file = new File("src/test/resources/UserInputDataSet.csv");
 		String absolutePath = file.getAbsolutePath();
+	
 		// Build reader instance
 		BufferedReader br = null;
 		String line = "";
@@ -84,7 +92,7 @@ public class DataSet {
 
 		try {
 
-			br = new BufferedReader(new FileReader(absolutePath));
+			br = new BufferedReader(new FileReader(filePath));
 			while ((line = br.readLine()) != null) {
 				// use comma as separator
 				String[] country = line.split(cvsSplitBy);

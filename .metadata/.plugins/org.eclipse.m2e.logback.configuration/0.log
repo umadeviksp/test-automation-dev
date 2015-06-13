@@ -1,0 +1,29 @@
+2015-06-13 21:41:13,956 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bloomz:testBloomz:0.0.1-SNAPSHOT @ /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/pom.xml.
+2015-06-13 21:41:20,586 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.testng:testng:jar:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2015-06-13 21:41:27,430 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testBloomz/src
+2015-06-13 21:41:27,508 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testBloomz/src/test/java
+2015-06-13 21:41:27,509 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /testBloomz/src/test/resources overlaps with sources folder /testBloomz/src/test/resources
+2015-06-13 21:41:27,821 [Worker-9] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bloomz:testBloomz:0.0.1-SNAPSHOT @ /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/pom.xml.
+2015-06-13 21:41:39,076 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.testng:testng:jar:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2015-06-13 21:41:42,565 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.testng:testng:jar:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2015-06-13 21:41:43,391 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:41:43,391 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/src/main/resources
+2015-06-13 21:41:43,394 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:41:43,403 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2015-06-13 21:41:47,429 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.testng:testng:jar:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2015-06-13 21:41:47,611 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:41:47,611 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/src/main/resources
+2015-06-13 21:41:47,613 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:41:47,635 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-06-13 21:42:10,026 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:42:10,043 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/src/main/resources
+2015-06-13 21:42:10,044 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 21:42:10,045 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2015-06-13 23:12:16,920 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 23:12:16,928 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/src/main/resources
+2015-06-13 23:12:16,929 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 23:12:17,533 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources
+2015-06-13 23:34:32,187 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 23:34:32,216 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz/src/main/resources
+2015-06-13 23:34:32,218 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-13 23:34:32,244 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 8 resources

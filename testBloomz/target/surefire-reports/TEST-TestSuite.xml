@@ -1,77 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="1,160.841" tests="15" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="1,390.512" tests="15" errors="0" skipped="0" failures="3">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.20-b23"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="24.0-b56"/>
     <property name="user.country.format" value="IN"/>
     <property name="gopherProxySet" value="false"/>
-    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
-    <property name="java.vendor.url" value="http://www.azulsystems.com/"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/Moolya21/Desktop/Bloomz/testBloomz"/>
-    <property name="java.runtime.version" value="1.8.0_20-b26"/>
+    <property name="user.dir" value="/Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz"/>
+    <property name="java.runtime.version" value="1.7.0_40-b43"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.io.tmpdir" value="/var/folders/81/pq77vph946bblw2njjjgp6mw0000gn/T/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Moolya21/Desktop/Bloomz/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4372382146959284093.tmp"/>
+    <property name="classworlds.conf" value="/usr/share/apache-maven-3.2.3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/Moolya21/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="java.class.version" value="52.0"/>
+    <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.9.5"/>
     <property name="user.home" value="/Users/Moolya21"/>
     <property name="user.timezone" value="Asia/Kolkata"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
-    <property name="java.specification.version" value="1.8"/>
+    <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="Moolya21"/>
-    <property name="java.class.path" value="/Users/Moolya21/Documents/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.5.1.20150109-1819/jars/plexus-classworlds-2.5.1.jar"/>
-    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
-    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="java.class.path" value="/usr/share/apache-maven-3.2.3/boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_20"/>
-    <property name="java.ext.dirs" value="/Users/Moolya21/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/classes"/>
-    <property name="java.vendor" value="Azul Systems, Inc."/>
-    <property name="maven.home" value="/Users/Moolya21/Desktop/Bloomz/testBloomz/EMBEDDED"/>
+    <property name="java.version" value="1.7.0_40"/>
+    <property name="java.ext.dirs" value="/Users/Moolya21/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/apache-maven-3.2.3"/>
     <property name="file.separator" value="/"/>
-    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testAppInstallation" classname="com.bloomz.tests.BVTTests" time="0.976"/>
-  <testcase name="testAppLauch" classname="com.bloomz.tests.BVTTests" time="6.017"/>
-  <testcase name="testSignInWithValidInputs" classname="com.bloomz.tests.BVTTests" time="74.326"/>
-  <testcase name="testSignUpForTeacher" classname="com.bloomz.tests.BVTTests" time="126.823"/>
-  <testcase name="testSignUpForRoomParent" classname="com.bloomz.tests.BVTTests" time="143.234"/>
-  <testcase name="testExistingAccountWithHomeTab" classname="com.bloomz.tests.BVTTests" time="76.218"/>
-  <testcase name="testExistingAccountWithCalendarEventsTab" classname="com.bloomz.tests.BVTTests" time="73.219"/>
-  <testcase name="testExistingAccountWithMessageTab" classname="com.bloomz.tests.BVTTests" time="74.445"/>
-  <testcase name="testExistingAccountWithVolunteerTab" classname="com.bloomz.tests.BVTTests" time="74.422"/>
-  <testcase name="testExistingAccountWithContactsTab" classname="com.bloomz.tests.BVTTests" time="70.987"/>
-  <testcase name="testAppBackgroundedAndForegrounded" classname="com.bloomz.tests.BVTTests" time="89.598"/>
-  <testcase name="testExistingAccountPostsByScrolling" classname="com.bloomz.tests.BVTTests" time="75.282"/>
-  <testcase name="testExistingAccountCalenderEventsByScrolling" classname="com.bloomz.tests.BVTTests" time="81.57"/>
-  <testcase name="testLaunchClassFromFlyOutMenu" classname="com.bloomz.tests.BVTTests" time="84.49"/>
-  <testcase name="testSwitchTabInClassScreen" classname="com.bloomz.tests.BVTTests" time="109.234"/>
+  <testcase name="testAppInstallation" classname="com.bloomz.tests.BVTTests" time="1.842"/>
+  <testcase name="testAppLauch" classname="com.bloomz.tests.BVTTests" time="6.422"/>
+  <testcase name="testSignInWithValidInputs" classname="com.bloomz.tests.BVTTests" time="75.811"/>
+  <testcase name="testSignUpForTeacher" classname="com.bloomz.tests.BVTTests" time="132.544"/>
+  <testcase name="testSignUpForRoomParent" classname="com.bloomz.tests.BVTTests" time="146.173"/>
+  <testcase name="testExistingAccountWithHomeTab" classname="com.bloomz.tests.BVTTests" time="96.053">
+    <failure message="Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView&#10;Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;&#10;System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;&#10;Session ID: 116aa928-0955-4211-bec8-4f6dfc674d51&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: 116aa928-0955-4211-bec8-4f6dfc674d51
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.<init>(HomePage.java:43)
+	at com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)
+	at com.bloomz.tests.BVTTests.testExistingAccountWithHomeTab(BVTTests.java:122)
+]]></failure>
+  </testcase>
+  <testcase name="testExistingAccountWithCalendarEventsTab" classname="com.bloomz.tests.BVTTests" time="163.821"/>
+  <testcase name="testExistingAccountWithMessageTab" classname="com.bloomz.tests.BVTTests" time="83.406"/>
+  <testcase name="testExistingAccountWithVolunteerTab" classname="com.bloomz.tests.BVTTests" time="74.526"/>
+  <testcase name="testExistingAccountWithContactsTab" classname="com.bloomz.tests.BVTTests" time="72.782"/>
+  <testcase name="testAppBackgroundedAndForegrounded" classname="com.bloomz.tests.BVTTests" time="120.455">
+    <failure message="Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/menuBtn&#10;Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;&#10;System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;&#10;Session ID: defa31c9-e162-4d24-9201-f795d548d182&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/menuBtn
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: defa31c9-e162-4d24-9201-f795d548d182
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.goToFlyOutMenu(HomePage.java:117)
+	at com.bloomz.tests.BVTTests.testAppBackgroundedAndForegrounded(BVTTests.java:209)
+</failure>
+  </testcase>
+  <testcase name="testExistingAccountPostsByScrolling" classname="com.bloomz.tests.BVTTests" time="88.728">
+    <failure message="Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView&#10;Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;&#10;System info: host: &apos;Colosseum.local&apos;, ip: &apos;192.168.2.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.7.0_40&apos;&#10;Session ID: 3a319dd7-e899-4a13-8c00-ceb955ea3fb9&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: 3a319dd7-e899-4a13-8c00-ceb955ea3fb9
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.<init>(HomePage.java:43)
+	at com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)
+	at com.bloomz.tests.BVTTests.testExistingAccountPostsByScrolling(BVTTests.java:221)
+]]></failure>
+  </testcase>
+  <testcase name="testExistingAccountCalenderEventsByScrolling" classname="com.bloomz.tests.BVTTests" time="79.964"/>
+  <testcase name="testLaunchClassFromFlyOutMenu" classname="com.bloomz.tests.BVTTests" time="125.815"/>
+  <testcase name="testSwitchTabInClassScreen" classname="com.bloomz.tests.BVTTests" time="122.17"/>
 </testsuite>

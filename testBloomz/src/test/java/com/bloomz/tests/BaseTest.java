@@ -22,34 +22,34 @@ public class BaseTest {
 
 	static EnvironmentSetting environmentSetting;
 	static UserInputData userInputData;
-	private static String appiumVersion;
-	private static String platformName;
-	private static String platformVersion;
-	private static String deviceName;
-	protected static String appPath;
-	private static String appPackage;
-	private static String appActivity;
-	private static String serverAddress;
 	static ExecuteShellCommand shellCommand = new ExecuteShellCommand();
 
+	// Environment Variables
+	protected static String appiumVersion;
+	protected static String platformName;
+	protected static String platformVersion;
+	protected static String deviceName;
+	protected static String appPath;
+	protected static String appPackage;
+	protected static String appActivity;
+	protected static String serverAddress;
+
+	// User Input Datas
 	protected static String emailId;
-
 	protected static String password;
-
 	protected static String stagingUrl;
-
 	protected static String userType1;
-
 	protected static String userType2;
-
 	protected static String passwordForUserOnBoard;
-
 	protected static String zipCode;
 
 	@BeforeClass
 	public static void loadConfig() throws IOException {
 		environmentSetting = new EnvironmentSetting();
-		DataSet.getEnvironmentData(environmentSetting);
+		URL location = BaseTest.class.getClass().getResource(
+				"/EnviromentDataSet.csv");
+		String fullPath = location.getPath();
+		DataSet.getEnvironmentData(environmentSetting, fullPath);
 		appiumVersion = environmentSetting.getAppiumVersion();
 		platformName = environmentSetting.getPlatformName();
 		platformVersion = environmentSetting.getPlatformVersion();
@@ -60,7 +60,10 @@ public class BaseTest {
 		serverAddress = environmentSetting.getServerAddress();
 
 		userInputData = new UserInputData();
-		DataSet.getUserInputData(userInputData);
+		URL location2 = BaseTest.class.getClass().getResource(
+				"/UserInputDataSet.csv");
+		String fullPath2 = location2.getPath();
+		DataSet.getUserInputData(userInputData, fullPath2);
 		emailId = userInputData.getEmailId();
 		password = userInputData.getPassword();
 		stagingUrl = userInputData.getStagingUrl();

@@ -103,7 +103,7 @@ public class HomePage extends BasePage {
 	 * @return the string
 	 */
 	public String swipeUpAndGetUserPostComment() {
-		swipeUp("net.bloomz:id/HomeListView", 5, 5, 1000);
+		swipeUp("net.bloomz:id/HomeListView", 5, 5, 2000);
 		return getUserPostComment();
 
 	}
@@ -149,7 +149,6 @@ public class HomePage extends BasePage {
 		click(By.name("Apps"));
 		waitForElement(By.name("Calculator"));
 		click(By.name("Calculator"));
-		waitForElement(By.id("com.android.calculator2:id/result"));
 		((AndroidDriver) appiumDriver).sendKeyEvent(AndroidKeyCode.HOME);
 		click(By.name("Apps"));
 		waitForElement(By.name("Bloomz"));

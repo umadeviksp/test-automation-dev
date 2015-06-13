@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="147696" started-at="2015-06-12T20:38:27Z" finished-at="2015-06-12T20:40:55Z">
+  <suite name="Default suite" duration-ms="90378" started-at="2015-06-13T18:04:34Z" finished-at="2015-06-13T18:06:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="147696" started-at="2015-06-12T20:38:27Z" finished-at="2015-06-12T20:40:55Z">
+    <test name="Default test" duration-ms="90378" started-at="2015-06-13T18:04:34Z" finished-at="2015-06-13T18:06:04Z">
       <class name="com.bloomz.tests.BVTTests">
-        <test-method status="PASS" signature="loadConfig()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="loadConfig" is-config="true" duration-ms="83" started-at="2015-06-13T02:08:27Z" finished-at="2015-06-13T02:08:27Z">
+        <test-method status="PASS" signature="loadConfig()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="loadConfig" is-config="true" duration-ms="84" started-at="2015-06-13T23:34:34Z" finished-at="2015-06-13T23:34:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="setUp" is-config="true" duration-ms="10164" started-at="2015-06-13T02:08:27Z" finished-at="2015-06-13T02:08:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="setUp" is-config="true" duration-ms="9103" started-at="2015-06-13T23:34:34Z" finished-at="2015-06-13T23:34:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSignUpForTeacher()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="testSignUpForTeacher" duration-ms="134598" started-at="2015-06-13T02:08:37Z" finished-at="2015-06-13T02:10:52Z">
+        <test-method status="PASS" signature="testExistingAccountPostsByScrolling()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="testExistingAccountPostsByScrolling" duration-ms="78629" started-at="2015-06-13T23:34:43Z" finished-at="2015-06-13T23:36:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSignUpForTeacher -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="tearDown" is-config="true" duration-ms="2657" started-at="2015-06-13T02:10:52Z" finished-at="2015-06-13T02:10:55Z">
+        </test-method> <!-- testExistingAccountPostsByScrolling -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bloomz.tests.BVTTests@52af6cff]" name="tearDown" is-config="true" duration-ms="2546" started-at="2015-06-13T23:36:02Z" finished-at="2015-06-13T23:36:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

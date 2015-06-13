@@ -1,4 +1,87 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1,307.796 sec - in TestSuite
+Tests run: 15, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 1,623.131 sec <<< FAILURE! - in TestSuite
+testExistingAccountWithHomeTab(com.bloomz.tests.BVTTests)  Time elapsed: 96.053 sec  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: 116aa928-0955-4211-bec8-4f6dfc674d51
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.<init>(HomePage.java:43)
+	at com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)
+	at com.bloomz.tests.BVTTests.testExistingAccountWithHomeTab(BVTTests.java:122)
+
+testAppBackgroundedAndForegrounded(com.bloomz.tests.BVTTests)  Time elapsed: 120.455 sec  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/menuBtn
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: defa31c9-e162-4d24-9201-f795d548d182
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.goToFlyOutMenu(HomePage.java:117)
+	at com.bloomz.tests.BVTTests.testAppBackgroundedAndForegrounded(BVTTests.java:209)
+
+testExistingAccountPostsByScrolling(com.bloomz.tests.BVTTests)  Time elapsed: 88.728 sec  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Timed out after 40 seconds waiting for visibility of element located by By.id: net.bloomz:id/HomeListView
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'Colosseum.local', ip: '192.168.2.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_40'
+Session ID: 3a319dd7-e899-4a13-8c00-ceb955ea3fb9
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, browserName=Android, networkConnectionEnabled=true, desired={platformVersion=Android, deviceName=Abcd, platformName=Android, appActivity=md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity, appium-version=1, appPackage=net.bloomz}, locationContextEnabled=false, appPackage=net.bloomz, platformVersion=Android, databaseEnabled=false, deviceName=Abcd, platformName=Android, appium-version=1, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.bloomz.pages.BasePage.waitForElement(BasePage.java:116)
+	at com.bloomz.pages.HomePage.<init>(HomePage.java:43)
+	at com.bloomz.pages.SignInPage.loginWtihValidCredential(SignInPage.java:49)
+	at com.bloomz.tests.BVTTests.testExistingAccountPostsByScrolling(BVTTests.java:221)
+
