@@ -14,12 +14,10 @@
 
     1. Connect one android device (Android version > 4.2)
     2. git clone git@github.com:bloomzSrc/test-automation.git
-    3. Change the adb path in BaseTest.java to your absolute adb to execute to clear app cache
+    3. Change the adb path in BaseTest.java to your absolute adb path to perform clear app cache
+    
+        shellCommand .executeCommand(" your adb absolute path /adb shell pm clear " + appPackage);
         
-        shellCommand
-				  .executeCommand(" your adb absolute path /adb shell pm clear "
-						+ appPackage);
-						
     4. mvn clean
     5. mvn install
     
