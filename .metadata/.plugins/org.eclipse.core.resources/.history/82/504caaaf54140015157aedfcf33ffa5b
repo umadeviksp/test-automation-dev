@@ -25,6 +25,10 @@ public class DataSet {
 			EnvironmentSetting environmentSetting, String filePath)
 			throws IOException {
 
+		File file = new File("src/test/resources/EnviromentDataSet.csv");
+		String absolutePath = file.getAbsolutePath();
+
+
 		// Build reader instance
 		BufferedReader br = null;
 		String line = "";
@@ -74,6 +78,9 @@ public class DataSet {
 	public static void getUserInputData(UserInputData userInputData,
 			String filePath) throws IOException {
 
+		File file = new File("src/test/resources/UserInputDataSet.csv");
+		String absolutePath = file.getAbsolutePath();
+	
 		// Build reader instance
 		BufferedReader br = null;
 		String line = "";
