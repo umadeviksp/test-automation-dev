@@ -52,10 +52,16 @@ public class UserOnBoardingFlow extends UserOnBoardingPage {
 		Assert.assertTrue(getText(titleBarLocator).equals("New Class"),
 				"Current page is not New Class");
 		sendText(classNameEditTextLocator, className);
-		clickBack();
+		if (appiumDriver.findElements(schoolLocator).size() < 1) {
+			clickBack();
+		}
+
 		click(schoolLocator);
 		click(schoolTitleLocator);
 		if (className.equals("Room Parent")) {
+			if (appiumDriver.findElements(childNameEditTextLocator).size() < 1) {
+				swipeUp("android:id/content", 3, 3, 1000);
+			}
 			sendText(childNameEditTextLocator, className.substring(0, 4));
 		}
 		click(createButtonLocator);

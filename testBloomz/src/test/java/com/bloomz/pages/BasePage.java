@@ -256,4 +256,9 @@ public abstract class BasePage {
 		return this;
 	}
 
+	public WebElement getWebElement(By locator) {
+		return appiumDriver.findElement(locator);
+
+	}
+
 }

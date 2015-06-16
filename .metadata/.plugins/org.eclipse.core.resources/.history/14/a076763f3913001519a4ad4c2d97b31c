@@ -1,0 +1,13 @@
+package com.bloomz.utils.excelconfig;
+
+import com.bloomz.tests.BVTTests;
+
+public class Test {
+
+	public static void main(String[] args) {
+		BVTTests bvtTests = new BVTTests();
+		String currentTimeStamp = bvtTests.getCurrentTimeStamp();
+		System.out.println(currentTimeStamp);
+	}
+
+}

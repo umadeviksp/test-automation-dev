@@ -30,8 +30,7 @@ public class BVTTests extends BaseTest {
 	@Test
 	public void testAppLauch() {
 		String activity = getActivityName();
-		Assert.assertTrue(activity
-				.equals(appActivity),
+		Assert.assertTrue(activity.equals(appActivity),
 				"SplashActivity is not present");
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		Assert.assertTrue(
@@ -79,7 +78,7 @@ public class BVTTests extends BaseTest {
 				.goToTeacherOnBoarding()
 				.onBoardUser(userType1, generateRandomString(10),
 						generateRandomString(10),
-						generateRandomString(8) + "@test.com",
+						"automation_" + getCurrentTimeStamp() + "@test.com",
 						passwordForUserOnBoard, zipCode)
 				.userOnBoardFlow(userType1).goToFlyOutMenu()
 				.goToAccountSettings().logoutAccount();
@@ -104,7 +103,7 @@ public class BVTTests extends BaseTest {
 				.goToRoomParentOnBoarding()
 				.onBoardUser(userType2, generateRandomString(10),
 						generateRandomString(10),
-						generateRandomString(8) + "@test.com",
+						"automation_" + getCurrentTimeStamp() + "@test.com",
 						passwordForUserOnBoard, zipCode)
 				.userOnBoardFlow(userType2).goToFlyOutMenu()
 				.goToAccountSettings().logoutAccount();

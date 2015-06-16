@@ -27,12 +27,18 @@ public class UserOnBoardingPage extends BasePage {
 	/**
 	 * On board user.
 	 *
-	 * @param userType the user type
-	 * @param firstName the first name
-	 * @param lastName the last name
-	 * @param emailId the email id
-	 * @param password the password
-	 * @param zipCode the zip code
+	 * @param userType
+	 *            the user type
+	 * @param firstName
+	 *            the first name
+	 * @param lastName
+	 *            the last name
+	 * @param emailId
+	 *            the email id
+	 * @param password
+	 *            the password
+	 * @param zipCode
+	 *            the zip code
 	 * @return the user on boarding flow
 	 */
 	public UserOnBoardingFlow onBoardUser(String userType, String firstName,
@@ -45,7 +51,9 @@ public class UserOnBoardingPage extends BasePage {
 		sendText(emailEditTextLocator, emailId);
 		sendText(passwordEditTextLocator, password);
 		sendText(zipCodeEditTextLocator, zipCode);
-		clickBack();
+		if (appiumDriver.findElements(signUpButtonLocator).size() < 1) {
+			clickBack();
+		}
 		click(signUpButtonLocator);
 		return new UserOnBoardingFlow(appiumDriver);
 
