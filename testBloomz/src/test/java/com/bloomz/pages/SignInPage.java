@@ -50,10 +50,11 @@ public class SignInPage extends BasePage {
 	}
 
 	public SignInPage setEnviroment(String endPoints) {
-		click(settingButtonLocator);
-		sendText(editNewUrlEditTextLocator, endPoints);
-		click(saveButtonLocator);
+		if(appiumDriver.findElements(settingButtonLocator).size() < 1){
+			click(settingButtonLocator);
+			sendText(editNewUrlEditTextLocator, endPoints);
+			click(saveButtonLocator);
+		}
 		return this;
-
 	}
 }
