@@ -1,2 +1,0 @@
-appium-version,platformName,platformVersion,deviceName,appPath,appPackage,appActivity,localaddress,Local,SauecLab,Testdroid,
-1,Android,5.1,Abcd,/Users/Moolya21/Documents/Bloomz/base.apk,net.bloomz,md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity,http://127.0.0.1:4723/wd/hub

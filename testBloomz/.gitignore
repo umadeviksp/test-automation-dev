@@ -2,4 +2,6 @@
 /.settings/*
 *.class
 *.classpath
-/target
+.metadata/*
+.recommenders/*
+
