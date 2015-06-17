@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bloomz_Test_Run" verbose="1" parallel="tests">
+	<test name="LG_Nexus_4">
+		<parameter name="deviceName" value="LG Nexus 4 Emulator" />
+		<classes>
+			<class name="com.bloomz.tests.BVTTests">
+				<methods>
+					<include name="testAppInstallation"></include>
+					<include name="testAppLauch"></include>
+					<!-- <include name="testSignInWithValidInputs"></include>
+					<include name="testSignUpForTeacher"></include>
+					<include name="testSignUpForRoomParent"></include>
+					<include name="testExistingAccountWithHomeTab"></include>
+					<include name="testExistingAccountWithCalendarEventsTab"></include>
+					<include name="testExistingAccountWithMessageTab"></include>
+					<include name="testExistingAccountWithVolunteerTab"></include>
+					<include name="testExistingAccountWithContactsTab"></include>
+					<include name="testAppBackgroundedAndForegrounded"></include>
+					<include name="testExistingAccountPostsByScrolling"></include>
+					<include name="testExistingAccountCalenderEventsByScrolling"></include>
+					<include name="testLaunchClassFromFlyOutMenu"></include>
+					<include name="testSwitchTabInClassScreen"></include> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Google_Nexus_7C">
+		<parameter name="deviceName" value="Google Nexus 7C Emulator" />
+		<classes>
+			<class name="com.bloomz.tests.BVTTests">
+				<methods>
+					<include name="testAppInstallation"></include>
+					<include name="testAppLauch"></include>
+			<!-- 		<include name="testSignInWithValidInputs"></include>
+					<include name="testSignUpForTeacher"></include>
+					<include name="testSignUpForRoomParent"></include>
+					<include name="testExistingAccountWithHomeTab"></include>
+					<include name="testExistingAccountWithCalendarEventsTab"></include>
+					<include name="testExistingAccountWithMessageTab"></include>
+					<include name="testExistingAccountWithVolunteerTab"></include>
+					<include name="testExistingAccountWithContactsTab"></include>
+					<include name="testAppBackgroundedAndForegrounded"></include>
+					<include name="testExistingAccountPostsByScrolling"></include>
+					<include name="testExistingAccountCalenderEventsByScrolling"></include>
+					<include name="testLaunchClassFromFlyOutMenu"></include>
+					<include name="testSwitchTabInClassScreen"></include> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

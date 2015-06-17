@@ -29,9 +29,6 @@ public class BVTTests extends BaseTest {
 	 */
 	@Test
 	public void testAppLauch() {
-		String activity = getActivityName();
-		Assert.assertTrue(activity.equals(appActivity),
-				"SplashActivity is not present");
 		LandingPage landingPage = new LandingPage(appiumDriver);
 		Assert.assertTrue(
 				landingPage.getText(By.id("net.bloomz:id/SignIn")).equals(

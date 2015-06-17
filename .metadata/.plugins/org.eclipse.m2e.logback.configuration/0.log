@@ -243,3 +243,16 @@
 2015-06-16 23:05:54,614 [Worker-60] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean
 2015-06-16 23:06:02,389 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
 2015-06-16 23:06:02,389 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2015-06-17 18:25:06,127 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.testng:testng:jar:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2015-06-17 18:39:07,677 [Worker-28] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 18:39:07,711 [Worker-28] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2015-06-17 20:12:29,718 [Worker-38] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 20:12:29,742 [Worker-38] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2015-06-17 21:02:07,033 [Worker-47] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 21:02:07,068 [Worker-47] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2015-06-17 22:19:17,292 [Worker-75] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 22:19:17,316 [Worker-75] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2015-06-17 22:27:11,194 [Worker-70] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 22:27:11,229 [Worker-70] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean
+2015-06-17 22:27:30,523 [Worker-75] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/Moolya21/Documents/BloomzTest/test-automation/testBloomz
+2015-06-17 22:27:30,542 [Worker-75] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="24.47" tests="45" errors="0" skipped="44" failures="1">
+<testsuite name="TestSuite" time="5.089" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-8/Contents/Home/jre/lib"/>
@@ -25,7 +25,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Moolya21/Documents/BloomzTest/test-automation/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4354054494150869334.tmp"/>
+    <property name="classworlds.conf" value="/Users/Moolya21/Documents/BloomzTest/test-automation/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4337519867674682560.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/Moolya21/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -59,192 +59,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="24.47">
-    <failure message="com.testdroid.api.APIException: 400 Bad Request&#10;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;apiExceptionMessage xmlns:ns2=&quot;com.testdroid.api&quot; xmlns:ns3=&quot;cloud.testdroid.api.um.model&quot; xmlns:ns4=&quot;cloud.testdroid.api.model.jrjc&quot; xmlns:ns5=&quot;cloud.testdroid.um.api.model&quot;&gt;&lt;message&gt;Resource is in invalid state: No active subscription plan to run tests on selected devices.&lt;/message&gt;&lt;statusCode&gt;400&lt;/statusCode&gt;&lt;/apiExceptionMessage&gt; (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 18.59 seconds&#10;Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;&#10;System info: host: &apos;Colosseum.local&apos;, ip: &apos;169.254.120.102&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.5&apos;, java.version: &apos;1.8.0_20&apos;&#10;Driver info: io.appium.java_client.android.AndroidDriver" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: com.testdroid.api.APIException: 400 Bad Request
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiExceptionMessage xmlns:ns2="com.testdroid.api" xmlns:ns3="cloud.testdroid.api.um.model" xmlns:ns4="cloud.testdroid.api.model.jrjc" xmlns:ns5="cloud.testdroid.um.api.model"><message>Resource is in invalid state: No active subscription plan to run tests on selected devices.</message><statusCode>400</statusCode></apiExceptionMessage> (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 18.59 seconds
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'Colosseum.local', ip: '169.254.120.102', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.8.0_20'
-Driver info: io.appium.java_client.android.AndroidDriver
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:240)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:126)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:153)
-	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
-	at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:39)
-	at com.bloomz.tests.BaseTest.setUp(BaseTest.java:163)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]></failure>
-    <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.apache.http.client.protocol.RequestAddCookies).
-log4j:WARN Please initialize the log4j system properly.
-log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-]]></system-err>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="setUp" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testAppInstallation" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testAppLauch" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testSignInWithValidInputs" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testSignUpForTeacher" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testSignUpForRoomParent" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountWithHomeTab" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountWithCalendarEventsTab" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountWithMessageTab" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountWithVolunteerTab" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountWithContactsTab" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testAppBackgroundedAndForegrounded" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountPostsByScrolling" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testExistingAccountCalenderEventsByScrolling" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testLaunchClassFromFlyOutMenu" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="testSwitchTabInClassScreen" classname="com.bloomz.tests.BVTTests" time="0">
-    <skipped/>
-  </testcase>
+  <testcase name="testAppInstallation" classname="com.bloomz.tests.BVTTests" time="1.222"/>
+  <testcase name="testAppInstallation" classname="com.bloomz.tests.BVTTests" time="1.585"/>
+  <testcase name="testAppLauch" classname="com.bloomz.tests.BVTTests" time="3.867"/>
+  <testcase name="testAppLauch" classname="com.bloomz.tests.BVTTests" time="4.532"/>
 </testsuite>

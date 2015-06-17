@@ -43,6 +43,7 @@ public class SignInPage extends BasePage {
 	 *            the password
 	 */
 	public HomePage loginWtihValidCredential(String emailId, String password) {
+
 		sendText(emailEditTextLocator, emailId);
 		sendText(passwordEditTextLocator, password);
 		click(signInButtonLocator);
@@ -50,10 +51,13 @@ public class SignInPage extends BasePage {
 	}
 
 	public SignInPage setEnviroment(String endPoints) {
-		click(settingButtonLocator);
-		sendText(editNewUrlEditTextLocator, endPoints);
-		click(saveButtonLocator);
-		return this;
 
+		if (appiumDriver.findElements(settingButtonLocator).size() > 1) {
+
+			click(settingButtonLocator);
+			sendText(editNewUrlEditTextLocator, endPoints);
+			click(saveButtonLocator);
+		}
+		return this;
 	}
 }

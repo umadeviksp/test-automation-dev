@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,6 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import com.bloomz.utils.ExecuteShellCommand;
 import com.bloomz.utils.excelconfig.DataSet;
@@ -79,8 +81,9 @@ public class BaseTest {
 
 	}
 
+	@Parameters("deviceName")
 	@BeforeMethod
-	public void setUp() throws IOException {
+	public void setUp(String deviceName, Method method) throws IOException {
 
 		// ----------------- Local ------------------------------
 		// Clear App cache
@@ -105,22 +108,22 @@ public class BaseTest {
 		// "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity"
 
 		// ---------------------- Sauce labs ------------------------
-		// DesiredCapabilities caps = DesiredCapabilities.android();
-		// caps.setCapability("appiumVersion", "1.4.0");
-		// caps.setCapability("deviceName", "Samsung Galaxy S4 Emulator");
-		// caps.setCapability("deviceOrientation", "portrait");
-		// caps.setCapability("browserName", "");
-		// caps.setCapability("platformVersion", "4.4");
-		// caps.setCapability("platformName", "Android");
-		//
-		// caps.setCapability("app", "sauce-storage:bloomz.zip");
-		// caps.setCapability("appPackage", appPackage);// "net.bloomz"
-		// caps.setCapability("appActivity", appActivity); //
-		// "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity"
-		// appiumDriver = new AndroidDriver(
-		// new URL(
-		// "http://nitin_bloomz:fcb9a1d2-c072-445c-9bf0-9689b36532e2@ondemand.saucelabs.com:80/wd/hub"),
-		// caps); // "http://0.0.0.0:4724/wd/hub"
+
+		DesiredCapabilities caps = DesiredCapabilities.android();
+		caps.setCapability("appiumVersion", "1.4.0");
+		caps.setCapability("deviceName", deviceName);
+		caps.setCapability("deviceOrientation", "portrait");
+		caps.setCapability("browserName", "");
+		caps.setCapability("platformVersion", "4.4");
+		caps.setCapability("platformName", "Android");
+		caps.setCapability("name", deviceName + "_" + method.getName());
+		caps.setCapability("app", "sauce-storage:net.bloomz-Signed.apk");
+		caps.setCapability("appPackage", appPackage);// "net.bloomz"
+		caps.setCapability("appActivity", appActivity); // "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity"
+		appiumDriver = new AndroidDriver(
+				new URL(
+						"http://nitin_bloomz:fcb9a1d2-c072-445c-9bf0-9689b36532e2@ondemand.saucelabs.com:80/wd/hub"),
+				caps); // "http://0.0.0.0:4724/wd/hub"
 
 		// --------------------- AppThwack ---------------------
 		// DesiredCapabilities caps = DesiredCapabilities.android();
@@ -143,29 +146,30 @@ public class BaseTest {
 
 		// -------------------- Testdroid ----------------
 
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("testdroid_target", "Android");
-		capabilities.setCapability("deviceName", "Android Device");
-		capabilities.setCapability("testdroid_username", TESTDROID_USERNAME);
-		capabilities.setCapability("testdroid_password", TESTDROID_PASSWORD);
-		capabilities.setCapability("testdroid_project", "Appium Automation");
-		capabilities.setCapability("testdroid_description",
-				"My first Appium project at Testdroid Cloud");
-		capabilities.setCapability("testdroid_testrun", "Test Run 4");
-		capabilities.setCapability("testdroid_device", "Samsung Galaxy S6 Edge SM-G925F");
-		// Freemium
-		capabilities.setCapability("testdroid_app",
-				"28ab24b8-784d-44fb-b045-8bfd03c49573/bloomz.apk"); // to use
-		capabilities.setCapability("appPackage", "net.bloomz");
-		capabilities.setCapability("app-activity",
-				"md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity");
-		appiumDriver = new AndroidDriver(new URL(
-				"http://appium.testdroid.com/wd/hub"), capabilities);
-		System.out.println("Capabilities:" + capabilities.toString());
-
-		System.out
-				.println("Creating Appium session, this may take couple minutes..");
+		// DesiredCapabilities capabilities = new DesiredCapabilities();
+		// capabilities.setCapability("platformName", "Android");
+		// capabilities.setCapability("testdroid_target", "Android");
+		// capabilities.setCapability("deviceName", "Android Device");
+		// capabilities.setCapability("testdroid_username", TESTDROID_USERNAME);
+		// capabilities.setCapability("testdroid_password", TESTDROID_PASSWORD);
+		// capabilities.setCapability("testdroid_project", "Appium Automation");
+		// capabilities.setCapability("testdroid_description",
+		// "My first Appium project at Testdroid Cloud");
+		// capabilities.setCapability("testdroid_testrun", "Test Run 4");
+		// capabilities.setCapability("testdroid_device",
+		// "Samsung Galaxy S6 Edge SM-G925F");
+		// // Freemium
+		// capabilities.setCapability("testdroid_app",
+		// "28ab24b8-784d-44fb-b045-8bfd03c49573/bloomz.apk"); // to use
+		// capabilities.setCapability("appPackage", "net.bloomz");
+		// capabilities.setCapability("app-activity",
+		// "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity");
+		// appiumDriver = new AndroidDriver(new URL(
+		// "http://appium.testdroid.com/wd/hub"), capabilities);
+		// System.out.println("Capabilities:" + capabilities.toString());
+		//
+		// System.out
+		// .println("Creating Appium session, this may take couple minutes..");
 
 	}
 
