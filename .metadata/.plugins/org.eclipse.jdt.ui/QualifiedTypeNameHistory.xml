@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.bloomz.tests.BVTTests"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.bloomz.tests.BaseTest"/>
+<fullyQualifiedTypeName name="com.google.api.client.json.JsonFactory"/>
+<fullyQualifiedTypeName name="com.google.api.client.http.HttpRequest"/>
+<fullyQualifiedTypeName name="com.google.api.client.http.HttpHeaders"/>
+<fullyQualifiedTypeName name="com.google.api.client.http.HttpRequestFactory"/>
+<fullyQualifiedTypeName name="com.google.api.client.http.HttpResponse"/>
+</qualifiedTypeNameHistroy>

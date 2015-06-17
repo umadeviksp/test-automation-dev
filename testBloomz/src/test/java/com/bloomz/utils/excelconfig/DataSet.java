@@ -5,10 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-
-import com.bloomz.tests.BaseTest;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -28,10 +24,6 @@ public class DataSet {
 	public static void getEnvironmentData(
 			EnvironmentSetting environmentSetting, String filePath)
 			throws IOException {
-
-		File file = new File("src/test/resources/EnviromentDataSet.csv");
-		String absolutePath = file.getAbsolutePath();
-
 
 		// Build reader instance
 		BufferedReader br = null;
@@ -82,9 +74,6 @@ public class DataSet {
 	public static void getUserInputData(UserInputData userInputData,
 			String filePath) throws IOException {
 
-		File file = new File("src/test/resources/UserInputDataSet.csv");
-		String absolutePath = file.getAbsolutePath();
-	
 		// Build reader instance
 		BufferedReader br = null;
 		String line = "";
