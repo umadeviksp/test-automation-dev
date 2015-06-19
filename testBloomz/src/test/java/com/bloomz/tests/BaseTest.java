@@ -81,9 +81,9 @@ public class BaseTest {
 
 	}
 
-	@Parameters("deviceName")
+	@Parameters({"deviceName", "osVersion"})
 	@BeforeMethod
-	public void setUp(String deviceName, Method method) throws IOException {
+	public void setUp(String deviceName, String osVersion,  Method method) throws IOException {
 
 		// ----------------- Local ------------------------------
 		// Clear App cache
@@ -114,9 +114,9 @@ public class BaseTest {
 		caps.setCapability("deviceName", deviceName);
 		caps.setCapability("deviceOrientation", "portrait");
 		caps.setCapability("browserName", "");
-		caps.setCapability("platformVersion", "4.4");
+		caps.setCapability("platformVersion", osVersion);
 		caps.setCapability("platformName", "Android");
-		caps.setCapability("name", deviceName + "_" + method.getName());
+		caps.setCapability("name", osVersion + "_" + method.getName() + '_' + deviceName);
 		caps.setCapability("app", "sauce-storage:net.bloomz-Signed.apk");
 		caps.setCapability("appPackage", appPackage);// "net.bloomz"
 		caps.setCapability("appActivity", appActivity); // "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity"
@@ -146,30 +146,30 @@ public class BaseTest {
 
 		// -------------------- Testdroid ----------------
 
-		// DesiredCapabilities capabilities = new DesiredCapabilities();
-		// capabilities.setCapability("platformName", "Android");
-		// capabilities.setCapability("testdroid_target", "Android");
-		// capabilities.setCapability("deviceName", "Android Device");
-		// capabilities.setCapability("testdroid_username", TESTDROID_USERNAME);
-		// capabilities.setCapability("testdroid_password", TESTDROID_PASSWORD);
-		// capabilities.setCapability("testdroid_project", "Appium Automation");
-		// capabilities.setCapability("testdroid_description",
-		// "My first Appium project at Testdroid Cloud");
-		// capabilities.setCapability("testdroid_testrun", "Test Run 4");
-		// capabilities.setCapability("testdroid_device",
-		// "Samsung Galaxy S6 Edge SM-G925F");
-		// // Freemium
-		// capabilities.setCapability("testdroid_app",
-		// "28ab24b8-784d-44fb-b045-8bfd03c49573/bloomz.apk"); // to use
-		// capabilities.setCapability("appPackage", "net.bloomz");
-		// capabilities.setCapability("app-activity",
-		// "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity");
-		// appiumDriver = new AndroidDriver(new URL(
-		// "http://appium.testdroid.com/wd/hub"), capabilities);
-		// System.out.println("Capabilities:" + capabilities.toString());
-		//
-		// System.out
-		// .println("Creating Appium session, this may take couple minutes..");
+//		 DesiredCapabilities capabilities = new DesiredCapabilities();
+//		 capabilities.setCapability("platformName", "Android");
+//		 capabilities.setCapability("testdroid_target", "android");
+//		 capabilities.setCapability("deviceName", "Android Device");
+//		 capabilities.setCapability("testdroid_username", TESTDROID_USERNAME);
+//		 capabilities.setCapability("testdroid_password", TESTDROID_PASSWORD);
+//		 capabilities.setCapability("testdroid_project", "Appium Automation");
+//		 capabilities.setCapability("testdroid_description",
+//		 "My first Appium project at Testdroid Cloud");
+//		 capabilities.setCapability("testdroid_testrun", "Test Run 5");
+//		 capabilities.setCapability("testdroid_device",
+//		 "Asus Memo Pad 8 K011");
+//		 // Freemium
+//		 capabilities.setCapability("testdroid_app",
+//		 "af290b54-186c-4e0e-ab12-be1fc8538704/net.bloomz-Signed.apk"); // to use
+//		 capabilities.setCapability("appPackage", "net.bloomz");
+//		 capabilities.setCapability("app-activity",
+//		 "md50650226ac6f52b09d4ba74196a0cfcac.SplashActivity");
+//		 appiumDriver = new AndroidDriver(new URL(
+//		 "http://appium.testdroid.com/wd/hub"), capabilities);
+//		 System.out.println("Capabilities:" + capabilities.toString());
+		
+		 System.out
+		 .println("Creating Appium session, this may take couple minutes..");
 
 	}
 
