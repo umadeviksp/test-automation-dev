@@ -1,0 +1,7 @@
+'setUp':{'siteUrl':'app-staging.bloomz.net:8000/#/app'},
+	'signin':{
+				'username':'cc60@test.com',
+				'password':'bloomz999',
+				'name':'deena 61',
+				'invalidPassword':'invalid'
+            }
