@@ -8,13 +8,12 @@ import org.testng.Assert;
 import com.bloomz.pages.BasePage;
 
 public class ContactsTab extends BasePage {
-	By contactListViewLocator = By.id("net.bloomz:id/MyContactsListView");
+  By contactListViewLocator = By.id("net.bloomz:id/MyContactsListView");
 
-	public ContactsTab(AppiumDriver appiumDriver) {
-		super(appiumDriver);
-		Assert.assertTrue(
-				waitForElement(contactListViewLocator).isDisplayed() == true,
-				"Current tab is not messages tab");
-	}
+  public ContactsTab(AppiumDriver appiumDriver) {
+    super(appiumDriver);
+    Assert.assertTrue(waitForElement(contactListViewLocator).isDisplayed() == true,
+        "Current tab is not messages tab");
+  }
 
 }

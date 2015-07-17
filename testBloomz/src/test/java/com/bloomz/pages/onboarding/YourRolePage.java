@@ -9,31 +9,31 @@ import com.bloomz.pages.LandingPage;
 
 public class YourRolePage extends BasePage {
 
-	By invitationEditTextLocator = By.id("net.bloomz:id/editInvitationcode");
-	By teacherLocator = By.id("net.bloomz:id/teacher");
-	By roomParentLocator = By.id("net.bloomz:id/roomParent");
-	By ptaLeaderLocator = By.id("net.bloomz:id/ptaLeader");
-	By cancelButtonLocator = By.id("net.bloomz:id/CancelBtn");
+  By invitationEditTextLocator = By.id("net.bloomz:id/editInvitationcode");
+  By teacherLocator = By.id("net.bloomz:id/teacher");
+  By roomParentLocator = By.id("net.bloomz:id/roomParent");
+  By ptaLeaderLocator = By.id("net.bloomz:id/ptaLeader");
+  By cancelButtonLocator = By.id("net.bloomz:id/CancelBtn");
 
-	public YourRolePage(AppiumDriver appiumDriver) {
-		super(appiumDriver);
-	}
+  public YourRolePage(AppiumDriver appiumDriver) {
+    super(appiumDriver);
+  }
 
-	public LandingPage goBackToOnBoardingPage() {
-		click(cancelButtonLocator);
-		return new LandingPage(appiumDriver);
+  public LandingPage goBackToOnBoardingPage() {
+    click(cancelButtonLocator);
+    return new LandingPage(appiumDriver);
 
-	}
+  }
 
-	public UserOnBoardingPage goToTeacherOnBoarding() {
-		click(teacherLocator);
-		return new UserOnBoardingPage(appiumDriver);
+  public UserOnBoardingPage goToTeacherOnBoarding() {
+    click(teacherLocator);
+    return new UserOnBoardingPage(appiumDriver);
 
-	}
+  }
 
-	public UserOnBoardingPage goToRoomParentOnBoarding() {
-		click(roomParentLocator);
-		return new UserOnBoardingPage(appiumDriver);
+  public UserOnBoardingPage goToRoomParentOnBoarding() {
+    click(roomParentLocator);
+    return new UserOnBoardingPage(appiumDriver);
 
-	}
+  }
 }

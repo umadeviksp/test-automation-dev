@@ -5,29 +5,28 @@ import java.io.InputStreamReader;
 
 public class ExecuteShellCommand {
 
-	
-	public String executeCommand(String command) {
 
-		StringBuffer output = new StringBuffer();
+  public String executeCommand(String command) {
 
-		Process p;
-		try {
-			p = Runtime.getRuntime().exec(command);
-			p.waitFor();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					p.getInputStream()));
+    StringBuffer output = new StringBuffer();
 
-			String line = "";
-			while ((line = reader.readLine()) != null) {
-				output.append(line + "\n");
-			}
+    Process p;
+    try {
+      p = Runtime.getRuntime().exec(command);
+      p.waitFor();
+      BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+      String line = "";
+      while ((line = reader.readLine()) != null) {
+        output.append(line + "\n");
+      }
 
-		return output.toString();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
-	}
+    return output.toString();
+
+  }
 
 }
