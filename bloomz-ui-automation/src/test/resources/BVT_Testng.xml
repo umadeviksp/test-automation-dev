@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bloomz_Test_Run" verbose="1" parallel="tests"
-	thread-count="3">
+<suite name="Bloomz_Test_Run" verbose="1" parallel="false">
 
 	<test name="BVT Testcases on Android">
 		<parameter name="platformName" value="Android"></parameter>
@@ -15,7 +14,6 @@
 			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
 		</classes>
 	</test>
-
 	<test name="BVT Testcases on chrome">
 		<parameter name="platformName" value="Web"></parameter>
 		<parameter name="browserType" value="CHROME"></parameter>
@@ -28,7 +26,7 @@
 			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
 		</classes>
 	</test>
-	<test name="BVT Testcases on firefox">
+	<test name="BVT Testcases on safari">
 		<parameter name="platformName" value="Web"></parameter>
 		<parameter name="browserType" value="SAFARI"></parameter>
 		<groups>
@@ -40,5 +38,7 @@
 			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
 		</classes>
 	</test>
+
+
 
 </suite>

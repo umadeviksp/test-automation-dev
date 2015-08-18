@@ -1,9 +1,11 @@
 package com.net.bloomz.pages.interfaces;
 
+import com.net.bloomz.pages.SignInPage;
+
 
 public interface LandingPageActions<T extends LandingPageActions<T>> {
 
-  T clickOnSignInButton();
+  SignInPage clickOnSignInButton();
 
   T clickOnCreateAccountORIAmNew();
 }

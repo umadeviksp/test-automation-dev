@@ -1,25 +1,24 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.LandingPageActions;
-import com.net.bloomz.tests.BaseTest;
 
 
 
 public class LandingPage extends BasePage implements LandingPageActions<LandingPage> {
-  private WebDriver driver;
+
 
   By signInButtonLocator = null;
   By createAccountButtonLocator = null;
 
-  public LandingPage() {
-    if (BaseTest.getPlatform().equals("Android")) {
+  public LandingPage(Browser<?> browser) {
+    super(browser);
+    if (getPlatformName().equals("Android")) {
       signInButtonLocator = By.id("net.bloomz:id/SignIn");
       createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");
-    } else if (BaseTest.getPlatform().equals("ios")) {
+    } else if (getPlatformName().equals("ios")) {
       signInButtonLocator = By.id("");
       createAccountButtonLocator = By.id("");
     } else {
@@ -30,16 +29,16 @@ public class LandingPage extends BasePage implements LandingPageActions<LandingP
 
 
   @Override
-  public LandingPage clickOnSignInButton() {
+  public SignInPage clickOnSignInButton() {
     System.out.println(signInButtonLocator.toString());
     click(signInButtonLocator);
-    return PageFactory.initElements(driver, LandingPage.class);
+    return new SignInPage(browser);
   }
 
   @Override
   public LandingPage clickOnCreateAccountORIAmNew() {
     click(createAccountButtonLocator);
-    return PageFactory.initElements(driver, LandingPage.class);
+    return new LandingPage(browser);
   }
 
 

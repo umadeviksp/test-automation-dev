@@ -1,25 +1,24 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.SettingPageActions;
-import com.net.bloomz.tests.BaseTest;
 
 
 public class SettingPage extends BasePage implements SettingPageActions<SettingPage> {
 
-  WebDriver driver;
+
   By signOutButtonLocator = null;
   By popUpSignOutButtonLocator = null;
 
 
-  public SettingPage() {
-    if (BaseTest.getPlatform().equals("Android")) {
+  public SettingPage(Browser<?> browser) {
+    super(browser);
+    if (getPlatformName().equals("Android")) {
       signOutButtonLocator = By.id("net.bloomz:id/txtSignOut");
       popUpSignOutButtonLocator = By.id("net.bloomz:id/SignOutBtn");
-    } else if (BaseTest.getPlatform().equals("iOS")) {
+    } else if (getPlatformName().equals("iOS")) {
 
     } else {
       signOutButtonLocator = By.xpath("//*[@ng-click=\"logout()\"]");
@@ -30,12 +29,12 @@ public class SettingPage extends BasePage implements SettingPageActions<SettingP
   @Override
   public SettingPage clickOnSignOutButton() {
     click(signOutButtonLocator);
-    return PageFactory.initElements(driver, SettingPage.class);
+    return this;
   }
 
   @Override
   public SettingPage clickOnPopUpSignOutButton() {
     click(popUpSignOutButtonLocator);
-    return PageFactory.initElements(driver, SettingPage.class);
+    return this;
   }
 }

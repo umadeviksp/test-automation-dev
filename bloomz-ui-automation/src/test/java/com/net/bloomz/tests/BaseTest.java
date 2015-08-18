@@ -2,11 +2,15 @@ package com.net.bloomz.tests;
 
 import io.appium.java_client.android.AndroidDriver;
 
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -28,6 +32,7 @@ public class BaseTest {
   public static Browser<?> browser;
   public static String browserString = "";
 
+  private static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
 
   @SuppressWarnings("static-access")
@@ -35,9 +40,11 @@ public class BaseTest {
   @BeforeClass(alwaysRun = true)
   public void setUp(String platformName, String browserType) throws IWebDriverException,
       MalformedURLException {
+    
+    
     Browser<?> browser = null;
     TimeoutsConfig timeouts =
-        TimeoutsConfig.builder().pageLoadTimoutSeconds(10).implicitWaitTimeoutMillis(2000).build();
+        TimeoutsConfig.builder().pageLoadTimoutSeconds(60).implicitWaitTimeoutMillis(60000).build();
 
     if (platformName.equals("Android")) {
       browser =
@@ -60,11 +67,16 @@ public class BaseTest {
 
     } else if (platformName.equals("Web")) {
       System.setProperty("webdriver.chrome.driver", "/Users/manikandan/Downloads/chromedriver");
-//      browser =
-//          LocalBrowserBuilder
-//              .getBuilder(WebBrowserType.CHROME, "http://app-test01.bloomz.net:8000/#/app")
-//              .withBrowserBinaryPath("/Users/manikandan/Downloads/chromedriver").build();
-//      ((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
+      // browser =
+      // LocalBrowserBuilder
+      // .getBuilder(WebBrowserType.CHROME, "http://app-test01.bloomz.net:8000/#/app")
+      // .withBrowserBinaryPath("/Users/manikandan/Downloads/chromedriver").build();
+      // ((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
+      // browser =
+      // RemoteBrowserBuilder.getBuilder(WebBrowserType.valueOf(browserType),
+      // "http://app-test01.bloomz.net:8000/#/app", "http://169.254.148.189:4444/wd/hub")
+      // .build();
+      // ((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
 
 
 
@@ -77,6 +89,8 @@ public class BaseTest {
       
       
        } else if (browserType.equals(WebBrowserType.SAFARI.toString())) {
+         SafariOptions options = new SafariOptions(); 
+         options.setUseCleanSession(true);
        browser =
        LocalBrowserBuilder.getBuilder(WebBrowserType.SAFARI,
        "http://app-test01.bloomz.net:8000/#/app").build();
@@ -87,6 +101,9 @@ public class BaseTest {
     }
     this.browser = browser;
     browserString = platformName;
+    
+    
+
 
   }
 
@@ -104,25 +121,63 @@ public class BaseTest {
     // .toString())) {
     // ((WebBrowser) browser).quit();
     // }
+    // if (browser != null) {
+    // String browserName = browser.toString();
+    // if (browserName.contains("web")) {
+    // System.out.println("Web Browser");
+    // ((WebBrowser) browser).quit();
+    // } else if (browserName.contains("Android")) {
+    // System.out.println("Mobile Browser");
+    // ((MobileBrowser) browser).quit();
+    // }
+    // }
+    
+    
+    logger.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
+
+    logger.info("X");
+
+    logger.info("X");
+
+    logger.info("X");
+
+    logger.info("X");
+    
+ 
     if (browser != null) {
       browser.quit();
     }
+
 
   }
 
 
 
   @BeforeMethod(alwaysRun = true)
-  public void startMethod() {
+  public void startMethod(Method method) {
+    logger.info("****************************************************************************************");
+
+    logger.info("****************************************************************************************");
+
+    logger.info("$$$$$$$$$$$$$$$$$$$$$          " +method.getName()+ "          $$$$$$$$$$$$$$$$$$$$$$$$$");
+
+    logger.info("****************************************************************************************");
+
+    logger.info("****************************************************************************************");
 
   }
 
 
   @AfterMethod(alwaysRun = true)
   public void stopMethod() {
-    if (getPlatform().equals("Android")) {
+    if (browserString.equals("Android")) {
       ((AndroidDriver) browser.getWebDriver()).resetApp();
     }
+    
+    
+
+    
+    
   }
 
   public static String getPlatform() {

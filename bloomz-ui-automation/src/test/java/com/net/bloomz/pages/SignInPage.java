@@ -1,11 +1,9 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.SignPageActions;
-import com.net.bloomz.tests.BaseTest;
 
 
 public class SignInPage extends BasePage implements SignPageActions<SignInPage> {
@@ -23,8 +21,9 @@ public class SignInPage extends BasePage implements SignPageActions<SignInPage> 
   By saveButtonLocator = null;
   By pageTitleLocator = null;
 
-  public SignInPage() {
-    if (BaseTest.getPlatform().equals("Android")) {
+  public SignInPage(Browser<?> browser) {
+    super(browser);
+    if (getPlatformName().equals("Android")) {
       backArrowButtonLocator = By.id("net.bloomz:id/llback");
       settingButtonLocator = By.id("net.bloomz:id/settingsBtn");
       emailEditTextLocator = By.id("net.bloomz:id/editEmail");
@@ -39,7 +38,7 @@ public class SignInPage extends BasePage implements SignPageActions<SignInPage> 
       pageTitleLocator = By.id("net.bloomz:id/txtHeadingTitle");
 
 
-    } else if (BaseTest.getPlatform().equals("ios")) {
+    } else if (getPlatformName().equals("ios")) {
 
       backArrowButtonLocator = By.id("net.bloomz:id/llback");
       settingButtonLocator = By.id("net.bloomz:id/settingsBtn");
@@ -72,15 +71,13 @@ public class SignInPage extends BasePage implements SignPageActions<SignInPage> 
 
 
 
-  private WebDriver driver;
-
-
-
   @Override
   public SignInPage enterEmailIdOnTextBox(String emailId) {
-    setEnviroment();
+    if (getPlatformName().equals("Android")) {
+      setEnviroment();
+    }
     sendText(emailEditTextLocator, emailId);
-    return PageFactory.initElements(driver, SignInPage.class);
+    return this;
   }
 
 
@@ -88,25 +85,25 @@ public class SignInPage extends BasePage implements SignPageActions<SignInPage> 
   @Override
   public SignInPage enterPasswordOnTextBox(String password) {
     sendText(passwordEditTextLocator, password);
-    return PageFactory.initElements(driver, SignInPage.class);
+    return this;
   }
 
   @Override
-  public SignInPage clickOnSignInButton() {
+  public HomePage clickOnSignInButton() {
     click(signInButtonLocator);
-    return PageFactory.initElements(driver, SignInPage.class);
+    return new HomePage(browser);
   }
 
 
 
   @Override
   public SignInPage setEnviroment() {
-    if (getActions().getBrowser().getWebDriver().findElements(settingButtonLocator).size() != 0) {
+    if (browser.getActions().getElements(settingButtonLocator).size() != 0) {
       click(settingButtonLocator);
       sendText(editNewUrlEditTextLocator, "http://app-test01.bloomz.net:8000");
       click(saveButtonLocator);
     }
-    return PageFactory.initElements(driver, SignInPage.class);
+    return this;
   }
 
 

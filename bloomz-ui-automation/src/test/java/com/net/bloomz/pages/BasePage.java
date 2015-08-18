@@ -12,26 +12,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.net.bloomz.appium.pagefactory.framework.actions.SeleniumActions;
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.appium.pagefactory.framework.config.TimeoutType;
 import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
-import com.net.bloomz.tests.BaseTest;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class BasePage.
  */
+@SuppressWarnings("unchecked")
 public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 
   WebDriverWait driverWait;
 
-  WebDriver driver;
+  Browser<?> browser;
+
+  public BasePage(Browser<?> browser) {
+    this.browser = browser;
+  }
 
   /**
    * Send text.
@@ -42,14 +46,14 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public BasePage sendText(By locator, String text) {
     waitForElement(locator);
-    if (BaseTest.getPlatform().equals("Android")) {
+    if (getPlatformName().equals("Android")) {
       click(locator);
     }
-    getActions().getElement(locator).clear();
-    getActions().inputText(locator, text);
-    if (BaseTest.getPlatform().equals("Android")) {
-      System.out.println("Base Page : " + BaseTest.getPlatform());
-      ((AndroidDriver) getActions().getBrowser().getWebDriver()).hideKeyboard();
+    browser.getActions().getElement(locator).clear();
+    browser.getActions().inputText(locator, text);
+    if (getPlatformName().equals("Android")) {
+      System.out.println("Base Page : " + getPlatformName().equals("Android"));
+      ((AndroidDriver<?>) browser.getWebDriver()).hideKeyboard();
     }
     return this;
 
@@ -63,15 +67,14 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public BasePage click(By locator) {
     waitForElement(locator);
-    if (BaseTest.getPlatform().equals("")) {
+    if (getPlatformName().equals("")) {
       try {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
       } catch (InterruptedException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
     }
-    getActions().click(locator, TimeoutType.FORTY_SECONDS);
+    browser.getActions().click(locator, TimeoutType.FORTY_SECONDS);
     return this;
   }
 
@@ -82,7 +85,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    * @return the base page
    */
   public BasePage clickBack() {
-    getActions().getBrowser().getWebDriver().navigate().back();
+    browser.getWebDriver().navigate().back();
     return this;
 
   }
@@ -95,7 +98,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public String getText(By locator) {
     waitForElement(locator);
-    return getActions().getElement(locator).getText();
+    return browser.getActions().getElement(locator).getText();
   }
 
   /**
@@ -105,7 +108,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    * @return the web element
    */
   public WebElement waitForElement(By locator) {
-    driverWait = new WebDriverWait(getActions().getBrowser().getWebDriver(), 40);
+    driverWait = new WebDriverWait(browser.getWebDriver(), 40);
     return driverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
   }
 
@@ -119,14 +122,13 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public BasePage swipeRight(String id, int offset, int duration) {
     MobileElement element1 =
-        (MobileElement) ((AndroidDriver) getActions().getBrowser().getWebDriver())
-            .findElementById(id);
+        (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElementById(id);
     int offset1 = 1;
     Point p1 = element1.getCenter();
     Point location1 = element1.getLocation();
     Dimension size1 = element1.getSize();
-    ((AndroidDriver) getActions().getBrowser().getWebDriver()).swipe(location1.getX() + offset1
-        + offset, p1.getY(), location1.getX() + size1.getWidth() - offset1, p1.getY(), duration);
+    ((AndroidDriver<?>) browser.getWebDriver()).swipe(location1.getX() + offset1 + offset,
+        p1.getY(), location1.getX() + size1.getWidth() - offset1, p1.getY(), duration);
     return this;
   }
 
@@ -139,15 +141,13 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public BasePage swipeLeft(String id, int duration) {
     MobileElement element =
-        (MobileElement) ((AndroidDriver) getActions().getBrowser().getWebDriver())
-            .findElementById(id);
+        (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElementById(id);
     int offset = 1;
     Point p = element.getCenter();
     Point location = element.getLocation();
     Dimension size = element.getSize();
-    ((AndroidDriver) getActions().getBrowser().getWebDriver()).swipe(
-        location.getX() + size.getWidth() - offset, p.getY(), location.getX() + offset, p.getY(),
-        1000);
+    ((AndroidDriver<?>) browser.getWebDriver()).swipe(location.getX() + size.getWidth() - offset,
+        p.getY(), location.getX() + offset, p.getY(), 1000);
     return this;
   }
 
@@ -163,8 +163,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
   public BasePage swipeUp(String id, int offsetFromStartBorder, int offsetFromEndBorder,
       int duration) {
     MobileElement element =
-        (MobileElement) ((AndroidDriver) getActions().getBrowser().getWebDriver())
-            .findElementById(id);
+        (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElementById(id);
     element.swipe(SwipeElementDirection.UP, offsetFromStartBorder, offsetFromEndBorder, duration);
     return this;
   }
@@ -182,8 +181,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
       int duration) {
     waitForElement(By.id(id));
     MobileElement element =
-        (MobileElement) ((AndroidDriver) getActions().getBrowser().getWebDriver())
-            .findElementById(id);
+        (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElementById(id);
     element.swipe(SwipeElementDirection.DOWN, offsetFromStartBorder, offsetFromEndBorder, duration);
     return this;
   }
@@ -196,7 +194,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
    */
   public ArrayList<String> getListContents(By locator) {
     java.util.List<WebElement> findElements =
-        ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElements(locator);
+        ((AndroidDriver<WebElement>) browser.getWebDriver()).findElements(locator);
     ArrayList<String> arrayList = new ArrayList<String>();
     arrayList.clear();
     Iterator<WebElement> iterator = findElements.iterator();
@@ -221,10 +219,8 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
   public BasePage scrollTo(By locator, String text, String direction) throws InterruptedException {
 
     MobileElement element =
-        (MobileElement) ((AndroidDriver) getActions().getBrowser().getWebDriver())
-            .findElement(locator);
-    JavascriptExecutor js =
-        (JavascriptExecutor) ((AndroidDriver) getActions().getBrowser().getWebDriver());
+        (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
+    JavascriptExecutor js = (JavascriptExecutor) ((AndroidDriver<?>) browser.getWebDriver());
     java.util.HashMap<String, String> scrollObject = new java.util.HashMap<String, String>();
     scrollObject.put("direction", direction);
     scrollObject.put("text", text);
@@ -234,40 +230,40 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
   }
 
   public WebElement getWebElement(By locator) {
-    return ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElement(locator);
+    return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
 
   }
 
   public boolean isWebElementDisplayed(By locator) {
-    return ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElement(locator)
-        .isDisplayed();
+    return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator).isDisplayed();
 
   }
 
   public void setTimeToTimePicker(String firstField, String secondField, String thirdField) {
 
     List<WebElement> date =
-        ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElements(By
+        ((AndroidDriver<WebElement>) browser.getWebDriver()).findElements(By
             .className("android.widget.NumberPicker"));
     date.get(0).click();
     if (!date.get(0).isDisplayed()) {
-      ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElement(
-          By.id("net.bloomz:id/txtfromtime")).click();
+      ((AndroidDriver<?>) browser.getWebDriver()).findElement(By.id("net.bloomz:id/txtfromtime"))
+          .click();
     }
     date.get(0).sendKeys(firstField);
     date.get(1).sendKeys(secondField);
     date.get(2).sendKeys(thirdField);
   }
 
+
   public void setDateToDatePicker(String firstField, String secondField, String thirdField) {
 
     List<WebElement> date =
-        ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElements(By
+        ((AndroidDriver<WebElement>) browser.getWebDriver()).findElements(By
             .className("android.widget.NumberPicker"));
     date.get(0).click();
     if (!date.get(0).isDisplayed()) {
-      ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElement(
-          By.id("net.bloomz:id/txtfromdate")).click();
+      ((AndroidDriver<?>) browser.getWebDriver()).findElement(By.id("net.bloomz:id/txtfromdate"))
+          .click();
     }
     date.get(0).sendKeys(firstField);
     date.get(1).sendKeys(secondField);
@@ -275,8 +271,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
   }
 
   public String getElementSize(By locator) {
-    int elementSize =
-        ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElements(locator).size();
+    int elementSize = ((AndroidDriver<?>) browser.getWebDriver()).findElements(locator).size();
     if (elementSize != 0) {
       return String.valueOf(elementSize);
     }
@@ -284,7 +279,19 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
   }
 
   public BasePage clearTextBox(By locator) {
-    ((AndroidDriver) getActions().getBrowser().getWebDriver()).findElement(locator).clear();
+    ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator).clear();
     return this;
+  }
+
+  public String getPlatformName() {
+    String string = browser.toString();
+    System.out.println(string);
+    if (string.contains("Android")) {
+      System.out.println("Driver Instance : "
+          + browser.getDesiredCapabilities().getCapability("platformName").toString());
+      return browser.getDesiredCapabilities().getCapability("platformName").toString();
+
+    }
+    return "";
   }
 }

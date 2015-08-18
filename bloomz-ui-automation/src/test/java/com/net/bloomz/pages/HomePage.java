@@ -1,16 +1,13 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.HomePageActions;
-import com.net.bloomz.tests.BaseTest;
 
 
 public class HomePage extends BasePage implements HomePageActions<HomePage> {
 
-  WebDriver driver;
 
   By bloomzIconLocator = null;
   By settingButtonLocator = null;
@@ -32,11 +29,12 @@ public class HomePage extends BasePage implements HomePageActions<HomePage> {
   // By profileNameLocator = By.id("net.bloomz:id/txtProfileName");
   // By postTitleLocator = By.id("net.bloomz:id/txtPostTitle");
 
-  public HomePage() {
-    if (BaseTest.getPlatform().equals("Android")) {
+  public HomePage(Browser<?> browser) {
+    super(browser);
+    if (getPlatformName().equals("Android")) {
       bloomzIconLocator = By.id("net.bloomz:id/menuBtn");
       settingButtonLocator = By.id("net.bloomz:id/txtSetting");
-    } else if (BaseTest.getPlatform().equals("iOS")) {
+    } else if (getPlatformName().equals("iOS")) {
       bloomzIconLocator = By.id("");
       settingButtonLocator = By.id("");
     } else {
@@ -48,21 +46,21 @@ public class HomePage extends BasePage implements HomePageActions<HomePage> {
   @Override
   public HomePage clickOnBloomzIconForMobileApp() {
 
-    if (BaseTest.getPlatform().equals("Android") || BaseTest.getPlatform().equals("iOS")) {
+    if (getPlatformName().equals("Android") || getPlatformName().equals("Android")) {
       waitForElement(bloomzIconLocator);
       click(bloomzIconLocator);
-      return PageFactory.initElements(driver, HomePage.class);
+      return new HomePage(browser);
     }
     return null;
   }
 
 
   @Override
-  public HomePage clickOnSettingButton() {
+  public SettingPage clickOnSettingButton() {
     clickOnBloomzIconForMobileApp();
     waitForElement(settingButtonLocator);
     click(settingButtonLocator);
-    return PageFactory.initElements(driver, HomePage.class);
+    return new SettingPage(browser);
   }
 
 
