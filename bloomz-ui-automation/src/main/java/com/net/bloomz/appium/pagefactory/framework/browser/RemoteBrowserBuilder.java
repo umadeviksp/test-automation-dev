@@ -22,8 +22,8 @@ import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException
 /**
  * <p>
  * Builder class for creating a
- * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.RemoteBrowser}. A
- * RemoteBrowser is a browser running in a Selenium Grid, that works by
+ * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.RemoteBrowser}
+ * . A RemoteBrowser is a browser running in a Selenium Grid, that works by
  * connecting to a Selenium Hub. See
  * https://code.google.com/p/selenium/wiki/Grid2
  * </p>
@@ -46,8 +46,7 @@ import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException
  * </p>
  */
 public class RemoteBrowserBuilder {
-	private static final Logger logger = LoggerFactory
-			.getLogger(RemoteBrowserBuilder.class);
+	private static final Logger logger = LoggerFactory.getLogger(RemoteBrowserBuilder.class);
 
 	private final WebBrowserType browserType;
 	private final String baseTestUrl;
@@ -64,16 +63,11 @@ public class RemoteBrowserBuilder {
 	private Optional<Level> browserLogLevel = Optional.empty();
 	private Optional<String> browserLogFile = Optional.empty();
 	private Optional<Platform> platform = Optional.empty();
-	
 
-	private RemoteBrowserBuilder(WebBrowserType browserType,
-			String baseTestUrl, String seleniumHubURL) {
-		this.browserType = Preconditions.checkNotNull(browserType,
-				"You must provide a non-null BrowserType!");
-		this.baseTestUrl = Preconditions.checkNotNull(baseTestUrl,
-				"You must provide a non-null baseTestUrl!");
-		this.seleniumHubURL = Preconditions.checkNotNull(seleniumHubURL,
-				"You must provide a non-null seleniumHubURL");
+	private RemoteBrowserBuilder(WebBrowserType browserType, String baseTestUrl, String seleniumHubURL) {
+		this.browserType = Preconditions.checkNotNull(browserType, "You must provide a non-null BrowserType!");
+		this.baseTestUrl = Preconditions.checkNotNull(baseTestUrl, "You must provide a non-null baseTestUrl!");
+		this.seleniumHubURL = Preconditions.checkNotNull(seleniumHubURL, "You must provide a non-null seleniumHubURL");
 		this.timeoutsConfig = TimeoutsConfig.defaultTimeoutsConfig();
 	}
 
@@ -91,10 +85,8 @@ public class RemoteBrowserBuilder {
 	 *            - URL with port to the Selenium HUB, e.g.
 	 *            http://selenium.my.company.com:4444/wd/hub
 	 */
-	public static RemoteBrowserBuilder getBuilder(WebBrowserType browserType,
-			String baseTestUrl, String seleniumHubURL) {
-		return new RemoteBrowserBuilder(browserType, baseTestUrl,
-				seleniumHubURL);
+	public static RemoteBrowserBuilder getBuilder(WebBrowserType browserType, String baseTestUrl, String seleniumHubURL) {
+		return new RemoteBrowserBuilder(browserType, baseTestUrl, seleniumHubURL);
 	}
 
 	/**
@@ -109,10 +101,8 @@ public class RemoteBrowserBuilder {
 	 *            - URL with port to the Selenium HUB, e.g.
 	 *            http://selenium.my.company.com:4444/wd/hub
 	 */
-	public static RemoteBrowserBuilder getChromeBuilder(String baseTestUrl,
-			String seleniumHubURL) {
-		return new RemoteBrowserBuilder(WebBrowserType.CHROME, baseTestUrl,
-				seleniumHubURL);
+	public static RemoteBrowserBuilder getChromeBuilder(String baseTestUrl, String seleniumHubURL) {
+		return new RemoteBrowserBuilder(WebBrowserType.CHROME, baseTestUrl, seleniumHubURL);
 	}
 
 	/**
@@ -127,10 +117,8 @@ public class RemoteBrowserBuilder {
 	 *            - URL with port to the Selenium HUB, e.g.
 	 *            http://selenium.my.company.com:4444/wd/hub
 	 */
-	public static RemoteBrowserBuilder getFirefoxBuilder(String baseTestUrl,
-			String seleniumHubURL) {
-		return new RemoteBrowserBuilder(WebBrowserType.FIREFOX, baseTestUrl,
-				seleniumHubURL);
+	public static RemoteBrowserBuilder getFirefoxBuilder(String baseTestUrl, String seleniumHubURL) {
+		return new RemoteBrowserBuilder(WebBrowserType.FIREFOX, baseTestUrl, seleniumHubURL);
 	}
 
 	/**
@@ -145,10 +133,8 @@ public class RemoteBrowserBuilder {
 	 *            - URL with port to the Selenium HUB, e.g.
 	 *            http://selenium.my.company.com:4444/wd/hub
 	 */
-	public static RemoteBrowserBuilder getInternetExplorerBuilder(
-			String baseTestUrl, String seleniumHubURL) {
-		return new RemoteBrowserBuilder(WebBrowserType.IE, baseTestUrl,
-				seleniumHubURL);
+	public static RemoteBrowserBuilder getInternetExplorerBuilder(String baseTestUrl, String seleniumHubURL) {
+		return new RemoteBrowserBuilder(WebBrowserType.IE, baseTestUrl, seleniumHubURL);
 	}
 
 	// ------------Getters in case the client wants to inspect the config they
@@ -216,37 +202,28 @@ public class RemoteBrowserBuilder {
 	 *             when something goes wrong with creating a new WebDriver.
 	 */
 	public RemoteBrowser build() throws IWebDriverException {
-		logger.info("Building Remote Browser with the following config: \n{}",
-				toString());
+		logger.info("Building Remote Browser with the following config: \n{}", toString());
 		WebBrowser browser;
 		switch (browserType) {
 		case FIREFOX:
-			browser = new FirefoxBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserBinaryPath, platform);
+			browser = new FirefoxBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserBinaryPath, platform);
 			break;
 		case CHROME:
-			browser = new ChromeBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserBinaryPath, platform);
+			browser = new ChromeBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserBinaryPath, platform);
 			break;
 		case IE:
-			browser = new InternetExplorerBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserBinaryPath, platform);
+			browser = new InternetExplorerBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath,
+					browserVersion, browserLocale, startWindowWidth, startWindowHeight, browserLogLevel,
+					browserBinaryPath, platform);
 			break;
 		case SAFARI:
-			browser = new SafariBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserBinaryPath, platform);
+			browser = new SafariBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserBinaryPath, platform);
 			break;
 		default:
-			throw new IllegalArgumentException(
-					"Only Firefox, Chrome, and IE are currently supported!");
+			throw new IllegalArgumentException("Only Firefox, Chrome, and IE are currently supported!");
 		}
 		RemoteBrowser remoteBrowser = new RemoteBrowser(browser, seleniumHubURL);
 		remoteBrowser.initializeBrowser();
@@ -254,8 +231,7 @@ public class RemoteBrowserBuilder {
 	}
 
 	public RemoteBrowserBuilder withTimeoutsConfig(TimeoutsConfig timeoutsConfig) {
-		this.timeoutsConfig = timeoutsConfig == null ? TimeoutsConfig
-				.defaultTimeoutsConfig() : timeoutsConfig;
+		this.timeoutsConfig = timeoutsConfig == null ? TimeoutsConfig.defaultTimeoutsConfig() : timeoutsConfig;
 		return this;
 	}
 
@@ -293,22 +269,14 @@ public class RemoteBrowserBuilder {
 		this.platform = Optional.ofNullable(platform);
 		return this;
 	}
-	
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("browserType", browserType)
-				.add("baseTestUrl", baseTestUrl)
-				.add("seleniumHubURL", seleniumHubURL)
-				.add("browserVersion", browserVersion)
-				.add("browserLocale", browserLocale)
-				.add("startWindowWidth", startWindowWidth)
-				.add("startWindowHeight", startWindowHeight)
-				.add("browserLogLevel", browserLogLevel)
-				.add("browserLogFile", browserLogFile)
-				.add("platform", platform).toString();
+		return Objects.toStringHelper(this).add("browserType", browserType).add("baseTestUrl", baseTestUrl)
+				.add("seleniumHubURL", seleniumHubURL).add("browserVersion", browserVersion)
+				.add("browserLocale", browserLocale).add("startWindowWidth", startWindowWidth)
+				.add("startWindowHeight", startWindowHeight).add("browserLogLevel", browserLogLevel)
+				.add("browserLogFile", browserLogFile).add("platform", platform).toString();
 	}
-
-
 
 }

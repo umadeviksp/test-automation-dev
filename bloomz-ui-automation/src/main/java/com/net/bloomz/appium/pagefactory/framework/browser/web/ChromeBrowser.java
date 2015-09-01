@@ -27,23 +27,16 @@ import com.net.bloomz.appium.pagefactory.framework.config.TimeoutsConfig;
 import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException;
 
 public class ChromeBrowser extends WebBrowser {
-	private static final Logger logger = LoggerFactory
-			.getLogger(ChromeBrowser.class);
+	private static final Logger logger = LoggerFactory.getLogger(ChromeBrowser.class);
 
-	public ChromeBrowser(String baseTestUrl, TimeoutsConfig timeouts,
-			Optional<String> driverPath, Optional<String> browserBinaryPath,
-			Optional<String> browserVersion, Optional<String> browserLocale,
-			Optional<Integer> startWindowWidth,
-			Optional<Integer> startWindowHeight,
-			Optional<Level> browserLogLevel, Optional<String> browserLogFile,
-			Optional<Platform> platform) {
+	public ChromeBrowser(String baseTestUrl, TimeoutsConfig timeouts, Optional<String> driverPath,
+			Optional<String> browserBinaryPath, Optional<String> browserVersion, Optional<String> browserLocale,
+			Optional<Integer> startWindowWidth, Optional<Integer> startWindowHeight, Optional<Level> browserLogLevel,
+			Optional<String> browserLogFile, Optional<Platform> platform) {
 
-		super(baseTestUrl, timeouts, driverPath, browserBinaryPath,
-				browserVersion, browserLocale, startWindowWidth,
+		super(baseTestUrl, timeouts, driverPath, browserBinaryPath, browserVersion, browserLocale, startWindowWidth,
 				startWindowHeight, browserLogLevel, browserLogFile, platform);
 	}
-
-	
 
 	@Override
 	public WebBrowserType getBrowserType() {
@@ -65,8 +58,7 @@ public class ChromeBrowser extends WebBrowser {
 
 		setCommonWebBrowserCapabilities(desiredCapabilities);
 
-		desiredCapabilities.setCapability(
-				CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
 		// If the locale option is present and is not empty, then set this
 		// option in Chromedriver
@@ -81,8 +73,7 @@ public class ChromeBrowser extends WebBrowser {
 		// the Chrome Binary file
 		Optional<String> browserBinaryPath = getBrowserBinaryPath();
 		if (browserBinaryPath.isPresent() && !browserBinaryPath.get().isEmpty()) {
-			desiredCapabilities.setCapability("chrome.binary",
-					browserBinaryPath.get());
+			desiredCapabilities.setCapability("chrome.binary", browserBinaryPath.get());
 		}
 
 		// ChromeOptions
@@ -108,8 +99,7 @@ public class ChromeBrowser extends WebBrowser {
 		Optional<String> driverPath = getWebDriverPath();
 		Optional<String> browserLogFile = getBrowserLogFile();
 
-		ChromeDriverService.Builder builder = new ChromeDriverService.Builder()
-				.usingAnyFreePort();
+		ChromeDriverService.Builder builder = new ChromeDriverService.Builder().usingAnyFreePort();
 
 		if (driverPath.isPresent() && !driverPath.get().isEmpty()) {
 			File chromedriverFile = new File(driverPath.get());
@@ -125,8 +115,7 @@ public class ChromeBrowser extends WebBrowser {
 		try {
 			service.start();
 		} catch (IOException e) {
-			throw new IWebDriverException(
-					"Error starting Chrome driver service", e);
+			throw new IWebDriverException("Error starting Chrome driver service", e);
 		}
 		return new ChromeDriver(service, getDesiredCapabilities());
 	}
@@ -138,11 +127,9 @@ public class ChromeBrowser extends WebBrowser {
 			return null;
 		}
 		logger.debug("Getting available log types...");
-		Set<String> availableLogTypes = webDriver.manage().logs()
-				.getAvailableLogTypes();
+		Set<String> availableLogTypes = webDriver.manage().logs().getAvailableLogTypes();
 		logger.debug("Found log types: {}", availableLogTypes);
-		if (availableLogTypes == null
-				|| !availableLogTypes.contains(LogType.BROWSER)) {
+		if (availableLogTypes == null || !availableLogTypes.contains(LogType.BROWSER)) {
 			return null;
 		}
 		LogEntries logs = webDriver.manage().logs().get(LogType.BROWSER);

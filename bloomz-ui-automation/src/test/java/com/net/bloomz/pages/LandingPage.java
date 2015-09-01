@@ -1,46 +1,55 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidLandingPage;
 import com.net.bloomz.pages.interfaces.LandingPageActions;
+import com.net.bloomz.pages.web.WebLandingPage;
 
+public class LandingPage extends BasePage implements LandingPageActions {
+	static By signInButtonLocator;
+	static By createAccountButtonLocator;
 
+	public LandingPage(Browser<?> browser) {
+		super(browser);
+	}
 
-public class LandingPage extends BasePage implements LandingPageActions<LandingPage> {
+	@Override
+	public SignInPage clickOnSignInButton() {
+		click(signInButtonLocator);
+		return SignInPage.getSignInPage(browser);
+	}
 
+	@Override
+	public YourRolePage clickOnCreateAccountOrIAmNewButton() {
+		click(createAccountButtonLocator);
+		return YourRolePage.getYourRolePage(browser);
+	}
 
-  By signInButtonLocator = null;
-  By createAccountButtonLocator = null;
+	public static LandingPage getLandingPage(Browser<?> browser) {
+		String string = browser.toString();
+		System.out.println(string);
+		if (string.contains("AndroidMobile")) {
+			signInButtonLocator = By.id("net.bloomz:id/SignIn");
+			createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");
+			return new AndroidLandingPage(browser);
+		} else if (string.equals(".iOS")) {
+			signInButtonLocator = By.id("net.bloomz:id/SignIn");
+			createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");
+		} else {
+			signInButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('login');\"]");
+			createAccountButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('roleChooser')\"]");
+			return new WebLandingPage(browser);
+		}
+		return null;
+	}
 
-  public LandingPage(Browser<?> browser) {
-    super(browser);
-    if (getPlatformName().equals("Android")) {
-      signInButtonLocator = By.id("net.bloomz:id/SignIn");
-      createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");
-    } else if (getPlatformName().equals("ios")) {
-      signInButtonLocator = By.id("");
-      createAccountButtonLocator = By.id("");
-    } else {
-      signInButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('login');\"]");
-      createAccountButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('roleChooser')\"]");
-    }
-  }
-
-
-  @Override
-  public SignInPage clickOnSignInButton() {
-    System.out.println(signInButtonLocator.toString());
-    click(signInButtonLocator);
-    return new SignInPage(browser);
-  }
-
-  @Override
-  public LandingPage clickOnCreateAccountORIAmNew() {
-    click(createAccountButtonLocator);
-    return new LandingPage(browser);
-  }
-
-
+	public LandingPage thenVerifySignInAndCreateButtonsShouldBeDisplayed() {
+		Assert.assertTrue(getElementSize(signInButtonLocator) != 0 && getElementSize(createAccountButtonLocator) != 0,
+				"Current page is not Landing Page");
+		return LandingPage.getLandingPage(browser);
+	}
 
 }

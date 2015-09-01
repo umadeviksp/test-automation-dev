@@ -11,25 +11,25 @@ import org.openqa.selenium.interactions.TouchScreen;
 import org.openqa.selenium.remote.RemoteTouchScreen;
 
 public class SwipeableWebDriver extends AndroidDriver implements HasTouchScreen {
-    private RemoteTouchScreen touch;
+	private RemoteTouchScreen touch;
 
-    public SwipeableWebDriver(URL remoteAddress, Capabilities desiredCapabilities) {
-        super(remoteAddress, desiredCapabilities);
-        touch = new RemoteTouchScreen(getExecuteMethod());
-    }
+	public SwipeableWebDriver(URL remoteAddress, Capabilities desiredCapabilities) {
+		super(remoteAddress, desiredCapabilities);
+		touch = new RemoteTouchScreen(getExecuteMethod());
+	}
 
-    @Override
-    public TouchScreen getTouch() {
-        return touch;
-    }
+	@Override
+	public TouchScreen getTouch() {
+		return touch;
+	}
 
-    @Override
-    public MobileElement scrollTo(String s) {
-        return null;
-    }
+	@Override
+	public MobileElement scrollTo(String s) {
+		return null;
+	}
 
-    @Override
-    public MobileElement scrollToExact(String s) {
-        return null;
-    }
+	@Override
+	public MobileElement scrollToExact(String s) {
+		return null;
+	}
 }

@@ -3,38 +3,46 @@ package com.net.bloomz.pages;
 import org.openqa.selenium.By;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidSettingPage;
 import com.net.bloomz.pages.interfaces.SettingPageActions;
+import com.net.bloomz.pages.web.WebSettingPage;
 
+public class SettingPage extends BasePage implements SettingPageActions {
 
-public class SettingPage extends BasePage implements SettingPageActions<SettingPage> {
+	static By signOutButtonLocator = null;
+	static By popUpSignOutButtonLocator = null;
 
+	public SettingPage(Browser<?> browser) {
+		super(browser);
 
-  By signOutButtonLocator = null;
-  By popUpSignOutButtonLocator = null;
+	}
 
+	@Override
+	public SettingPage clickOnSignOutButton() {
+		click(signOutButtonLocator);
+		return this;
+	}
 
-  public SettingPage(Browser<?> browser) {
-    super(browser);
-    if (getPlatformName().equals("Android")) {
-      signOutButtonLocator = By.id("net.bloomz:id/txtSignOut");
-      popUpSignOutButtonLocator = By.id("net.bloomz:id/SignOutBtn");
-    } else if (getPlatformName().equals("iOS")) {
+	@Override
+	public SignInPage clickOnPopUpSignOutButton() {
+		click(popUpSignOutButtonLocator);
+		return SignInPage.getSignInPage(browser);
+	}
 
-    } else {
-      signOutButtonLocator = By.xpath("//*[@ng-click=\"logout()\"]");
-      popUpSignOutButtonLocator = By.xpath("//*[contains(text(), \"Sign Out\")]");
-    }
-  }
+	public static SettingPage getSettingPage(Browser<?> browser) {
+		String string = browser.toString();
+		System.out.println(string);
+		if (string.contains("AndroidMobile")) {
+			signOutButtonLocator = By.id("net.bloomz:id/txtSignOut");
+			popUpSignOutButtonLocator = By.id("net.bloomz:id/SignOutBtn");
+			return new AndroidSettingPage(browser);
+		} else if (string.contains(".iOS")) {
 
-  @Override
-  public SettingPage clickOnSignOutButton() {
-    click(signOutButtonLocator);
-    return this;
-  }
-
-  @Override
-  public SettingPage clickOnPopUpSignOutButton() {
-    click(popUpSignOutButtonLocator);
-    return this;
-  }
+		} else {
+			signOutButtonLocator = By.xpath("//*[@ng-click=\"logout()\"]");
+			popUpSignOutButtonLocator = By.xpath("//*[contains(text(), \"Sign Out\")]");
+			return new WebSettingPage(browser);
+		}
+		return null;
+	}
 }

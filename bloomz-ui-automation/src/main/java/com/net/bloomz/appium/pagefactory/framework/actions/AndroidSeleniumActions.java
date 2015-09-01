@@ -8,8 +8,7 @@ import com.net.bloomz.appium.pagefactory.framework.browser.mobile.AndroidMobileB
  * Currently, this is the same as BaseSeleniumActions, as we don't have any need
  * to implement anything differently for Android.
  */
-public class AndroidSeleniumActions extends
-		BaseSeleniumActions<AndroidMobileBrowser> {
+public class AndroidSeleniumActions extends BaseSeleniumActions<AndroidMobileBrowser> {
 
 	public AndroidSeleniumActions(AndroidMobileBrowser browser) {
 		super(browser);

@@ -7,11 +7,11 @@ import javax.annotation.Nonnull;
  */
 public interface TopLevelPage extends Page {
 
-    @Nonnull
-    String getWebPagePath();
+	@Nonnull
+	String getWebPagePath();
 
-    void leavePageHook();
+	void leavePageHook();
 
-    long getPageLoadTime();
+	long getPageLoadTime();
 
 }

@@ -24,20 +24,15 @@ import com.net.bloomz.appium.pagefactory.framework.config.TimeoutsConfig;
 
 public class FirefoxBrowser extends WebBrowser {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(FirefoxBrowser.class);
+	private static final Logger logger = LoggerFactory.getLogger(FirefoxBrowser.class);
 
-	public FirefoxBrowser(String baseTestUrl, TimeoutsConfig timeoutsConfig,
-			Optional<String> webDriverPath, Optional<String> browserBinaryPath,
-			Optional<String> browserVersion, Optional<String> browserLocale,
-			Optional<Integer> startWindowWidth,
-			Optional<Integer> startWindowHeight,
-			Optional<Level> browserLogLevel, Optional<String> browserLogFile,
-			Optional<Platform> platform) {
+	public FirefoxBrowser(String baseTestUrl, TimeoutsConfig timeoutsConfig, Optional<String> webDriverPath,
+			Optional<String> browserBinaryPath, Optional<String> browserVersion, Optional<String> browserLocale,
+			Optional<Integer> startWindowWidth, Optional<Integer> startWindowHeight, Optional<Level> browserLogLevel,
+			Optional<String> browserLogFile, Optional<Platform> platform) {
 
-		super(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath,
-				browserVersion, browserLocale, startWindowWidth,
-				startWindowHeight, browserLogLevel, browserLogFile, platform);
+		super(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion, browserLocale,
+				startWindowWidth, startWindowHeight, browserLogLevel, browserLogFile, platform);
 	}
 
 	@Override
@@ -51,8 +46,7 @@ public class FirefoxBrowser extends WebBrowser {
 
 		setCommonWebBrowserCapabilities(desiredCapabilities);
 
-		desiredCapabilities.setCapability(
-				CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
 		FirefoxProfile profile = new FirefoxProfile();
 		profile.setEnableNativeEvents(true);
@@ -65,8 +59,7 @@ public class FirefoxBrowser extends WebBrowser {
 			final String browserBinaryPathStr = browserBinaryPath.get();
 			File file = new File(browserBinaryPathStr);
 			if (file.exists()) {
-				desiredCapabilities.setCapability(FirefoxDriver.BINARY,
-						new FirefoxBinary(file));
+				desiredCapabilities.setCapability(FirefoxDriver.BINARY, new FirefoxBinary(file));
 			}
 		}
 
@@ -91,11 +84,9 @@ public class FirefoxBrowser extends WebBrowser {
 			return null;
 		}
 		logger.debug("Getting available log types...");
-		Set<String> availableLogTypes = webDriver.manage().logs()
-				.getAvailableLogTypes();
+		Set<String> availableLogTypes = webDriver.manage().logs().getAvailableLogTypes();
 		logger.debug("Found log types: {}", availableLogTypes);
-		if (availableLogTypes == null
-				|| !availableLogTypes.contains(LogType.BROWSER)) {
+		if (availableLogTypes == null || !availableLogTypes.contains(LogType.BROWSER)) {
 			return null;
 		}
 		LogEntries logs = webDriver.manage().logs().get(LogType.BROWSER);

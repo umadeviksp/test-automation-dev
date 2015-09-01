@@ -1,14 +1,14 @@
 package com.net.bloomz.pages.interfaces;
 
 import com.net.bloomz.pages.HomePage;
+import com.net.bloomz.pages.SignInPage;
 
+public interface SignPageActions {
+	SignInPage enterEmailIdOnTextBox(String emailId);
 
-public interface SignPageActions<T extends SignPageActions<T>> {
-  T enterEmailIdOnTextBox(String emailId);
+	SignInPage enterPasswordOnTextBox(String password);
 
-  T enterPasswordOnTextBox(String password);
+	HomePage clickOnSignInButton();
 
-  HomePage clickOnSignInButton();
-  
-  T setEnviroment();
+	SignInPage setEnviroment();
 }

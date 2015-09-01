@@ -23,79 +23,72 @@ import com.net.bloomz.appium.pagefactory.framework.config.TimeoutsConfig;
 import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException;
 
 public class SafariBrowser extends WebBrowser {
-    private static final Logger logger = LoggerFactory.getLogger(SafariBrowser.class);
+	private static final Logger logger = LoggerFactory.getLogger(SafariBrowser.class);
 
-    public SafariBrowser(String baseTestUrl,
-                         TimeoutsConfig timeouts,
-                         Optional<String> driverPath,
-                         Optional<String> browserBinaryPath,
-                         Optional<String> browserVersion,
-                         Optional<String> browserLocale,
-                         Optional<Integer> startWindowWidth,
-                         Optional<Integer> startWindowHeight,
-                         Optional<Level> browserLogLevel,
-                         Optional<String> browserLogFile,
-                         Optional<Platform> platform) {
+	public SafariBrowser(String baseTestUrl, TimeoutsConfig timeouts, Optional<String> driverPath,
+			Optional<String> browserBinaryPath, Optional<String> browserVersion, Optional<String> browserLocale,
+			Optional<Integer> startWindowWidth, Optional<Integer> startWindowHeight, Optional<Level> browserLogLevel,
+			Optional<String> browserLogFile, Optional<Platform> platform) {
 
-        super(baseTestUrl, timeouts, driverPath, browserBinaryPath, browserVersion, browserLocale,
-                startWindowWidth, startWindowHeight, browserLogLevel, browserLogFile, platform);
-    }
+		super(baseTestUrl, timeouts, driverPath, browserBinaryPath, browserVersion, browserLocale, startWindowWidth,
+				startWindowHeight, browserLogLevel, browserLogFile, platform);
+	}
 
-    @Override
-    public WebBrowserType getBrowserType() {
-        return WebBrowserType.SAFARI;
-    }
+	@Override
+	public WebBrowserType getBrowserType() {
+		return WebBrowserType.SAFARI;
+	}
 
-    @Override
-    public LoggingPreferences getLoggingPreferences() {
-        Level level = getLogLevel();
-        LoggingPreferences loggingPreferences = new LoggingPreferences();
-        loggingPreferences.enable(LogType.BROWSER, level);
-        loggingPreferences.enable(LogType.DRIVER, level);
-        return loggingPreferences;
-    }
+	@Override
+	public LoggingPreferences getLoggingPreferences() {
+		Level level = getLogLevel();
+		LoggingPreferences loggingPreferences = new LoggingPreferences();
+		loggingPreferences.enable(LogType.BROWSER, level);
+		loggingPreferences.enable(LogType.DRIVER, level);
+		return loggingPreferences;
+	}
 
-    @Override
-    public DesiredCapabilities getDesiredCapabilities() {
-        DesiredCapabilities desiredCapabilities = DesiredCapabilities.safari();
+	@Override
+	public DesiredCapabilities getDesiredCapabilities() {
+		DesiredCapabilities desiredCapabilities = DesiredCapabilities.safari();
 
-        setCommonWebBrowserCapabilities(desiredCapabilities);
+		setCommonWebBrowserCapabilities(desiredCapabilities);
 
-        desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
-        SafariOptions safariOptions = new SafariOptions();
-        safariOptions.setUseCleanSession(true);
+		SafariOptions safariOptions = new SafariOptions();
+		safariOptions.setUseCleanSession(true);
 
-        desiredCapabilities.setCapability(SafariOptions.CAPABILITY, safariOptions);
+		desiredCapabilities.setCapability(SafariOptions.CAPABILITY, safariOptions);
 
-        return desiredCapabilities;
-    }
+		return desiredCapabilities;
+	}
 
-    @Override
-    public SafariSeleniumActions getActions() {
-        return new SafariSeleniumActions(this);
-    }
+	@Override
+	public SafariSeleniumActions getActions() {
+		return new SafariSeleniumActions(this);
+	}
 
-    @Override
-    protected WebDriver createWebDriver() throws IWebDriverException {
+	@Override
+	protected WebDriver createWebDriver() throws IWebDriverException {
 
-        return new SafariDriver(getDesiredCapabilities());
-    }
+		return new SafariDriver(getDesiredCapabilities());
+	}
 
-    @Nullable
-    public LogEntries getBrowserLogEntries() {
-        if (webDriver == null) {
-            logger.info("WebDriver was null in ChromeBrowser#getBrowserLogEntries! Returning null.");
-            return null;
-        }
-        logger.debug("Getting available log types...");
-        Set<String> availableLogTypes = webDriver.manage().logs().getAvailableLogTypes();
-        logger.debug("Found log types: {}", availableLogTypes);
-        if (availableLogTypes == null || !availableLogTypes.contains(LogType.BROWSER)) {
-            return null;
-        }
-        LogEntries logs = webDriver.manage().logs().get(LogType.BROWSER);
-        logger.info("Success - obtained Browser logs for a local ChromeBrowser!");
-        return logs;
-    }
+	@Nullable
+	public LogEntries getBrowserLogEntries() {
+		if (webDriver == null) {
+			logger.info("WebDriver was null in ChromeBrowser#getBrowserLogEntries! Returning null.");
+			return null;
+		}
+		logger.debug("Getting available log types...");
+		Set<String> availableLogTypes = webDriver.manage().logs().getAvailableLogTypes();
+		logger.debug("Found log types: {}", availableLogTypes);
+		if (availableLogTypes == null || !availableLogTypes.contains(LogType.BROWSER)) {
+			return null;
+		}
+		LogEntries logs = webDriver.manage().logs().get(LogType.BROWSER);
+		logger.info("Success - obtained Browser logs for a local ChromeBrowser!");
+		return logs;
+	}
 }

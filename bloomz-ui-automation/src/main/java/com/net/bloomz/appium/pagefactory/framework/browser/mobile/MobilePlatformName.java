@@ -1,17 +1,15 @@
 package com.net.bloomz.appium.pagefactory.framework.browser.mobile;
 
 public enum MobilePlatformName {
-    IOS("iOS"),
-    ANDROID("Android");
-  
+	IOS("iOS"), ANDROID("Android");
 
-    private String platformName;
+	private String platformName;
 
-    private MobilePlatformName(String platformName) {
-        this.platformName = platformName;
-    }
+	private MobilePlatformName(String platformName) {
+		this.platformName = platformName;
+	}
 
-    public String getPlatformName() {
-        return platformName;
-    }
+	public String getPlatformName() {
+		return platformName;
+	}
 }

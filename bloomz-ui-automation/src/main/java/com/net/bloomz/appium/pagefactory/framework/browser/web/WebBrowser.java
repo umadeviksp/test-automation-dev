@@ -31,8 +31,7 @@ import com.net.bloomz.appium.pagefactory.framework.webservice.EndpointBuilder;
  * isRemote, and getActions
  */
 public abstract class WebBrowser extends Browser<WebDriver> {
-	private static final Logger logger = LoggerFactory
-			.getLogger(WebBrowser.class);
+	private static final Logger logger = LoggerFactory.getLogger(WebBrowser.class);
 
 	private final Optional<String> webDriverPath;
 	private final Optional<String> browserBinaryPath;
@@ -66,13 +65,10 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 	//
 	// }
 
-	public WebBrowser(String baseTestUrl, TimeoutsConfig timeouts,
-			Optional<String> webDriverPath, Optional<String> browserBinaryPath,
-			Optional<String> browserVersion, Optional<String> browserLocale,
-			Optional<Integer> startWindowWidth,
-			Optional<Integer> startWindowHeight,
-			Optional<Level> browserLogLevel, Optional<String> browserLogFile,
-			Optional<Platform> platform) {
+	public WebBrowser(String baseTestUrl, TimeoutsConfig timeouts, Optional<String> webDriverPath,
+			Optional<String> browserBinaryPath, Optional<String> browserVersion, Optional<String> browserLocale,
+			Optional<Integer> startWindowWidth, Optional<Integer> startWindowHeight, Optional<Level> browserLogLevel,
+			Optional<String> browserLogFile, Optional<Platform> platform) {
 		super(baseTestUrl, timeouts);
 		this.webDriverPath = webDriverPath;
 		this.browserBinaryPath = browserBinaryPath;
@@ -94,25 +90,14 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 	public void initializeBrowser() throws IWebDriverException {
 		this.webDriver = createWebDriver();
 		if (startWindowWidth.isPresent() && startWindowHeight.isPresent()) {
-			this.webDriver
-					.manage()
-					.window()
-					.setSize(
-							new Dimension(startWindowWidth.get(),
-									startWindowHeight.get()));
+			this.webDriver.manage().window().setSize(new Dimension(startWindowWidth.get(), startWindowHeight.get()));
 		}
 		// Safari web driver doesn't support setting timeouts.
 		if (getBrowserType() != WebBrowserType.SAFARI) {
-			this.webDriver.manage().timeouts()
-					.pageLoadTimeout(getPageTimeoutSeconds(), TimeUnit.SECONDS);
-			this.webDriver
-					.manage()
-					.timeouts()
-					.implicitlyWait(getImplicitWaitTimeoutMillis(),
-							TimeUnit.MILLISECONDS);
+			this.webDriver.manage().timeouts().pageLoadTimeout(getPageTimeoutSeconds(), TimeUnit.SECONDS);
+			this.webDriver.manage().timeouts().implicitlyWait(getImplicitWaitTimeoutMillis(), TimeUnit.MILLISECONDS);
 		}
-		logger.info("SUCCESS - Created WebBrowser of type {}: {}",
-				getBrowserType(), webDriver);
+		logger.info("SUCCESS - Created WebBrowser of type {}: {}", getBrowserType(), webDriver);
 	}
 
 	public abstract WebBrowserType getBrowserType();
@@ -158,8 +143,7 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 	}
 
 	public Level getLogLevel() {
-		return browserLogLevel.isPresent() ? browserLogLevel.get()
-				: Level.WARNING;
+		return browserLogLevel.isPresent() ? browserLogLevel.get() : Level.WARNING;
 	}
 
 	public Optional<String> getBrowserLogFile() {
@@ -214,15 +198,13 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 		if (uri.isAbsolute()) {
 			absoluteURI = uri;
 		} else {
-			String fullURIStr = EndpointBuilder.uri(baseTestUrl, "/",
-					uri.toString());
+			String fullURIStr = EndpointBuilder.uri(baseTestUrl, "/", uri.toString());
 			absoluteURI = URI.create(fullURIStr);
 		}
 		logger.info("Opening web page by URL {}", absoluteURI);
 		runLeavePageHook();
 		invalidateCachedPage();
-		T page = PAGE_UTILS.loadPageFromURL(absoluteURI, pageClass,
-				getWebDriver(), getActions());
+		T page = PAGE_UTILS.loadPageFromURL(absoluteURI, pageClass, getWebDriver(), getActions());
 		setCachedPage(page);
 		return page;
 	}
@@ -241,8 +223,7 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 	 *            {@link com.net.bloomz.appium.pagefactory.framework.pages.TopLevelPage}
 	 *            class to load.
 	 */
-	public <T extends TopLevelPage> T openPageByURL(String href,
-			Class<T> pageClass) {
+	public <T extends TopLevelPage> T openPageByURL(String href, Class<T> pageClass) {
 		URI uri = URI.create(href);
 		return openPageByURL(uri, pageClass);
 	}
@@ -286,20 +267,17 @@ public abstract class WebBrowser extends Browser<WebDriver> {
 	 * 
 	 * @param desiredCapabilities
 	 */
-	protected void setCommonWebBrowserCapabilities(
-			DesiredCapabilities desiredCapabilities) {
+	protected void setCommonWebBrowserCapabilities(DesiredCapabilities desiredCapabilities) {
 		// If a required version is present, then set this as a desired
 		// capability. Only affects Remote browsers.
 		Optional<String> browserVersion = getBrowserVersion();
 		if (browserVersion.isPresent() && !browserVersion.get().isEmpty()) {
-			desiredCapabilities.setCapability(CapabilityType.VERSION,
-					browserVersion.get());
+			desiredCapabilities.setCapability(CapabilityType.VERSION, browserVersion.get());
 		}
 
 		// Set logging preferences.
 		LoggingPreferences loggingPreferences = getLoggingPreferences();
-		desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS,
-				loggingPreferences);
+		desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingPreferences);
 
 		// If a platform is specified, set this desired capability. Only affects
 		// Remote browsers.

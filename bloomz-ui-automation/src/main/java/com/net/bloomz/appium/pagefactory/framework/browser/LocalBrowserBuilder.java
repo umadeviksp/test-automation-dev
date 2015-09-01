@@ -23,7 +23,8 @@ import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException
  * Builder class for creating a Browser that is running on the same host as the
  * test code. Creates either a
  * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.ChromeBrowser},
- * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.FirefoxBrowser}, or
+ * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.FirefoxBrowser}
+ * , or
  * {@link com.net.bloomz.appium.pagefactory.framework.browser.web.InternetExplorerBrowser}
  * .
  * </p>
@@ -49,8 +50,7 @@ import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException
  * </p>
  */
 public class LocalBrowserBuilder {
-	private static final Logger logger = LoggerFactory
-			.getLogger(LocalBrowserBuilder.class);
+	private static final Logger logger = LoggerFactory.getLogger(LocalBrowserBuilder.class);
 
 	private final WebBrowserType browserType;
 	private final String baseTestUrl;
@@ -68,10 +68,8 @@ public class LocalBrowserBuilder {
 	private Optional<Platform> platform = Optional.empty();
 
 	private LocalBrowserBuilder(WebBrowserType browserType, String baseTestUrl) {
-		this.browserType = Preconditions.checkNotNull(browserType,
-				"You must provide a non-null browserType!");
-		this.baseTestUrl = Preconditions.checkNotNull(baseTestUrl,
-				"You must provide a non-null baseTestUrl!");
+		this.browserType = Preconditions.checkNotNull(browserType, "You must provide a non-null browserType!");
+		this.baseTestUrl = Preconditions.checkNotNull(baseTestUrl, "You must provide a non-null baseTestUrl!");
 		this.timeoutsConfig = TimeoutsConfig.defaultTimeoutsConfig();
 	}
 
@@ -84,8 +82,7 @@ public class LocalBrowserBuilder {
 	 * @param baseTestUrl
 	 *            - base URL for your webapp, e.g. http://my.site.com/base
 	 */
-	public static LocalBrowserBuilder getBuilder(WebBrowserType browserType,
-			String baseTestUrl) {
+	public static LocalBrowserBuilder getBuilder(WebBrowserType browserType, String baseTestUrl) {
 		return new LocalBrowserBuilder(browserType, baseTestUrl);
 	}
 
@@ -118,8 +115,7 @@ public class LocalBrowserBuilder {
 	 * @param baseTestUrl
 	 *            - base URL for your webapp, e.g. http://my.site.com/base
 	 */
-	public static LocalBrowserBuilder getInternetExplorerBuilder(
-			String baseTestUrl) {
+	public static LocalBrowserBuilder getInternetExplorerBuilder(String baseTestUrl) {
 		return new LocalBrowserBuilder(WebBrowserType.IE, baseTestUrl);
 	}
 
@@ -188,16 +184,13 @@ public class LocalBrowserBuilder {
 	 *             instance.
 	 */
 	public WebBrowser build() throws IWebDriverException {
-		logger.info("Building Local Browser with the following config: \n{}",
-				toString());
+		logger.info("Building Local Browser with the following config: \n{}", toString());
 		WebBrowser browser;
 		switch (browserType) {
 		case FIREFOX:
 
-			browser = new FirefoxBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserLogFile, platform);
+			browser = new FirefoxBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserLogFile, platform);
 			/*
 			 * new FirefoxBrowser(baseTestUrl, timeoutsConfig, webDriverPath,
 			 * browserBinaryPath, Optional.empty(), browserLocale,
@@ -205,34 +198,27 @@ public class LocalBrowserBuilder {
 			 */
 			break;
 		case CHROME:
-			browser = new ChromeBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserLogFile, platform);
+			browser = new ChromeBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserLogFile, platform);
 			break;
 		case IE:
-			browser = new InternetExplorerBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserLogFile, platform);
+			browser = new InternetExplorerBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath,
+					browserVersion, browserLocale, startWindowWidth, startWindowHeight, browserLogLevel,
+					browserLogFile, platform);
 			break;
 		case SAFARI:
-			browser = new SafariBrowser(baseTestUrl, timeoutsConfig,
-					webDriverPath, browserBinaryPath, browserVersion,
-					browserLocale, startWindowWidth, startWindowHeight,
-					browserLogLevel, browserLogFile, platform);
+			browser = new SafariBrowser(baseTestUrl, timeoutsConfig, webDriverPath, browserBinaryPath, browserVersion,
+					browserLocale, startWindowWidth, startWindowHeight, browserLogLevel, browserLogFile, platform);
 			break;
 		default:
-			throw new IllegalArgumentException(
-					"Only Firefox, Chrome, and IE are currently supported!");
+			throw new IllegalArgumentException("Only Firefox, Chrome, and IE are currently supported!");
 		}
 		browser.initializeBrowser();
 		return browser;
 	}
 
 	public LocalBrowserBuilder withTimeoutsConfig(TimeoutsConfig timeoutsConfig) {
-		this.timeoutsConfig = timeoutsConfig == null ? TimeoutsConfig
-				.defaultTimeoutsConfig() : timeoutsConfig;
+		this.timeoutsConfig = timeoutsConfig == null ? TimeoutsConfig.defaultTimeoutsConfig() : timeoutsConfig;
 		return this;
 	}
 
@@ -273,14 +259,10 @@ public class LocalBrowserBuilder {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("browserType", browserType)
-				.add("baseTestUrl", baseTestUrl)
-				.add("webDriverPath", webDriverPath)
-				.add("browserBinaryPath", browserBinaryPath)
-				.add("browserLocale", browserLocale)
-				.add("startWindowWidth", startWindowWidth)
-				.add("startWindowHeight", startWindowHeight)
-				.add("browserLogLevel", browserLogLevel)
+		return Objects.toStringHelper(this).add("browserType", browserType).add("baseTestUrl", baseTestUrl)
+				.add("webDriverPath", webDriverPath).add("browserBinaryPath", browserBinaryPath)
+				.add("browserLocale", browserLocale).add("startWindowWidth", startWindowWidth)
+				.add("startWindowHeight", startWindowHeight).add("browserLogLevel", browserLogLevel)
 				.add("browserLogFile", browserLogFile).toString();
 	}
 }

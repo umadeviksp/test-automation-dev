@@ -1,7 +1,11 @@
 package com.net.bloomz.pages.interfaces;
 
-public interface SettingPageActions<T extends SettingPageActions<T>> {
+import com.net.bloomz.pages.SettingPage;
+import com.net.bloomz.pages.SignInPage;
 
-  T clickOnSignOutButton();
-  T clickOnPopUpSignOutButton();
+public interface SettingPageActions {
+
+	SettingPage clickOnSignOutButton();
+
+	SignInPage clickOnPopUpSignOutButton();
 }
