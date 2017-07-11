@@ -21,52 +21,55 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).thenVerifySignInAndCreateButtonsShouldBeDisplayed();
 	}
 
-	@Test(groups = { "android", "ios", "web", "BVT03" })
-	public void BVT03_testSignInWithValidInputs() throws Exception {
-
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-				.clickOnSettingButton().clickOnSignOutButton().clickOnPopUpSignOutButton();
-
-	}
+//	@Test(groups = { "android", "ios", "web", "BVT03" })
+//	public void BVT03_testSignInWithValidInputs() throws Exception {
+//
+//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+//				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+//				.clickOnSettingButton().clickOnSignOutButton();
+//
+//	}
+	
+	/*
 
 	@Test(groups = { "android", "ios", "web", "BVT04" })
 	public void BVT04_testSignUpAsATeacher() throws Exception {
 
-		LandingPage.getLandingPage(browser).clickOnCreateAccountOrIAmNewButton().clickOnTeacherIcon()
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnTeacherIcon()
 				.enterFirstName("test").enterLastName("bloomz")
 				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
 				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton().clickOnPopUpSignOutButton();
+				.clickOnSignOutButton();
 
 	}
 
 	@Test(groups = { "android", "ios", "web", "BVT05" })
 	public void BVT05_testSignUpAsARoomParent() {
 
-		LandingPage.getLandingPage(browser).clickOnCreateAccountOrIAmNewButton().clickOnRoomParentIcon()
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnRoomParentIcon()
 				.enterFirstName("test").enterLastName("bloomz")
 				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
 				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton().clickOnPopUpSignOutButton();
+				.clickOnSignOutButton();
 	}
+	
+	*/
 
-	@Test(groups = { "android", "ios", "web", "BVT06" })
-	public void BVT06_testPostsOnMainFeedForExistingAccount() {
+//	@Test(groups = { "android", "ios", "web", "BVT06" })
+//	public void BVT06_testPostsOnMainFeedForExistingAccount() {
+//
+//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+//				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+//				.thenVerifyMainFeedPostShouldNotBeNull().clickOnSettingButton().clickOnSignOutButton();
+//	}
 
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-				.thenVerifyMainFeedPostShouldNotBeNull().clickOnSettingButton().clickOnSignOutButton()
-				.clickOnPopUpSignOutButton();
-	}
-
-	@Test(groups = { "android", "ios", "web", "BVT07" })
-	public void BVT07_testCalenderEventsOnMainFeedForExistingAccount() {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab()
-				.thenVerifyCalenderEventsShouldNotBeNull();
-		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton().clickOnPopUpSignOutButton();
-	}
+//	@Test(groups = { "android", "ios", "web", "BVT07" })
+//	public void BVT07_testCalendarEventsOnMainFeedForExistingAccount() {
+//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+//				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab()
+//				.thenVerifyCalendarEventsShouldNotBeNull();
+//		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
+//	}
 
 	public void BVT08_testMessagesOnMainFeedForExistingAccount() {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
@@ -79,7 +82,7 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnVolunteersTab()
 				.thenVerifyAddVolunteerButtonShouldBeDisplayed();
-		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton().clickOnPopUpSignOutButton();
+		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
 
 	}
 

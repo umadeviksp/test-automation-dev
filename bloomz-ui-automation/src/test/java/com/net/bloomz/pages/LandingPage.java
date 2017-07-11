@@ -23,7 +23,7 @@ public class LandingPage extends BasePage implements LandingPageActions {
 	}
 
 	@Override
-	public YourRolePage clickOnCreateAccountOrIAmNewButton() {
+	public YourRolePage clickOnCreateAccount() {
 		click(createAccountButtonLocator);
 		return YourRolePage.getYourRolePage(browser);
 	}
@@ -40,7 +40,7 @@ public class LandingPage extends BasePage implements LandingPageActions {
 			createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");
 		} else {
 			signInButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('login');\"]");
-			createAccountButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('roleChooser')\"]");
+			createAccountButtonLocator = By.xpath("//*[@ng-click=\"navigateTo('createJoinGroup')\"]");
 			return new WebLandingPage(browser);
 		}
 		return null;

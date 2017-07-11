@@ -19,7 +19,7 @@ public class WebLandingPage extends LandingPage implements LandingPageActions {
 	}
 
 	@Override
-	public YourRolePage clickOnCreateAccountOrIAmNewButton() {
-		return super.clickOnCreateAccountOrIAmNewButton();
+	public YourRolePage clickOnCreateAccount() {
+		return super.clickOnCreateAccount();
 	}
 }

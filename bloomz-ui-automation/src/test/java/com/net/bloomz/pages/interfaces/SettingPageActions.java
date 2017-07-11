@@ -5,7 +5,5 @@ import com.net.bloomz.pages.SignInPage;
 
 public interface SettingPageActions {
 
-	SettingPage clickOnSignOutButton();
-
-	SignInPage clickOnPopUpSignOutButton();
+	SignInPage clickOnSignOutButton();
 }

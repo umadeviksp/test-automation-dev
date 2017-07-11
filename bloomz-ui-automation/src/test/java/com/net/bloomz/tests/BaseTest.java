@@ -97,26 +97,30 @@ public class BaseTest {
 
 		} else if (platformName.equals("Web")) {
 			WebBrowser browser;
+			String baseTestUrl = Config.getConfigData("bloomz_base_test_url");
+			
 			if (environment.equals("local")) {
-				System.setProperty("webdriver.chrome.driver", "/Users/manikandan/Downloads/chromedriver");
+				String chromeDriverLocation = Config.getConfigData("chrome_driver_location");
+				
+				System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 
 				if (browserType.equals(WebBrowserType.CHROME.toString())) {
 					browser = LocalBrowserBuilder
-							.getBuilder(WebBrowserType.CHROME, "http://app-test01.bloomz.net:8000/#/app")
-							.withBrowserBinaryPath("/Users/manikandan/Downloads/chromedriver").build();
+							.getBuilder(WebBrowserType.CHROME, baseTestUrl)
+							.withBrowserBinaryPath(chromeDriverLocation).build();
 					((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
 					return browser;
 
 				} else if (browserType.equals(WebBrowserType.SAFARI.toString())) {
 
 					browser = LocalBrowserBuilder.getBuilder(WebBrowserType.SAFARI,
-							"http://app-test01.bloomz.net:8000/#/app").build();
+							baseTestUrl).build();
 					((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
 					return browser;
 				}
 			} else if (environment.equals("cloud")) {
 				browser = RemoteBrowserBuilder.getBuilder(WebBrowserType.valueOf(browserType),
-						"http://app-test01.bloomz.net:8000/#/app", URL).build();
+						baseTestUrl, URL).build();
 				((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
 				return browser;
 			}

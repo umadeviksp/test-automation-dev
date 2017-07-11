@@ -11,13 +11,8 @@ public class WebSettingPage extends SettingPage {
 	}
 
 	@Override
-	public SettingPage clickOnSignOutButton() {
+	public SignInPage clickOnSignOutButton() {
 		return super.clickOnSignOutButton();
-	}
-
-	@Override
-	public SignInPage clickOnPopUpSignOutButton() {
-		return super.clickOnPopUpSignOutButton();
 	}
 
 }

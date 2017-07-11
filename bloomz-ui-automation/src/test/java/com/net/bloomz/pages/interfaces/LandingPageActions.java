@@ -7,5 +7,5 @@ public interface LandingPageActions {
 
 	SignInPage clickOnSignInButton();
 
-	YourRolePage clickOnCreateAccountOrIAmNewButton();
+	YourRolePage clickOnCreateAccount();
 }

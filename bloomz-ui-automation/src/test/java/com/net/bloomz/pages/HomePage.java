@@ -13,7 +13,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By settingButtonLocator;
 	static By createButtonLocator;
 	static By postUpdateCards;
-	static By myCalenderTabLocator;
+	static By myCalendarTabLocator;
 	static By volunteerTabLocator;
 
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -52,8 +52,8 @@ public class HomePage extends BasePage implements HomePageActions {
 
 	@Override
 	public CalendarTabPage clickOnMyCalendarTab() {
-		click(myCalenderTabLocator);
-		return CalendarTabPage.getCalenderTabPage(browser);
+		click(myCalendarTabLocator);
+		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 
 	@Override
@@ -80,16 +80,17 @@ public class HomePage extends BasePage implements HomePageActions {
 			settingButtonLocator = By.id("net.bloomz:id/txtSetting");
 			createButtonLocator = By.id("net.bloomz:id/btnStart");
 			postUpdateCards = By.id("");
-			myCalenderTabLocator = By.name("calender");
+			myCalendarTabLocator = By.name("calendar");
 			volunteerTabLocator = By.name("volunteer");
 			return new AndroidHomePage(browser);
 		} else if (string.contains(".iOS")) {
 			settingButtonLocator = By.id("");
 		} else {
-			settingButtonLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftAccount\"]");
+			settingButtonLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]");
 			createButtonLocator = By.xpath("//*[@data-post=\"+ Create\"]");
 			postUpdateCards = By.xpath("//*[@post-message=\"postMessage\"]");
-			myCalenderTabLocator = By.id("bloomzMainNav_navLeftMy Calendar");
+//			myCalendarTabLocator = By.id("bloomzMainNav_navLeftMy Calendar");
+			myCalendarTabLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftMy Calendar\"]");
 			volunteerTabLocator = By.id("bloomzMainNav_navLeftVolunteers");
 			return new WebHomePage(browser);
 		}

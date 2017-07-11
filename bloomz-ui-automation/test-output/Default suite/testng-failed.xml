@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.net.bloomz.tests.BV_TestCases">
+        <methods>
+          <include name="BVT02_testAppLauch"/>
+          <include name="BVT07_testCalenderEventsOnMainFeedForExistingAccount"/>
+          <include name="stopMethod"/>
+          <include name="BVT05_testSignUpAsARoomParent"/>
+          <include name="setUp"/>
+          <include name="BVT03_testSignInWithValidInputs"/>
+          <include name="BVT09_testVolunteersOnMainFeedForExistingAccount"/>
+          <include name="BVT04_testSignUpAsATeacher"/>
+          <include name="tearDown"/>
+          <include name="BVT01_testAppInstallation"/>
+          <include name="BVT06_testPostsOnMainFeedForExistingAccount"/>
+        </methods>
+      </class> <!-- com.net.bloomz.tests.BV_TestCases -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

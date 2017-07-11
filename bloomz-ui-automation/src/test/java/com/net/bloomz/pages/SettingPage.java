@@ -10,7 +10,6 @@ import com.net.bloomz.pages.web.WebSettingPage;
 public class SettingPage extends BasePage implements SettingPageActions {
 
 	static By signOutButtonLocator = null;
-	static By popUpSignOutButtonLocator = null;
 
 	public SettingPage(Browser<?> browser) {
 		super(browser);
@@ -18,14 +17,8 @@ public class SettingPage extends BasePage implements SettingPageActions {
 	}
 
 	@Override
-	public SettingPage clickOnSignOutButton() {
+	public SignInPage clickOnSignOutButton() {
 		click(signOutButtonLocator);
-		return this;
-	}
-
-	@Override
-	public SignInPage clickOnPopUpSignOutButton() {
-		click(popUpSignOutButtonLocator);
 		return SignInPage.getSignInPage(browser);
 	}
 
@@ -34,13 +27,11 @@ public class SettingPage extends BasePage implements SettingPageActions {
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			signOutButtonLocator = By.id("net.bloomz:id/txtSignOut");
-			popUpSignOutButtonLocator = By.id("net.bloomz:id/SignOutBtn");
 			return new AndroidSettingPage(browser);
 		} else if (string.contains(".iOS")) {
 
 		} else {
-			signOutButtonLocator = By.xpath("//*[@ng-click=\"logout()\"]");
-			popUpSignOutButtonLocator = By.xpath("//*[contains(text(), \"Sign Out\")]");
+			signOutButtonLocator = By.xpath("//span[contains(text(), \"Sign Out\")]");
 			return new WebSettingPage(browser);
 		}
 		return null;

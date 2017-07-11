@@ -12,10 +12,10 @@ public class AndroidLandingPage extends LandingPage implements LandingPageAction
 	}
 
 	@Override
-	public YourRolePage clickOnCreateAccountOrIAmNewButton() {
+	public YourRolePage clickOnCreateAccount() {
 		super.clickOnSignInButton();
 		AndroidSignInPage.getSignInPage(browser).setEnviroment();
 		super.clickBack();
-		return super.clickOnCreateAccountOrIAmNewButton();
+		return super.clickOnCreateAccount();
 	}
 }
