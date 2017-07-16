@@ -1,9 +1,9 @@
 package com.net.bloomz.pages.web;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.CreateAccountPage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.SignInPage;
-import com.net.bloomz.pages.YourRolePage;
 import com.net.bloomz.pages.interfaces.LandingPageActions;
 
 public class WebLandingPage extends LandingPage implements LandingPageActions {
@@ -19,7 +19,7 @@ public class WebLandingPage extends LandingPage implements LandingPageActions {
 	}
 
 	@Override
-	public YourRolePage clickOnCreateAccount() {
+	public CreateAccountPage clickOnCreateAccount() {
 		return super.clickOnCreateAccount();
 	}
 }

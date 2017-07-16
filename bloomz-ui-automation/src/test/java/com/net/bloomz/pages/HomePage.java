@@ -16,13 +16,13 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By myCalendarTabLocator;
 	static By volunteerTabLocator;
 
-	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
-	// By menuButtonLocator = By.id("net.bloomz:id/menuBtn");
+	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
 	// By postTextLocator = By.id("net.bloomz:id/txtAlbumPhotoComment");
 	// By homeLauncherIconLocator = By.name("Apps");
 	// By bloomzAppLocator = By.name("Bloomz");
 	// By homeTab = By.name("home");
+	// By menuButtonLocator = By.id("net.bloomz:id/menuBtn");
 	// By calendarTab = By.name("calender");
 	// By messageTab = By.name("message");
 	// By volunteerTab = By.name("volunteer");
@@ -54,12 +54,6 @@ public class HomePage extends BasePage implements HomePageActions {
 	public CalendarTabPage clickOnMyCalendarTab() {
 		click(myCalendarTabLocator);
 		return CalendarTabPage.getCalendarTabPage(browser);
-	}
-
-	@Override
-	public VolunteersTabPage clickOnVolunteersTab() {
-		click(volunteerTabLocator);
-		return VolunteersTabPage.getVolunteersTabPage(browser);
 	}
 
 	public HomePage thenVerifyMainFeedPostShouldNotBeNull() {

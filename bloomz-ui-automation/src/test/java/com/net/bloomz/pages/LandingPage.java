@@ -23,9 +23,9 @@ public class LandingPage extends BasePage implements LandingPageActions {
 	}
 
 	@Override
-	public YourRolePage clickOnCreateAccount() {
+	public CreateAccountPage clickOnCreateAccount() {
 		click(createAccountButtonLocator);
-		return YourRolePage.getYourRolePage(browser);
+		return CreateAccountPage.getCreateAccountPage(browser);
 	}
 
 	public static LandingPage getLandingPage(Browser<?> browser) {
