@@ -1,5 +1,5 @@
 package com.net.bloomz.pages.interfaces;
 
-public interface PTCEventPageActions {
+public interface CreatePTCEventInClassPageActions {
 	// put method headers in here
 }

@@ -4,11 +4,10 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
-import com.net.bloomz.pages.interfaces.ClassPageActions;
-import com.net.bloomz.pages.interfaces.PTCEventPageActions;
-import com.net.bloomz.pages.web.WebClassPage;
+import com.net.bloomz.pages.interfaces.CreatePTCEventInClassPageActions;
+import com.net.bloomz.pages.web.WebPTCEventPage;
 
-public class PTCEvent extends BasePage implements PTCEventPageActions {
+public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEventInClassPageActions {
 	
 	static By mediaTabLocator;
 	static By calendarTabLocator;
@@ -27,91 +26,91 @@ public class PTCEvent extends BasePage implements PTCEventPageActions {
 	static By rsvpButtonLocator;
 	static By saveButtonLocator;
 	
-	public PTCEvent(Browser<?> browser) {
+	public CreatePTCEventInClassPage(Browser<?> browser) {
 		super(browser);
 	}
 	
-	public PTCEvent clickOnMediaTab() {
+	public CreatePTCEventInClassPage clickOnMediaTab() {
 		click(mediaTabLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickOnCalendarTab() { 
+	public CreatePTCEventInClassPage clickOnCalendarTab() { 
 		click(calendarTabLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickOnEventButton() {
+	public CreatePTCEventInClassPage clickOnEventButton() {
 		click(eventButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickOnEventTab() {
+	public CreatePTCEventInClassPage clickOnEventTab() {
 		click(eventTabLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent enterTitleText() {
+	public CreatePTCEventInClassPage enterTitleText() {
 		sendText(titleBoxLocator, "Random");
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent enterLocationText() {
+	public CreatePTCEventInClassPage enterLocationText() {
 		sendText(locationBoxLocator, "Random");
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent enterNotesText() {
+	public CreatePTCEventInClassPage enterNotesText() {
 		sendText(notesBoxLocator, "Random");
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickStartDateBox() {
+	public CreatePTCEventInClassPage clickStartDateBox() {
 		click(startDateBoxLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickStartDate() {
+	public CreatePTCEventInClassPage clickStartDate() {
 		click(startDateButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickEndDateBox() {
+	public CreatePTCEventInClassPage clickEndDateBox() {
 		click(endDateBoxLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickEndDate() {
+	public CreatePTCEventInClassPage clickEndDate() {
 		click(endDateBoxLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickInviteButton() {
+	public CreatePTCEventInClassPage clickInviteButton() {
 		click(inviteButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickInviteAllButton() {
+	public CreatePTCEventInClassPage clickInviteAllButton() {
 		click(inviteAllButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickDoneButton() {
+	public CreatePTCEventInClassPage clickDoneButton() {
 		click(doneButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickRSVPButton() {
+	public CreatePTCEventInClassPage clickRSVPButton() {
 		click(rsvpButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public PTCEvent clickSaveButton() {
+	public CreatePTCEventInClassPage clickSaveButton() {
 		click(saveButtonLocator);
-		return PTCEvent.getClassPage(browser);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public static PTCEvent getClassPage(Browser<?> browser) {
+	public static CreatePTCEventInClassPage getCreatePTCEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {

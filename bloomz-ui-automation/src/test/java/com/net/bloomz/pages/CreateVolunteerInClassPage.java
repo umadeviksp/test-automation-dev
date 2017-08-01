@@ -9,7 +9,6 @@ import com.net.bloomz.pages.web.WebCreateVolunteerInClassPage;
 
 public class CreateVolunteerInClassPage extends BasePage implements CreateVolunteerInClassPageActions {
 	
-	static By volunteerTabLocator;
 	static By needItemsButtonLocator;
 	static By itemNameBoxLocator;
 	static By needPeopleButtonLocator;
@@ -34,110 +33,105 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 	public CreateVolunteerInClassPage(Browser<?> browser) {
 		super(browser);
 	}
-
-	public ClassPage clickVolunteerTab() {
-		click(volunteerTabLocator);
-		return ClassPage.getClassPage(browser);
-	}
 	
-	public ClassPage clickNeedItemsButton() {
+	public CreateVolunteerInClassPage clickNeedItemsButton() {
 		click(needItemsButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage typeItems() {
+	public CreateVolunteerInClassPage typeItems() {
 		sendText(itemNameBoxLocator, "Apples, grapes, and carrots");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickNeedPeopleButton() {
+	public CreateVolunteerInClassPage clickNeedPeopleButton() {
 		click(needPeopleButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage enterTask() {
+	public CreateVolunteerInClassPage enterTask() {
 		sendText(taskBoxLocator, "3 people to set up");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage enterTitleText() {
+	public CreateVolunteerInClassPage enterTitleText() {
 		sendText(titleBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage enterLocationText() {
+	public CreateVolunteerInClassPage enterLocationText() {
 		sendText(locationBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage enterNotesText() {
+	public CreateVolunteerInClassPage enterNotesText() {
 		sendText(notesBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickStartDateBox() {
+	public CreateVolunteerInClassPage clickStartDateBox() {
 		click(startDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickStartDate() {
+	public CreateVolunteerInClassPage clickStartDate() {
 		click(startDateButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickEndDateBox() {
+	public CreateVolunteerInClassPage clickEndDateBox() {
 		click(endDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickEndDate() {
+	public CreateVolunteerInClassPage clickEndDate() {
 		click(endDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickRepeatButton() {
+	public CreateVolunteerInClassPage clickRepeatButton() {
 		click(repeatButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickRepeatWeeklyButton() {
+	public CreateVolunteerInClassPage clickRepeatWeeklyButton() {
 		click(repeatWeeklyButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickExitRepeatScreenButton() {
+	public CreateVolunteerInClassPage clickExitRepeatScreenButton() {
 		click(exitRepeatScreenButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickEndRepeatButton() {
+	public CreateVolunteerInClassPage clickEndRepeatButton() {
 		click(endRepeatButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickAfterNumberOfTimesButtonLocator() {
+	public CreateVolunteerInClassPage clickAfterNumberOfTimesButtonLocator() {
 		click(afterNumberOfTimesButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage typeNumberOfTimesButtonLocator() {
+	public CreateVolunteerInClassPage typeNumberOfTimesButtonLocator() {
 		sendText(numberOfTimesBoxLocator, "4");
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickExitAfterNumberOfTimesButtonLocator() {
+	public CreateVolunteerInClassPage clickExitAfterNumberOfTimesButtonLocator() {
 		click(exitNumberOfTimesScreenButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 
-	public ClassPage clickRSVPButton() {
+	public CreateVolunteerInClassPage clickRSVPButton() {
 		click(rsvpButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickSaveButton() {
+	public CreateVolunteerInClassPage clickSaveButton() {
 		click(saveButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
 	public static CreateVolunteerInClassPage getCreateVolunteerInClassPage(Browser<?> browser) {
@@ -148,7 +142,6 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 		} else if (string.equals(".iOS")) {
 			
 		} else {
-			volunteerTabLocator = By.xpath("//*[@id=\"calendar\"]/div[3]/div[1]/div[3]/div/ul/li[6]");
 			needItemsButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/section/ul/li[1]/a");
 			itemNameBoxLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/div/section/label/span/input[1]");
 			needPeopleButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/section/ul/li[2]/a");

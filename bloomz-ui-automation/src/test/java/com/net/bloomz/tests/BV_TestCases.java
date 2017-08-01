@@ -168,22 +168,27 @@ public class BV_TestCases extends BaseTest {
 	}
 	*/
 	
+	/*
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
 	public void createEventWithInviteesInAClass() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab().clickOnEventButton()
-		.clickOnEventTab().enterTitleText().enterLocationText().enterNotesText().clickStartDateBox().clickStartDate()
-		.clickEndDateBox().clickEndDate().clickInviteButton().clickInviteAllButton().clickDoneButton().clickRSVPButton()
+		.clickOnEventTab().enterTitleText().enterLocationText().enterNotesText().clickInviteButton().clickInviteAllButton().clickDoneButton()
 		.clickSaveButton();
 	}
+	*/
 	
-	@Test(groups = { "android", "ios", "web", "BVT01101" })
+	/*
+	@Test(groups = { "android", "ios", "web", "BVT01002" })
 	public void createVRRecurringEventInAClass() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab().clickOnEventButton()
-		.clickOnEventTab().enterTitleText().enterLocationText().enterNotesText().clickStartDateBox().clickStartDate()
-		.clickEndDateBox().clickEndDate();
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		.clickCreateButton().createVolunteerAsk().clickNeedItemsButton().typeItems().clickNeedPeopleButton()
+		.enterTask().enterTitleText().enterLocationText().enterNotesText().clickRepeatButton().
+		clickRepeatWeeklyButton().clickExitRepeatScreenButton().clickEndRepeatButton().
+		typeNumberOfTimesButtonLocator().clickExitAfterNumberOfTimesButtonLocator()
+		.clickRSVPButton().clickSaveButton();
 	}
-	
+	*/
 	
 }

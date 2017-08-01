@@ -5,19 +5,12 @@
     <classes>
       <class name="com.net.bloomz.tests.BV_TestCases">
         <methods>
-          <include name="testPostsOnMainFeedForExistingAccount"/>
-          <include name="testBackgroundingForegroundingApp"/>
-          <include name="testMessagesOnMainFeedForExistingAccount"/>
-          <include name="setUp"/>
-          <include name="testLaunchingClassFromLeftNav"/>
-          <include name="testAppInstallation"/>
-          <include name="testContactsOnMainFeedForExistingAccount"/>
           <include name="stopMethod"/>
-          <include name="testCreatePostInClassWithPictures"/>
-          <include name="testCalendarEventsOnMainFeedForExistingAccount"/>
+          <include name="setUp"/>
           <include name="testAppLauch"/>
           <include name="tearDown"/>
-          <include name="testSignInWithValidInputs"/>
+          <include name="testAppInstallation"/>
+          <include name="createEventWithInviteesInAClass"/>
         </methods>
       </class> <!-- com.net.bloomz.tests.BV_TestCases -->
     </classes>

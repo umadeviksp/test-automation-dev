@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Bloomz_Test_Run">
-              <span class="suite-name border-failed">Bloomz_Test_Run</span>
+              <span class="suite-name border-passed">Bloomz_Test_Run</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Bloomz_Test_Run" class="hide-methods failed suite-Bloomz_Test_Run"> (hide)</a> <!-- hide-methods failed suite-Bloomz_Test_Run -->
-                      <a href="#" panel-name="suite-Bloomz_Test_Run" class="show-methods failed suite-Bloomz_Test_Run"> (show)</a> <!-- show-methods failed suite-Bloomz_Test_Run -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Bloomz_Test_Run" class="hide-methods passed suite-Bloomz_Test_Run"> (hide)</a> <!-- hide-methods passed suite-Bloomz_Test_Run -->
+                      <a href="#" panel-name="suite-Bloomz_Test_Run" class="show-methods passed suite-Bloomz_Test_Run"> (show)</a> <!-- show-methods passed suite-Bloomz_Test_Run -->
                     </span>
-                    <div class="method-list-content failed suite-Bloomz_Test_Run">
+                    <div class="method-list-content passed suite-Bloomz_Test_Run">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Bloomz_Test_Run" title="com.net.bloomz.tests.BV_TestCases" hash-for-method="testCreatePostInClassWithPictures">testCreatePostInClassWithPictures</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Bloomz_Test_Run" title="com.net.bloomz.tests.BV_TestCases" hash-for-method="createVRRecurringEventInAClass">createVRRecurringEventInAClass</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Bloomz_Test_Run -->
+                    </div> <!-- method-list-content passed suite-Bloomz_Test_Run -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,87 +116,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Bloomz_Test_Run" class="panel Bloomz_Test_Run">
-          <div class="suite-Bloomz_Test_Run-class-failed">
+          <div class="suite-Bloomz_Test_Run-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.net.bloomz.tests.BV_TestCases</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCreatePostInClassWithPictures">
-                  </a> <!-- testCreatePostInClassWithPictures -->
-                  <span class="method-name">testCreatePostInClassWithPictures</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 40 seconds: By.xpath: //*[@id=&quot;calendar&quot;]/div[3]/div[1]/div[3]/div/ul/li[5]is not present
-Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
-System info: host: &apos;DESKTOP-T1IU6HU&apos;, ip: &apos;192.168.1.26&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\shash\AppData\Local\Temp\scoped_dir50536_9345}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=59.0.3071.115, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b1c865d7c970b43c9acbea27e42aed3e
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at com.net.bloomz.appium.pagefactory.framework.actions.BaseSeleniumActions.waitOnExpectedCondition(BaseSeleniumActions.java:1202)
-	at com.net.bloomz.pages.BasePage.waitForElement(BasePage.java:119)
-	at com.net.bloomz.pages.BasePage.click(BasePage.java:76)
-	at com.net.bloomz.pages.ClassPage.clickOnEventTab(ClassPage.java:49)
-	at com.net.bloomz.tests.BV_TestCases.testCreatePostInClassWithPictures(BV_TestCases.java:175)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:821)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:773)
-	at org.testng.TestRunner.run(TestRunner.java:623)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
-	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;calendar&quot;]/div[3]/div[1]/div[3]/div/ul/li[5]&quot;}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
-System info: host: &apos;DESKTOP-T1IU6HU&apos;, ip: &apos;192.168.1.26&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\shash\AppData\Local\Temp\scoped_dir50536_9345}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=59.0.3071.115, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b1c865d7c970b43c9acbea27e42aed3e
-*** Element info: {Using=xpath, value=//*[@id=&quot;calendar&quot;]/div[3]/div[1]/div[3]/div/ul/li[5]}
-	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:861)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 29 more
-
-</div> <!-- stack-trace -->
+                  <a name="createVRRecurringEventInAClass">
+                  </a> <!-- createVRRecurringEventInAClass -->
+                  <span class="method-name">createVRRecurringEventInAClass</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Bloomz_Test_Run-class-failed -->
+          </div> <!-- suite-Bloomz_Test_Run-class-passed -->
         </div> <!-- panel Bloomz_Test_Run -->
         <div panel-name="test-xml-Bloomz_Test_Run" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -242,10 +176,10 @@ Session ID: b1c865d7c970b43c9acbea27e42aed3e
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">BVT01001</span>
+              <span class="test-group-name">BVT01002</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">testCreatePostInClassWithPictures</span>
+                <span class="method-in-group-name">createVRRecurringEventInAClass</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -253,7 +187,7 @@ Session ID: b1c865d7c970b43c9acbea27e42aed3e
               <span class="test-group-name">android</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">testCreatePostInClassWithPictures</span>
+                <span class="method-in-group-name">createVRRecurringEventInAClass</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -261,7 +195,7 @@ Session ID: b1c865d7c970b43c9acbea27e42aed3e
               <span class="test-group-name">ios</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">testCreatePostInClassWithPictures</span>
+                <span class="method-in-group-name">createVRRecurringEventInAClass</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -269,7 +203,7 @@ Session ID: b1c865d7c970b43c9acbea27e42aed3e
               <span class="test-group-name">web</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">testCreatePostInClassWithPictures</span>
+                <span class="method-in-group-name">createVRRecurringEventInAClass</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -291,9 +225,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCreatePostInClassWithPictures')
+data.setCell(0, 1, 'createVRRecurringEventInAClass')
 data.setCell(0, 2, 'com.net.bloomz.tests.BV_TestCases')
-data.setCell(0, 3, 72390);
+data.setCell(0, 3, 80924);
 window.suiteTableData['Bloomz_Test_Run']= { tableData: data, tableDiv: 'times-div-Bloomz_Test_Run'}
 return data;
 }
@@ -339,22 +273,20 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">startMethod(public void com.net.bloomz.tests.BV_TestCases.testCreatePostInClassWithPictures() throws java.lang.E...)</span>
-                <span class="method-start">12 ms</span>
+                <span class="method-name">startMethod(public void com.net.bloomz.tests.BV_TestCases.createVRRecurringEventInAClass() throws java.lang.Exce...)</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testCreatePostInClassWithPictures</span>
-                <span class="method-start">7804 ms</span>
+                <span class="method-name">createVRRecurringEventInAClass</span>
+                <span class="method-start">5384 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">stopMethod([TestResult name=testCreatePostInClassWithPictures status=FAILURE method=BV_TestCases.testCreatePost...)</span>
-                <span class="method-start">80213 ms</span>
+                <span class="method-name">stopMethod([TestResult name=createVRRecurringEventInAClass status=SUCCESS method=BV_TestCases.createVRRecurring...)</span>
+                <span class="method-start">86310 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">82228 ms</span>
+                <span class="method-start">88109 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
