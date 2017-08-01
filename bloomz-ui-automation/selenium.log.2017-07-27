@@ -1,0 +1,236 @@
+27 Jul 2017 14:06:30 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:06:31 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:07:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:UsersshashDownloadschromedriver_win32chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:08:19 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:08:23 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (796d9eeddda9bb4d87c940747433f5dc)
+27 Jul 2017 14:08:23 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 14:08:26 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 14:08:26 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 14:08:26 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCalendarEventsOnMainFeedForExistingAccount          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 14:08:26 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 14:08:26 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 14:08:26 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 14:08:35 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (796d9eeddda9bb4d87c940747433f5dc)
+27 Jul 2017 14:08:37 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 14:08:37 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 14:08:37 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:37 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:37 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:37 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:37 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:08:39 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (0356806cca4924be7705933b84fc6bcc)
+27 Jul 2017 14:08:39 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 14:08:40 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 14:08:40 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 14:08:40 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 14:08:40 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:40 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:40 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:40 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:40 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 14:08:43 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (8e79cb66bf28f1d3b4ad111e028e64a0)
+27 Jul 2017 14:08:43 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 14:08:44 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 14:08:44 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 14:08:44 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 14:08:44 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:44 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:44 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:44 INFO  INFO  BaseTest  - X
+27 Jul 2017 14:08:44 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[C:/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:03:56 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:04:00 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (b0f0fa4d327dcd8777fb427033d0fba7)
+27 Jul 2017 16:04:00 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:04:03 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:03 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:03 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCalendarEventsOnMainFeedForExistingAccount          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:04:03 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:03 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:03 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:08 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:08 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:04:09 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:09 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:04:09 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:14 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:21 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (b0f0fa4d327dcd8777fb427033d0fba7)
+27 Jul 2017 16:04:23 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:04:23 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:04:23 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:23 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:23 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:23 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:23 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:04:26 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (5fc033645b23b3290f5c52736352ea49)
+27 Jul 2017 16:04:26 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:04:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:27 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testContactsOnMainFeedForExistingAccount          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:04:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:27 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:32 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:33 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:04:33 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:33 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:04:33 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:38 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:47 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (5fc033645b23b3290f5c52736352ea49)
+27 Jul 2017 16:04:48 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:04:48 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:04:48 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:48 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:48 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:48 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:04:48 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:04:51 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (72e5a90dde9ff592c032e567d793d695)
+27 Jul 2017 16:04:51 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:04:53 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:53 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:53 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:04:53 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:53 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:04:53 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:59 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:59 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:04:59 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:04:59 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:04:59 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:04 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:12 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (72e5a90dde9ff592c032e567d793d695)
+27 Jul 2017 16:05:14 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:05:14 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:05:14 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:14 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:14 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:14 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:14 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:05:16 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (f4bf309eb0d31ea06e301ca51cd30d2a)
+27 Jul 2017 16:05:16 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:05:19 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:19 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:19 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testLaunchingClassFromLeftNav          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:05:19 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:19 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:19 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:24 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:24 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:05:24 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:24 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:05:24 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:29 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:38 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (f4bf309eb0d31ea06e301ca51cd30d2a)
+27 Jul 2017 16:05:39 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:05:39 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:05:39 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:39 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:39 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:39 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:05:39 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:05:42 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (fc00f0ed10a36025aed972008d93067f)
+27 Jul 2017 16:05:42 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:05:46 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:46 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:46 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testMessagesOnMainFeedForExistingAccount          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:05:46 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:46 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:05:46 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:51 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:51 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:05:51 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:52 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:05:52 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:05:59 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (fc00f0ed10a36025aed972008d93067f)
+27 Jul 2017 16:06:01 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:06:01 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:06:01 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:01 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:01 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:01 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:01 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:06:04 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (e0f56ad8dd62d0e57317f4d6db8bd524)
+27 Jul 2017 16:06:04 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:06:06 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:06 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:06 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testPostsOnMainFeedForExistingAccount          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:06:06 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:06 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:06 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:11 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:11 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:06:12 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:12 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:06:12 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:17 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:21 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (e0f56ad8dd62d0e57317f4d6db8bd524)
+27 Jul 2017 16:06:22 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:06:22 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:06:22 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:22 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:22 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:22 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:22 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/shash/Downloads/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+27 Jul 2017 16:06:25 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on XP (b9f32d3aeda0255e286eaa10b2a6341c)
+27 Jul 2017 16:06:25 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+27 Jul 2017 16:06:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:27 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testSignInWithValidInputs          $$$$$$$$$$$$$$$$$$$$$$$$$
+27 Jul 2017 16:06:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:27 INFO  INFO  BaseTest  - ****************************************************************************************
+27 Jul 2017 16:06:27 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:32 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:32 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+27 Jul 2017 16:06:32 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:33 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+27 Jul 2017 16:06:33 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:38 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:40 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:40 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:45 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+27 Jul 2017 16:06:51 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on XP (b9f32d3aeda0255e286eaa10b2a6341c)
+27 Jul 2017 16:06:53 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on XP (null)
+27 Jul 2017 16:06:53 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+27 Jul 2017 16:06:53 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:53 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:53 INFO  INFO  BaseTest  - X
+27 Jul 2017 16:06:53 INFO  INFO  BaseTest  - X

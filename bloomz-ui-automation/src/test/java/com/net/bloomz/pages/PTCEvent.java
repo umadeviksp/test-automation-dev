@@ -5,9 +5,10 @@ import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.ClassPageActions;
+import com.net.bloomz.pages.interfaces.PTCEventPageActions;
 import com.net.bloomz.pages.web.WebClassPage;
 
-public class ClassPage extends BasePage implements ClassPageActions {
+public class PTCEvent extends BasePage implements PTCEventPageActions {
 	
 	static By mediaTabLocator;
 	static By calendarTabLocator;
@@ -26,91 +27,91 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By rsvpButtonLocator;
 	static By saveButtonLocator;
 	
-	public ClassPage(Browser<?> browser) {
+	public PTCEvent(Browser<?> browser) {
 		super(browser);
 	}
 	
-	public ClassPage clickOnMediaTab() {
+	public PTCEvent clickOnMediaTab() {
 		click(mediaTabLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickOnCalendarTab() { 
+	public PTCEvent clickOnCalendarTab() { 
 		click(calendarTabLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickOnEventButton() {
+	public PTCEvent clickOnEventButton() {
 		click(eventButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickOnEventTab() {
+	public PTCEvent clickOnEventTab() {
 		click(eventTabLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage enterTitleText() {
+	public PTCEvent enterTitleText() {
 		sendText(titleBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage enterLocationText() {
+	public PTCEvent enterLocationText() {
 		sendText(locationBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage enterNotesText() {
+	public PTCEvent enterNotesText() {
 		sendText(notesBoxLocator, "Random");
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickStartDateBox() {
+	public PTCEvent clickStartDateBox() {
 		click(startDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickStartDate() {
+	public PTCEvent clickStartDate() {
 		click(startDateButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickEndDateBox() {
+	public PTCEvent clickEndDateBox() {
 		click(endDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickEndDate() {
+	public PTCEvent clickEndDate() {
 		click(endDateBoxLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickInviteButton() {
+	public PTCEvent clickInviteButton() {
 		click(inviteButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickInviteAllButton() {
+	public PTCEvent clickInviteAllButton() {
 		click(inviteAllButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickDoneButton() {
+	public PTCEvent clickDoneButton() {
 		click(doneButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickRSVPButton() {
+	public PTCEvent clickRSVPButton() {
 		click(rsvpButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public ClassPage clickSaveButton() {
+	public PTCEvent clickSaveButton() {
 		click(saveButtonLocator);
-		return ClassPage.getClassPage(browser);
+		return PTCEvent.getClassPage(browser);
 	}
 	
-	public static ClassPage getClassPage(Browser<?> browser) {
+	public static PTCEvent getClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
@@ -135,7 +136,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a");
 			rsvpButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[6]/section[2]/div/label");
 			saveButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
-			return new WebClassPage(browser);
+			return new WebPTCEventPage(browser);
 		}
 		return null;
 	}

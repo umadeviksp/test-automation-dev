@@ -18,8 +18,8 @@
         <methods>
           <include name="stopMethod"/>
           <include name="startMethod"/>
+          <include name="testCreatePostInClassWithPictures"/>
           <include name="setUp"/>
-          <include name="BVT09_testVolunteersOnMainFeedForExistingAccount"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.net.bloomz.tests.BV_TestCases -->
