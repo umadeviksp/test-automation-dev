@@ -16,7 +16,7 @@ public class BV_TestCases extends BaseTest {
 		Assert.assertTrue(((AndroidDriver<?>) browser.getWebDriver()).isAppInstalled("net.bloomz"),
 				"App is not Installed");
 	}
-
+	
 	@Test(groups = { "android", "ios", "BVT0201" })
 	public void testAppLauch() {
 		LandingPage.getLandingPage(browser).thenVerifySignInAndCreateButtonsShouldBeDisplayed();
@@ -100,7 +100,7 @@ public class BV_TestCases extends BaseTest {
 				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 				.thenVerifyMainFeedPostShouldNotBeNull().clickOnSettingButton().clickOnSignOutButton();
 	}
-
+	
 	@Test(groups = { "android", "ios", "web", "BVT0502" })
 	public void testCalendarEventsOnMainFeedForExistingAccount() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
@@ -114,26 +114,19 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyMessagesShouldNotBeNull();
 
 	}
-	
-	*/
-	
-	/*
+
 	// NEEDS TO BE IMPLEMENTED FULLY <- INSTRUCTIONS UNCLEAR
 	@Test(groups = { "android", "ios", "web", "BVT0504" })
 	public void testVolunteerAsksOnMainFeedForExistingAccount() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton();
 	}
-	*/
-	
-	/*
-	
+
 	@Test(groups = { "android", "ios", "web", "BVT0505" })
 	public void testContactsOnMainFeedForExistingAccount() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyContactsTab().thenVerifyContactsShouldNotBeNull();
 	}
-	
 
 	@Test(groups = { "android", "ios", "BVT0601" })
 	public void testBackgroundingForegroundingApp() throws Exception {
@@ -143,21 +136,19 @@ public class BV_TestCases extends BaseTest {
 	
 	@Test(groups = { "android", "ios", "web", "BVT0801" })
 	public void testLaunchingClassFromLeftNav() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSign	InButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName();
 	}
 	
-	*/
-	
 	// NOT FINISHED - APP DOES NOT FUNCTION PROPERLY
-	/*
 	@Test(groups = { "android", "ios", "web", "BVT0802" })
 	public void testSwitchingTabsInsideClassPage() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMediaTab();
-	} */
+	}
+	
+	*/
 
-	/*
 	@Test(groups = { "android", "ios", "web", "BVT0901" })
 	public void testCreatePostInClassWithPictures() throws Exception {
 		String testImageFilePath = Config.getConfigData("test_image_location");
@@ -168,15 +159,30 @@ public class BV_TestCases extends BaseTest {
 		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
 		.clickOnBackButton().clickOnUpdatesTab();
 	}
-	*/
-	
-	/*
+
 	@Test(groups = { "android", "ios", "web", "BVT0902" })
 	public void testCreateAnnouncementInClass() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAnnouncement()
 		.enterTitle("test title").enterGeneralUpdate("random text").clickOnPostButton();
 	}
-	*/
 
+	@Test(groups = { "android", "ios", "web", "BVT01001" })
+	public void createEventWithInviteesInAClass() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab()
+		.createNewEvent().enterTitle("test title").enterLocation("random location").enterNotes("some notes")
+		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton();
+	}
+	
+	@Test(groups = { "android", "ios", "web", "BVT01002" })
+	public void createVRRecurringEventInAClass() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		.clickCreateButton().createVolunteerAsk().clickNeedItemsButton().typeItems().clickNeedPeopleButton()
+		.enterTask().enterTitleText("test title").enterLocationText("some location").enterNotesText("random notes")
+		.clickRepeatButton().clickRepeatWeeklyButton().clickExitRepeatScreenButton().clickEndRepeatButton()
+		.typeNumberOfTimesButtonLocator().clickExitAfterNumberOfTimesButtonLocator()
+		.clickRSVPButton().clickSaveButton();
+	}
 }

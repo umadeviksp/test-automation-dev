@@ -1,0 +1,278 @@
+31 Jul 2017 11:35:32 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 11:35:49 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (185f8383427d40e2d93aa5bc54c9f13c)
+31 Jul 2017 11:35:49 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 11:35:59 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:35:59 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:35:59 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 11:35:59 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:35:59 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:35:59 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:05 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:06 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 11:36:07 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:07 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 11:36:08 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:13 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:25 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:35 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:36:41 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (185f8383427d40e2d93aa5bc54c9f13c)
+31 Jul 2017 11:36:45 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 11:36:45 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 11:36:45 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:36:45 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:36:45 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:36:45 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:36:45 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 11:36:51 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (8647d790484782e283550ed29dd843a7)
+31 Jul 2017 11:36:51 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 11:36:57 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:36:57 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:36:57 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testSignInWithValidInputs          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 11:36:57 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:36:57 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:36:57 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:03 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:03 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 11:37:04 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:04 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 11:37:04 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:10 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:16 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:16 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:22 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:37:30 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (8647d790484782e283550ed29dd843a7)
+31 Jul 2017 11:37:32 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 11:37:32 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 11:37:32 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:37:32 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:37:32 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:37:32 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:48:10 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 11:48:18 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (43ffd9cf9ff00dcc4def26d958c1ca34)
+31 Jul 2017 11:48:18 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 11:48:25 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:48:25 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:48:25 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 11:48:25 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:48:25 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 11:48:25 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:48:31 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:48:32 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 11:48:32 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:48:33 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 11:48:33 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:48:38 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:48:50 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:49:00 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:49:06 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:49:12 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 11:49:18 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (43ffd9cf9ff00dcc4def26d958c1ca34)
+31 Jul 2017 11:49:21 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 11:49:21 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 11:49:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:49:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:49:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 11:49:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:38:34 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 12:38:40 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (d42b7d4f56bae23300a4072216b80fe4)
+31 Jul 2017 12:38:40 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 12:38:45 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:38:45 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:38:45 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 12:38:45 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:38:45 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:38:45 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:38:51 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:38:51 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 12:38:52 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:38:52 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 12:38:52 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:38:58 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:09 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:19 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:25 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:31 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:40 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:45 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:46 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 12:39:47 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:39:48 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (d42b7d4f56bae23300a4072216b80fe4)
+31 Jul 2017 12:39:51 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 12:39:51 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 12:39:51 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:39:51 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:39:51 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:39:51 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:47:01 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 12:47:06 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (024984bd3e41a8adc9861c7fc777eff8)
+31 Jul 2017 12:47:06 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 12:47:12 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:47:12 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:47:12 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 12:47:12 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:47:12 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:47:12 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:17 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:18 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 12:47:18 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:19 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 12:47:19 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:24 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:36 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:46 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:53 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:53 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 12:47:54 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:47:54 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (024984bd3e41a8adc9861c7fc777eff8)
+31 Jul 2017 12:47:57 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 12:47:57 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 12:47:57 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:47:57 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:47:57 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:47:57 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:56:32 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 12:56:37 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (5f189dac4a62d6dca53edf0a7cf534e6)
+31 Jul 2017 12:56:37 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 12:56:42 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:56:42 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:56:42 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 12:56:42 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:56:42 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 12:56:43 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:56:48 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:56:48 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 12:56:49 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:56:49 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 12:56:50 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:56:55 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:57:08 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:57:16 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:57:22 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:57:23 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 12:57:24 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 12:57:24 INFO  INFO  BaseSeleniumActions  - Inputting text 'random text' into element with locator 'By.id: addPost_postData'
+31 Jul 2017 12:57:25 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (5f189dac4a62d6dca53edf0a7cf534e6)
+31 Jul 2017 12:57:27 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 12:57:27 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 12:57:27 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:57:27 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:57:27 INFO  INFO  BaseTest  - X
+31 Jul 2017 12:57:27 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:02:26 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 13:02:29 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (929a480ccf0501ab69c08eddf84d31c8)
+31 Jul 2017 13:02:29 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 13:02:34 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:02:34 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:02:34 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 13:02:34 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:02:34 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:02:34 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:02:40 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:02:40 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 13:02:41 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:02:41 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 13:02:42 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:02:47 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:02:58 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:03:08 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:03:14 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:03:15 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 13:03:16 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:03:16 INFO  INFO  BaseSeleniumActions  - Inputting text 'random text' into element with locator 'By.id: addPost_postData'
+31 Jul 2017 13:03:17 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:03:22 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (929a480ccf0501ab69c08eddf84d31c8)
+31 Jul 2017 13:03:25 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 13:03:25 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 13:03:25 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:03:25 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:03:25 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:03:25 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:57:17 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 13:57:23 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (17bc70e109f8f1f752c0c3911b4616d4)
+31 Jul 2017 13:57:23 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 13:57:28 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:57:28 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:57:28 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 13:57:28 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:57:28 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 13:57:28 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:57:33 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:57:34 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 13:57:34 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:57:35 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 13:57:35 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:57:40 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:57:52 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:58:02 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:58:10 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:58:11 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 13:58:11 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:58:12 INFO  INFO  BaseSeleniumActions  - Inputting text 'random text' into element with locator 'By.id: addPost_postData'
+31 Jul 2017 13:58:12 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 13:58:17 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (17bc70e109f8f1f752c0c3911b4616d4)
+31 Jul 2017 13:58:21 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 13:58:21 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 13:58:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:58:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:58:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 13:58:21 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:29:28 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 14:29:33 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (67e4b4e4f9964cccd9e553c62d661b77)
+31 Jul 2017 14:29:33 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 14:29:38 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:29:38 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:29:38 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 14:29:38 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:29:38 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:29:38 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:29:44 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:29:44 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 14:29:45 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:29:45 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 14:29:46 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:29:51 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:30:32 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (67e4b4e4f9964cccd9e553c62d661b77)
+31 Jul 2017 14:30:36 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 14:30:36 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 14:30:36 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:30:36 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:30:36 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:30:36 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:30:57 INFO  INFO  LocalBrowserBuilder  - Building Local Browser with the following config: 
+LocalBrowserBuilder{browserType=CHROME, baseTestUrl=http://app-staging.bloomz.net/#/app, webDriverPath=Optional.empty, browserBinaryPath=Optional[/Users/VishalAdmin/Desktop/chromedriver_win32/chromedriver.exe], browserLocale=Optional.empty, startWindowWidth=Optional.empty, startWindowHeight=Optional.empty, browserLogLevel=Optional.empty, browserLogFile=Optional.empty}
+31 Jul 2017 14:31:02 INFO  INFO  WebBrowser  - SUCCESS - Created WebBrowser of type CHROME: ChromeDriver: chrome on WIN8_1 (1aa4579ed54ed0f6785fbc89e7c18303)
+31 Jul 2017 14:31:02 INFO  INFO  WebBrowser  - Opening web page by URL http://app-staging.bloomz.net/#/app
+31 Jul 2017 14:31:07 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:31:07 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:31:07 INFO  INFO  BaseTest  - $$$$$$$$$$$$$$$$$$$$$          testCreatePostInClassWithPictures          $$$$$$$$$$$$$$$$$$$$$$$$$
+31 Jul 2017 14:31:07 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:31:07 INFO  INFO  BaseTest  - ****************************************************************************************
+31 Jul 2017 14:31:07 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:13 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:13 INFO  INFO  BaseSeleniumActions  - Inputting text 'alphateacher@test.com' into element with locator 'By.xpath: //*[@id="loginForm_username"]'
+31 Jul 2017 14:31:14 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:15 INFO  INFO  BaseSeleniumActions  - Inputting text 'bloomz999' into element with locator 'By.xpath: //*[@id="loginForm_password"]'
+31 Jul 2017 14:31:15 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:20 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:32 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:42 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:48 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:49 INFO  INFO  BaseSeleniumActions  - Inputting text 'random title' into element with locator 'By.xpath: //*[@id="addPost"]/div/div[1]/form/div[1]/input'
+31 Jul 2017 14:31:50 INFO  INFO  BaseSeleniumActions  - Waiting on expected condition, using timeout of 40 seconds
+31 Jul 2017 14:31:51 INFO  INFO  BaseSeleniumActions  - Inputting text 'random text' into element with locator 'By.id: addPost_postData'
+31 Jul 2017 14:31:51 INFO  INFO  Browser  - Quitting WebDriver: ChromeDriver: chrome on WIN8_1 (1aa4579ed54ed0f6785fbc89e7c18303)
+31 Jul 2017 14:31:54 INFO  INFO  Browser  - SUCCESS - quit WebDriver: ChromeDriver: chrome on WIN8_1 (null)
+31 Jul 2017 14:31:54 INFO  INFO  BaseTest  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+31 Jul 2017 14:31:54 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:31:54 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:31:54 INFO  INFO  BaseTest  - X
+31 Jul 2017 14:31:54 INFO  INFO  BaseTest  - X
