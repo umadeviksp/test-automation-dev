@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.net.bloomz.pages.HomePage;
 import com.net.bloomz.pages.LandingPage;
+import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 
@@ -21,6 +22,7 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).thenVerifySignInAndCreateButtonsShouldBeDisplayed();
 	}
 
+	/*
 	@Test(groups = { "android", "ios", "web", "BVT0301" })
 	public void testSignInWithValidInputs() throws Exception {
 
@@ -29,6 +31,7 @@ public class BV_TestCases extends BaseTest {
 				.clickOnSettingButton().clickOnSignOutButton();
 
 	}
+	*/
 	
 	/*
 	// NEEDS TO BE UPDATED
@@ -88,6 +91,8 @@ public class BV_TestCases extends BaseTest {
 	}
 	*/
 	
+	/*
+	
 	@Test(groups = { "android", "ios", "web", "BVT0501" })
 	public void testPostsOnMainFeedForExistingAccount() throws Exception {
 
@@ -110,6 +115,8 @@ public class BV_TestCases extends BaseTest {
 
 	}
 	
+	*/
+	
 	/*
 	// NEEDS TO BE IMPLEMENTED FULLY <- INSTRUCTIONS UNCLEAR
 	@Test(groups = { "android", "ios", "web", "BVT0504" })
@@ -119,6 +126,7 @@ public class BV_TestCases extends BaseTest {
 	}
 	*/
 	
+	/*
 	
 	@Test(groups = { "android", "ios", "web", "BVT0505" })
 	public void testContactsOnMainFeedForExistingAccount() throws Exception {
@@ -135,9 +143,11 @@ public class BV_TestCases extends BaseTest {
 	
 	@Test(groups = { "android", "ios", "web", "BVT0801" })
 	public void testLaunchingClassFromLeftNav() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		LandingPage.getLandingPage(browser).clickOnSign	InButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName();
 	}
+	
+	*/
 	
 	// NOT FINISHED - APP DOES NOT FUNCTION PROPERLY
 	/*
@@ -147,10 +157,26 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMediaTab();
 	} */
 
+	/*
 	@Test(groups = { "android", "ios", "web", "BVT0901" })
 	public void testCreatePostInClassWithPictures() throws Exception {
+		String testImageFilePath = Config.getConfigData("test_image_location");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName();
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
+		// .clickOnPostToField().clickOnToFirstClass().clickOnToDoneButton()
+		.enterTitle("random title").enterGeneralUpdate("random text")
+		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
+		.clickOnBackButton().clickOnUpdatesTab();
 	}
+	*/
+	
+	/*
+	@Test(groups = { "android", "ios", "web", "BVT0902" })
+	public void testCreateAnnouncementInClass() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAnnouncement()
+		.enterTitle("test title").enterGeneralUpdate("random text").clickOnPostButton();
+	}
+	*/
 
 }
