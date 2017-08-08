@@ -17,6 +17,11 @@ public class CreateAccountPage extends BasePage implements CreateAccountPageActi
 	public CreateAccountPage(Browser<?> browser) {
 		super(browser);
 	}
+	
+	public GroupPage clickOnCreateNewClassGroup() {
+		click(createNewClassGroupLocator);
+		return GroupPage.getGroupPage(browser); 
+	}
 
 	public static CreateAccountPage getCreateAccountPage(Browser<?> browser) {
 		String string = browser.toString();
@@ -34,11 +39,5 @@ public class CreateAccountPage extends BasePage implements CreateAccountPageActi
 		return null;
 	}
 	
-	// need to fix this
-	public Object clickOnCreateNewClassGroup() {
-		click(createNewClassGroupLocator);
-		return null; // need to fix this to GroupTypePage
-//		return HomePage.getHomePage(browser);
-	}
 
 }

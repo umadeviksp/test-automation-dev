@@ -19,6 +19,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By volunteerTabLocator;
 	
 	static By classNameLocator;
+	static By createClassLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -39,6 +40,11 @@ public class HomePage extends BasePage implements HomePageActions {
 
 	public HomePage(Browser<?> browser) {
 		super(browser);
+	}
+	
+	public CreateClassPage clickOnCreateClass() {
+		click(createClassLocator);
+		return CreateClassPage.getCreateClassPage(browser);
 	}
 
 	@Override
@@ -108,6 +114,7 @@ public class HomePage extends BasePage implements HomePageActions {
 			
 			messagesLocator = By.xpath("//*[@ng-click=\"showMessage(message)\"]");
 			classNameLocator = By.xpath("//*[@id=\"posts\"]/nav[1]/div[2]/ul[4]/li/ul/li[1]/span/a");
+			createClassLocator = By.xpath("//*[@id=\"welcomeTeacherCard\"]/div/article/ul/li[4]/a");
 			
 			return new WebHomePage(browser);
 		} 

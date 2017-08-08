@@ -17,6 +17,7 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 	static By signUpButtonLocator;
 	static By termsLinkLocator;
 	static By backButtonLocator;
+	static By roomParentButtonLocator;
 
 	public SignUpPage(Browser<?> browser) {
 		super(browser);
@@ -34,6 +35,7 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 			signUpButtonLocator = By.id("net.bloomz:id/btnSignUp");
 			termsLinkLocator = By.id("net.bloomz:id/txtterms");
 			backButtonLocator = By.id("net.bloomz:id/backarrow");
+			//roomParentButtonLocator = By.id("");
 			return new AndroidSignUpPage(browser);
 		} else if (string.contains(".iOS")) {
 		} else {
@@ -42,9 +44,10 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 			lastNameEditTextLocator = By.id("signup_lastName");
 			emailEditTextLocator = By.id("signup_email");
 			passwordEditTextLocator = By.id("signup_password");
-			signUpButtonLocator = By.xpath("//*[@ng-click=\"signUp()\"]");
+			signUpButtonLocator = By.xpath("//*[@ng-click=\"verifyAndSignUp(signup)\"]");
 			termsLinkLocator = By.xpath("//*[@ng-click=\"$emit('showAddToStack-terms');\"]");
 			backButtonLocator = By.xpath("//*[@ ng-click=\"leftButtonClickCallback()\"]");
+			roomParentButtonLocator = By.xpath("//*[@id=\"signUpScreen\"]/div/div/form/div[2]/section/div/div[2]");
 			return new WebSignUpPage(browser);
 		}
 		return null;
@@ -73,7 +76,12 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 		sendText(passwordEditTextLocator, password);
 		return SignUpPage.getSignUpPage(browser);
 	}
-
+	
+	public SignUpPage clickOnRoomParent() {
+		click(roomParentButtonLocator);
+		return SignUpPage.getSignUpPage(browser);
+	}
+	
 	@Override
 	public HomePage clickOnSignUpButton() {
 		click(signUpButtonLocator);
@@ -81,3 +89,5 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 	}
 
 }
+
+

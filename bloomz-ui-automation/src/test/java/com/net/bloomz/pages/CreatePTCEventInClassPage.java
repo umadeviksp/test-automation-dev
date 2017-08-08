@@ -9,89 +9,54 @@ import com.net.bloomz.pages.web.WebCreatePTCEventInClassPage;
 
 public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEventInClassPageActions {
 	
-	static By mediaTabLocator;
-	static By calendarTabLocator;
-	static By eventButtonLocator;
-	static By eventTabLocator;
 	static By titleBoxLocator;
 	static By locationBoxLocator;
 	static By notesBoxLocator;
-	static By startDateBoxLocator;
-	static By startDateButtonLocator;
-	static By endDateBoxLocator;
-	static By endDateButtonLocator;
-	static By inviteButtonLocator;
-	static By inviteAllButtonLocator;
+	static By addDateButtonLocator;
+	static By someDateButtonLocator;
+	static By nextButtonLocator;
+	static By next2ButtonLocator;
+	static By selectFirstClassButtonLocator;
 	static By doneButtonLocator;
-	static By rsvpButtonLocator;
-	static By saveButtonLocator;
+	static By sendButtonLocator;
 	
 	public CreatePTCEventInClassPage(Browser<?> browser) {
 		super(browser);
 	}
 	
-	public CreatePTCEventInClassPage clickOnMediaTab() {
-		click(mediaTabLocator);
+	public CreatePTCEventInClassPage enterTitle(String title) {
+		sendText(titleBoxLocator, title);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage clickOnCalendarTab() { 
-		click(calendarTabLocator);
+	public CreatePTCEventInClassPage enterLocation(String location) {
+		sendText(locationBoxLocator, location);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage clickOnEventButton() {
-		click(eventButtonLocator);
+	public CreatePTCEventInClassPage enterNotes(String notes) {
+		sendText(notesBoxLocator, notes);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage clickOnEventTab() {
-		click(eventTabLocator);
+	public CreatePTCEventInClassPage enterDate() {
+		click(addDateButtonLocator);
+		click(someDateButtonLocator);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage enterTitleText() {
-		sendText(titleBoxLocator, "Random");
+	public CreatePTCEventInClassPage clickNextButton() {
+		click(nextButtonLocator);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage enterLocationText() {
-		sendText(locationBoxLocator, "Random");
+	public CreatePTCEventInClassPage clickNext2Button() {
+		click(next2ButtonLocator);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage enterNotesText() {
-		sendText(notesBoxLocator, "Random");
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickStartDateBox() {
-		click(startDateBoxLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickStartDate() {
-		click(startDateButtonLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickEndDateBox() {
-		click(endDateBoxLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickEndDate() {
-		click(endDateBoxLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickInviteButton() {
-		click(inviteButtonLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickInviteAllButton() {
-		click(inviteAllButtonLocator);
+	public CreatePTCEventInClassPage selectFirstClassButton() {
+		click(selectFirstClassButtonLocator);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
@@ -100,13 +65,8 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
-	public CreatePTCEventInClassPage clickRSVPButton() {
-		click(rsvpButtonLocator);
-		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
-	}
-	
-	public CreatePTCEventInClassPage clickSaveButton() {
-		click(saveButtonLocator);
+	public CreatePTCEventInClassPage clickSendButton() {
+		click(sendButtonLocator);
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
@@ -118,23 +78,16 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 		} else if (string.equals(".iOS")) {
 			
 		} else {
-			mediaTabLocator = By.xpath("//*[@ng-click=\"setSelected(menu); \"][@data-coachmark=\"Media\"]");
-			calendarTabLocator = By.xpath("//*[@id=\"communityMenu_calendar\"]/a");
-			eventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
-			eventTabLocator = By.xpath("//*[@id=\"calendar\"]/div[3]/div[1]/div[3]/div/ul/li[5]");
-			
-			titleBoxLocator = By.xpath("//*[@id=\"addEvent_eventTitle\"]");
-			locationBoxLocator = By.xpath("//*[@id=\"addEvent_eventLocation\"]");
-			notesBoxLocator = By.xpath("//*[@id=\"addEvent_eventNotes\"]");
-			startDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106645\"]");
-			startDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[6]/td[2]");
-			endDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106647\"]");
-			endDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[8]/td[2]/a");
-			inviteButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[6]/section[1]/label/a");
-			inviteAllButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[1]/section/div/button");
-			doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a");
-			rsvpButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[6]/section[2]/div/label");
-			saveButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
+			titleBoxLocator = By.id("addEvent_eventTitle");
+			locationBoxLocator = By.id("addEvent_eventLocation");
+			notesBoxLocator = By.id("addEvent_eventDetails");
+			addDateButtonLocator = By.xpath("//*[@id=\"addUpdatePtEvent\"]/div/form/div/div[2]/section[3]/section[1]/ul/li/label/a");
+			someDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[4]/td[2]/a");
+			nextButtonLocator = By.xpath("//*[@ng-click=\"clickNext()\"]");
+			next2ButtonLocator = By.xpath("//*[@ng-click=\"actionBtnClicked()\"]");
+			selectFirstClassButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[1]/section/div/h2/button/span[2]");
+			doneButtonLocator = By.xpath("//*[@ng-click=\"applyCommit()\"]");
+			sendButtonLocator = By.xpath("//*[@ng-click=\"addPTEvent()\"]");
 			return new WebCreatePTCEventInClassPage(browser);
 		}
 		return null;

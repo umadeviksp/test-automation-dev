@@ -16,6 +16,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By updatesTabLocator;
 	static By createPostButtonLocator;
 	static By createAnnouncementButtonLocator;
+	static By createAlertButtonLocator;
+	static By createPTCEventButtonLocator;
 	static By calendarTabLocator;
 	static By eventDropdownLocator;
 
@@ -61,10 +63,22 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return CreateAnnouncementInClassPage.getCreateAnnouncementInClassPage(browser);	
 	}
 	
+	public CreateAlertInClassPage createNewAlert() {
+		clickOnCreateButton();
+		click(createAlertButtonLocator);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);	
+	}
+	
+	public CreatePTCEventInClassPage createNewPTCEvent() {
+		clickOnCreateButton();
+		click(createPTCEventButtonLocator);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
+	}
+	
 	public ClassPage clickOnCreateButton() {
 		click(createButtonLocator);
 		return ClassPage.getClassPage(browser);
-	}	
+	}
 
 	public ClassPage clickOnCalendarTab() { 
 		click(calendarTabLocator);
@@ -96,6 +110,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			createButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
 			createPostButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[2]/div");
 			createAnnouncementButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[6]");
+			createAlertButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[8]");
+			createPTCEventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[11]");
 			calendarTabLocator = By.xpath("//*[@id=\"communityMenu_calendar\"]/a");
 			eventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
 			eventDropdownLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[9]");

@@ -146,9 +146,9 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 			itemNameBoxLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/div/section/label/span/input[1]");
 			needPeopleButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/section/ul/li[2]/a");
 			taskBoxLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/div[2]/section/label/span/input[1]");
-			titleBoxLocator = By.xpath("//*[@id=\"addEvent_eventTitle\"]");
-			locationBoxLocator = By.xpath("//*[@id=\"addEvent_eventLocation\"]");
-			notesBoxLocator = By.xpath("//*[@id=\"addEvent_eventNotes\"]");
+			titleBoxLocator = By.id("addEvent_eventTitle");
+			locationBoxLocator = By.id("addEvent_eventLocation");
+			notesBoxLocator = By.id("addEvent_eventNotes");
 			startDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106645\"]");
 			startDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[6]/td[2]");
 			endDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106647\"]");
@@ -157,8 +157,8 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 			repeatWeeklyButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/div[1]/section/section/div/div[2]");
 			exitRepeatScreenButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[3]/a");
 			endRepeatButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[5]/section[2]/label/span");
-			afterNumberOfTimesButtonLocator = By.xpath("//*[@id=\"occurrenceInput\"]");
-			numberOfTimesBoxLocator = By.xpath("//*[@id=\"occurrenceInput\"]");
+			afterNumberOfTimesButtonLocator = By.id("occurrenceInput");
+			numberOfTimesBoxLocator = By.id("occurrenceInput");
 			exitNumberOfTimesScreenButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[4]/a");
 			rsvpButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[6]/section[2]/div/label");
 			saveButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
