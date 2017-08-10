@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Bloomz_Test_Run" verbose="2" parallel="false"
+	thread-count="7">
+
+<!-- 	<test name="BVT Android Testcases on Testdroid ">
+		<parameter name="platformName" value="Android"></parameter>
+		<parameter name="browserType" value=""></parameter>
+		<parameter name="environment" value="testdroid"></parameter>
+		<groups>
+			<run>
+				<include name="android" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
+		</classes>
+	</test> -->
+<!-- 	<test name="BVT Android Testcases on Local">
+		<parameter name="platformName" value="Android"></parameter>
+		<parameter name="browserType" value=""></parameter>
+		<parameter name="environment" value="local"></parameter>
+		<groups>
+			<run>
+				<include name="BVT09" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BV_TestCases" />
+		</classes>
+	</test>  -->   
+  	<test name="BVT Web Testcases on chrome - Local">
+		<parameter name="platformName" value="Web"></parameter>
+		<parameter name="browserType" value="CHROME"></parameter>
+		<parameter name="environment" value="local"></parameter>
+		<groups>
+			<run>
+				<include name="web" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BV_Feature_TestCases" />
+		</classes>
+	</test> 
+<!-- 	<test name="BVT Web Testcases on safari - Local">
+		<parameter name="platformName" value="Web"></parameter>
+		<parameter name="environment" value="local"></parameter>
+		<parameter name="browserType" value="SAFARI"></parameter>
+		<groups>
+			<run>
+				<include name="web" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
+		</classes>
+	</test> -->
+
+	<!-- <test name="BVT Web Testcases on chrome - Cloud">
+		<parameter name="platformName" value="Web"></parameter>
+		<parameter name="browserType" value="CHROME"></parameter>
+		<parameter name="environment" value="cloud"></parameter>
+		<groups>
+			<run>
+				<include name="web" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
+		</classes>
+	</test>
+	<test name="BVT Web Testcases on safari - Cloud">
+		<parameter name="platformName" value="Web"></parameter>
+		<parameter name="environment" value="cloud"></parameter>
+		<parameter name="browserType" value="SAFARI"></parameter>
+		<groups>
+			<run>
+				<include name="web" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.net.bloomz.tests.BVT_SmokeTest" />
+		</classes>
+	</test> -->
+
+
+</suite>
