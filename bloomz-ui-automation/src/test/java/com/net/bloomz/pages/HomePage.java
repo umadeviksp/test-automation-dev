@@ -91,6 +91,12 @@ public class HomePage extends BasePage implements HomePageActions {
 		click(classNameLocator);
 		return ClassPage.getClassPage(browser);
 	}
+	
+	//Uma added
+	public CreatePage clickCreateButton() {
+		click(createButtonLocator);
+		return CreatePage.getCreatePage(browser);
+	}
 
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();

@@ -20,7 +20,10 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By createPTCEventButtonLocator;
 	static By calendarTabLocator;
 	static By eventDropdownLocator;
-
+	static By likeButtonLocator;
+	static By commentButtonLocator;
+	static By likeTextLocator;
+	
 	public ClassPage(Browser<?> browser) {
 		super(browser);
 	}
@@ -95,6 +98,19 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
+	//Uma added
+	public ClassPage clickOnLikeButton() {
+		click(likeButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage thenVerifyThatLikeWasSuccessful(String exptext) {
+		Assert.assertEquals(getText(likeTextLocator) , exptext);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	
+	
 	public static ClassPage getClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -115,6 +131,10 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			calendarTabLocator = By.xpath("//*[@id=\"communityMenu_calendar\"]/a");
 			eventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
 			eventDropdownLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[9]");
+			//Uma added
+			likeButtonLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[1]");
+			commentButtonLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[3]");
+			likeTextLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[3]");
 			return new WebClassPage(browser);
 		}
 		return null;

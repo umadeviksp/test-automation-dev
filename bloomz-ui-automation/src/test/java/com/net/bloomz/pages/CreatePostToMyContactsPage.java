@@ -52,16 +52,9 @@ public class CreatePostToMyContactsPage extends BasePage implements CreatePostTo
 			toFirstClassLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/section[1]/div");
 			toSecondContactLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[2]/section[2]/div");
 			toThirdContactLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[2]/section[3]/div");
-			/*doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a");
-			titleFieldLocator = By.xpath("//*[@id=\"addPost\"]/div/div[1]/form/div[1]/input");
-			generalUpdateFieldLocator = By.id("addPost_postData");
-			postButtonLocator = By.xpath("//*[@id=\"addPost\"]/div/nav[1]/a[2]");
-			uploadPhotoInputLocator = By.id("postImgUploaderAddPost");
-			backButtonLocator = By.xpath("//*[@id=\"postViewControl\"]/nav/ng-switch[1]/a");
-			successIndicatorLocator = By.xpath("//*[@id=\"postViewControl\"]/div[1]/div[1]/section/p[1]");
 			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/span");
 			toFirstContactLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/section[1]/div");
-			*/
+			
 			return new WebCreatePostToMyContactsPage(browser);
 		}
 		return null;

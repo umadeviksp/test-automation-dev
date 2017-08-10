@@ -18,6 +18,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	static By backButtonLocator;
 	static By uploadPhotoInputLocator;
 	static By successIndicatorLocator;
+	static By myContactsLocator;
+	static By myCommunitiesLocator;
+	static By postCommentFieldLocator;
+	static By sendCommentButtonLocator;
+	static By selectAllLocator;
 
 	public CreatePostInClassPage(Browser<?> browser) {
 		super(browser);
@@ -67,7 +72,33 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		Assert.assertTrue(getElementSize(successIndicatorLocator) > 0, "Post was not successful");
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
+	
+	//Uma added
+	public CreatePostToMyContactsPage clickOnMyContacts() {
+		click(myContactsLocator);
+		return CreatePostToMyContactsPage.getCreatePostToMyContactsPage(browser);
+	}
+	
+	public CreatePostToMyCommunitiesPage clickOnMyCommunities() {
+		click(myCommunitiesLocator);
+		return CreatePostToMyCommunitiesPage.getCreatePostToMyCommunitiesPage(browser);
+	}
+	
+	public CreatePostInClassPage enterPostComment() {
+		sendText(postCommentFieldLocator, "comment successfully posted");
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnSendPostComment() {
+		click(sendCommentButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
 
+	public CreatePostInClassPage clickOnSelectAll() {
+		click(selectAllLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
 	public static CreatePostInClassPage getCreatePostInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -85,6 +116,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 			uploadPhotoInputLocator = By.id("postImgUploaderAddPost");
 			backButtonLocator = By.xpath("//*[@id=\"postViewControl\"]/nav/ng-switch[1]/a");
 			successIndicatorLocator = By.xpath("//*[@id=\"postViewControl\"]/div[1]/div[1]/section/p[1]");
+			myContactsLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/div/ul/li[1]/a");
+			myCommunitiesLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/div/ul/li[3]/a");
+			postCommentFieldLocator = By.id("post_commentText");
+			sendCommentButtonLocator = By.xpath("//*[@id=\"postViewControl\"]/div[2]/div/form/div[2]/button");
+			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/span");
 			return new WebCreatePostInClassPage(browser);
 		}
 		return null;
