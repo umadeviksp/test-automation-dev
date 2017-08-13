@@ -33,103 +33,6 @@ public class BV_Feature_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).thenVerifySignInAndCreateButtonsShouldBeDisplayed();
 	}
 
-/*	@Test(groups = { "android", "ios", "web", "BVT0301" })
-	public void testSignInWithValidInputs() throws Exception {
-
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-				.clickOnSettingButton().clickOnSignOutButton();
-
-	}*/
-	
-	// NEEDS TO BE UPDATED
-	@Test(groups = { "android", "ios", "web", "BVT0401" })
-	public void testSignUpAsATeacher() throws Exception {
-
-		/*LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup()
-				.enterFirstName("test").enterLastName("bloomz")
-				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
-				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton();*/
-
-	}
-	
-	// NEEDS TO BE UPDATED
-	@Test(groups = { "android", "ios", "web", "BVT0402" })
-	public void testSignUpAsATeacherFRE() throws Exception {
-
-		/*LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnRoomParentIcon()
-				.enterFirstName("test").enterLastName("bloomz")
-				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
-				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton();*/
-	}
-	
-	// NEEDS TO BE UPDATED
-	@Test(groups = { "android", "ios", "web", "BVT0403" })
-	public void testSignUpAsTeacherWithInvitationCode() throws Exception {
-
-		/*LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnRoomParentIcon()
-				.enterFirstName("test").enterLastName("bloomz")
-				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
-				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton();*/
-	}
-	
-	// NEEDS TO BE UPDATED
-	@Test(groups = { "android", "ios", "web", "BVT0404" })
-	public void testSignUpAsARoomParent() throws Exception {
-
-		/*LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnRoomParentIcon()
-				.enterFirstName("test").enterLastName("bloomz")
-				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
-				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton();*/
-	}
-	
-	// NEEDS TO BE UPDATED
-	@Test(groups = { "android", "ios", "web", "BVT0405" })
-	public void testSignUpAsARoomParentFRE() throws Exception {
-
-		/*LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnRoomParentIcon()
-				.enterFirstName("test").enterLastName("bloomz")
-				.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
-				.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-				.clickOnSignOutButton();*/
-	}
-
-	@Test(groups = { "android", "ios", "web", "BVT0501" })
-	public void testPostsOnMainFeedForExistingAccount() throws Exception {
-
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-				.thenVerifyMainFeedPostShouldNotBeNull().clickOnSettingButton().clickOnSignOutButton();
-	}
-
-	@Test(groups = { "android", "ios", "web", "BVT0502" })
-	public void testCalendarEventsOnMainFeedForExistingAccount() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab()
-				.thenVerifyCalendarEventsShouldNotBeNull();
-		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
-	}
-	
-	// NEEDS TO BE IMPLEMENTED FULLY
-	@Test(groups = { "android", "ios", "web", "BVT0503" })
-	public void testMessagesOnMainFeedForExistingAccount() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton();
-		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
-
-	}
-	// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
-		public void a_testMessagesOnMainFeedForExistingAccount() throws Exception {
-			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-					.enterPasswordOnTextBox("bloomz999").clickOnSignInButton();
-			HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
-
-		}
 		// NEEDS TO BE IMPLEMENTED FULLY
 		@Test(groups = { "android", "ios", "web", "BVT0503" })
 		public void a_testCancelOnSettings() throws Exception {
@@ -156,7 +59,7 @@ public class BV_Feature_TestCases extends BaseTest {
 		}
 
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
 		public void testCancelOnMyProfileOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
@@ -165,7 +68,7 @@ public class BV_Feature_TestCases extends BaseTest {
 		}
 
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
 		public void testEditOnMyProfileOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
@@ -173,7 +76,7 @@ public class BV_Feature_TestCases extends BaseTest {
 			
 		}
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
 		public void testChoosePhotoOnMyProfileOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
@@ -181,7 +84,7 @@ public class BV_Feature_TestCases extends BaseTest {
 			
 		}
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
 		public void testChoosePhotoOnMyProfileandCancelOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
@@ -204,7 +107,7 @@ public class BV_Feature_TestCases extends BaseTest {
 			StudentSignInPage.getStudentSignInPage(browser).clickOnGoBackButton() ;
 		}
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
 		public void testAddSpouseOnMyProfileOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
@@ -218,8 +121,8 @@ public class BV_Feature_TestCases extends BaseTest {
 		}
 		
 		// NEEDS TO BE IMPLEMENTED FULLY
-		@Test(groups = { "android", "ios", "web", "BVT0503" })
-		public void a_testAddChildOnMyProfileOnSettings() throws Exception {
+		@Test(groups = { "android", "ios", "web", "BVT0503", "Profile" })
+		public void testAddChildOnMyProfileOnSettings() throws Exception {
 			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
 					.enterPasswordOnTextBox(my_pwd).clickOnSignInButton();
 			HomePage.getHomePage(browser).clickOnSettingButton().clickOnMyProfileButton();
