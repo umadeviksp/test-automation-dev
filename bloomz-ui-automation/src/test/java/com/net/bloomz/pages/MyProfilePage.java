@@ -23,7 +23,6 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 		super(browser);
 
 	}
-
 	
 	public ProfileAddSpousePage clickOnAddSpouseButton() {
 		click(addSpouseButtonLocator);

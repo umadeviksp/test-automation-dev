@@ -1,12 +1,10 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
-import com.net.bloomz.pages.interfaces.ExampleTemplatePageActions;
 import com.net.bloomz.pages.interfaces.SchoolLocationPageActions;
-import com.net.bloomz.pages.web.WebExampleTemplatePage;
+import com.net.bloomz.pages.web.WebSchoolLocationPage;
 
 public class SchoolLocationPage extends BasePage implements SchoolLocationPageActions {
 	
@@ -27,7 +25,7 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 		} else {
 			schoolLocator = By.xpath("//*[@id=\"activityTypes\"]/div/div/form/section/div/section/section[1]/span[1]");
 			schoolSearchEditTextLocator = By.xpath("//*[@id=\"pickLocationId\"]");
-			return new SchoolLocationPage(browser);
+			return new WebSchoolLocationPage(browser);
 		}
 		return null;
 	}
