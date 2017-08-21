@@ -20,6 +20,11 @@ public class HomePage extends BasePage implements HomePageActions {
 	
 	static By classNameLocator;
 	static By createClassLocator;
+	static By messageButtonLocator;
+	static By firstMessageInTrayLocator;
+	static By messagesTextLocator;
+	
+	static int iMessageSize;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -70,7 +75,19 @@ public class HomePage extends BasePage implements HomePageActions {
 		click(myContactsTabLocator);
 		return ContactsTabPage.getContactsTabPage(browser);
 	}
+	
+	@Override
+	public CreateMessagePage clickOnMyMessageButton() {
+		click(messageButtonLocator);
+		return CreateMessagePage.getCreateMessagePage(browser);
+	}
 
+	@Override
+	public CreatePage clickCreateButton() {
+		click(createButtonLocator);
+		return CreatePage.getCreatePage(browser);
+	}
+	
 	public HomePage thenVerifyMainFeedPostShouldNotBeNull() {
 		Assert.assertTrue(getElementSize(postUpdateCards) > 3, "This account doesn't contain posts");
 		return HomePage.getHomePage(browser);
@@ -87,16 +104,30 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	/*public HomePage getMessageSize() {
+		iMessageSize = getElementSize(messagesLocator);
+		//iMessageSize = getElementSize(locator);
+		System.out.println(iMessageSize);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyMessages_a(String sText) {
+		System.out.println(getElementSize(messagesLocator));
+		Assert.assertTrue(getElementSize(messagesLocator) > iMessageSize, "New message is not sent");
+		return HomePage.getHomePage(browser);
+	}*/
+	
 	public ClassPage clickOnAClassName() {
 		click(classNameLocator);
 		return ClassPage.getClassPage(browser);
 	}
 	
-	//Uma added
-	public CreatePage clickCreateButton() {
-		click(createButtonLocator);
-		return CreatePage.getCreatePage(browser);
+	public CreateMessagePage clickOnFirstMessageInTray() {
+		click(firstMessageInTrayLocator);
+		return CreateMessagePage.getCreateMessagePage(browser);
 	}
+
+	
 
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
@@ -119,8 +150,11 @@ public class HomePage extends BasePage implements HomePageActions {
 			volunteerTabLocator = By.id("bloomzMainNav_navLeftVolunteers");
 			
 			messagesLocator = By.xpath("//*[@ng-click=\"showMessage(message)\"]");
+			firstMessageInTrayLocator = By.xpath("//*[@id=\"messages_section\"]/article[1]/div[1]/h2/div");
 			classNameLocator = By.xpath("//*[@id=\"posts\"]/nav[1]/div[2]/ul[4]/li/ul/li[1]/span/a");
 			createClassLocator = By.xpath("//*[@id=\"welcomeTeacherCard\"]/div/article/ul/li[4]/a");
+			messageButtonLocator = By.xpath ("//*[@id=\"_sidechat\"]/div/div/div[2]/button");
+
 			
 			return new WebHomePage(browser);
 		} 

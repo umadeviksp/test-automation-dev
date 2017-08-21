@@ -40,7 +40,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.net.bloomz.tests.FEATURE_TestCases" />
+			<class name="com.net.bloomz.tests.FEATURE_Post_TestCases" />
 		</classes>
 	</test> 
 <!-- 	<test name="BVT Web Testcases on safari - Local">
