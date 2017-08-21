@@ -6,15 +6,17 @@ import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidEditMyProfilePage ;
 import com.net.bloomz.pages.interfaces.EditMyProfilePageActions;
 import com.net.bloomz.pages.web.WebEditMyProfilePage ;
-import com.net.bloomz.pages.SignOutConfirmationPage;
 import com.net.bloomz.pages.ProfilePicOptionsPage ;
 
 public class EditMyProfilePage extends BasePage implements EditMyProfilePageActions {
 
-	static By signOutButtonLocator = null;
-	static By choosePhotoButtonLocator = null;
-	static By accountSettingsButtonLocator = null;
 	static By cancelButtonLocator = null;
+	static By saveButtonLocator = null;
+	static By choosePhotoButtonLocator = null;
+	static By firstNameTextLocator = null;
+	static By lastNameTextLocator = null;
+	static By genderMaleSelectLocator = null;
+	static By genderFemaleSelectLocator = null;
 
 	public EditMyProfilePage(Browser<?> browser) {
 		super(browser);
@@ -22,39 +24,61 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 	}
 
 	
-	public SignOutConfirmationPage clickOnSignOutButton() {
-		click(signOutButtonLocator);
-		return SignOutConfirmationPage.getSignOutConfirmationPage(browser);
+	public MyProfilePage clickOnGoBackButton() {
+		click(cancelButtonLocator);
+		return MyProfilePage.getMyProfilePage(browser) ;
+	}
+
+	public MyProfilePage clickOnSaveButton() {
+		click(saveButtonLocator);
+		return MyProfilePage.getMyProfilePage(browser) ;
 	}
 
 	public ProfilePicOptionsPage clickOnChoosePhotoButton() {
 		click(choosePhotoButtonLocator);
 		return ProfilePicOptionsPage.getProfilePicOptionsPage(browser);
 	}
-	public SignInPage clickOnAccountSettingsButton() {
-		click(accountSettingsButtonLocator);
-		return SignInPage.getSignInPage(browser);
+
+	public EditMyProfilePage enterFirstName(String firstName) {
+		sendText(firstNameTextLocator, firstName);
+		return this;
 	}
-	public MyProfilePage clickOnGoBackButton() {
-		click(cancelButtonLocator);
-		return MyProfilePage.getMyProfilePage(browser) ;
+
+	public EditMyProfilePage enterLastName(String lastName) {
+		sendText(lastNameTextLocator, lastName);
+		return this;
 	}
+
+	public EditMyProfilePage selectMaleGenderButton() {
+		click(genderMaleSelectLocator);
+		return this;
+	}
+
+	public EditMyProfilePage selectFemaleGenderButton() {
+		click(genderFemaleSelectLocator);
+		return this;
+	}
+
 	public static EditMyProfilePage getEditMyProfilePage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			choosePhotoButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
 			cancelButtonLocator 	= By.id("net.bloomz:id/txtCancel");
-			signOutButtonLocator 	= By.id("net.bloomz:id/txtSignOut");
-			accountSettingsButtonLocator = By.id("net.bloomz:id/txtAccountSettings");
+			firstNameTextLocator 	= By.id("net.bloomz:id/txtSignOut");
+			lastNameTextLocator = By.id("net.bloomz:id/txtAccountSettings");
 			return new AndroidEditMyProfilePage(browser);
 		} else if (string.contains(".iOS")) {
 
 		} else {
-			choosePhotoButtonLocator	= By.className("choosePhotoOptions");
-			cancelButtonLocator 	= By.className("backButtonOnly");
-			signOutButtonLocator 	= By.xpath("//label[contains(text(), \"Sign Out\")]");
-			accountSettingsButtonLocator = By.xpath("//span[contains(text(), \"Account Settings\")]");
+			cancelButtonLocator	= By.xpath("//nav[@id = 'userProfileView_myProfileEditHeader']//a[@class='backButton']");
+			saveButtonLocator 	= By.xpath("//nav[@id = 'userProfileView_myProfileEditHeader']//a[@class='nextButton']");
+			choosePhotoButtonLocator	= By.xpath("//section[contains(@class,'userProfileInfo')]//span[@class='choosePhotoOptions']");
+			
+			firstNameTextLocator= By.xpath("//section[contains(@class,'myInfoEdit')]//input[@id='editProfile_firstName']");
+			lastNameTextLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@id='editProfile_lastName']");
+			genderMaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='male']");
+			genderFemaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='female']");
 			return new WebEditMyProfilePage(browser);
 		}
 		return null;

@@ -1,6 +1,6 @@
 package com.net.bloomz.pages.interfaces;
 
-import com.net.bloomz.pages.HomePage;
+import com.net.bloomz.pages.SettingPage;
 import com.net.bloomz.pages.CalendarSettingsPage;
 import com.net.bloomz.pages.NotificationsPage;
 import com.net.bloomz.pages.ProfileSettingsPage;
@@ -12,7 +12,7 @@ import com.net.bloomz.pages.SignOutConfirmationPage;
 
 public interface AccountSettingsPageActions {
 
-	HomePage clickOnGoBackButton();
+	SettingPage clickOnGoBackButton();
 	CalendarSettingsPage clickOnCalendarSettingsButton() ;
 	NotificationsPage clickOnNotificationsButton() ;
 	ProfileSettingsPage clickOnProfileSettingsButton() ;
@@ -21,8 +21,5 @@ public interface AccountSettingsPageActions {
 	ChangePasswordPage clickOnChangePasswordButton() ;
 	ChangeEmailAddressPage clickOnChangeEmailAddressButton() ;
 	SignOutConfirmationPage clickOnSignOutButton();
-
-
-
 
 }

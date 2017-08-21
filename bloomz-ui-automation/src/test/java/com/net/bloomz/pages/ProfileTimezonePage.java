@@ -37,8 +37,8 @@ public class ProfileTimezonePage extends BasePage implements ProfileTimezonePage
 			
 		} else {
 			// define By variables here
-			saveButtonLocator 	= By.className("nextButton");
-			goBackButtonLocator	= By.className("backButtonOnly");
+			saveButtonLocator 	= By.xpath("//div[@id='supportedTimezones']//a[contains(@class,'nextButton')]");
+			goBackButtonLocator	= By.xpath("//div[@id='supportedTimezones']//a[contains(@class,'backButtonOnly')]");
 			return new WebProfileTimezonePage(browser);
 		}
 		return null;

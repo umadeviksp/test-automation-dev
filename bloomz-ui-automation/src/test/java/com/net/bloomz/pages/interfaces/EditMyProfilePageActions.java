@@ -1,15 +1,17 @@
 package com.net.bloomz.pages.interfaces;
 
-//import com.net.bloomz.pages.AccountSettingsPage;
-import com.net.bloomz.pages.SignInPage;
-import com.net.bloomz.pages.SignOutConfirmationPage;
 import com.net.bloomz.pages.ProfilePicOptionsPage ;
+import com.net.bloomz.pages.EditMyProfilePage;
 import com.net.bloomz.pages.MyProfilePage ;
 
 public interface EditMyProfilePageActions {
 
-	SignOutConfirmationPage clickOnSignOutButton();
 	ProfilePicOptionsPage clickOnChoosePhotoButton();
-	SignInPage clickOnAccountSettingsButton();
 	MyProfilePage clickOnGoBackButton();
+	MyProfilePage clickOnSaveButton() ;
+	EditMyProfilePage enterFirstName(String firstName) ;
+	EditMyProfilePage enterLastName(String lastName) ;
+	EditMyProfilePage selectMaleGenderButton() ;
+	EditMyProfilePage selectFemaleGenderButton() ;
+	
 }

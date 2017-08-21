@@ -12,6 +12,9 @@ public class CalendarSettingsPage extends BasePage implements CalendarSettingsPa
 	// declare By variables here
 	static By goBackButtonLocator = null;
 	static By saveButtonLocator = null;
+	static By addCalendarButtonLocator = null;
+	static By importCalendarButtonLocator = null;
+	static By calendarListLocator = null;
 
 	public CalendarSettingsPage(Browser<?> browser) {
 		super(browser);
@@ -27,6 +30,25 @@ public class CalendarSettingsPage extends BasePage implements CalendarSettingsPa
 		return AccountSettingsPage.getAccountSettingsPage(browser);
 	}
 
+	public CalendarSettingsImportCalendarPage clickOnAddCalendarButton() {
+		click(addCalendarButtonLocator);
+		return CalendarSettingsImportCalendarPage.getCalendarSettingsImportCalendarPage(browser);
+	}
+
+	public CalendarSettingsImportCalendarPage clickOnImportCalendarButton() {
+		browser.getWebDriver().findElements(calendarListLocator).size() ;
+		click(importCalendarButtonLocator);
+		return CalendarSettingsImportCalendarPage.getCalendarSettingsImportCalendarPage(browser);
+	}
+
+	public CalendarSettingsImportCalendarPage clickOnExistingCalendarButton() {
+		if(browser.getWebDriver().findElements(calendarListLocator).size() >0)
+		{
+			browser.getWebDriver().findElement(calendarListLocator).click();
+		}
+		return CalendarSettingsImportCalendarPage.getCalendarSettingsImportCalendarPage(browser);
+	}
+
 	public static CalendarSettingsPage getCalendarSettingsPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -37,8 +59,11 @@ public class CalendarSettingsPage extends BasePage implements CalendarSettingsPa
 			
 		} else {
 			// define By variables here
-			saveButtonLocator 	= By.className("nextButton");
-			goBackButtonLocator	= By.className("backButtonOnly");
+			saveButtonLocator 	= By.xpath("nextButton");
+			goBackButtonLocator	= By.xpath("//div[@id='calendarSettings']//a[@class='backButtonOnly']");
+			addCalendarButtonLocator 	= By.xpath("//div[@id='calendarSettings']//*[@class='inlineAddBtn']");
+			importCalendarButtonLocator	= By.xpath("//div[@id='calendarSettings']//*[contains(@class,'linkControl')]");
+			calendarListLocator	= By.xpath("//div[@id='calendarSettings']//section[contains(@class,'calendarToggle')]//label");
 			return new WebCalendarSettingsPage(browser);
 		}
 		return null;

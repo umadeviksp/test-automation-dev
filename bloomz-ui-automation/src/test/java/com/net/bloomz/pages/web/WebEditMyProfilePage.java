@@ -10,9 +10,4 @@ public class WebEditMyProfilePage extends EditMyProfilePage {
 		super(browser);
 	}
 
-	@Override
-	public SignOutConfirmationPage clickOnSignOutButton() {
-		return super.clickOnSignOutButton();
-	}
-
 }

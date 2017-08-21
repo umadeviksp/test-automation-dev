@@ -28,9 +28,9 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 	}
 
 	
-	public HomePage clickOnGoBackButton() {
+	public SettingPage clickOnGoBackButton() {
 		click(goBackButtonLocator);
-		return HomePage.getHomePage(browser);
+		return SettingPage.getSettingPage(browser);
 	}
 
 	public CalendarSettingsPage clickOnCalendarSettingsButton() {
@@ -86,16 +86,16 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 		} else if (string.contains(".iOS")) {
 
 		} else {
-			goBackButtonLocator 	= By.xpath("//span[contains(text(), \"Cancel\")]");
-			signOutButtonLocator 	= By.xpath("//label[contains(text(), \"Sign Out\")]");
+			goBackButtonLocator 	= By.xpath("//div[@id='accountSettings']//a[contains(@class,'backButtonOnly')]");
+			signOutButtonLocator 	= By.xpath("//label[contains(text(),'Sign Out')]");
 
-			calendarSettingsButtonLocator 	= By.xpath("//label[contains(text(), \"Calendar Settings\")]");
-			notificationsButtonLocator = By.xpath("//label[contains(text(), \"Notifications\")]");
-			profileSettingsButtonLocator = By.xpath("//label[contains(text(), \"Profile Settings\")]");
-			preferredLanguageButtonLocator = By.xpath("//label[contains(text(), \"Preferred Language\")]");
-			profileTimezoneButtonLocator = By.xpath("//label[contains(text(), \"Profile Timezone\")]");
-			changePasswordButtonLocator = By.xpath("//label[contains(text(), \"Change Password\")]");
-			changeEmailAddressButtonLocator = By.xpath("//label[contains(text(), \"Change Email Address\")]");
+			calendarSettingsButtonLocator 	= By.xpath("//label[contains(text(), 'Calendar Settings')]");
+			notificationsButtonLocator = By.xpath("//label[contains(text(), 'Notifications')]");
+			profileSettingsButtonLocator = By.xpath("//label[contains(text(), 'Profile Settings')]");
+			preferredLanguageButtonLocator = By.xpath("//label[contains(text(), 'Preferred Language')]");
+			profileTimezoneButtonLocator = By.xpath("//label[contains(text(), 'Profile Timezone')]");
+			changePasswordButtonLocator = By.xpath("//label[contains(text(), 'Change Password')]");
+			changeEmailAddressButtonLocator = By.xpath("//label[contains(text(), 'Change Email Address')]");
 			
 			return new WebAccountSettingsPage(browser);
 		}

@@ -55,11 +55,11 @@ public class ChangeEmailAddressPage extends BasePage implements ChangeEmailAddre
 			
 		} else {
 			// define By variables here
-			saveButtonLocator 	= By.className("nextButton");
-			goBackButtonLocator	= By.className("backButtonOnly");
+			saveButtonLocator 	= By.xpath("//div[@id='changeEmail']//a[contains(@class,'nextButton')]");
+			goBackButtonLocator	= By.xpath("//div[@id='changeEmail']//a[contains(@class,'backButtonOnly')]");
 			newEmailTextLocator	= By.id("changeEmailForm_newemail");
 			passwordTextLocator	= By.id("changeEmailForm_password");
-			showPasswordButtonLocator	= By.id("showPswd_changeEmailForm_password");
+			showPasswordButtonLocator	= By.xpath("//div[@id='changeEmail']//div[contains(@class,'switchControl')]");
 			return new WebChangeEmailAddressPage(browser);
 		}
 		return null;

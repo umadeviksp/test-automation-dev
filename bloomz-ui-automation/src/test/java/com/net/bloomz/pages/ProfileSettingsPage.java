@@ -24,6 +24,7 @@ public class ProfileSettingsPage extends MyProfilePage implements ProfileSetting
 	public static ProfileSettingsPage getProfileSettingsPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
+		MyProfilePage.getMyProfilePage(browser) ;
 		if (string.contains("AndroidMobile")) {
 		
 			return new AndroidProfileSettingsPage(browser);

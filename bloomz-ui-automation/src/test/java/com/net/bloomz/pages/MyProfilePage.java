@@ -18,6 +18,7 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 	static By addChildButtonLocator = null;
 	static By editButtonLocator = null;
 	static By goBackButtonLocator = null;
+	static By childListLocator = null;
 
 	public MyProfilePage(Browser<?> browser) {
 		super(browser);
@@ -59,14 +60,14 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 		} else if (string.contains(".iOS")) {
 
 		} else {
-			addSpouseButtonLocator 	= By.xpath("//data-displayname[text()= \"Spouse\"]");
-			addChildButtonLocator = By.xpath("//data-displayname= \"Child\"");
 
-			addSpouseButtonLocator 	= By.xpath("//*[@id=\"userProfileView_myFamilyListing\"]/a[1]/span");
-			removeSpouseButtonLocator 	= By.className("spouseInvited");
+			addSpouseButtonLocator 	= By.xpath("//section[@id='userProfileView_myFamilyListing']//span[contains(@class,'profileM')]");
+			removeSpouseButtonLocator 	= By.xpath("//section[@id='userProfileView_myFamilyListing']//span[contains(@class,'spouseInvited')]");
+			childListLocator 	= By.xpath("//section[@id='userProfileView_myFamilyListing']//span[@name='userProfileView_myChild']");
 			addChildButtonLocator = By.xpath("//*[@id=\"userProfileView_myFamilyListing\"]/a[2]/span");
-			editButtonLocator 	= By.xpath("//a[text()= \"Edit\"]");
-			goBackButtonLocator 	= By.className("backButtonOnly");
+			editButtonLocator 	= By.xpath("//div[contains(@class,'profilePage')]//a[contains(@class,'nextButton')]");
+			goBackButtonLocator 	= By.xpath("//div[contains(@class,'profilePage')]//a[contains(@class,'backButtonOnly')]");
+
 			return new WebMyProfilePage(browser);
 		}
 		return null;

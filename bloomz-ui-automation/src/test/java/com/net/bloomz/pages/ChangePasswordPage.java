@@ -12,6 +12,9 @@ public class ChangePasswordPage extends BasePage implements ChangePasswordPageAc
 	// declare By variables here
 	static By goBackButtonLocator = null;
 	static By saveButtonLocator = null;
+	static By oldPasswordTextLocator = null;
+	static By newPasswordTextLocator = null;
+	static By showPasswordButtonLocator = null;
 
 	public ChangePasswordPage(Browser<?> browser) {
 		super(browser);
@@ -27,6 +30,21 @@ public class ChangePasswordPage extends BasePage implements ChangePasswordPageAc
 		return AccountSettingsPage.getAccountSettingsPage(browser);
 	}
 
+	public ChangePasswordPage enterOldPassword(String oldPassword) {
+		sendText(oldPasswordTextLocator, oldPassword);
+		return this;
+	}
+
+	public ChangePasswordPage enterNewPassword(String newPassword) {
+		sendText(newPasswordTextLocator, newPassword);
+		return this;
+	}
+
+	public ChangePasswordPage clickShowHidePassword() {
+		click(showPasswordButtonLocator);
+		return this;
+	}
+
 	public static ChangePasswordPage getChangePasswordPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -37,8 +55,11 @@ public class ChangePasswordPage extends BasePage implements ChangePasswordPageAc
 			
 		} else {
 			// define By variables here
-			saveButtonLocator 	= By.className("nextButton");
-			goBackButtonLocator	= By.className("backButtonOnly");
+			saveButtonLocator 	= By.xpath("//div[@id='changePassword']//a[contains(@class,'nextButton')]");
+			goBackButtonLocator	= By.xpath("//div[@id='changePassword']//a[contains(@class,'backButtonOnly')]");
+			oldPasswordTextLocator 	= By.id("changePasswordForm_oldpassword2");
+			newPasswordTextLocator	= By.id("changePasswordForm_newpassword2");
+			showPasswordButtonLocator	= By.xpath("//div[@id='changePassword']//div[@class='switchControl']");
 			return new WebChangePasswordPage(browser);
 		}
 		return null;
