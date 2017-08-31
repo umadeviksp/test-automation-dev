@@ -22,9 +22,18 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By createClassLocator;
 	static By messageButtonLocator;
 	static By firstMessageInTrayLocator;
-	static By messagesTextLocator;
-	
+	static By messageTextLocator;
+	static By eventListLocator;
+	static By eventOptionsLocator;
+	static By eventOptionsEditLocator;
+	static By eventPostComment;
+	static By sendCommentButtonLocator;
 	static int iMessageSize;
+	static By commentListLocator;
+	static By backButtonLocator;
+	static By eventOptionsDeleteLocator;
+	static By editEventDelConfirmation;
+	static By editEventRemDelConfirmation;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -88,6 +97,36 @@ public class HomePage extends BasePage implements HomePageActions {
 		return CreatePage.getCreatePage(browser);
 	}
 	
+	public HomePage clickOnEventList() {
+		click(eventListLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnEventOptions() {
+		click(eventOptionsLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public CreateEventInClassPage clickOnEventOptionsEdit() {
+		click(eventOptionsEditLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	public HomePage clickOnEventOptionsDelete() {
+		click(eventOptionsDeleteLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public CreateEventInClassPage clickOnConfirmEventDelete() {
+		click(editEventDelConfirmation);
+		return  CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	public HomePage clickOnEventOptionsDeleteReminder() {
+		click(editEventRemDelConfirmation);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public HomePage thenVerifyMainFeedPostShouldNotBeNull() {
 		Assert.assertTrue(getElementSize(postUpdateCards) > 3, "This account doesn't contain posts");
 		return HomePage.getHomePage(browser);
@@ -126,8 +165,33 @@ public class HomePage extends BasePage implements HomePageActions {
 		click(firstMessageInTrayLocator);
 		return CreateMessagePage.getCreateMessagePage(browser);
 	}
-
 	
+	public HomePage ReadkOnFirstMessageInTray(String sText) {
+		System.out.println(getText(messageTextLocator));
+		Assert.assertEquals(getText(messageTextLocator),sText);		
+		return HomePage.getHomePage(browser);
+	}
+
+	public HomePage enterPostComment() {
+		sendText(eventPostComment, "comment successfully posted");
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnSendComment() {
+		click(sendCommentButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyThatCommentWasSuccessful(String stext) {
+		Assert.assertEquals(getText(commentListLocator) , stext);
+		return HomePage.getHomePage(browser);
+	}
+	
+
+	public HomePage clickOnBackButton() {
+		click(backButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
 
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
@@ -154,6 +218,19 @@ public class HomePage extends BasePage implements HomePageActions {
 			classNameLocator = By.xpath("//*[@id=\"posts\"]/nav[1]/div[2]/ul[4]/li/ul/li[1]/span/a");
 			createClassLocator = By.xpath("//*[@id=\"welcomeTeacherCard\"]/div/article/ul/li[4]/a");
 			messageButtonLocator = By.xpath ("//*[@id=\"_sidechat\"]/div/div/div[2]/button");
+			messageTextLocator = By.xpath("//*[@id=\"messages_section\"]/article/div[2]/span");
+			//eventListLocator = By.xpath("*[@id=\"posts_updatesHomeSection\"]/div[1]/article/p/span[1]");
+			eventListLocator = By.xpath("//*[@id=\"posts_updatesHomeSection\"]/div[1]/article/div[3]");
+			eventOptionsLocator = By.xpath("//*[@id=\"calendarViewControl\"]/nav/a[2]");
+			eventOptionsEditLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");
+			eventOptionsDeleteLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
+			editEventDelConfirmation = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");
+			editEventRemDelConfirmation = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[3]/span");
+			eventPostComment = By.id("event_commentText");
+			sendCommentButtonLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[2]/div/form/div[2]/button");
+			
+			commentListLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[1]/section/div[1]/ul/li[2]");
+			backButtonLocator = By.xpath("//*[@id=\"calendarViewControl\"]/nav/a[1]");
 
 			
 			return new WebHomePage(browser);

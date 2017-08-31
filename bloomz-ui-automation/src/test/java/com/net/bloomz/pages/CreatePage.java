@@ -53,9 +53,9 @@ public class CreatePage extends BasePage implements CreatePageActions {
 		return CreatePage.getCreatePage(browser);
 	}
 	
-	public CreatePage clickOnEventItemButton() {
+	public CreateEventInClassPage clickOnEventItemButton() {
 		click(eventLocator);
-		return CreatePage.getCreatePage(browser);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
 	public CreatePage clickOnVolunteerButton() {
@@ -87,7 +87,7 @@ public class CreatePage extends BasePage implements CreatePageActions {
 			eventLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[7]/div");
 			volunteerLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[8]/div");
 			parentTeacherLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[9]");
-						
+									
 			return new WebCreatePage(browser);
 		}
 		return null;

@@ -14,6 +14,7 @@ public class CreateMessagePage extends BasePage implements CreateMessagePageActi
 	static By messageTextFieldLocator;
 	static By sendButtonLocator;
 	static By messagesTextLocator;
+	static By firstMessageInTrayLocator;
 	static By lastMessageInTrayLocator;
 	static By backButtonLocator;
 	static By lastMessageSizeInTrayLocator;
@@ -47,14 +48,22 @@ public class CreateMessagePage extends BasePage implements CreateMessagePageActi
 		return CreateMessagePage.getCreateMessagePage(browser);
 	}
 	
-	public CreateMessagePage thenVerifyMessages(String sText) {
-		Assert.assertEquals(getText(lastMessageInTrayLocator),sText);
+	public CreateMessagePage thenVerifyMessages(String sText, By messageLocator) {
+		Assert.assertEquals(getText(messageLocator),sText);
 		return CreateMessagePage.getCreateMessagePage(browser);
 	}
 	
 	public HomePage clickOnBackButton() {
 		click(backButtonLocator);
 		return HomePage.getHomePage(browser);
+	}
+	
+	public By getLastMessageLocator() {
+		return lastMessageInTrayLocator ;
+	}
+	
+	public By getFirstMessageLocator() {
+		return firstMessageInTrayLocator ;
 	}
 	
 	public CreateMessagePage clickOnOptionsButton() {
@@ -92,7 +101,8 @@ public class CreateMessagePage extends BasePage implements CreateMessagePageActi
 			messagesTextLocator = By.xpath("//*[@ng-class=\"{time: entry.type && entry.type == 'header'}\"]");
 			replyAllButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div/div[3]/div/form/div[2]/button");
 			
-			lastMessageInTrayLocator = By.xpath("//*[@ng-class=\"{groupChat: isMessageToGroup() || isQuietHours(), quietHoursMessageBackground: isQuietHours()}\"]/div[1]/div/div/span[2]/span");
+			firstMessageInTrayLocator = By.xpath("//*[@ng-class=\"{groupChat: isMessageToGroup() || isQuietHours(), quietHoursMessageBackground: isQuietHours()}\"]/div[1]/div/div/span[2]/span");
+			lastMessageInTrayLocator = By.xpath("//*[@ng-class=\"{groupChat: isMessageToGroup() || isQuietHours(), quietHoursMessageBackground: isQuietHours()}\"]/div[2]/div/div/span[2]/span");
 			optionsButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/nav/a[2]");
 			backButtonLocator = By.className("backButtonOnly");
 			deleteMessageButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");

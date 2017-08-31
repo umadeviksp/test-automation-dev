@@ -104,8 +104,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return ClassPage.getClassPage(browser);
 	}
 	
-	public ClassPage thenVerifyThatLikeWasSuccessful(String exptext) {
-		Assert.assertEquals(getText(likeTextLocator) , exptext);
+	public ClassPage thenVerifyThatLikeWasSuccessful(String stext) {
+		Assert.assertEquals(getText(likeTextLocator) , stext);
 		return ClassPage.getClassPage(browser);
 	}
 	

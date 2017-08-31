@@ -12,6 +12,7 @@ import org.apache.xalan.extensions.ExpressionVisitor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -23,6 +24,17 @@ import com.net.bloomz.appium.pagefactory.framework.actions.SeleniumActions;
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.appium.pagefactory.framework.config.TimeoutType;
 import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
+
+
+
+//Uma added
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -292,8 +304,18 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		return 0;
 	}
 
-	public BasePage clearTextBox(By locator) {
+	//Uma commented
+	/*public BasePage clearTextBox(By locator) {
 		((AndroidDriver<?>) browser.getWebDriver()).findElement(locator).clear();
+		return this;
+	}*/
+	public BasePage clearTextBox(By locator) {
+		waitForElement(locator);
+	
+		if (getPlatformName().equals("Android")) {
+			click(locator);
+		}
+		browser.getActions().getElement(locator).clear();
 		return this;
 	}
 
@@ -307,5 +329,41 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 
 		}
 		return "";
+	}
+	
+	
+	public BasePage sendkeyboardEvent(By locator) {
+		waitForElement(locator);
+	
+		if (getPlatformName().equals("Android")) {
+			click(locator);
+		}
+		browser.getActions().getElement(locator).sendKeys(Keys.ENTER);
+		return this;
+	}
+	
+	public String addYearsMonthsDays(Integer iYears, Integer iMonths, Integer iDays) {
+		
+	    String DATE_FORMAT = "MM-dd-yyyy";
+	    DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+	    DateTimeFormatter dateFormat8 = DateTimeFormatter.ofPattern(DATE_FORMAT);
+		 
+		// Get current date
+        Date currentDate = new Date();
+        System.out.println("date : " + dateFormat.format(currentDate));
+
+        // convert date to localdatetime
+       LocalDateTime localDateTime = currentDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+       System.out.println("localDate : " + dateFormat8.format(localDateTime));
+
+        // plus one
+       localDateTime = localDateTime.plusYears(iYears).plusMonths(iMonths).plusDays(iDays);
+
+        // convert LocalDateTime to date
+        Date addedDays = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+
+        System.out.println("\nOutput : " + dateFormat.format(addedDays));
+        
+        return dateFormat.format(addedDays);
 	}
 }

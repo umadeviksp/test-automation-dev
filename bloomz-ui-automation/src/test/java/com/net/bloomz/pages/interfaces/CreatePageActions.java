@@ -1,5 +1,6 @@
 package com.net.bloomz.pages.interfaces;
 
+import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreatePage;
 import com.net.bloomz.pages.CreatePostInClassPage;
 
@@ -11,7 +12,7 @@ public interface CreatePageActions {
 	
 	CreatePage clickOnAwardsButton();
 	
-	CreatePage clickOnEventItemButton();
+	CreateEventInClassPage clickOnEventItemButton();
 	
 	CreatePage clickOnParentTeacherButton();
 	
