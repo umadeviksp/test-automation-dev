@@ -27,9 +27,9 @@ public class CreateAnnouncementInClassPage extends BasePage implements CreateAnn
 		return CreateAnnouncementInClassPage.getCreateAnnouncementInClassPage(browser);
 	}
 
-	public CreateAnnouncementInClassPage clickOnPostButton() {
+	public HomePage clickOnPostButton() {
 		click(postButtonLocator);
-		return CreateAnnouncementInClassPage.getCreateAnnouncementInClassPage(browser);
+		return HomePage.getHomePage(browser);
 	}
 
 	public static CreateAnnouncementInClassPage getCreateAnnouncementInClassPage(Browser<?> browser) {

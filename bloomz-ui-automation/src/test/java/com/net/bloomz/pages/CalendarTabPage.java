@@ -10,6 +10,8 @@ import com.net.bloomz.pages.web.WebMyCalendarTabPage;
 public class CalendarTabPage extends BasePage {
 
 	static By calendarEventsLocator;
+	static By calendarTodayLocator;
+	static By calendarSomeDayLocator;
 
 	public CalendarTabPage(Browser<?> browser) {
 		super(browser);
@@ -24,6 +26,8 @@ public class CalendarTabPage extends BasePage {
 		} else if (string.contains(".iOS")) {
 		} else {
 			calendarEventsLocator = By.xpath("//*[@ng-show=\"day.calendarEntries.length>=0\"]");
+			calendarTodayLocator = By.xpath("//*[@id='communityContent']/div/section[1]/article/h2");
+			calendarSomeDayLocator = By.xpath("//*[@id='calendarList']/section[55]/article/h2");
 			return new WebMyCalendarTabPage(browser);
 		}
 		return null;
@@ -33,5 +37,33 @@ public class CalendarTabPage extends BasePage {
 		Assert.assertTrue(getElementSize(calendarEventsLocator) > 1, "Day events are not displayed");
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
-
+	
+	public MembersTabPage thenVerifyElementExists() {
+		Assert.assertTrue(getElementSize(calendarTodayLocator) > 0, "Calendar Tab is not displayed");
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+	
+	public CalendarTabPage ScrollDownHomeFeed() throws InterruptedException {
+		scrollIntoView(calendarSomeDayLocator);
+		return CalendarTabPage.getCalendarTabPage(browser);
+	}
+	
+	public CalendarTabPage thenVerifyScrollDown(String sText) {
+		
+		System.out.println(getText(calendarSomeDayLocator));
+		Assert.assertEquals(getText(calendarSomeDayLocator), sText);
+		return CalendarTabPage.getCalendarTabPage(browser);
+	}
+	
+	public CalendarTabPage ScrollUpHomeFeed() throws InterruptedException {
+		scrollIntoView(calendarTodayLocator);
+		return CalendarTabPage.getCalendarTabPage(browser);
+	}
+	
+	public CalendarTabPage thenVerifyScrollUp(String sText) {
+		System.out.println(getText(calendarTodayLocator));
+		Assert.assertEquals(getText(calendarTodayLocator), sText);
+		return CalendarTabPage.getCalendarTabPage(browser);
+	}
+	
 }

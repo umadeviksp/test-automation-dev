@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -194,4 +195,5 @@ public class BaseTest {
 				TimeoutType.FORTY_SECONDS);
 		return waitOnExpectedCondition.isDisplayed();
 	}
+	
 }

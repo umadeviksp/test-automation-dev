@@ -34,6 +34,21 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By eventOptionsDeleteLocator;
 	static By editEventDelConfirmation;
 	static By editEventRemDelConfirmation;
+	static By eventBubblelocator;
+	static By communityNameLocator;
+	static By profileNameTextLocator;
+	static By successEventMessageLocator;
+	static By newClassNameLocator;
+	static By announcementSectionLocator;
+	static By announcementCloseButtonLocator;
+	static By deleteAnnouncementLocator;
+	static By upcomingEventsLocator;
+	static By alertEventLocator;
+	static By classNameSecondLocator;
+	static By scrollHomeLocator;
+	static By scrollDownSupportLocator;
+	static By scrollUpWelcomeLocator;
+	
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -161,6 +176,16 @@ public class HomePage extends BasePage implements HomePageActions {
 		return ClassPage.getClassPage(browser);
 	}
 	
+	public ClassPage clickOnASecondClassName() {
+		click(classNameSecondLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnACommunity() {
+		click(classNameLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
 	public CreateMessagePage clickOnFirstMessageInTray() {
 		click(firstMessageInTrayLocator);
 		return CreateMessagePage.getCreateMessagePage(browser);
@@ -178,7 +203,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	}
 	
 	public HomePage clickOnSendComment() {
-		click(sendCommentButtonLocator);
+		click(sendCommentButtonLocator);	
 		return HomePage.getHomePage(browser);
 	}
 	
@@ -193,6 +218,73 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 
+	public HomePage clickOnEventBubbleButton() {
+		click(eventBubblelocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyProfileName(String sText) {
+		Assert.assertEquals(getAttribute(profileNameTextLocator, "data-displayname"),sText);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyClassname(String sText) {
+		System.out.println(getText(newClassNameLocator));
+		Assert.assertEquals(getText(newClassNameLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyAnnouncements(String sText) {
+		System.out.println(getText(announcementSectionLocator));
+		Assert.assertEquals(getText(announcementSectionLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnAnnouncementCloseButton() {
+		click(announcementCloseButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnAnnouncementDeleteButton() {
+		click(deleteAnnouncementLocator);
+		return HomePage.getHomePage(browser);
+	}
+
+	public HomePage thenVerifyThatPostWasSuccessful(String sText) {
+		successEventMessageLocator = By.id("toast");
+		System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
+	
+	public CreateAlertInClassPage clickOnAlertEventButton() {
+		click(alertEventLocator);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public HomePage ScrollDownHomeFeed() throws InterruptedException {
+		scrollIntoView(scrollDownSupportLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyScrollDown(String sText) {
+		System.out.println(getText(scrollDownSupportLocator));
+		Assert.assertEquals(getText(scrollDownSupportLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage ScrollUpHomeFeed() throws InterruptedException {
+		scrollIntoView(scrollUpWelcomeLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage thenVerifyScrollUp(String sText) {
+		System.out.println(getText(scrollUpWelcomeLocator));
+		Assert.assertEquals(getText(scrollUpWelcomeLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -227,11 +319,26 @@ public class HomePage extends BasePage implements HomePageActions {
 			editEventDelConfirmation = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");
 			editEventRemDelConfirmation = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[3]/span");
 			eventPostComment = By.id("event_commentText");
-			sendCommentButtonLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[2]/div/form/div[2]/button");
+			//sendCommentButtonLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[2]/div/form/div[2]/button");
+			sendCommentButtonLocator = By.cssSelector("#calendarViewControl > div.chatInput.ng-scope > div > form > div.buttonWrapper > button");
 			
 			commentListLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[1]/section/div[1]/ul/li[2]");
 			backButtonLocator = By.xpath("//*[@id=\"calendarViewControl\"]/nav/a[1]");
-
+			eventBubblelocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftHome\"]/span");
+			communityNameLocator = By.xpath("//*[@id=\"posts\"]/nav[1]/div[2]/ul[3]/li/ul/li/span/a");
+			//profileNameTextLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]/span");
+			profileNameTextLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]/span");
+			newClassNameLocator = By.xpath("//*[@id=\"orgHome\"]/div/nav[1]/h1/div");
+			announcementSectionLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/h1/span");
+			announcementCloseButtonLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/div/div/article/div[1]");
+			deleteAnnouncementLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
+			successEventMessageLocator = By.id("toast");
+			alertEventLocator = By.xpath("//*[@id='communityContent']/span/section[16]/div[2]/article/p/span[2]");
+			classNameSecondLocator = By.xpath("//*[@id='posts']/nav[1]/div[2]/ul[4]/li/ul/li[2]/span/a");
+			scrollHomeLocator = By.xpath("//*[@id='posts']/div[7]");
+			scrollDownSupportLocator = By.xpath("//*[@id='postsList']/div[2]/ul/li[2]/a");
+			scrollUpWelcomeLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/div/h2");
+			
 			
 			return new WebHomePage(browser);
 		} 

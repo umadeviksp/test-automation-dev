@@ -41,6 +41,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	static By reminderSelectionLocator;
 	static By fifteenminsReminderLocator;
 	static By doneReminderButtonLocator;
+	static By okButtonLocator;
+	static By upcomingEventsLocator;
 	
 
 
@@ -244,12 +246,22 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
-	public HomePage thenVerifyThatEventWasSuccessful(String sText) {
+	public CreateEventInClassPage clickOnOKButton() {
+		click(okButtonLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	public ClassPage thenVerifyThatEventWasSuccessful(String sText) {
 		System.out.println(getText(successEventMessageLocator));
 		Assert.assertEquals(getText(successEventMessageLocator), sText);
-		return HomePage.getHomePage(browser);
+		return ClassPage.getClassPage(browser);
 	}
 
+	public HomePage clickOnUpcomingEventSection() {
+		click(upcomingEventsLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public static CreateEventInClassPage getCreateEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -292,9 +304,12 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			sendButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
 			editNotifyYesButtonLocator = By.xpath("//*[@id=\"contentDiv\"]/form/div/ul/li[2]/button");
 			
-			reminderSelectionLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[1]/div/div/section[5]/section[3]/label/a");
+			//reminderSelectionLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[1]/div/div/section[5]/section[3]/label\"/a");
+			reminderSelectionLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[1]/div/div/section[5]/section[3]");
 			fifteenminsReminderLocator = By.xpath("//*[@id=\"setAlert\"]/div/div[1]/section/section/div/span[4]/div[1]");
 			doneReminderButtonLocator = By.xpath("//*[@id=\"setAlert\"]/div/nav/a[2]");
+			okButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");
+			upcomingEventsLocator = By.xpath("//section[@ng-repeat='day in eventsCollection.collection']/section[@id='posts_calendarEventsSection']/article/div");
 
 	
 			

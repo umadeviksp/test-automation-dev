@@ -23,6 +23,16 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By likeButtonLocator;
 	static By commentButtonLocator;
 	static By likeTextLocator;
+	static By newClassNameLocator;
+	static By upcomingEventsLocator;
+	static By optionsUpcomingEventLocator;
+	static By deleteUpcomingEventLocator;
+	static By confirmDeleteUpcomingEventLocator;
+	static By eventTitlenameLocator;
+	static By membersTabLocator;
+
+	
+
 	
 	public ClassPage(Browser<?> browser) {
 		super(browser);
@@ -38,16 +48,22 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
-	public ClassPage clickOnMediaTab() {
+	public MediaTabPage clickOnMediaTab() {
 		click(mediaTabLocator);
-		return ClassPage.getClassPage(browser);
+		return MediaTabPage.getMediaTabPage(browser);
 	}
 
-	public ClassPage clickOnUpdatesTab() {
+	public CreateEventInClassPage clickOnUpdatesTab() {
 		click(updatesTabLocator);
-		return ClassPage.getClassPage(browser);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 
+	public MembersTabPage clickOnMembersTab() {
+		click(membersTabLocator);
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+	
+	
 	public CreateEventInClassPage createNewEvent() {
 		clickOnEventButton();
 		clickOnEventDropdown();
@@ -83,9 +99,9 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return ClassPage.getClassPage(browser);
 	}
 
-	public ClassPage clickOnCalendarTab() { 
+	public CalendarTabPage clickOnCalendarTab() { 
 		click(calendarTabLocator);
-		return ClassPage.getClassPage(browser);
+		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
 	public ClassPage clickOnEventButton() {
@@ -109,6 +125,38 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return ClassPage.getClassPage(browser);
 	}
 	
+	public ClassPage thenVerifyClassname(String sText) {
+		System.out.println(getText(newClassNameLocator));
+		Assert.assertEquals(getText(newClassNameLocator), sText);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnUpcomingEvents() {
+		click(upcomingEventsLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage readUpcomingEventTitle(String sText) {
+		System.out.println(getText(eventTitlenameLocator));
+		Assert.assertEquals(getText(eventTitlenameLocator), sText);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnUpcomingEventsOptions() {
+		click(optionsUpcomingEventLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnUpcomingEventDelete() {
+		click(deleteUpcomingEventLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnConfirmUpcomingEventDelete() {
+		click(confirmDeleteUpcomingEventLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
 	
 	
 	public static ClassPage getClassPage(Browser<?> browser) {
@@ -122,6 +170,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			createButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
 			volunteerTabLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[10]");
 			mediaTabLocator = By.xpath("//*[@ng-click=\"setSelected(menu); \"][@data-coachmark=\"Media\"]");
+			membersTabLocator = By.xpath("//*[@id=\"communityMenu_circles\"]/a");
 			updatesTabLocator = By.xpath("//*[@id=\"communityMenu_home\"]/a");
 			createButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
 			createPostButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[2]/div");
@@ -135,6 +184,13 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			likeButtonLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[1]");
 			commentButtonLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[3]");
 			likeTextLocator = By.xpath("//*[@id=\"communityContent\"]/span/section[16]/div[2]/article/footer[1]/ul[1]/li[3]");
+			newClassNameLocator = By.xpath("//*[@id=\"orgHome\"]/div/nav[1]/h1/div");			
+			upcomingEventsLocator = By.xpath("//section[@id='communityContent']//section[@id='posts_calendarEventsSection']/article/div");
+			eventTitlenameLocator = By.xpath("//*[@id='calendarViewControl']/div[1]/section/section[1]/article/div[1]/h2/span");	
+			optionsUpcomingEventLocator = By.xpath("//*[@id='calendarViewControl']/nav/a[2]");
+			deleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[4]/span");
+			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[2]/span");
+						
 			return new WebClassPage(browser);
 		}
 		return null;

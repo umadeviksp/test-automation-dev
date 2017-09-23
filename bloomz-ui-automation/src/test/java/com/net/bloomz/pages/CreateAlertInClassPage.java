@@ -13,6 +13,14 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 	static By titleFieldLocator;
 	static By generalUpdateFieldLocator;
 	static By postButtonLocator;
+	static By toFieldLocator;
+	static By toClassFieldLocator;
+	static By doneButtonLocator;
+	static By alertTitleLocator;
+	static By alertIndicatorLocator;
+	static By optionsButtonLocator;
+	static By deletePostButonLocator;
+	
 
 	public CreateAlertInClassPage(Browser<?> browser) {
 		super(browser);
@@ -33,11 +41,48 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
 	}
 	
-	public CreateAlertInClassPage clickOnPostButton() {
+	public HomePage clickOnPostButton() {
 		click(postButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public CreateAlertInClassPage clickOnToFieldLocator() {
+		click(toFieldLocator);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public CreateAlertInClassPage clickOnToClassFieldLocator() {
+		click(toClassFieldLocator);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public CreateAlertInClassPage clickOnDoneLocator() {
+		click(doneButtonLocator);
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
 	}
 
+	public CreateAlertInClassPage readAlertEventTitle(String sText) {
+		System.out.println(getText(alertTitleLocator));
+		Assert.assertEquals(getText(alertTitleLocator), sText);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public CreateAlertInClassPage thenVerifyAlertMessgae() {
+		System.out.println(getText(alertIndicatorLocator));
+		Assert.assertEquals(getText(alertIndicatorLocator), "Alert");
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public CreateAlertInClassPage clickOnOptionsLocator() {
+		click(optionsButtonLocator);
+		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
+	}
+	
+	public HomePage clickOnDeletePostLocator() {
+		click(deletePostButonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public static CreateAlertInClassPage getCreateAlertInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -50,6 +95,13 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 			titleFieldLocator = By.xpath("//*[@id=\"addPost\"]/div/div[1]/form/div[1]/input");
 			generalUpdateFieldLocator = By.xpath("//*[@id=\"addPost_postData\"]");
 			postButtonLocator = By.xpath("//*[@id=\"addPost\"]/div/nav[1]/a[2]");
+			toFieldLocator = By.xpath("//*[@id=\"addPost\"]/div/div[1]/form/section[1]/div");
+			toClassFieldLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/ul/li/div");
+			doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a");
+			alertTitleLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/p/span[2]");
+			alertIndicatorLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/div[3]/span[1]");
+			optionsButtonLocator = By.xpath("//*[@id='postViewControl']/nav/ng-switch[3]/a");
+			deletePostButonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[1]/span");
 			return new WebCreateAlertInClassPage(browser);
 		}
 		return null;

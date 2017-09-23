@@ -5,8 +5,11 @@ import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.TimeZone;
+
 
 import org.apache.xalan.extensions.ExpressionVisitor;
 import org.openqa.selenium.By;
@@ -24,6 +27,7 @@ import com.net.bloomz.appium.pagefactory.framework.actions.SeleniumActions;
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.appium.pagefactory.framework.config.TimeoutType;
 import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
+
 
 
 
@@ -120,6 +124,20 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		return browser.getActions().getElement(locator).getText();
 	}
 
+	/**
+	 
+	 /**
+	 * Get an attribute.
+	 *
+	 * @param locator
+	 *            the locator
+	 * @return the text
+	 */
+	public String getAttribute(By locator, String sAttribute) {
+		waitForElement(locator);
+		return browser.getActions().getElement(locator).getAttribute(sAttribute);
+	}
+	
 	/**
 	 * Wait for element.
 	 *
@@ -260,6 +278,16 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		return this;
 	}
 
+	public BasePage scrollIntoView(By locator) throws InterruptedException {
+
+		//MobileElement element = (MobileElement) ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
+		WebElement element = browser.getWebDriver().findElement(locator);
+		JavascriptExecutor js = (JavascriptExecutor) (browser.getWebDriver());
+		js.executeScript("arguments[0].scrollIntoView(true);",element);
+		return this;
+	}
+	
+	
 	public WebElement getWebElement(By locator) {
 		return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
 
@@ -297,6 +325,14 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 	}
 
 	public int getElementSize(By locator) {
+		waitForElement(locator);
+		if (getPlatformName().equals("")) {
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		int elementSize = browser.getActions().getElements(locator).size();
 		if (elementSize != 0) {
 			return elementSize;
@@ -366,4 +402,51 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
         
         return dateFormat.format(addedDays);
 	}
+	
+	public void selectDateFromDatePicker(By locator1, By locator2) {
+		
+		//Get Today's number
+        String today = getCurrentDay();
+        System.out.println("Today's number: " + today + "\n");
+ 
+        //Click and open the datepickers
+        browser.getWebDriver().findElement(locator1).click();
+ 
+        //This is from date picker table
+        WebElement dateWidgetFrom = browser.getWebDriver().findElement(locator2);
+ 
+        //This are the rows of the from date picker table
+        //List<WebElement> rows = dateWidgetFrom.findElements(By.tagName("tr"));
+ 
+        //This are the columns of the from date picker table
+        List<WebElement> columns = dateWidgetFrom.findElements(By.tagName("td"));
+ 
+        //DatePicker is a table. Thus we can navigate to each cell
+        //and if a cell matches with the current date then we will click it.
+        for (WebElement cell: columns) {
+ 
+            //Select Today's Date
+            if (cell.getText().equals(today)) {
+                cell.click();
+                break;
+            }
+        }
+	}
+	
+	public String getCurrentDay (){
+        //Create a Calendar Object
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+ 
+        //Get Current Day as a number
+        int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println("Today Int: " + todayInt +"\n");
+ 
+        //Integer to String Conversion
+        String todayStr = Integer.toString(todayInt);
+        System.out.println("Today Str: " + todayStr + "\n");
+ 
+        return todayStr;
+		
+	}
+	
 }

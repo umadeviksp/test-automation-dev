@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.net.bloomz.pages.LandingPage;
 
 
@@ -36,11 +37,11 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		.clickStartDate().clearStartDate().enterStartDate(0, 0, 5).clickCloseCalendar().clickStartTime()
 		.clearStartTime().enterStartTime("10:00 AM").clickEndDate().clearEndDate().enterEndDate(0, 0, 5)
 		.clickCloseCalendar().clearEndTime().enterEndTime("12:00 PM")
-		.clickSaveButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!")
+		.clickSaveButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnEventBubbleButton()
 		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsEdit().enterTitle("Edit an Event")
 		.enterLocation("Edit an event Location").enterNotes("Edit an event with calendar personal and invitees")
 		.clickSendButton().clickOnEditNotifyYes().thenVerifyThatEventWasSuccessful("Event Updated Successfully!")
-		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDelete().clickOnConfirmEventDelete()
+		.clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
 		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
 	}
 	
@@ -55,12 +56,12 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		.clickStartDate().clearStartDate().enterStartDate(0, 0, 3).clickCloseCalendar().clickStartTime()
 		.clearStartTime().enterStartTime("10:00 AM").clickEndDate().clearEndDate().enterEndDate(0, 0, 3)
 		.clickCloseCalendar().clearEndTime().enterEndTime("12:00 PM")
-		.clickSaveButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!")
+		.clickSaveButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnEventBubbleButton()
 		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsEdit()
 		.clickStartDate().clearStartDate().enterStartDate(0, 0, 4).clickCloseCalendar()
 		.clickEndDate().clearEndDate().enterEndDate(0, 0, 4).clickCloseCalendar()
 		.clickSaveButton().thenVerifyThatEventWasSuccessful("Event Updated Successfully!")
-		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDelete().clickOnConfirmEventDelete()
+		.clickOnEventOptions().clickOnEventOptionsDelete().clickOnConfirmEventDelete()
 		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
 	}
 	
@@ -70,13 +71,14 @@ public class FEATURE_Event_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
 	public void createAndPostCommentToAllDayEvent() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickCreateButton().clickOnEventItemButton()
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
+		.clickCreateButton().clickOnEventItemButton()
 		.enterTitle("Create an All Day Event").enterLocation("All Day Event Location").enterNotes("Create an all day event with calendar personal and post a comment")
 		.clickInviteButton().clickOnMyClassesButton().selectFirstClass().clickDoneButton()
 		.clickOnAllDayButton().clickStartDate().clearStartDate().enterStartDate(0, 0, 2).clickCloseCalendar()
 		.clickEndDate().clearEndDate().enterEndDate(0, 0, 2).clickCloseCalendar()
-		.clickSendButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!")
-		.clickOnEventList().enterPostComment().clickOnSendComment().thenVerifyThatCommentWasSuccessful("1 comment")
+		.clickSendButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnEventBubbleButton()
+		.clickOnEventList().enterPostComment().clickOnSendComment().thenVerifyThatCommentWasSuccessful("1 Comments")
 		.clickOnBackButton().clickOnEventList().clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
 		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
 	}
@@ -88,23 +90,24 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickCreateButton().clickOnEventItemButton()
 		.enterTitle("Create an Event with RSVP").enterLocation("Event Location").enterNotes("Create an event with calendar personal and RSVP")
-		.clickInviteButton().clickOnMyClassesButton().selectAllClasses().clickDoneButton()
-		.clickRSVPButton().clickOnReminderButton().selectFifteenMinsReminder().clickOnDoneReminderButton()
+		.clickRSVPButton().clickInviteButton().clickOnMyClassesButton().selectAllClasses().clickDoneButton()
+		.clickOnReminderButton().selectFifteenMinsReminder().clickOnDoneReminderButton()
 		.clickStartDate().clearStartDate().enterStartDate(0, 0, 2).clickCloseCalendar()
 		.clickEndDate().clearEndDate().enterEndDate(0, 0, 2).clickCloseCalendar()
-		.clickSendButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!")
-		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDelete().clickOnConfirmEventDelete()
+		.clickSendButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnEventBubbleButton()
+		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
 		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
 	}
 	
+	//Bug there is no option to create event under community
 	/*
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
-	public void dummy() throws Exception {
+	public void createEventInACommunity() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
-		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
-		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");
-	}
-	*/
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnACommunity().clickOnCalendarTab()
+		.createNewEvent().enterTitle("test title").enterLocation("random location").enterNotes("some notes")
+		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton();
+	}*/
+
 	
 }

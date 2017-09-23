@@ -19,6 +19,8 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 	static By selectFirstClassButtonLocator;
 	static By doneButtonLocator;
 	static By sendButtonLocator;
+	static By successMsgLocator;
+	static By datepickerLocator;
 	
 	public CreatePTCEventInClassPage(Browser<?> browser) {
 		super(browser);
@@ -40,8 +42,19 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 	}
 	
 	public CreatePTCEventInClassPage enterDate() {
-		click(addDateButtonLocator);
-		click(someDateButtonLocator);
+		//click(addDateButtonLocator);
+		selectDateFromDatePicker(addDateButtonLocator, datepickerLocator);
+		//click(someDateButtonLocator);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
+	}
+	
+	public CreatePTCEventInClassPage clearDate() {
+		clearTextBox(addDateButtonLocator);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
+	}
+	
+	public CreatePTCEventInClassPage enterStartDate(Integer iYrs, Integer iMons, Integer iDay) {
+		sendText(addDateButtonLocator,addYearsMonthsDays(iYrs,iMons,iDay));
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
@@ -70,6 +83,10 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
 	}
 	
+	public CreatePTCEventInClassPage thenVerifyThatPTCEventWasSuccessful(String stext) {
+		Assert.assertEquals(getText(successMsgLocator) , stext);
+		return CreatePTCEventInClassPage.getCreatePTCEventInClassPage(browser);
+	}
 	public static CreatePTCEventInClassPage getCreatePTCEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -88,6 +105,9 @@ public class CreatePTCEventInClassPage extends BasePage implements CreatePTCEven
 			selectFirstClassButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[1]/section/div/h2/button/span[2]");
 			doneButtonLocator = By.xpath("//*[@ng-click=\"applyCommit()\"]");
 			sendButtonLocator = By.xpath("//*[@ng-click=\"addPTEvent()\"]");
+			successMsgLocator = By.xpath("//*[@id=\"calendarViewControl\"]/div[1]/section/section[1]/h1[1]/span[1]");
+			datepickerLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody");
+					//*[@id="calendarViewControl"]/div[1]/section/section[1]/h1[1]/span[1]
 			return new WebCreatePTCEventInClassPage(browser);
 		}
 		return null;

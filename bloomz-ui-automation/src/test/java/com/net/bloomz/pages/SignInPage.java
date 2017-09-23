@@ -47,7 +47,8 @@ public class SignInPage extends BasePage implements SignPageActions {
 
 		return null;
 	}
-
+	
+	
 	public static SignInPage getSignInPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);

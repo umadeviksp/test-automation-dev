@@ -29,6 +29,11 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 	static By exitNumberOfTimesScreenButtonLocator;
 	static By rsvpButtonLocator;
 	static By saveButtonLocator;
+	static By nextButtonLocator;
+	static By next2ButtonLocator;
+	static By messageFieldLocator;
+	static By sendButtonLocator;
+	static By successEventMessageLocator;
 	
 	public CreateVolunteerInClassPage(Browser<?> browser) {
 		super(browser);
@@ -134,6 +139,34 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
 	}
 	
+	public CreateVolunteerInClassPage clickNextButton() {
+		click(nextButtonLocator);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
+	}
+	
+	
+	public CreateVolunteerInClassPage clickNext2Button() {
+		click(next2ButtonLocator);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
+	}
+	
+	public CreateVolunteerInClassPage enterMessage(String sMessage) {
+		sendText(messageFieldLocator, sMessage);
+		return CreateVolunteerInClassPage.getCreateVolunteerInClassPage(browser);
+	}
+	
+	
+	public ClassPage clickSendButton() {
+		click(sendButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public HomePage thenVerifyVolunteerEventWasSuccessful(String sText) {
+		System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public static CreateVolunteerInClassPage getCreateVolunteerInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -142,26 +175,37 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 		} else if (string.equals(".iOS")) {
 			
 		} else {
-			needItemsButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/section/ul/li[1]/a");
-			itemNameBoxLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/div/section/label/span/input[1]");
-			needPeopleButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/section/ul/li[2]/a");
-			taskBoxLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/div/div/section/div[2]/section/label/span/input[1]");
-			titleBoxLocator = By.id("addEvent_eventTitle");
-			locationBoxLocator = By.id("addEvent_eventLocation");
+			needItemsButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/div/div/section/section/ul/li[1]/a");
+			needItemsButtonLocator = By.xpath("//section[@class='taskFooter']//div[@class='addAnotherItem']") ;
+			itemNameBoxLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/div/div/section/div/section/label/span/input[1]");
+			needPeopleButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/div/div/section/section/ul/li[2]/a");
+			taskBoxLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/div/div/section/div[2]/section/label/span/input[1]");
+			titleBoxLocator = By.xpath("//form[@name='editEventForm']//div//div/div[3]//section[@class='formLayout']//section[@class='autoSuggest']//label//div//input[@id='addEvent_eventTitle']");
+			locationBoxLocator = By.xpath("//form[@name='editEventForm']//div//div/div[3]//section[@class='formLayout']//section[2]//label//input[@id='addEvent_eventLocation']");
 			notesBoxLocator = By.id("addEvent_eventNotes");
-			startDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106645\"]");
-			startDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[6]/td[2]");
-			endDateBoxLocator = By.xpath("//*[@id=\"splitDateTime_date_1501528106647\"]");
-			endDateButtonLocator = By.xpath("//*[@id=\"CalendarControl\"]/table/tbody/tr[8]/td[2]/a");
-			repeatButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[5]/section[1]/label/a");
-			repeatWeeklyButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/div[1]/section/section/div/div[2]");
-			exitRepeatScreenButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[3]/a");
-			endRepeatButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[5]/section[2]/label/span");
+			startDateBoxLocator = By.xpath("//*[@id='splitDateTime_date_1501528106645']");
+			startDateButtonLocator = By.xpath("//*[@id='CalendarControl']/table/tbody/tr[6]/td[2]");
+			endDateBoxLocator = By.xpath("//*[@id='splitDateTime_date_1501528106647']");
+			endDateButtonLocator = By.xpath("//*[@id='CalendarControl']/table/tbody/tr[8]/td[2]/a");
+			//repeatButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/section[5]/section[1]/label/a");
+			repeatButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[2]/div/div/div[3]/section[3]/section[3]/label/a");
+			repeatWeeklyButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/div[1]/section/section/div/div[2]");
+			exitRepeatScreenButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/nav[3]/a");
+			//endRepeatButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/section[5]/section[2]/label/span");
+			endRepeatButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form[2]/div/div/div[3]/section[3]/section[4]/label/a");
 			afterNumberOfTimesButtonLocator = By.id("occurrenceInput");
 			numberOfTimesBoxLocator = By.id("occurrenceInput");
-			exitNumberOfTimesScreenButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[4]/a");
-			rsvpButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form/div/div/section[6]/section[2]/div/label");
-			saveButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
+			exitNumberOfTimesScreenButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/nav[4]/a");
+			rsvpButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/form/div/div/section[6]/section[2]/div/label");
+			saveButtonLocator = By.xpath("//*[@id='addUpdateEvent']/div/nav[1]/a[2]");
+			nextButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
+			next2ButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a[2]");
+			messageFieldLocator = By.xpath("//*[@id='ptInvite_message']");
+			//*[@id="//*[@id="ptInvite_message"]"]
+			sendButtonLocator = By.xpath("//div[@id='addPost']//a[@class='nextButton']");
+			successEventMessageLocator = By.id("toast");
+			
+			//*[@id="addPost"]/div/nav/a[2]
 			return new WebCreateVolunteerInClassPage(browser);
 		}
 		return null;

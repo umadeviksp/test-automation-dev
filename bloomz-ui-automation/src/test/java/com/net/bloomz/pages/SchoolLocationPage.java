@@ -10,6 +10,8 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 	
 	static By schoolLocator;
 	static By schoolSearchEditTextLocator;
+	static By selectCommunityLocator;
+	static By doneButtonLocator;
 
 	public SchoolLocationPage(Browser<?> browser) {
 		super(browser);
@@ -25,6 +27,8 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 		} else {
 			schoolLocator = By.xpath("//*[@id=\"activityTypes\"]/div/div/form/section/div/section/section[1]/span[1]");
 			schoolSearchEditTextLocator = By.xpath("//*[@id=\"pickLocationId\"]");
+			selectCommunityLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/section/div/button");
+			doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav/a[2]");
 			return new WebSchoolLocationPage(browser);
 		}
 		return null;
@@ -38,6 +42,16 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 	public SchoolLocationPage enterSchoolSearch(String schoolName) {
 		sendText(schoolSearchEditTextLocator, schoolName);
 		return this;
+	}
+	
+	public SchoolLocationPage clickOnSchoolCommunity() {
+		click(selectCommunityLocator);
+		return SchoolLocationPage.getSchoolLocationPage(browser);
+	}
+	
+	public CreateClassPage clickOnDone() {
+		click(doneButtonLocator);
+		return CreateClassPage.getCreateClassPage(browser);
 	}
 
 }
