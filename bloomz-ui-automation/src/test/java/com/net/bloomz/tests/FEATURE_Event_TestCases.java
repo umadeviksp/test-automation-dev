@@ -25,7 +25,7 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).thenVerifySignInAndCreateButtonsShouldBeDisplayed();
 	}
 	
-	
+	/*
 	//Create a Event for Personal calendar with Start and End, inviting a contact 
 	//and editing an event title, Location and Notes
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -97,7 +97,7 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		.clickSendButton().thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnEventBubbleButton()
 		.clickOnEventList().clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
 		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
-	}
+	}*/
 	
 	//Bug there is no option to create event under community
 	/*
@@ -108,6 +108,8 @@ public class FEATURE_Event_TestCases extends BaseTest {
 		.createNewEvent().enterTitle("test title").enterLocation("random location").enterNotes("some notes")
 		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton();
 	}*/
+	
+	
 
 	
 }
