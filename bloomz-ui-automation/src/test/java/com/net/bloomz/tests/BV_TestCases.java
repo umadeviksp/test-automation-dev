@@ -16,7 +16,7 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-	/*
+	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -255,7 +255,7 @@ public class BV_TestCases extends BaseTest {
 		CreateMessagePage.getCreateMessagePage(browser).clickOnBackButton()
 		.clickOnFirstMessageInTray().clickOnOptionsButton().clickOnDeleteMessageButton().clickOnDeleteButton();
 	}
-	*/
+	
 	
 	// Scroll up and down the Home feed
 	// 7.1 Verify the Teacher (account with multiple posts) is able to scroll up and down the Home screen
