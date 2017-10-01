@@ -12,6 +12,7 @@ public class CalendarTabPage extends BasePage {
 	static By calendarEventsLocator;
 	static By calendarTodayLocator;
 	static By calendarSomeDayLocator;
+	static By calendarUpLocator;
 
 	public CalendarTabPage(Browser<?> browser) {
 		super(browser);
@@ -27,7 +28,9 @@ public class CalendarTabPage extends BasePage {
 		} else {
 			calendarEventsLocator = By.xpath("//*[@ng-show=\"day.calendarEntries.length>=0\"]");
 			calendarTodayLocator = By.xpath("//*[@id='communityContent']/div/section[1]/article/h2");
-			calendarSomeDayLocator = By.xpath("//*[@id='calendarList']/section[55]/article/h2");
+			calendarUpLocator = By.xpath("//*[@id='calendarList']/section[2]/article/h2");
+			calendarSomeDayLocator = By.xpath("//*[@id='calendarList']/section[12]/article/h2");
+			//*[@id="calendarList"]/section[12]/article/h2
 			return new WebMyCalendarTabPage(browser);
 		}
 		return null;
@@ -43,26 +46,28 @@ public class CalendarTabPage extends BasePage {
 		return MembersTabPage.getMembersTabPage(browser);
 	}
 	
-	public CalendarTabPage ScrollDownHomeFeed() throws InterruptedException {
+	public CalendarTabPage ScrollDownCalendarFeed() throws InterruptedException {
 		scrollIntoView(calendarSomeDayLocator);
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
+	
 	public CalendarTabPage thenVerifyScrollDown(String sText) {
 		
+		System.out.println(addYearsMonthsDays(0,0,53));
 		System.out.println(getText(calendarSomeDayLocator));
 		Assert.assertEquals(getText(calendarSomeDayLocator), sText);
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
-	public CalendarTabPage ScrollUpHomeFeed() throws InterruptedException {
-		scrollIntoView(calendarTodayLocator);
+	public CalendarTabPage ScrollUpCalendarFeed() throws InterruptedException {
+		scrollIntoView(calendarUpLocator);
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
 	public CalendarTabPage thenVerifyScrollUp(String sText) {
-		System.out.println(getText(calendarTodayLocator));
-		Assert.assertEquals(getText(calendarTodayLocator), sText);
+		System.out.println(getText(calendarUpLocator));
+		Assert.assertEquals(getText(calendarUpLocator), sText);
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	

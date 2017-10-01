@@ -15,6 +15,8 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 	static By saveButtonLocator;
 	static By classNameEditTextLocator;
 	static By roomParentButtonLocator;
+	//static By schoolPickLocator;
+	//static By schoolTextLocator;
 
 	public CreateClassPage(Browser<?> browser) {
 		super(browser);
@@ -28,10 +30,13 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 		} else if (string.equals(".iOS")) {
 			
 		} else {
-			chooseSchoolButtonLocator = By.xpath("//*[@id=\"createGroup\"]/div/div/form/div[2]/section[1]/section");
+			//chooseSchoolButtonLocator = By.xpath("//*[@id=\"createGroup\"]/div/div/form/div[2]/section[1]/section");
+			chooseSchoolButtonLocator = By.xpath("//*[@id='createGroup']//span[@class='linkControl drillDown']");
 			saveButtonLocator = By.xpath("//*[@id=\"createGroup\"]/div/nav/ng-switch[3]/a");
-			classNameEditTextLocator = By.id("groupName");
+			classNameEditTextLocator = By.id("groupName");			
 			roomParentButtonLocator  =By.xpath("//*[@id=\"createGroup\"]/div/div/form/div[2]/div[3]/section/div/div[2]");
+			//schoolTextLocator = By.xpath("//*[@id='pickLocationId']lickOnchooseSchoolButtonLocator");
+			//schoolPickLocator = By.xpath("//*[@id='activityTypes']/div/div/form/section/div/section/section[1]/span/h2");
 			return new WebCreateClassPage(browser);
 		}
 		return null;
@@ -41,6 +46,7 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 		click(chooseSchoolButtonLocator);
 		return SchoolLocationPage.getSchoolLocationPage(browser);	
 	}
+	
 	
 	public CreateClassPage enterClassName(String fName) {
 		sendText(classNameEditTextLocator, fName);

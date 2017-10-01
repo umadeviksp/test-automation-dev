@@ -13,6 +13,7 @@ import com.net.bloomz.pages.web.WebLandingPage;
 public class CreateAccountPage extends BasePage implements CreateAccountPageActions {
 	
 	static By createNewClassGroupLocator;
+	static By JoinAClassGroupLocator;
 
 	public CreateAccountPage(Browser<?> browser) {
 		super(browser);
@@ -21,6 +22,11 @@ public class CreateAccountPage extends BasePage implements CreateAccountPageActi
 	public GroupPage clickOnCreateNewClassGroup() {
 		click(createNewClassGroupLocator);
 		return GroupPage.getGroupPage(browser); 
+	}
+	
+	public InvitePage clickOnJoinAClassGroup() {
+		click(JoinAClassGroupLocator);
+		return InvitePage.getInvitePage(browser); 
 	}
 
 	public static CreateAccountPage getCreateAccountPage(Browser<?> browser) {
@@ -33,6 +39,7 @@ public class CreateAccountPage extends BasePage implements CreateAccountPageActi
 			
 		} else {
 			createNewClassGroupLocator = By.xpath("//*[@ng-click=\"launchCreateGroupClassScreen()\"]");
+			JoinAClassGroupLocator = By.xpath("//*[@ng-click=\"launchInviteCodeScreen()\"]");
 			
 			return new WebCreateAccountPage(browser);
 		}

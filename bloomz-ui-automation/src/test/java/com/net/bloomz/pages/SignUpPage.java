@@ -1,6 +1,7 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidSignUpPage;
@@ -15,6 +16,7 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 	static By emailEditTextLocator;
 	static By passwordEditTextLocator;
 	static By signUpButtonLocator;
+	static By signUpSheetLocator;
 	static By termsLinkLocator;
 	static By backButtonLocator;
 	static By roomParentButtonLocator;
@@ -45,6 +47,7 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 			emailEditTextLocator = By.id("signup_email");
 			passwordEditTextLocator = By.id("signup_password");
 			signUpButtonLocator = By.xpath("//*[@ng-click=\"verifyAndSignUp(signup)\"]");
+			signUpSheetLocator = By.xpath("//*[@id='volunteer_addEventQuickLink']");
 			termsLinkLocator = By.xpath("//*[@ng-click=\"$emit('showAddToStack-terms');\"]");
 			backButtonLocator = By.xpath("//*[@ ng-click=\"leftButtonClickCallback()\"]");
 			roomParentButtonLocator = By.xpath("//*[@id=\"signUpScreen\"]/div/div/form/div[2]/section/div/div[2]");
@@ -87,6 +90,13 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 		click(signUpButtonLocator);
 		return HomePage.getHomePage(browser);
 	}
+	
+	public HomePage thenVerifySignupButton() {
+		Assert.assertTrue(getElementSize(signUpSheetLocator) > 0, "Signup button is not displayed");
+		return HomePage.getHomePage(browser);
+	}
+	
+	
 
 }
 

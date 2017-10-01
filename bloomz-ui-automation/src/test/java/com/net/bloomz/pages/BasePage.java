@@ -5,13 +5,17 @@ import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 
 
-import org.apache.xalan.extensions.ExpressionVisitor;
+
+
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,6 +27,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.net.bloomz.appium.pagefactory.framework.actions.SeleniumActions;
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.appium.pagefactory.framework.config.TimeoutType;
@@ -31,6 +38,17 @@ import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
 
 
 
+
+
+
+
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 //Uma added
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -39,6 +57,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+
+import javax.net.ssl.HttpsURLConnection;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -447,6 +467,53 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
  
         return todayStr;
 		
+	}
+	
+	public BasePage ReadJson()	{
+		
+		//String sURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=pop@pop.pop&action=getDetails"; //just a string
+		String sURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=test_24-sep-2017-8-03-22-pm@test.com&action=getDetails";
+		String myStr ;
+
+		sURL = "https://app-staging.bloomz.net/api/admin/updateuser";
+		
+		try {
+			// Connect to the URL using java's native library
+			String login ="achaks@gmail.com";
+			String password="bloomz999";
+			String loginPassword = login+ ":" + password;
+			
+			String encoded = Base64.getEncoder().encodeToString(loginPassword.getBytes()) ;
+			System.out.println(encoded);
+			URL url = new URL(sURL);
+			HttpURLConnection request = (HttpURLConnection) url.openConnection();
+			request.setRequestProperty ("Authorization", "Basic " + encoded);
+			request.connect();			
+			
+		       InputStream xmlInputStream =request.getInputStream();
+		        byte[] testByteArr = new byte[xmlInputStream.available()];
+		        xmlInputStream.read(testByteArr);
+		        System.out.println(new String(testByteArr)); 
+
+			
+
+			// Convert to a JSON object to print data
+			JsonParser jp = new JsonParser(); //from gson
+			JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
+			JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
+			myStr = rootobj.get("primaryemail").getAsString(); //just grab the text
+			System.out.println(myStr);
+			myStr = rootobj.get("createdtime").getAsString(); //just grab the text
+			System.out.println(myStr);
+			myStr = rootobj.get("invitatio2ncode").getAsString(); //just grab the text
+			System.out.println(myStr);
+			myStr = rootobj.get("userregistrationstatus").getAsString(); //just grab the text
+			System.out.println(myStr);
+		} catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		return this ;		
 	}
 	
 }

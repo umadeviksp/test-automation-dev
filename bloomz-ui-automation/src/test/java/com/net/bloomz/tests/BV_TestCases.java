@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.net.bloomz.pages.BasePage;
 import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
@@ -16,7 +17,8 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-	/*
+	
+		
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -42,6 +44,7 @@ public class BV_TestCases extends BaseTest {
 		.thenVerifyProfileName("Alpha Teacher").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
+		
 	// Sign Up - Teacher
 	// 4.1 Verify that a new user (no Invitation) can sign up as a Teacher
 	@Test(groups = { "android", "ios", "web", "BVT0401" })
@@ -50,20 +53,24 @@ public class BV_TestCases extends BaseTest {
 		.enterFirstName("test").enterLastName("bloomz")
 		.enterEmailId("test_" + getTimeStamp().replaceAll("-", "_") + "@test.com").enterPassword("bloomz999")
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test bloomz")
-		.clickOnSettingButton().clickOnSignOutButton();
+		.thenVerifyWelcomeScreen().clickOnSettingButton().clickOnSignOutButton();
 	}
+	
+	
+	
 	
 	// FRE - Teacher
 	// 4.2 Verify the New Teacher FRE - No Invitation
-	// cleanup to delete class should be added
 	@Test(groups = { "android", "ios", "web", "BVT0402" })
 	public void BVT_04_2_testSignUpAsATeacherFRE() throws Exception {
 		String sClassName = "test_" + getTimeStamp().replaceAll("-", "_");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
-		.clickOnSaveButtonLocator().thenVerifyClassname(sClassName).clickOnASecondClassName()
-		.clickOnMembersTab().clickOnMembersManageButton().clickOnMembersGeneralTab().clickOnDeleteClass().clickOnDeleteClassConfirm();	
+		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
+		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
+		.clickOnMembersGeneralTab().clickOnDeleteClass();	
 	}		
+	
 	
 	// Sign Up - Room Parent
 	// 4.4 Verify that new user can sign up as the Room parent with no invitation code
@@ -128,8 +135,17 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyMessagesShouldNotBeNull()
 		.clickOnFirstMessageInTray().clickOnOptionsButton().clickOnDeleteMessageButton().clickOnDeleteMessageButton();
-	}	
-		
+	}
+	
+	
+	// 5.4 Verify an existing Teacher (account with Volunteer Asks in the class) is able to load the Volunteer Asks screen
+	@Test(groups = { "android", "ios", "web", "BVT0504" })
+	public void BVT_05_4_testSignupssOnMainFeedForExistingAccount() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMySignupsTab().thenVerifySignupButton();
+	}
+	
+	
 	// Contacts screen loading
 	// 5.5 Verify an existing Teacher (account with contacts) is able to load the Contacts screen
 	@Test(groups = { "android", "ios", "web", "BVT0505" })
@@ -138,12 +154,33 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyContactsTab().thenVerifyContactsShouldNotBeNull();
 	}	
 	
+	
 	// 
 	@Test(groups = { "android", "ios", "BVT0601" })
 	public void testBackgroundingForegroundingApp() throws Exception {
 		// needs to be implemented
 		// mobile only
 	}
+	
+	// Scroll up and down the Home feed
+	// 7.1 Verify the Teacher (account with multiple posts) is able to scroll up and down the Home screen
+	@Test(groups = { "android", "ios", "web", "BVT0701" })
+	public void BVT_07_1_testScrollUpDownHomeFeed() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().ScrollDownHomeFeed().thenVerifyScrollDown("support site")
+		.ScrollUpHomeFeed().thenVerifyScrollUp("Welcome to Bloomz");
+	}
+	
+	
+	// Scroll up and down the Calendar feed
+	// 7.2 Verify the Teacher (account with multiple posts) is able to scroll up and down the Calendar screen
+	@Test(groups = { "android", "ios", "web", "BVT0702" })
+	public void BVT_07_2_testScrollUpDownCalendarFeed() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab().ScrollDownCalendarFeed()
+		.ScrollUpCalendarFeed().thenVerifyScrollUp("Today");
+	}	
+	
 	
 	// Launching the Class from left nav
 	// 8.1 Verify the Teacher ( existing account which has class created and data in the class) is able to launch his class from the left nav
@@ -207,8 +244,10 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_10_1_createEventWithInviteesInAClass() throws Exception {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab()
-		.createNewEvent().enterTitle(sTitle).enterLocation("random location").enterNotes("some notes")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab();
+		
+		CreateEventInClassPage.getCreateEventInClassPage(browser).createNewEvent()		
+		.enterTitle(sTitle).enterLocation("random location").enterNotes("some notes")
 		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton().clickOnOKButton()
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnUpdatesTab().clickOnUpcomingEventSection()
 		.clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
@@ -255,24 +294,45 @@ public class BV_TestCases extends BaseTest {
 		CreateMessagePage.getCreateMessagePage(browser).clickOnBackButton()
 		.clickOnFirstMessageInTray().clickOnOptionsButton().clickOnDeleteMessageButton().clickOnDeleteButton();
 	}
-	*/
+		
 	
-	// Scroll up and down the Home feed
-	// 7.1 Verify the Teacher (account with multiple posts) is able to scroll up and down the Home screen
-	@Test(groups = { "android", "ios", "web", "BVT0701" })
-	public void BVT_07_1_testScrollUpDownHomeFeed() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().ScrollDownHomeFeed().thenVerifyScrollDown("support site")
-		.ScrollUpHomeFeed().thenVerifyScrollUp("Welcome to Bloomz");
-	}	
+		
+	// Parent sign up with Class Access Code - Class with B/P ON
+	// 11.1 Verify the parent is able to sign up with class access code and is able to pick the student from the list
+	@Test(groups = { "android", "ios", "web", "BVT1101" })
+	public void BVT_11_1_SignUpWithExistingChild() throws Exception {
+		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
+		sEMail = sEMail.toLowerCase();
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("JKFVXZ")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickOnNext().selectTestChildName().clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
+	}
 	
-	// Scroll up and down the Calendar feed
-	// 7.1 Verify the Teacher (account with multiple posts) is able to scroll up and down the Calendar screen
-	@Test(groups = { "android", "ios", "web", "BVT0702" })
-	public void BVT_07_2_testScrollUpDownCalendarFeed() throws Exception {
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab().ScrollDownHomeFeed().thenVerifyScrollDown("support site")
-		.ScrollUpHomeFeed().thenVerifyScrollUp("Welcome to Bloomz");
-	}	
 	
+	// Parent sign up with Class Access Code - Class with B/P ON
+	// 11.2 Verify the parent is able to sign up with class access code and is able to add a student
+	@Test(groups = { "android", "ios", "web", "BVT1102" })
+	public void BVT_11_2_SignUpWithNewChild() throws Exception {
+		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
+		sEMail = sEMail.toLowerCase();
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("JKFVXZ")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickOnNext().selectAddYourChild().enterChildFirstName("testChild" + getTimeStamp()).clickOnAddClass().clickOnJoinClass()
+		.thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
+	}
+	
+	
+	// Parent sign up with Class Access Code - Class with no B/P
+	// 11.3 Verify the parent is able to sign up with class access code and is able to add the child info while joining
+	@Test(groups = { "android", "ios", "web", "BVT1102" })
+	public void BVT_11_2_SignUpWithNewChildBPOFF() throws Exception {
+		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
+		sEMail = sEMail.toLowerCase();
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("B6SEH9")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
+		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
+	}
+	
+		
 }

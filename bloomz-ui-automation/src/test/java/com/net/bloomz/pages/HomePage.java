@@ -48,7 +48,12 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By scrollHomeLocator;
 	static By scrollDownSupportLocator;
 	static By scrollUpWelcomeLocator;
-	
+	static By signupsTabLocator;
+	static By welcomeMessageLocator;
+	static By createClassWelcomeLocator;
+	static By tourWelcomeLocator;
+	static By feedLocator;
+	static By membersTabLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -100,10 +105,20 @@ public class HomePage extends BasePage implements HomePageActions {
 		return ContactsTabPage.getContactsTabPage(browser);
 	}
 	
+	public SignUpPage clickOnMySignupsTab() {
+		click(signupsTabLocator);
+		return SignUpPage.getSignUpPage(browser);
+	}
+	
 	@Override
 	public CreateMessagePage clickOnMyMessageButton() {
 		click(messageButtonLocator);
 		return CreateMessagePage.getCreateMessagePage(browser);
+	}
+
+	public MembersTabPage clickOnMembersTab() {
+		click(membersTabLocator);
+		return MembersTabPage.getMembersTabPage(browser);
 	}
 
 	@Override
@@ -146,6 +161,12 @@ public class HomePage extends BasePage implements HomePageActions {
 		Assert.assertTrue(getElementSize(postUpdateCards) > 3, "This account doesn't contain posts");
 		return HomePage.getHomePage(browser);
 	}
+	
+
+	public HomePage thenVerifyMainFeed() {
+		Assert.assertTrue(getElementSize(feedLocator) > 0, "Home Feed is not visible");
+		return HomePage.getHomePage(browser);
+	}
 
 	public HomePage thenVerifyCreateButtonShouldBeDisplayed() {
 		waitForElement(createButtonLocator);
@@ -172,7 +193,8 @@ public class HomePage extends BasePage implements HomePageActions {
 	}*/
 	
 	public ClassPage clickOnAClassName() {
-		click(classNameLocator);
+//		click(classNameLocator);
+		ReadJson();
 		return ClassPage.getClassPage(browser);
 	}
 	
@@ -285,6 +307,13 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	public HomePage thenVerifyWelcomeScreen() {
+		Assert.assertEquals(getText(welcomeMessageLocator), "Welcome to Bloomz");
+		Assert.assertEquals(getText(createClassLocator), "Create a Class");
+		Assert.assertEquals(getText(tourWelcomeLocator), "Take Quick Tour");
+		return HomePage.getHomePage(browser);
+	}
+	
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -338,7 +367,12 @@ public class HomePage extends BasePage implements HomePageActions {
 			scrollHomeLocator = By.xpath("//*[@id='posts']/div[7]");
 			scrollDownSupportLocator = By.xpath("//*[@id='postsList']/div[2]/ul/li[2]/a");
 			scrollUpWelcomeLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/div/h2");
-			
+			signupsTabLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftSignups\"]");
+			welcomeMessageLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/div/h2");
+			//createClassWelcomeLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/ul/li[4]/a");
+			tourWelcomeLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/ul/li[3]/a");
+			feedLocator = By.xpath("//*[@id='communityScrollView']/h1/span[1]/div");
+			membersTabLocator = By.xpath("//*[@id='communityMenu_circles']/a");
 			
 			return new WebHomePage(browser);
 		} 

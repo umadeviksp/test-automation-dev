@@ -43,6 +43,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	static By doneReminderButtonLocator;
 	static By okButtonLocator;
 	static By upcomingEventsLocator;
+	static By eventButtonLocator;
+	static By eventDropdownLocator;
 	
 
 
@@ -262,6 +264,12 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 		return HomePage.getHomePage(browser);
 	}
 	
+	public CreateEventInClassPage createNewEvent() {
+		click(eventButtonLocator);
+		click(eventDropdownLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
 	public static CreateEventInClassPage getCreateEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -289,6 +297,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			saveButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
 			calendarListLocator = By.xpath("//*[@id=\"addEvent_calendarSwitcher\"]/section/label/a");
 			allDayLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[1]/div/div/section[4]/section[1]/div/label");
+			eventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
+			eventDropdownLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[9]");
 			
 			calendarPersonalLocator = By.xpath("//*[@id=\"calendarPicker\"]/div/div/div/section/section/div/section[1]/div/h2/button/span");
 			backButtonLocator = By.id("calendarPicker_profileBack");

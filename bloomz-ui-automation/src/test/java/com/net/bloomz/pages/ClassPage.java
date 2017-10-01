@@ -1,11 +1,21 @@
 package com.net.bloomz.pages;
 
+import java.io.BufferedReader;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.net.URL;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonIOException;
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.ClassPageActions;
 import com.net.bloomz.pages.web.WebClassPage;
+
 
 public class ClassPage extends BasePage implements ClassPageActions {
 	
@@ -69,6 +79,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		clickOnEventDropdown();
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
+	
 	
 	public CreatePostInClassPage createNewPost() {
 		clickOnCreateButton();
@@ -156,6 +167,35 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		click(confirmDeleteUpcomingEventLocator);
 		return ClassPage.getClassPage(browser);
 	}
+	
+	public static String readResponse(Reader rd) throws IOException {
+	    StringBuilder sb = new StringBuilder();
+	    int cp;
+	    while ((cp = rd.read()) != -1) {
+	        sb.append((char) cp);
+	    }
+	    return sb.toString();
+	}
+	/*
+	public static JsonArray readJsonFromURL(String url) throws IOException, JsonIOException {
+	    InputStream is = new URL(url).openStream();
+	    Reader rd1 = null ;
+	    BufferedReader rd = new BufferedReader(rd1, 0) ;
+	    String jsonText = readResponse(rd);
+	    // System.out.println("response: " + jsonText);
+	    JsonArray jsonData = new JsonArray();
+	//    jsonData.
+	    is.close();
+	    return jsonData;
+
+	}	
+	public ClassPage testFunc1()throws IOException, JsonIOException {
+		JsonArray responseText ;
+		responseText = readJsonFromURL( "https://app-staging.bloomz.net/api/admin/updateuser?email=test_24-sep-2017-8-03-22-pm@test.com&action=getDetails");
+		return ClassPage.getClassPage(browser);
+	}
+	*/
+	
 	
 	
 	

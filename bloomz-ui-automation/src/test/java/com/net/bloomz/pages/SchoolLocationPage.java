@@ -44,9 +44,10 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 		return this;
 	}
 	
-	public SchoolLocationPage clickOnSchoolCommunity() {
+	public CreateClassPage clickOnSchoolCommunity() {
+		//*[@id="activityTypes"]/div/div/form/section/div/section/section[1]/span/h2
 		click(selectCommunityLocator);
-		return SchoolLocationPage.getSchoolLocationPage(browser);
+		return CreateClassPage.getCreateClassPage(browser);
 	}
 	
 	public CreateClassPage clickOnDone() {
