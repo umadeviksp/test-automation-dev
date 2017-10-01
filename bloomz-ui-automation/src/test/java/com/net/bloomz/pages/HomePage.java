@@ -193,8 +193,8 @@ public class HomePage extends BasePage implements HomePageActions {
 	}*/
 	
 	public ClassPage clickOnAClassName() {
-//		click(classNameLocator);
-		ReadJson();
+		click(classNameLocator);
+//		ReadJson();
 		return ClassPage.getClassPage(browser);
 	}
 	
