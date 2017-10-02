@@ -168,8 +168,8 @@
 			<version>1.4</version>
 		</dependency>
     <dependency>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-testng</artifactId>
+        <groupId>ru.yandex.qatools.allure</groupId>
+        <artifactId>allure-testng-adaptor</artifactId>
         <version>${allure.version}</version>
         <scope>test</scope>
     </dependency>
