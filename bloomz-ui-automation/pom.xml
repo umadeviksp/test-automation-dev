@@ -208,7 +208,7 @@
 					</properties>
 					<reportsDirectory>test-output/</reportsDirectory>
 					<!-- <reportsDirectory>${test.report.path}/${timestamp-with-seconds}</reportsDirectory> -->
-					<testFailureIgnore>false</testFailureIgnore>
+					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 				<executions>
 					<execution>
@@ -362,7 +362,7 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.14</version>
 					<configuration>
-						<testFailureIgnore>false</testFailureIgnore>
+						<testFailureIgnore>true</testFailureIgnore>
 						<argLine>
 							-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
 						</argLine>
