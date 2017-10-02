@@ -36,7 +36,6 @@ public class CalendarSettingsPage extends BasePage implements CalendarSettingsPa
 	}
 
 	public CalendarSettingsImportCalendarPage clickOnImportCalendarButton() {
-		browser.getWebDriver().findElements(calendarListLocator).size() ;
 		click(importCalendarButtonLocator);
 		return CalendarSettingsImportCalendarPage.getCalendarSettingsImportCalendarPage(browser);
 	}

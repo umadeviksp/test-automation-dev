@@ -28,7 +28,9 @@ public class InvitePage extends BasePage implements InvitePageActions {
 	static By addClassButtonLocator;
 	static By addChildFNameLocator;
 	static By addChildLNameLocator;
-	
+	static By classNameTextLocator;
+	static By gmailButtonLocator;
+	static By continueButtonLocator;
 
 	public InvitePage(Browser<?> browser) {
 		super(browser);
@@ -119,6 +121,15 @@ public class InvitePage extends BasePage implements InvitePageActions {
 		return InvitePage.getInvitePage(browser); 
 	}
 	
+	
+	public InvitePage selectAnyOneClass() {
+		click(classNameTextLocator);
+		return InvitePage.getInvitePage(browser);
+	}
+	
+	
+	
+
 	public static InvitePage getInvitePage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -144,11 +155,13 @@ public class InvitePage extends BasePage implements InvitePageActions {
 			addClassButtonLocator = By.xpath("//*[@id='contentDiv']//button[@class='ng-binding']");
 			addChildFNameLocator = By.xpath("//*[@name = 'Child_Information']//input[@ng-model = 'child.firstName']");
 			addChildLNameLocator = By.xpath("//*[@name = 'Child_Information']//input[@ng-model = 'child.lastName']");
+			classNameTextLocator = By.xpath("//*[@ng-bind=\"groupEntry.displayName\"]");
+
 		
 			return new WebInvitePage(browser);
 		}
 		return null;
 	}
-	
+
 
 }

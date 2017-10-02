@@ -1,6 +1,7 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidChangePasswordPage;
@@ -15,6 +16,10 @@ public class ChangePasswordPage extends BasePage implements ChangePasswordPageAc
 	static By oldPasswordTextLocator = null;
 	static By newPasswordTextLocator = null;
 	static By showPasswordButtonLocator = null;
+	static WebElement tempWebElement = null;
+	static String oldPasswordType = null;
+	static String newPasswordType = null;
+	static Boolean passwordHidden = true ;
 
 	public ChangePasswordPage(Browser<?> browser) {
 		super(browser);
@@ -42,6 +47,71 @@ public class ChangePasswordPage extends BasePage implements ChangePasswordPageAc
 
 	public ChangePasswordPage clickShowHidePassword() {
 		click(showPasswordButtonLocator);
+		return this;
+	}
+
+	public ChangePasswordPage verifyShowHidePassword() {
+		// check if oldPasswordTextLocator and newPasswordTextLocator
+		// gets shown or hidden
+		if(browser.getWebDriver().findElements(oldPasswordTextLocator).size() >0)
+		{
+			tempWebElement=browser.getWebDriver().findElement(oldPasswordTextLocator);
+			oldPasswordType = tempWebElement.getAttribute("type") ;
+		}
+		if(browser.getWebDriver().findElements(newPasswordTextLocator).size() >0)
+		{
+			tempWebElement=browser.getWebDriver().findElement(newPasswordTextLocator);
+			newPasswordType = tempWebElement.getAttribute("type") ;
+		}
+		if(newPasswordType.equals(oldPasswordType) && newPasswordType.equals("password"))
+		{
+			passwordHidden = true ;
+		}
+		else
+		{
+			passwordHidden = false ;
+		}
+		click(showPasswordButtonLocator);
+		if(browser.getWebDriver().findElements(oldPasswordTextLocator).size() >0)
+		{
+			tempWebElement=browser.getWebDriver().findElement(oldPasswordTextLocator);
+			oldPasswordType = tempWebElement.getAttribute("type") ;
+		}
+		if(browser.getWebDriver().findElements(newPasswordTextLocator).size() >0)
+		{
+			tempWebElement=browser.getWebDriver().findElement(newPasswordTextLocator);
+			newPasswordType = tempWebElement.getAttribute("type") ;
+		}
+		if(newPasswordType.equals(oldPasswordType))
+		{
+			if(newPasswordType.equals("password"))
+			{
+				if(passwordHidden = false )
+				{
+					//success
+				}
+				else
+				{
+					//failure
+				}
+			}
+			else
+			{
+				if(passwordHidden = true )
+				{
+					//success
+				}
+				else
+				{
+					//failure
+				}
+			}
+		}
+		else
+		{
+			//failure
+		}
+		click(showPasswordButtonLocator);	// to return the button to previous state
 		return this;
 	}
 

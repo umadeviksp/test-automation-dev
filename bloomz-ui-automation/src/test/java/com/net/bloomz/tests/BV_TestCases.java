@@ -6,17 +6,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.net.bloomz.pages.BasePage;
+import com.net.bloomz.pages.ClassAccessCodePage;
 import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.CreatePTCEventInClassPage;
+import com.net.bloomz.pages.CreatePostInClassPage;
 import com.net.bloomz.pages.CreateVolunteerInClassPage;
 import com.net.bloomz.pages.HomePage;
+import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
+		
 			
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
@@ -315,6 +319,81 @@ public class BV_TestCases extends BaseTest {
 		.clickOnFirstMessageInTray().clickOnOptionsButton().clickOnDeleteMessageButton().clickOnDeleteButton();
 	}
 		
+	// Invite Parents to Class -  Copy Paste
+	// 10.5 Verify the Teacher (existing account which has class created) is able to Invite Parent to the class by copy and paste
+	@Test(groups = { "android", "ios", "web", "BVT1005" })
+	public void BVT_10_5_testInviteParentsToClassCopyAndPaste() {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().enterEmailId("test@test.com ")
+		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
+		.clickOnSettingButton().clickOnSignOutButton();
+
+	}
+	
+	// Invite Parents to Class - Smart Invite
+	// 10.6 Verify the Teacher (existing account which has class created) is able to Invite Parent to the class through smart invite
+	@Test(groups = { "android", "ios", "web", "BVT1006" })
+	public void BVT_10_6_testInviteParentsToClassSmartInvite() {
+		LandingPage.getLandingPage(browser).clickOnSignInButton()
+				.enterEmailIdOnTextBox("alphateacher@test.com")
+				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
+				.thenVerifyCreateButtonShouldBeDisplayed()
+				.clickOnInviteButton().selectAnyOneClass().selectParentRole()
+				.selectSmartInviteUseGmail().clickOnGmailOption().clickOnContinue();
+	}
+	
+	//Upload the Cover photo of the class
+	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
+	@Test(groups = { "android", "ios", "web", "BVT1007" })
+	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() {
+		String testImageFilePath = Config.getConfigData("test_class_location");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
+		.clickOnEditCoverPhotoButton().uploadImage(testImageFilePath);
+		
+		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("updated").clickOnSettingButton().clickOnSignOutButton();
+
+	}
+	
+	
+	//Upload the mascot image of the class
+	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
+	@Test(groups = { "android", "ios", "web", "BVT1008" })
+	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() {
+		LandingPage
+				.getLandingPage(browser)
+				.clickOnSignInButton()
+				.enterEmailIdOnTextBox("alphateacher@test.com")
+				.enterPasswordOnTextBox("bloomz999")
+				.clickOnSignInButton()
+				.thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
+				.clickOnMascotPhoto()
+				.clickOnUploadNewPhotoButton()
+				.verifyImageUploadSuccessfully(
+						"Group Logo updated successfully");
+
+		HomePage.getHomePage(browser).clickOnSettingButton()
+				.clickOnSignOutButton();
+
+	}
+
+	//Upload the profile picture
+	//10.9 Verify the Teacher (existing account which has class created) is able to Upload the Profile picture
+	@Test(groups = { "android", "ios", "web", "BVT1009" })
+	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() {
+		LandingPage.getLandingPage(browser).clickOnSignInButton()
+				.enterEmailIdOnTextBox("alphateacher@test.com")
+				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
+				.thenVerifyCreateButtonShouldBeDisplayed();
+		HomePage.getHomePage(browser).clickOnSettingButton()
+				.clickOnMyProfileButton().clickOnEditButton()
+				.uploadProfileImage().clickOnSaveButton()
+				.verifyProfileUploaded().clickOnSettingBackButton();
+		
+		HomePage.getHomePage(browser).clickOnSettingButton()
+		.clickOnSignOutButton();
+	}
 	
 	// Parent sign up with Class Access Code - Class with B/P ON
 	// 11.1 Verify the parent is able to sign up with class access code and is able to pick the student from the list
@@ -343,15 +422,14 @@ public class BV_TestCases extends BaseTest {
 	
 	// Parent sign up with Class Access Code - Class with no B/P
 	// 11.3 Verify the parent is able to sign up with class access code and is able to add the child info while joining
-	@Test(groups = { "android", "ios", "web", "BVT1102" })
-	public void BVT_11_2_SignUpWithNewChildBPOFF() throws Exception {
+	@Test(groups = { "android", "ios", "web", "BVT1103" })
+	public void BVT_11_3_SignUpWithNewChildBPOFF() throws Exception {
 		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
 		sEMail = sEMail.toLowerCase();
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("B6SEH9")
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
-	}
+	}	
 	
-		
 }

@@ -37,6 +37,11 @@ public class SettingPage extends BasePage implements SettingPageActions {
 		click(cancelButtonLocator);
 		return HomePage.getHomePage(browser);
 	}
+	
+	public SettingPage uploadProfileImage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	public static SettingPage getSettingPage(Browser<?> browser) {
 		String string = browser.toString();

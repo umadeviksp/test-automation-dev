@@ -72,4 +72,9 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 		}
 		return null;
 	}
+
+	public EditMyProfilePage verifyProfileUploaded() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

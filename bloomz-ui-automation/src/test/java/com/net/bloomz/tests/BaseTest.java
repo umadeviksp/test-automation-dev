@@ -47,22 +47,18 @@ public class BaseTest {
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws IWebDriverException, MalformedURLException {
-		logger.info("1");
 
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
-		logger.info("2");
 
 	}
 
 	private Browser<?> createBrowser(String platformName, String browserType, String environment)
 			throws IWebDriverException {
-		logger.info("3");
 		TimeoutsConfig timeouts = TimeoutsConfig.builder().pageLoadTimoutSeconds(80).implicitWaitTimeoutMillis(80000)
 				.build();
-		logger.info("4");
 
 		if (platformName.equals("Android")) {
 			MobileBrowser browser = null;
@@ -104,7 +100,6 @@ public class BaseTest {
 			WebBrowser browser;
 			String baseTestUrl = Config.getConfigData("bloomz_base_test_url");
 			
-		logger.info("5");
 			if (environment.equals("local")) {
 				String chromeDriverLocation = Config.getConfigData("chrome_driver_location");
 				
@@ -125,7 +120,6 @@ public class BaseTest {
 					return browser;
 				}
 			} else if (environment.equals("cloud")) {
-		logger.info("6");
 				browser = RemoteBrowserBuilder.getBuilder(WebBrowserType.valueOf(browserType),
 						baseTestUrl, URL).build();
 				((WebBrowser) browser).openPageByURL(browser.getBaseTestUrl());
@@ -141,9 +135,7 @@ public class BaseTest {
 	public void startMethod(Method method, String platformName, String browserType, String environment)
 			throws IWebDriverException {
 
-		logger.info("7");
 		browser = createBrowser(platformName, browserType, environment);
-		logger.info("8");
 		logger.info("****************************************************************************************");
 
 		logger.info("****************************************************************************************");
@@ -158,18 +150,14 @@ public class BaseTest {
 
 	@AfterMethod(alwaysRun = true)
 	public void stopMethod(ITestResult result) {
-		logger.info("9");
 		String string = browser.toString();
 		if (string.contains("Android")) {
 			((AndroidDriver) browser.getWebDriver()).resetApp();
 		}
 		if (browser != null) {
-		logger.info("10");
 			browser.quit();
-		logger.info("11");
 		}
 
-		logger.info("12");
 		logger.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
 
 		logger.info("X");
@@ -207,5 +195,4 @@ public class BaseTest {
 				TimeoutType.FORTY_SECONDS);
 		return waitOnExpectedCondition.isDisplayed();
 	}
-	
 }

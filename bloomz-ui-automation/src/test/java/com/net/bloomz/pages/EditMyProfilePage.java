@@ -83,4 +83,17 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 		}
 		return null;
 	}
+
+
+	public EditMyProfilePage uploadProfileImage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	public EditMyProfilePage clickOnSettingBackButton() {
+		// TODO Auto-generated method stub
+		return null;		
+	}
 }

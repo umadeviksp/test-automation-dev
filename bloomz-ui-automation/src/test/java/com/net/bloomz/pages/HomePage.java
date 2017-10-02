@@ -54,6 +54,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By tourWelcomeLocator;
 	static By feedLocator;
 	static By membersTabLocator;
+	static By inviteButtonLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -284,6 +285,11 @@ public class HomePage extends BasePage implements HomePageActions {
 		click(alertEventLocator);
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
 	}
+
+	public InvitationGroupPage clickOnInviteButton() {
+		click(inviteButtonLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
 	
 	public HomePage ScrollDownHomeFeed() throws InterruptedException {
 		scrollIntoView(scrollDownSupportLocator);
@@ -374,6 +380,8 @@ public class HomePage extends BasePage implements HomePageActions {
 			tourWelcomeLocator = By.xpath("//*[@id='welcomeTeacherCard']/div/article/ul/li[3]/a");
 			feedLocator = By.xpath("//*[@id='communityScrollView']/h1/span[1]/div");
 			membersTabLocator = By.xpath("//*[@id='communityMenu_circles']/a");
+
+			inviteButtonLocator = By.xpath ("//div[@id='mainPanel']//a[@id='bloomzMainNav_navLeftInvite']");
 			
 			return new WebHomePage(browser);
 		} 

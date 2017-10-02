@@ -1,7 +1,6 @@
 package com.net.bloomz.pages;
 
 import java.io.BufferedReader;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -40,6 +39,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By confirmDeleteUpcomingEventLocator;
 	static By eventTitlenameLocator;
 	static By membersTabLocator;
+	static By editCoverPhotoButton;
+	static By uploadNewPhotoButtonLocator;
 
 	
 
@@ -168,6 +169,33 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return ClassPage.getClassPage(browser);
 	}
 	
+	public ClassPage verifyImageUploadSuccessfully(String image) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ClassPage clickOnEditCoverPhotoButton() {
+		click(editCoverPhotoButton);
+		return ClassPage.getClassPage(browser);
+	}
+
+	public ClassPage clickOnUploadNewPhotoButton() {
+		click(uploadNewPhotoButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+
+	public ClassPage clickOnMascotPhoto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ClassPage uploadImage(String pathToTestImage) {
+		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
+		//return CreatePostInClassPage.getCreatePostInClassPage(browser);
+		return null;
+	}
+	
+	
 	public static String readResponse(Reader rd) throws IOException {
 	    StringBuilder sb = new StringBuilder();
 	    int cp;
@@ -234,6 +262,9 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			optionsUpcomingEventLocator = By.xpath("//*[@id='calendarViewControl']/nav/a[2]");
 			deleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[4]/span");
 			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[2]/span");
+			editCoverPhotoButton = By.xpath("//*[@id=\"communityScrollView\"]//button[@ng-click=\"editCoverPhoto()\"]");
+			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
+			//uploadPhotoInputLocator = By.xpath(xpathExpression);
 						
 			return new WebClassPage(browser);
 		}

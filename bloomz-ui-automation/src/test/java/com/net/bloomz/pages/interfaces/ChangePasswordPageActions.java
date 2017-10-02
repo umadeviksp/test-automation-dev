@@ -10,4 +10,5 @@ public interface ChangePasswordPageActions {
 	ChangePasswordPage enterOldPassword(String oldPassword) ;
 	ChangePasswordPage enterNewPassword(String oldPassword) ;
 	ChangePasswordPage clickShowHidePassword() ;
+	ChangePasswordPage verifyShowHidePassword() ;
 }
