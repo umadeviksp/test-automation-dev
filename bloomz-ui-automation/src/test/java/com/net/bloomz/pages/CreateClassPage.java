@@ -34,7 +34,8 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 			chooseSchoolButtonLocator = By.xpath("//*[@id='createGroup']//span[@class='linkControl drillDown']");
 			saveButtonLocator = By.xpath("//*[@id=\"createGroup\"]/div/nav/ng-switch[3]/a");
 			classNameEditTextLocator = By.id("groupName");			
-			roomParentButtonLocator  =By.xpath("//*[@id=\"createGroup\"]/div/div/form/div[2]/div[3]/section/div/div[2]");
+			//roomParentButtonLocator  =By.xpath("//*[@id=\"createGroup\"]/div/div/form/div[2]/div[3]/section/div/div[2]");
+			roomParentButtonLocator  =By.xpath("//*[@id='createGroup']//div[@class='highlightableRow ng-scope ng-binding']");
 			//schoolTextLocator = By.xpath("//*[@id='pickLocationId']lickOnchooseSchoolButtonLocator");
 			//schoolPickLocator = By.xpath("//*[@id='activityTypes']/div/div/form/section/div/section/section[1]/span/h2");
 			return new WebCreateClassPage(browser);

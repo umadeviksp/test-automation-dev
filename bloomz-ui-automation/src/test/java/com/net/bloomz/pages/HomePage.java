@@ -339,6 +339,7 @@ public class HomePage extends BasePage implements HomePageActions {
 			classNameLocator = By.xpath("//*[@id=\"posts\"]/nav[1]/div[2]/ul[4]/li/ul/li[1]/span/a");
 			createClassLocator = By.xpath("//*[@id=\"welcomeTeacherCard\"]/div/article/ul/li[4]/a");
 			messageButtonLocator = By.xpath ("//*[@id=\"_sidechat\"]/div/div/div[2]/button");
+			//messageButtonLocator = By.xpath("//*[@id='orgHome']//div[@class='menuOptWrapper']//div[@class='clipping']//ul//li[@data-abbr='+ Message Class']");
 			messageTextLocator = By.xpath("//*[@id=\"messages_section\"]/article/div[2]/span");
 			//eventListLocator = By.xpath("*[@id=\"posts_updatesHomeSection\"]/div[1]/article/p/span[1]");
 			eventListLocator = By.xpath("//*[@id=\"posts_updatesHomeSection\"]/div[1]/article/div[3]");

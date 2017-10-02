@@ -17,8 +17,7 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-	
-		
+			
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -55,8 +54,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test bloomz")
 		.thenVerifyWelcomeScreen().clickOnSettingButton().clickOnSignOutButton();
 	}
-	
-	
+		
 	
 	
 	// FRE - Teacher
@@ -71,6 +69,8 @@ public class BV_TestCases extends BaseTest {
 		.clickOnMembersGeneralTab().clickOnDeleteClass();	
 	}		
 	
+	//Needs to implement 4.3
+	
 	
 	// Sign Up - Room Parent
 	// 4.4 Verify that new user can sign up as the Room parent with no invitation code
@@ -83,18 +83,21 @@ public class BV_TestCases extends BaseTest {
 		.clickOnSettingButton().clickOnSignOutButton();
 	}
 	
+		
 	// FRE - Room Parent
 	// 4.5 Verify the new room parent FRE- No Invitation code
-	// Checkpoint has to be added
-	// Steps are leading to error
 	@Test(groups = { "android", "ios", "web", "BVT0405" })
 	public void BVT_04_5_testSignUpAsARoomParentFRE() throws Exception {
-		//String sClassName = "test_" + getTimeStamp().replaceAll("-", "_");
-		//LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alpharoomparent@test.com")
-		//.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass()
-		//.enterClassName(sClassName).clickRoomParentButton().clickOnSaveButtonLocator().thenVerifyClassname(sClassName);
+		String sClassName = "test_" + getTimeStamp().replaceAll("-", "_");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
+		.clickRoomParentButton()
+		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
+		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
+		.clickOnMembersGeneralTab().clickOnDeleteClass();
 	}
-		
+	
+	
 	// Home screen loading
 	// 5.1 Verify an existing Teacher (account with a bunch of posts to the class) is able to load the Home screen
 	@Test(groups = { "android", "ios", "web", "BVT0501" })
@@ -112,7 +115,8 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab()
 		.thenVerifyCalendarEventsShouldNotBeNull();
-	}		
+	}	
+	
 	
 	// Messages screen loading 
 	// Pre-requisite for testcase 5.3 also covers 10.4
@@ -202,7 +206,7 @@ public class BV_TestCases extends BaseTest {
 		ClassPage.getClassPage(browser).clickOnMembersTab().thenVerifyElementExists();
 	}
 	
-
+	
 	// Create Post in a Class - with pictures
 	// 9.1 Verify the Teacher (existing account which has class created) is able to create a post with pictures in the class
 	@Test(groups = { "android", "ios", "web", "BVT0901" })
@@ -213,7 +217,9 @@ public class BV_TestCases extends BaseTest {
 		.enterTitle("random title").enterGeneralUpdate("random text")
 		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
 		.clickOnBackButton().clickOnUpdatesTab();
-	}		
+	}
+	
+		
 	
 	// Create Announcement in a class
 	// 9.2 Verify the Teacher (existing account which has class created) is able to create an announcement in the class
@@ -223,7 +229,9 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAnnouncement()
 		.enterTitle("test announcement").enterGeneralUpdate("random text for verifying announcement feature")
 		.clickOnPostButton().thenVerifyAnnouncements("(1)").clickOnAnnouncementCloseButton().clickOnAnnouncementDeleteButton();
-	}		
+	}
+	
+	
 	
 	// Create Alert in a class
 	// 9.3 Verify the Teacher (existing account which has class created) is able to create an alert in the class	
@@ -238,6 +246,8 @@ public class BV_TestCases extends BaseTest {
 		.clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae().clickOnOptionsLocator().clickOnDeletePostLocator();		
 	}	
 	
+	
+	
 	// Create Event with invitees in a class
 	// 10.1 Verify the Teacher (existing account which has class created) is able to create an event in the class and invite all the class parents
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -248,11 +258,19 @@ public class BV_TestCases extends BaseTest {
 		
 		CreateEventInClassPage.getCreateEventInClassPage(browser).createNewEvent()		
 		.enterTitle(sTitle).enterLocation("random location").enterNotes("some notes")
-		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton().clickOnOKButton()
-		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!").clickOnUpdatesTab().clickOnUpcomingEventSection()
-		.clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
-		.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");	;		
+		.clickRSVPButton().clickInviteButton().clickInviteAllButton().clickDoneButton()
+		.clickOnReminderButton().selectFifteenMinsReminder().clickOnDoneReminderButton()
+		.clickStartDate().clearStartDate().enterStartDate(0, 0, 5).clickCloseCalendar().clickStartTime()
+		.clearStartTime().enterStartTime("10:00 AM").clickEndDate().clearEndDate().enterEndDate(0, 0, 5)
+		.clickCloseCalendar().clearEndTime().enterEndTime("12:00 PM")
+		.clickSaveButton().clickOnOKButton()
+		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
+		//HomePage.getHomePage(browser).clickOnEventBubbleButton();
+		//ClassPage.getClassPage(browser).clickOnUpdatesTab().clickOnUpcomingEventSection()
+		//.clickOnEventOptions().clickOnEventOptionsDeleteReminder().clickOnConfirmEventDelete()
+		//.thenVerifyThatEventWasSuccessful("Event Deleted Successfully!");		
 	}	
+	
 	
 	// Create VR Recurring Event in a class
 	// 10.2 Verify the Teacher (existing account which has class created) is able to create a Recurring VR event in the class and notifies all the parents
@@ -269,6 +287,8 @@ public class BV_TestCases extends BaseTest {
 		.clickOnUpcomingEvents().readUpcomingEventTitle(sTitle)
 		.clickOnUpcomingEventsOptions().clickOnUpcomingEventDelete().clickOnConfirmUpcomingEventDelete();
 	}	
+	
+	
 	
 	// Create PTC Event in the class 
 	// 10.3 Verify the Teacher (existing account which has class created) is able to create a PTC event in the class and Invites all the parents
@@ -296,7 +316,6 @@ public class BV_TestCases extends BaseTest {
 	}
 		
 	
-		
 	// Parent sign up with Class Access Code - Class with B/P ON
 	// 11.1 Verify the parent is able to sign up with class access code and is able to pick the student from the list
 	@Test(groups = { "android", "ios", "web", "BVT1101" })

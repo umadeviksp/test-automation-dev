@@ -298,7 +298,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			calendarListLocator = By.xpath("//*[@id=\"addEvent_calendarSwitcher\"]/section/label/a");
 			allDayLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/form[1]/div/div/section[4]/section[1]/div/label");
 			eventButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
-			eventDropdownLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[9]");
+			//eventDropdownLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[9]");
+			eventDropdownLocator = By.xpath("//*[@id='orgHome']//div[@class='menuOptWrapper']//div[@class='clipping']//ul//li[@data-abbr='+ Event']");
 			
 			calendarPersonalLocator = By.xpath("//*[@id=\"calendarPicker\"]/div/div/div/section/section/div/section[1]/div/h2/button/span");
 			backButtonLocator = By.id("calendarPicker_profileBack");
