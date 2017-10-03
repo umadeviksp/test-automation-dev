@@ -45,7 +45,6 @@
 			<groupId>ru.yandex.qatools.allure</groupId>
 			<artifactId>allure-testng-adaptor</artifactId>
 			<version>${allure.version}</version>
-            		<scope>test</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
@@ -190,26 +189,20 @@
 				<version>${maven-surefire-version}</version>
 				<configuration>
 					<basedir>/src/main/java/com/net/bloomz/appium/script</basedir>
+					<reportsDirectory>test-output/</reportsDirectory>
 					<suiteXmlFiles>
 						<suiteXmlFile>${basedir}/src/test/resources/BVT_Testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<testFailureIgnore>false</testFailureIgnore>
+					<argLine>
+						-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+					</argLine>
 					<properties>
 						<property>
-							<name>usedefaultlisteners</name>
-							<value>true</value>
-						</property>
-
-						<!-- Setting ReportNG listeners -->
-					<!-- 	<property>
 							<name>listener</name>
-							<value>org.uncommons.reportng.HTMLReporter
-							</value>
-							<value>org.uncommons.reportng.JUnitXMLReporter</value>
-						</property> -->
+							<value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
+						</property>
 					</properties>
-					<reportsDirectory>test-output/</reportsDirectory>
-					<!-- <reportsDirectory>${test.report.path}/${timestamp-with-seconds}</reportsDirectory> -->
-					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 				<executions>
 					<execution>
@@ -219,6 +212,13 @@
 						</goals>
 					</execution>
 				</executions>
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+					</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -358,43 +358,7 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.14</version>
-					<configuration>
-						<testFailureIgnore>true</testFailureIgnore>
-						<argLine>
-							-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-						</argLine>
-						<!--only for 1.3.* TestNG adapters. Since 1.4.0.RC4, the listener adds 
-							via ServiceLoader -->
-						<properties>
-							<property>
-								<name>listener</name>
-								<value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
-							</property>
-						</properties>
-					</configuration>
-					<dependencies>
-						<dependency>
-							<groupId>org.aspectj</groupId>
-							<artifactId>aspectjweaver</artifactId>
-							<version>${aspectj.version}</version>
-						</dependency>
-					</dependencies>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-	<reporting>
-		<excludeDefaults>true</excludeDefaults>
-		<plugins>
-			<plugin>
-				<groupId>ru.yandex.qatools.allure</groupId>
-				<artifactId>allure-maven-plugin</artifactId>
-				<version>2.2</version>
-			</plugin>
-		</plugins>
-	</reporting>
 </project>
