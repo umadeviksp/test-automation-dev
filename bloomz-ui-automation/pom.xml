@@ -28,6 +28,7 @@
 		<sources.encoding>UTF-8</sources.encoding>
 		<allure.version>1.4.16</allure.version>
 		<aspectj.version>1.7.4</aspectj.version>
+	    <alluremaven.version>2.5</alluremaven.version>
 	</properties>
 
 	<dependencies>
@@ -187,6 +188,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-version}</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<basedir>/src/main/java/com/net/bloomz/appium/script</basedir>
 					<reportsDirectory>test-output/</reportsDirectory>
@@ -204,21 +213,13 @@
 						</property>
 					</properties>
 				</configuration>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>test</goal>
-						</goals>
-					</execution>
-				</executions>
-					<dependencies>
-						<dependency>
-							<groupId>org.aspectj</groupId>
-							<artifactId>aspectjweaver</artifactId>
-							<version>${aspectj.version}</version>
-						</dependency>
-					</dependencies>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -361,4 +362,15 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>ru.yandex.qatools.allure</groupId>
+				<artifactId>allure-maven-plugin</artifactId>
+				<version>${alluremaven.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
+
