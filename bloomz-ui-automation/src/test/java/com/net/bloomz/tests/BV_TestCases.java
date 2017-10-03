@@ -1,6 +1,8 @@
 package com.net.bloomz.tests;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import io.appium.java_client.android.AndroidDriver;
 
@@ -24,7 +26,6 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-		
 			
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
@@ -210,7 +211,7 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0801" })
 	public void BVT_08_1_testLaunchingClassFromLeftNav() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha's Class");
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher");
 	}	
 	
 		
@@ -219,7 +220,7 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0802" })
 	public void BVT_08_2_testSwitchTabsInClass() throws Exception {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha's Class")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher")
 		.clickOnCalendarTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMediaTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMembersTab().thenVerifyElementExists();
@@ -230,16 +231,20 @@ public class BV_TestCases extends BaseTest {
 	// 9.1 Verify the Teacher (existing account which has class created) is able to create a post with pictures in the class
 	@Test(groups = { "android", "ios", "web", "BVT0901" })
 	public void BVT_09_1_testCreatePostInClassWithPictures() throws Exception {
-		String testImageFilePath = Config.getConfigData("test_image_location");
+	
+		Path currentRelativePath = Paths.get("");
+		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
+	
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle("random title").enterGeneralUpdate("random text")
 		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
 		.clickOnBackButton().clickOnUpdatesTab();
+		
+		
 	}
 	
 		
-	
 	// Create Announcement in a class
 	// 9.2 Verify the Teacher (existing account which has class created) is able to create an announcement in the class
 	@Test(groups = { "android", "ios", "web", "BVT0902" })
@@ -363,8 +368,10 @@ public class BV_TestCases extends BaseTest {
 	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
 	@Test(groups = { "android", "ios", "web", "BVT1007" })
 	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() throws InterruptedException, IOException {
-		//String testImageFilePath = Config.getConfigData("test_class_location");
-		String sUploadapp = Config.getConfigData("test_upload_location");
+
+		Path currentRelativePath = Paths.get("");
+		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
+
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnEditCoverPhotoButton().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
@@ -376,7 +383,9 @@ public class BV_TestCases extends BaseTest {
 	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
 	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() throws InterruptedException, IOException {
-		String sUploadapp = Config.getConfigData("test_upload_location");
+		Path currentRelativePath = Paths.get("");
+		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
+		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnMascotPhoto().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
@@ -389,7 +398,9 @@ public class BV_TestCases extends BaseTest {
 	//10.9 Verify the Teacher (existing account which has class created) is able to Upload the Profile picture
 	@Test(groups = { "android", "ios", "web", "BVT1009" })
 	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() throws InterruptedException, IOException {
-		String sUploadapp = Config.getConfigData("test_upload_location");
+		Path currentRelativePath = Paths.get("");
+		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
+		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();
 		
@@ -405,6 +416,7 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
 	}
 	
+	
 	// Parent sign up with Class Access Code - Class with B/P ON
 	// 11.1 Verify the parent is able to sign up with class access code and is able to pick the student from the list
 	@Test(groups = { "android", "ios", "web", "BVT1101" })
@@ -415,6 +427,7 @@ public class BV_TestCases extends BaseTest {
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().selectTestChildName().clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
+	
 	
 	
 	// Parent sign up with Class Access Code - Class with B/P ON
@@ -441,5 +454,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}	
+	
 		
 }
