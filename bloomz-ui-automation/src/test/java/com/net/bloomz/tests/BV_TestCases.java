@@ -1,5 +1,7 @@
 package com.net.bloomz.tests;
 
+import java.io.IOException;
+
 import io.appium.java_client.android.AndroidDriver;
 
 import org.testng.Assert;
@@ -13,9 +15,11 @@ import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.CreatePTCEventInClassPage;
 import com.net.bloomz.pages.CreatePostInClassPage;
 import com.net.bloomz.pages.CreateVolunteerInClassPage;
+import com.net.bloomz.pages.EditMyProfilePage;
 import com.net.bloomz.pages.HomePage;
 import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
+import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
@@ -58,7 +62,8 @@ public class BV_TestCases extends BaseTest {
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test bloomz")
 		.thenVerifyWelcomeScreen().clickOnSettingButton().clickOnSignOutButton();
 	}
-		
+	
+	// 
 	
 	
 	// FRE - Teacher
@@ -71,9 +76,19 @@ public class BV_TestCases extends BaseTest {
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
 		.clickOnMembersGeneralTab().clickOnDeleteClass();	
-	}		
+	}	
 	
-	//Needs to implement 4.3
+	
+	// Add member, Teacher to a class
+	// 4.3 Verify that a teacher can be invited to a class
+	@Test(groups = { "android", "ios", "web", "BVT0403" })
+	public void BVT_04_3_testInviteteacherToAClass() throws Exception {
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMembersTab()
+		.clickOnAddMembers().clickOnInviteMembers().selectTeacherRole().selectEmailsManually().enterEmailId("test@test.com ")
+		.clickOnEmailSendButton().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
+		.clickOnSettingButton().clickOnSignOutButton();;
+	}
 	
 	
 	// Sign Up - Room Parent
@@ -343,56 +358,51 @@ public class BV_TestCases extends BaseTest {
 				.selectSmartInviteUseGmail().clickOnGmailOption().clickOnContinue();
 	}
 	
+	
 	//Upload the Cover photo of the class
 	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
 	@Test(groups = { "android", "ios", "web", "BVT1007" })
-	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() {
-		String testImageFilePath = Config.getConfigData("test_class_location");
+	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() throws InterruptedException, IOException {
+		//String testImageFilePath = Config.getConfigData("test_class_location");
+		String sUploadapp = Config.getConfigData("test_upload_location");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
-		.clickOnEditCoverPhotoButton().uploadImage(testImageFilePath);
-		
-		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("updated").clickOnSettingButton().clickOnSignOutButton();
-
+		.clickOnEditCoverPhotoButton().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
+		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-	
+		
 	//Upload the mascot image of the class
 	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
-	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() {
-		LandingPage
-				.getLandingPage(browser)
-				.clickOnSignInButton()
-				.enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999")
-				.clickOnSignInButton()
-				.thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
-				.clickOnMascotPhoto()
-				.clickOnUploadNewPhotoButton()
-				.verifyImageUploadSuccessfully(
-						"Group Logo updated successfully");
-
-		HomePage.getHomePage(browser).clickOnSettingButton()
-				.clickOnSignOutButton();
-
+	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() throws InterruptedException, IOException {
+		String sUploadapp = Config.getConfigData("test_upload_location");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
+		.clickOnMascotPhoto().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
+			
+		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Group Logo updated successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
-
+	
+	
 	//Upload the profile picture
 	//10.9 Verify the Teacher (existing account which has class created) is able to Upload the Profile picture
 	@Test(groups = { "android", "ios", "web", "BVT1009" })
-	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() {
-		LandingPage.getLandingPage(browser).clickOnSignInButton()
-				.enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
-				.thenVerifyCreateButtonShouldBeDisplayed();
-		HomePage.getHomePage(browser).clickOnSettingButton()
-				.clickOnMyProfileButton().clickOnEditButton()
-				.uploadProfileImage().clickOnSaveButton()
-				.verifyProfileUploaded().clickOnSettingBackButton();
+	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() throws InterruptedException, IOException {
+		String sUploadapp = Config.getConfigData("test_upload_location");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();
 		
-		HomePage.getHomePage(browser).clickOnSettingButton()
-		.clickOnSignOutButton();
+		HomePage.getHomePage(browser).clickOnSettingButton().clickOnMyProfileButton().clickOnEditButton()
+		.uploadProfileImage().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
+		
+		EditMyProfilePage.getEditMyProfilePage(browser).clickOnSaveButton();
+		
+		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Profile updated successfully");
+		
+		MyProfilePage.getMyProfilePage(browser).clickOnGoBackButton();
+		
+		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
 	}
 	
 	// Parent sign up with Class Access Code - Class with B/P ON
@@ -401,7 +411,7 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_11_1_SignUpWithExistingChild() throws Exception {
 		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
 		sEMail = sEMail.toLowerCase();
-		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("JKFVXZ")
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("X6CKVX")
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().selectTestChildName().clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
@@ -413,7 +423,7 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_11_2_SignUpWithNewChild() throws Exception {
 		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
 		sEMail = sEMail.toLowerCase();
-		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("JKFVXZ")
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("X6CKVX")
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().selectAddYourChild().enterChildFirstName("testChild" + getTimeStamp()).clickOnAddClass().clickOnJoinClass()
 		.thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
@@ -431,5 +441,5 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}	
-	
+		
 }

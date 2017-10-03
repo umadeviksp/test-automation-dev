@@ -17,7 +17,8 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 	static By lastNameTextLocator = null;
 	static By genderMaleSelectLocator = null;
 	static By genderFemaleSelectLocator = null;
-
+	static By uploadProfileImageLocator;
+	
 	public EditMyProfilePage(Browser<?> browser) {
 		super(browser);
 
@@ -79,15 +80,16 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 			lastNameTextLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@id='editProfile_lastName']");
 			genderMaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='male']");
 			genderFemaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='female']");
+			uploadProfileImageLocator = By.xpath("//*[@id=\"userProfile_\"]//span[@src=\"profile.photo\"]//span[@ng-click=\"editPhoto()\"]");
 			return new WebEditMyProfilePage(browser);
 		}
 		return null;
 	}
 
 
-	public EditMyProfilePage uploadProfileImage() {
-		// TODO Auto-generated method stub
-		return null;
+	public ClassPage uploadProfileImage() {
+		click(uploadProfileImageLocator);
+		return ClassPage.getClassPage(browser);
 	}
 
 

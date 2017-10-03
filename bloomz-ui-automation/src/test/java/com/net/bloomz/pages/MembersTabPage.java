@@ -15,6 +15,7 @@ public class MembersTabPage extends BasePage {
 	static By membersGeneralTabLocator;
 	static By deleteClassLocator;
 	static By deleteClassConfirmLocator;
+	static By addMembersIconLocator;
 
 	public MembersTabPage(Browser<?> browser) {
 		super(browser);
@@ -33,6 +34,7 @@ public class MembersTabPage extends BasePage {
 			membersGeneralTabLocator = By.xpath("//*[@id='orgSettings']/div/div[1]/section/div/ul/li[1]/a");
 			deleteClassLocator = By.xpath("//*[@id='communitySettings_deleteGroup']");
 			deleteClassConfirmLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[1]/span");
+			addMembersIconLocator = By.xpath("//*[@id=\"communityContent\"]//button[@class=\"addMember ng-scope\"]");
 			return new WebCreateMembersTabPage(browser);
 		}
 		return null;
@@ -61,6 +63,11 @@ public class MembersTabPage extends BasePage {
 	public MembersTabPage clickOnDeleteClassConfirm() {
 		click(deleteClassConfirmLocator);
 		return MembersTabPage.getMembersTabPage(browser);
+	}
+	
+	public InvitationGroupPage clickOnAddMembers() {
+		click(addMembersIconLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
 }

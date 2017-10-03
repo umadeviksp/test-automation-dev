@@ -26,6 +26,8 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 	static By smartInviteButtonLocator;
 	static By gmailButtonLocator;
 	static By continueButtonLocator;
+	static By inviteMembersSectionLocator;
+	static By teacherRoleTextLocator;
 
 	public InvitationGroupPage(Browser<?> browser) {
 		super(browser);
@@ -73,6 +75,11 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
+	public InvitationGroupPage selectTeacherRole() {
+		click(teacherRoleTextLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
 	public InvitationGroupPage selectEmailsManually() {
 		click(typeEmailsManuallyTextLocator);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
@@ -100,6 +107,12 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 
 	public InvitationGroupPage clickOnContinue() {
 		click(continueButtonLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+		
+	}
+		
+	public InvitationGroupPage clickOnInviteMembers() {
+		click(inviteMembersSectionLocator);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 		
 	}
@@ -132,6 +145,9 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 			smartInviteButtonLocator = By.xpath("//*[contains(text(),\"Use your phone's email app or Gmail\")]");
 			gmailButtonLocator = By.xpath("//*[@id=\"mailClients\"]//a[@class=\"clientGmail\"]");
 			continueButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Continue\")]");
+			inviteMembersSectionLocator = By.xpath("//*[@id=\"groupCreateOptions\"]//*[contains(text(),\"Invite people to join Alpha Teacher on Bloomz.\")]");
+			teacherRoleTextLocator = By
+					.xpath("//*[@id=\"rolePicker\"]//*[contains(text(),\"Teacher\")]"); 
 			return new WebInvitationGroupPage(browser);
 		}
 		return null;

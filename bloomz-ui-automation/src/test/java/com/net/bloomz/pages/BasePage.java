@@ -516,4 +516,10 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		return this ;		
 	}
 	
+	public void UploadFileAutoIT(String sFileName) throws InterruptedException, IOException {
+	        //Which calls the autoit exe file
+			//Runtime.getRuntime().exec("C:/MyFolder/Professional/Technical/Bloomz/test-automation/bloomz-ui-automation/src/test/resources/uploadfileBloomzCover.exe");
+		Runtime.getRuntime().exec(sFileName);
+	}
+	
 }

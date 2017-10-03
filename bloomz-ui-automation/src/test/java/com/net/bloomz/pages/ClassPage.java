@@ -41,6 +41,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By membersTabLocator;
 	static By editCoverPhotoButton;
 	static By uploadNewPhotoButtonLocator;
+	static By mascotPhotoLocator;
+	
 
 	
 
@@ -185,14 +187,15 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	}
 
 	public ClassPage clickOnMascotPhoto() {
-		// TODO Auto-generated method stub
-		return null;
+		click(mascotPhotoLocator);
+		return ClassPage.getClassPage(browser);
 	}
 	
-	public ClassPage uploadImage(String pathToTestImage) {
+	public ClassPage uploadImage(String pathToTestImage) throws InterruptedException, IOException {
 		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
 		//return CreatePostInClassPage.getCreatePostInClassPage(browser);
-		return null;
+		UploadFileAutoIT(pathToTestImage);
+		return ClassPage.getClassPage(browser);
 	}
 	
 	
@@ -264,7 +267,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[2]/span");
 			editCoverPhotoButton = By.xpath("//*[@id=\"communityScrollView\"]//button[@ng-click=\"editCoverPhoto()\"]");
 			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
-			//uploadPhotoInputLocator = By.xpath(xpathExpression);
+			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Teacher Logo\"]");
 						
 			return new WebClassPage(browser);
 		}
