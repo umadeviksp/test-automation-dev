@@ -226,7 +226,7 @@
 					<basedir>/src/main/java/com/net/bloomz/appium/script</basedir>
 					<reportsDirectory>test-output/</reportsDirectory>
 					<suiteXmlFiles>
-						<suiteXmlFile>${basedir}/src/test/resources/FEATURE_Settings_Profile_Testng.xml</suiteXmlFile>
+						<suiteXmlFile>${basedir}/src/test/resources/BVT_Testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<testFailureIgnore>false</testFailureIgnore>
 					<argLine>
