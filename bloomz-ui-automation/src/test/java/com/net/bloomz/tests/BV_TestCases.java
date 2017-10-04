@@ -370,8 +370,18 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() throws InterruptedException, IOException {
 
 		Path currentRelativePath = Paths.get("");
-		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
-
+		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
+		String sUploadapp = sCurrentPath + Config.getConfigData("test_cover_image");
+		if (sCurrentPath.contains("/"))
+		{
+			System.out.println ("this is not windows") ;
+		}
+		else
+		{
+			sUploadapp = sUploadapp.replaceAll("/","\\\\");
+			System.out.println ("this is windows") ;
+		}
+		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnEditCoverPhotoButton().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
@@ -384,7 +394,17 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
 	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() throws InterruptedException, IOException {
 		Path currentRelativePath = Paths.get("");
-		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
+		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
+		String sUploadapp = sCurrentPath + Config.getConfigData("test_cover_image");
+		if (sCurrentPath.contains("/"))
+		{
+			System.out.println ("this is not windows") ;
+		}
+		else
+		{
+			sUploadapp = sUploadapp.replaceAll("/","\\\\");
+			System.out.println ("this is windows") ;
+		}
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
@@ -399,7 +419,17 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT1009" })
 	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() throws InterruptedException, IOException {
 		Path currentRelativePath = Paths.get("");
-		String sUploadapp = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_upload_location");
+		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
+		String sUploadapp = sCurrentPath + Config.getConfigData("test_cover_image");
+		if (sCurrentPath.contains("/"))
+		{
+			System.out.println ("this is not windows") ;
+		}
+		else
+		{
+			sUploadapp = sUploadapp.replaceAll("/","\\\\");
+			System.out.println ("this is windows") ;
+		}
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();

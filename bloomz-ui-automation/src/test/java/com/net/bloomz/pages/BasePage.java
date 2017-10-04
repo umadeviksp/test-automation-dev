@@ -11,9 +11,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 
-
-
-
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 
 
 import org.openqa.selenium.By;
@@ -43,6 +44,7 @@ import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
 
 
 
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -53,6 +55,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -517,9 +520,40 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 	}
 	
 	public void UploadFileAutoIT(String sFileName) throws InterruptedException, IOException {
-	        //Which calls the autoit exe file
-			//Runtime.getRuntime().exec("C:/MyFolder/Professional/Technical/Bloomz/test-automation/bloomz-ui-automation/src/test/resources/uploadfileBloomzCover.exe");
-		Runtime.getRuntime().exec(sFileName);
+	        
+		try {
+			
+			StringSelection stringSelection = new StringSelection(sFileName);
+
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+			//native key strokes for CTRL, V and ENTER keys
+            Robot robot = new Robot();
+            Thread.sleep(3000);
+            
+         // Press Enter
+            robot.keyPress(KeyEvent.VK_ENTER);
+            
+           // Release Enter
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            Thread.sleep(1000);
+            
+             // Press CTRL+V
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            
+           // Release CTRL+V
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            Thread.sleep(1000);
+                   
+            // Press Enter 
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            
+        } catch (Exception exp) {
+			exp.printStackTrace();
+		}
+		
 	}
 	
 }
