@@ -26,7 +26,7 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-			
+		
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -82,7 +82,7 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
-		.clickOnMembersGeneralTab().clickOnDeleteClass();	
+		.clickOnMembersGeneralTab().clickOnDeleteClass().clickOnDeleteClassConfirm();	
 	}	
 	
 	
@@ -97,7 +97,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnEmailSendButton().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnSettingButton().clickOnSignOutButton();;
 	}
-	
+		
 	
 	// Sign Up - Room Parent
 	// 4.4 Verify that new user can sign up as the Room parent with no invitation code
@@ -113,7 +113,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-		
+	
 	// FRE - Room Parent
 	// 4.5 Verify the new room parent FRE- No Invitation code
 	@Test(groups = { "android", "ios", "web", "BVT0405" })
@@ -126,7 +126,7 @@ public class BV_TestCases extends BaseTest {
 		.clickRoomParentButton()
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
-		.clickOnMembersGeneralTab().clickOnDeleteClass();
+		.clickOnMembersGeneralTab().clickOnDeleteClass().clickOnDeleteClassConfirm();
 	}
 	
 	
@@ -461,7 +461,6 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Group Logo updated successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-	
 	//Upload the profile picture
 	//10.9 Verify the Teacher (existing account which has class created) is able to Upload the Profile picture
 	@Test(groups = { "android", "ios", "web", "BVT1009" })
@@ -542,7 +541,7 @@ public class BV_TestCases extends BaseTest {
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
-	}	
+	}
 	
 		
 }
