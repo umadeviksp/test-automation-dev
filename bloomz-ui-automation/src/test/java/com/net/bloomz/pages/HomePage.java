@@ -280,6 +280,12 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	public HomePage thenVerifyThatUploadWasSuccessful(String sText) {
+		//successEventMessageLocator = By.id("toast");
+		//System.out.println(getText(successEventMessageLocator));
+		//Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return HomePage.getHomePage(browser);
+	}
 	
 	public CreateAlertInClassPage clickOnAlertEventButton() {
 		click(alertEventLocator);

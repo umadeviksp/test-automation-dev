@@ -412,7 +412,7 @@ public class BV_TestCases extends BaseTest {
 	//Upload the Cover photo of the class
 	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
 	@Test(groups = { "android", "ios", "web", "BVT1007" })
-	public void BVT_10_07_testUploadTheCoverPhotoOfTheClass() throws InterruptedException, IOException {
+	public void BVT_10_7_testUploadTheCoverPhotoOfTheClass() throws InterruptedException, IOException {
 		System.out.println("BVT_10_07_testUploadTheCoverPhotoOfTheClass");
 		Path currentRelativePath = Paths.get("");
 		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
@@ -431,14 +431,14 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnEditCoverPhotoButton().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
-		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
+		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
 		
 	//Upload the mascot image of the class
 	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
-	public void BVT_10_08_testUploadTheMascotPhotoOfTheClass() throws InterruptedException, IOException {
+	public void BVT_10_8_testUploadTheMascotPhotoOfTheClass() throws InterruptedException, IOException {
 		System.out.println("BVT_10_08_testUploadTheMascotPhotoOfTheClass");
 		Path currentRelativePath = Paths.get("");
 		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
@@ -458,13 +458,13 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnMascotPhoto().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
 			
-		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Group Logo updated successfully").clickOnSettingButton().clickOnSignOutButton();
+		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Group Logo updated successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
 	//Upload the profile picture
 	//10.9 Verify the Teacher (existing account which has class created) is able to Upload the Profile picture
 	@Test(groups = { "android", "ios", "web", "BVT1009" })
-	public void BVT_10_09_testUploadTheProfilePictureOfTheUser() throws InterruptedException, IOException {
+	public void BVT_10_9_testUploadTheProfilePictureOfTheUser() throws InterruptedException, IOException {
 		System.out.println("BVT_10_09_testUploadTheProfilePictureOfTheUser");
 		Path currentRelativePath = Paths.get("");
 		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
