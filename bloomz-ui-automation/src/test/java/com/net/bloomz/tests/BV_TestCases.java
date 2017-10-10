@@ -21,7 +21,7 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-	/*
+	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -277,7 +277,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnPostButton().thenVerifyAnnouncements("(1)").clickOnAnnouncement().clickOnAnnouncementOptions()
 		.clickOnAnnouncementDeleteButton();
 	}
-	*/
+	
 	
 	
 	// Create Alert in a class
@@ -298,7 +298,7 @@ public class BV_TestCases extends BaseTest {
 	}	
 	
 	
-	/*
+	
 	// Create Event with invitees in a class
 	// 10.1 Verify the Teacher (existing account which has class created) is able to create an event in the class and invite all the class parents
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -539,6 +539,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	*/
+	
 		
 }
