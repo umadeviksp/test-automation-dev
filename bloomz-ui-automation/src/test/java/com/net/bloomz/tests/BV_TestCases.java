@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.net.bloomz.pages.ClassPage;
+import com.net.bloomz.pages.CreateAlertInClassPage;
 import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.EditMyProfilePage;
@@ -291,8 +292,9 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAlert()
 		.clickOnContinueCreateAlertButton().clickOnToFieldLocator().clickOnToClassFieldLocator().clickOnDoneLocator()
-		.enterTitle(sTitle).enterGeneralUpdate("Create alert in class").clickOnPostButton()
-		.clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae().clickOnOptionsLocator().clickOnDeletePostLocator();		
+		.enterTitle(sTitle).enterGeneralUpdate("Create alert in class").clickOnPostButton().clickOnAllGroupsButton();
+		
+		HomePage.getHomePage(browser).clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae().clickOnOptionsLocator().clickOnDeletePostLocator();		
 	}	
 	
 	

@@ -115,7 +115,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		waitForElement(locator);
 		if (getPlatformName().equals("")) {
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -312,10 +312,17 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 	
 	
 	public WebElement getWebElement(By locator) {
+		
 		return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
 
 	}
 
+	public void refreshWebPage() {
+		browser.getWebDriver().navigate().refresh();		
+		//return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator);
+
+	}
+	
 	public boolean isWebElementDisplayed(By locator) {
 		return ((AndroidDriver<?>) browser.getWebDriver()).findElement(locator).isDisplayed();
 
