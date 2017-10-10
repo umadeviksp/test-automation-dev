@@ -42,6 +42,7 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 	}
 	
 	public HomePage clickOnPostButton() {
+		System.out.println("Click on Post");
 		click(postButtonLocator);
 		return HomePage.getHomePage(browser);
 	}
