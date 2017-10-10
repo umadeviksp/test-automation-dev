@@ -294,7 +294,9 @@ public class HomePage extends BasePage implements HomePageActions {
 	}
 	
 	public CreateAlertInClassPage clickOnAlertEventButton() {
+		System.out.println("Click on alert section");
 		click(alertEventLocator);
+		System.out.println("Found alert section");
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
 	}
 
