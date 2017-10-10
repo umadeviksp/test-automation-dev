@@ -20,7 +20,7 @@ import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-	/*	
+	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -296,7 +296,7 @@ public class BV_TestCases extends BaseTest {
 	}	
 	
 	
-	/*
+	
 	// Create Event with invitees in a class
 	// 10.1 Verify the Teacher (existing account which has class created) is able to create an event in the class and invite all the class parents
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -402,7 +402,7 @@ public class BV_TestCases extends BaseTest {
 				.clickOnInviteButton().selectAnyOneClass().selectParentRole()
 				.selectSmartInviteUseGmail().clickOnGmailOption().clickOnContinue();
 	}
-	*/
+	
 	
 	//Upload the Cover photo of the class
 	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
@@ -429,7 +429,7 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-	/*	
+	
 	//Upload the mascot image of the class
 	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
@@ -537,6 +537,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	*/
+	
 		
 }

@@ -550,7 +550,7 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
             
-            Thread.sleep(6000);
+            Thread.sleep(1000);
             
         } catch (Exception exp) {
 			exp.printStackTrace();
