@@ -194,6 +194,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	public ClassPage uploadImage(String pathToTestImage) throws InterruptedException, IOException {
 		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
 		//return CreatePostInClassPage.getCreatePostInClassPage(browser);
+
 		UploadFileAutoIT(pathToTestImage);
 		return ClassPage.getClassPage(browser);
 	}

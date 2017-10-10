@@ -9,24 +9,18 @@ import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.net.bloomz.pages.BasePage;
-import com.net.bloomz.pages.ClassAccessCodePage;
 import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
-import com.net.bloomz.pages.CreatePTCEventInClassPage;
-import com.net.bloomz.pages.CreatePostInClassPage;
-import com.net.bloomz.pages.CreateVolunteerInClassPage;
 import com.net.bloomz.pages.EditMyProfilePage;
 import com.net.bloomz.pages.HomePage;
-import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
 	
-		
+	/*	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -279,7 +273,8 @@ public class BV_TestCases extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAnnouncement()
 		.enterTitle("test announcement").enterGeneralUpdate("random text for verifying announcement feature")
-		.clickOnPostButton().thenVerifyAnnouncements("(1)").clickOnAnnouncementCloseButton().clickOnAnnouncementDeleteButton();
+		.clickOnPostButton().thenVerifyAnnouncements("(1)").clickOnAnnouncement().clickOnAnnouncementOptions()
+		.clickOnAnnouncementDeleteButton();
 	}
 	
 	
@@ -290,7 +285,7 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0903" })
 	public void BVT_09_3_testCreateAlertInClass() throws Exception {
 		System.out.println("BVT_09_3_testCreateAlertInClass");
-		String sTitle = "test_alert_" + getTimeStamp().replaceAll("-", "_");
+		String sTitle = "test_alert_message" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
@@ -301,7 +296,7 @@ public class BV_TestCases extends BaseTest {
 	}	
 	
 	
-	
+	/*
 	// Create Event with invitees in a class
 	// 10.1 Verify the Teacher (existing account which has class created) is able to create an event in the class and invite all the class parents
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -407,7 +402,7 @@ public class BV_TestCases extends BaseTest {
 				.clickOnInviteButton().selectAnyOneClass().selectParentRole()
 				.selectSmartInviteUseGmail().clickOnGmailOption().clickOnContinue();
 	}
-	
+	*/
 	
 	//Upload the Cover photo of the class
 	//10.7 Verify the Teacher (existing account which has class created) is able to Upload the Cover photo of the class
@@ -434,7 +429,7 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-		
+	/*	
 	//Upload the mascot image of the class
 	//10.8 Verify the Teacher (existing account which has class created) is able to Upload the Mascot image of the class
 	@Test(groups = { "android", "ios", "web", "BVT1008" })
@@ -542,6 +537,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	
+	*/
 		
 }

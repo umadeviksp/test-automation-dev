@@ -40,7 +40,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By successEventMessageLocator;
 	static By newClassNameLocator;
 	static By announcementSectionLocator;
-	static By announcementCloseButtonLocator;
+	static By announcementLocator;
 	static By deleteAnnouncementLocator;
 	static By upcomingEventsLocator;
 	static By alertEventLocator;
@@ -55,6 +55,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By feedLocator;
 	static By membersTabLocator;
 	static By inviteButtonLocator;
+	static By announceOptionsLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -263,8 +264,13 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
-	public HomePage clickOnAnnouncementCloseButton() {
-		click(announcementCloseButtonLocator);
+	public HomePage clickOnAnnouncement() {
+		click(announcementLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnAnnouncementOptions() {
+		click(announceOptionsLocator);
 		return HomePage.getHomePage(browser);
 	}
 	
@@ -281,9 +287,9 @@ public class HomePage extends BasePage implements HomePageActions {
 	}
 	
 	public HomePage thenVerifyThatUploadWasSuccessful(String sText) {
-		//successEventMessageLocator = By.id("toast");
-		//System.out.println(getText(successEventMessageLocator));
-		//Assert.assertEquals(getText(successEventMessageLocator), sText);
+		successEventMessageLocator = By.id("toast");
+		System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
 		return HomePage.getHomePage(browser);
 	}
 	
@@ -372,10 +378,14 @@ public class HomePage extends BasePage implements HomePageActions {
 			profileNameTextLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]/span");
 			newClassNameLocator = By.xpath("//*[@id=\"orgHome\"]/div/nav[1]/h1/div");
 			announcementSectionLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/h1/span");
-			announcementCloseButtonLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/div/div/article/div[1]");
-			deleteAnnouncementLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
+			//announcementCloseButtonLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/div/div/article/div[1]");
+			announcementLocator = By.xpath("//*[@id='posts_announcementsSection']//*[contains(text(),'test announcement')]");
+			announceOptionsLocator= By.xpath("//*[@id='postViewControl']//ng-switch[@on='rightButtonIsImage']//*[contains(text(),'Options')]");
+			//deleteAnnouncementLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
+			deleteAnnouncementLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Delete Announcement')]");
 			successEventMessageLocator = By.id("toast");
-			alertEventLocator = By.xpath("//*[@id='communityContent']/span/section[16]/div[2]/article/p/span[2]");
+			//alertEventLocator = By.xpath("//*[@id='communityContent']/span/section[16]/div[2]/article/p/span[2]");
+			alertEventLocator = By.xpath("//*[@id='communityContent']//*[contains(text(),'test_alert_message')]");
 			classNameSecondLocator = By.xpath("//*[@id='posts']/nav[1]/div[2]/ul[4]/li/ul/li[2]/span/a");
 			scrollHomeLocator = By.xpath("//*[@id='posts']/div[7]");
 			scrollDownSupportLocator = By.xpath("//*[@id='postsList']/div[2]/ul/li[2]/a");

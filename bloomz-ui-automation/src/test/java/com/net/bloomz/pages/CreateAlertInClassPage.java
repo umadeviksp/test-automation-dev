@@ -98,8 +98,10 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 			toFieldLocator = By.xpath("//*[@id=\"addPost\"]/div/div[1]/form/section[1]/div");
 			toClassFieldLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/ul/li/div");
 			doneButtonLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/a");
-			alertTitleLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/p/span[2]");
-			alertIndicatorLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/div[3]/span[1]");
+			//alertTitleLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/p/span[2]");
+			alertTitleLocator = By.xpath("//*[@id='postViewControl']//*[contains(text(),'test_alert_message')]");
+			//alertIndicatorLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/div[3]/span[1]");
+			alertIndicatorLocator = By.xpath("//*[@id='postViewControl']//span[@class='tags tagUrgent']");
 			optionsButtonLocator = By.xpath("//*[@id='postViewControl']/nav/ng-switch[3]/a");
 			deletePostButonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[1]/span");
 			return new WebCreateAlertInClassPage(browser);
