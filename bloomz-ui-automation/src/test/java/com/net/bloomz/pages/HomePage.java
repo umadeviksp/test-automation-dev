@@ -294,8 +294,9 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
-	public CreateAlertInClassPage clickOnAlertEventButton() {
+	public CreateAlertInClassPage clickOnAlertEventButton() throws InterruptedException{
 		System.out.println("Click on alert section");
+		scrollIntoView(alertEventLocator);
 		click(alertEventLocator);
 		System.out.println("Found alert section");
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
