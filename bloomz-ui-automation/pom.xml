@@ -41,6 +41,13 @@
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-commons -->
+		<dependency>
+		    <groupId>ru.yandex.qatools.allure</groupId>
+		    <artifactId>allure-commons</artifactId>
+		    <version>${allure.version}</version>
+		    <scope>test</scope>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-model -->
 		<dependency>
 		    <groupId>ru.yandex.qatools.allure</groupId>
