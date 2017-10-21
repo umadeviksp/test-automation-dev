@@ -41,6 +41,12 @@
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-model -->
+		<dependency>
+		    <groupId>ru.yandex.qatools.allure</groupId>
+		    <artifactId>allure-model</artifactId>
+		    <version>${allure.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>ru.yandex.qatools.allure</groupId>
 			<artifactId>allure-testng-adaptor</artifactId>
