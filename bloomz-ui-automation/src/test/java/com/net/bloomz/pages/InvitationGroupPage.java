@@ -1,6 +1,9 @@
 package com.net.bloomz.pages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidInvitationGroupPage ;
@@ -28,7 +31,14 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 	static By continueButtonLocator;
 	static By inviteMembersSectionLocator;
 	static By teacherRoleTextLocator;
-
+	static By inviteSpouseEmailTextLocator;
+	static By doneButtonLocator;
+	static By cancelButtonLocator;
+	static By successEventMessageLocator;
+	static By classAdminRoleTextLocator;
+	static By roomParentRoleTextLocator;
+	static By emailTextLocator;
+	
 	public InvitationGroupPage(Browser<?> browser) {
 		super(browser);
 
@@ -55,9 +65,14 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 		return  InvitationRecommendPage.getInvitationRecommendPage(browser);
 	}
 	
-	public HomePage clickOnInviteSpouseButton() {
+//	public HomePage clickOnInviteSpouseButton() {
+//		click(inviteSpouseButtonLocator);
+//		return  HomePage.getHomePage(browser);
+//	}
+	
+	public InvitationGroupPage clickOnInviteSpouseButton() {
 		click(inviteSpouseButtonLocator);
-		return  HomePage.getHomePage(browser);
+	return  InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
 	public InvitationPersonalConnectionPage clickOnInvitePersonalConnectionButton() {
@@ -80,13 +95,33 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
+	public InvitationGroupPage selectClassAdminRole() {
+		click(classAdminRoleTextLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
+	public InvitationGroupPage selectRoomParentRole() {
+		click(roomParentRoleTextLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
 	public InvitationGroupPage selectEmailsManually() {
 		click(typeEmailsManuallyTextLocator);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
+	public InvitationGroupPage clickEmailId() {
+		click(emailTextLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
 	public InvitationGroupPage enterEmailId(String emailId) {
 		sendText(emailIdTextBoxLocator, emailId);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
+	public InvitationGroupPage copyPaste(String sEmail) throws InterruptedException, IOException {
+		UploadFileAutoIT(sEmail);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
 	
@@ -115,7 +150,29 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 		click(inviteMembersSectionLocator);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
 		
+	}	
+
+	public InvitationGroupPage enterInviteSpouseEmail(String sEmail) {
+		sendText(inviteSpouseEmailTextLocator,sEmail);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
 	}
+	
+	public InvitationGroupPage clickOnDoneButton() {
+		click(doneButtonLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
+	public HomePage clickOnCancelButton() {
+		click(cancelButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public InvitationGroupPage thenVerifyTheToastMessage(String sText) {
+		//System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
 	
 	public static InvitationGroupPage getInvitationGroupPage(Browser<?> browser) {
 		String string = browser.toString();
@@ -132,7 +189,8 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 			inviteClassSectionLocator	= By.xpath("//div[@id='inviteToPicker']//label[@ng-bind='groups.title'][text()='Classes']/parent::node()//section");
 
 			inviteTryBloomzButtonLocator 	= By.xpath("//div[@id='inviteToPicker']//section[contains(@class,'inviteToTryBloomz')]");
-			inviteSpouseButtonLocator 	= By.xpath("//section[@id='userProfileView_myFamilyListing']//span[contains(@class,'profileM')]");
+			//inviteSpouseButtonLocator 	= By.xpath("//section[@id='userProfileView_myFamilyListing']//span[contains(@class,'profileM')]");
+			inviteSpouseButtonLocator 	= By.xpath("//*[@id='inviteToPicker']//span[contains(text(), 'Invite Your Spouse')]");
 			invitePersonalConnectionButtonLocator	= By.xpath("//div[@id='inviteToPicker']//section[contains(@ng-click,'invitePersonalConnections')]");
 			classNameTextLocator = By.xpath("//*[@ng-bind=\"groupEntry.displayName\"]");
 			parentRoleTextLocator = By
@@ -148,6 +206,16 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 			inviteMembersSectionLocator = By.xpath("//*[@id=\"groupCreateOptions\"]//*[contains(text(),\"Invite people to join Alpha Teacher on Bloomz.\")]");
 			teacherRoleTextLocator = By
 					.xpath("//*[@id=\"rolePicker\"]//*[contains(text(),\"Teacher\")]"); 
+			inviteSpouseEmailTextLocator = By.xpath("//*[@id='inviteSpouse_searchEmail']");
+			doneButtonLocator = By.xpath("//*[@id='inviteSpouseSearch']//*[contains(text(),'Done')]");
+			cancelButtonLocator = By.xpath("//*[@id='inviteToPicker']//*[contains(text(),'Cancel')]");
+			successEventMessageLocator = By.id("toast");
+			classAdminRoleTextLocator = By
+					.xpath("//*[@id='rolePicker']//*[contains(text(),'Class Admin')]"); 
+			roomParentRoleTextLocator = By
+					.xpath("//*[@id='rolePicker']//*[contains(text(),'Room Parent')]"); 
+			emailTextLocator = By.xpath("//*[@id='inviteTeachers']//*[contains(text(), 'To: Enter emails or US phone numbers...')]");
+			
 			return new WebInvitationGroupPage(browser);
 		}
 		return null;

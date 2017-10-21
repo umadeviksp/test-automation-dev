@@ -1,6 +1,7 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidMyProfilePage;
@@ -19,6 +20,9 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 	static By editButtonLocator = null;
 	static By goBackButtonLocator = null;
 	static By childListLocator = null;
+	static By successEventMessageLocator = null;
+	static By spouseInvitedImgLocator = null;
+	static By yesButtonLocator = null;
 
 	public MyProfilePage(Browser<?> browser) {
 		super(browser);
@@ -42,10 +46,29 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 		click(goBackButtonLocator);
 		return HomePage.getHomePage(browser) ;
 	}
+	
 	public EditMyProfilePage clickOnEditButton() {
 		click(editButtonLocator);
 		return EditMyProfilePage.getEditMyProfilePage(browser);
 	}
+	
+	public MyProfilePage thenVerifyThatUploadWasSuccessful(String sText) {
+		//successEventMessageLocator = By.id("toast");
+		System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return this;
+	}
+	
+	public MyProfilePage clickOnSpouseInvited() {
+		click(spouseInvitedImgLocator);
+		return MyProfilePage.getMyProfilePage(browser);
+	}
+	
+	public MyProfilePage clickOnYesButton() {
+		click(yesButtonLocator);
+		return MyProfilePage.getMyProfilePage(browser);
+	}
+	
 
 	public static MyProfilePage getMyProfilePage(Browser<?> browser) {
 		String string = browser.toString();
@@ -67,6 +90,9 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 			addChildButtonLocator = By.xpath("//*[@id=\"userProfileView_myFamilyListing\"]/a[2]/span");
 			editButtonLocator 	= By.xpath("//div[contains(@class,'profilePage')]//a[contains(@class,'nextButton')]");
 			goBackButtonLocator 	= By.xpath("//div[contains(@class,'profilePage')]//a[contains(@class,'backButtonOnly')]");
+			successEventMessageLocator = By.id("toast");
+			spouseInvitedImgLocator = By.xpath("//*[@id='userProfileView_myFamilyListing']//*[@data-displayname='Spouse Invited']//*[@alt='No Profile Photo']");
+			yesButtonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains(text(), 'Yes')]");
 
 			return new WebMyProfilePage(browser);
 		}

@@ -58,6 +58,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By announceOptionsLocator;
 	static By allGroupsMenuLocator;
 
+
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
 	// By postTextLocator = By.id("net.bloomz:id/txtAlbumPhotoComment");
@@ -336,6 +337,13 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	public HomePage thenVerifyWelcomeScreenTroop(String sText) {
+		Assert.assertEquals(getText(welcomeMessageLocator), "Welcome to Bloomz");
+		Assert.assertEquals(getText(createClassLocator), sText);
+		Assert.assertEquals(getText(tourWelcomeLocator), "Take Quick Tour");
+		return HomePage.getHomePage(browser);
+	}
+	
 	public HomePage clickOnAllGroupsButton() {
 		System.out.println("Click on All groups");
 		click(allGroupsMenuLocator);
@@ -410,6 +418,7 @@ public class HomePage extends BasePage implements HomePageActions {
 
 			inviteButtonLocator = By.xpath ("//div[@id='mainPanel']//a[@id='bloomzMainNav_navLeftInvite']");
 			allGroupsMenuLocator = By.xpath("//*[@id='bloomzMainNav_navLeftHome']");
+			
 			
 			return new WebHomePage(browser);
 		} 

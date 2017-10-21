@@ -38,10 +38,7 @@ public class SettingPage extends BasePage implements SettingPageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
-	public SettingPage uploadProfileImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	public static SettingPage getSettingPage(Browser<?> browser) {
 		String string = browser.toString();

@@ -1,6 +1,7 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidSignInPage;
@@ -18,6 +19,10 @@ public class SignInPage extends BasePage implements SignPageActions {
 	static By resetButtonLocator = null;
 	static By forgotPasswordBackButtonLocator = null;
 	static By pageTitleLocator = null;
+	static By successEventMessageLocator = null;
+	static By forgotPasswordLocator = null;
+	static By emailNameTextLocator = null;
+	static By requestNewPwdButtonLocator = null;
 
 	public SignInPage(Browser<?> browser) {
 		super(browser);
@@ -48,6 +53,26 @@ public class SignInPage extends BasePage implements SignPageActions {
 		return null;
 	}
 	
+	public SignInPage thenVerifyTheToastMessage(String sText) {		
+		System.out.println(getText(successEventMessageLocator));
+		Assert.assertEquals(getText(successEventMessageLocator), sText);
+		return this;
+	}
+	
+	public SignInPage clickOnForgotPassword() {
+		click(forgotPasswordLocator);
+		return this;
+	}
+	
+	public SignInPage enterEmailName(String sEmailId) {
+		sendText(emailNameTextLocator, sEmailId);
+		return this;
+	}
+	
+	public SignInPage clickOnRequestNewPassword() {
+		click(requestNewPwdButtonLocator);
+		return this;
+	}
 	
 	public static SignInPage getSignInPage(Browser<?> browser) {
 		String string = browser.toString();
@@ -84,6 +109,10 @@ public class SignInPage extends BasePage implements SignPageActions {
 			resetButtonLocator = By.id("net.bloomz:id/btnReset");
 			forgotPasswordBackButtonLocator = By.id("net.bloomz:id/backarrow");
 			pageTitleLocator = By.id("net.bloomz:id/txtHeadingTitle");
+			successEventMessageLocator = By.id("toast");
+			forgotPasswordLocator = By.xpath("//*[@id='login']//*[contains(text(),'Click here.')]");
+			emailNameTextLocator = By.xpath("//*[@id='forgotPassword']//*[@name='Email']");
+			requestNewPwdButtonLocator = By.xpath("//*[@id='resetPasswordBtn']//*[contains(text(),'Request New Password')]");
 			return new WebSignInPage(browser);
 		}
 

@@ -15,6 +15,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.awt.AWTException;
 
 
 import org.openqa.selenium.By;
@@ -563,6 +564,30 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 			exp.printStackTrace();
 		}
 		
+//	public BasePage CopyPaste() {
+//		 
+//		  String string = "Hello Selenium"; 
+//		  StringSelection stringSelection = new StringSelection(string);
+//		  Toolkit.getDefaultToolkit().getSystemClipboard()
+//		        .setContents(stringSelection, null);
+//		 
+//		  try {
+//		     Runtime runtime = Runtime.getRuntime();
+//		     runtime.exec("C:\\Windows\\System32\\Notepad.exe");
+//		      
+//		     Robot robot = new Robot();
+//		     robot.keyPress(KeyEvent.VK_CONTROL);
+//		     robot.keyPress(KeyEvent.VK_V); 
+//		     robot.keyRelease(KeyEvent.VK_V); 
+//		     robot.keyRelease(KeyEvent.VK_CONTROL); 
+//		 
+//		     } catch (AWTException e) {
+//		        e.printStackTrace();
+//		     } catch (IOException e1) {
+//		        e1.printStackTrace();
+//		   } 
+//		 
+//		}
 	}
 	
 }

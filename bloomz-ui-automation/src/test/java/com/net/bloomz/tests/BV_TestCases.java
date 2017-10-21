@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.net.bloomz.pages.ClassPage;
-import com.net.bloomz.pages.CreateAlertInClassPage;
 import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.EditMyProfilePage;

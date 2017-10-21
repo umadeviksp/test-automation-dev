@@ -1,6 +1,7 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidEditMyProfilePage ;
@@ -17,7 +18,8 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 	static By lastNameTextLocator = null;
 	static By genderMaleSelectLocator = null;
 	static By genderFemaleSelectLocator = null;
-	static By uploadProfileImageLocator;
+	static By uploadProfileImageLocator = null;
+	static By successEventMessageLocator = null;
 	
 	public EditMyProfilePage(Browser<?> browser) {
 		super(browser);
@@ -59,6 +61,8 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 		click(genderFemaleSelectLocator);
 		return this;
 	}
+	
+
 
 	public static EditMyProfilePage getEditMyProfilePage(Browser<?> browser) {
 		String string = browser.toString();
@@ -81,6 +85,7 @@ public class EditMyProfilePage extends BasePage implements EditMyProfilePageActi
 			genderMaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='male']");
 			genderFemaleSelectLocator = By.xpath("//section[contains(@class,'myInfoEdit')]//input[@value='female']");
 			uploadProfileImageLocator = By.xpath("//*[@id=\"userProfile_\"]//span[@src=\"profile.photo\"]//span[@ng-click=\"editPhoto()\"]");
+			
 			return new WebEditMyProfilePage(browser);
 		}
 		return null;

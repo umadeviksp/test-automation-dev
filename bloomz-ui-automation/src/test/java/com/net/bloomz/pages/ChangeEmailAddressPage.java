@@ -16,6 +16,7 @@ public class ChangeEmailAddressPage extends BasePage implements ChangeEmailAddre
 	static By passwordTextLocator = null;
 	static By showPasswordButtonLocator = null;
 
+
 	public ChangeEmailAddressPage(Browser<?> browser) {
 		super(browser);
 	}
@@ -45,6 +46,8 @@ public class ChangeEmailAddressPage extends BasePage implements ChangeEmailAddre
 		return this;
 	}
 
+	
+	
 	public static ChangeEmailAddressPage getChangeEmailAddressPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -60,6 +63,7 @@ public class ChangeEmailAddressPage extends BasePage implements ChangeEmailAddre
 			newEmailTextLocator	= By.id("changeEmailForm_newemail");
 			passwordTextLocator	= By.id("changeEmailForm_password");
 			showPasswordButtonLocator	= By.xpath("//div[@id='changeEmail']//div[contains(@class,'switchControl')]");
+			
 			return new WebChangeEmailAddressPage(browser);
 		}
 		return null;
