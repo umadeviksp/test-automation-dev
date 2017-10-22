@@ -19,7 +19,7 @@ import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
 public class BV_TestCases extends BaseTest {
-	
+	/*
 	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
@@ -87,9 +87,12 @@ public class BV_TestCases extends BaseTest {
 		System.out.println("BVT_04_3_testInviteteacherToAClass");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMembersTab()
-		.clickOnAddMembers().clickOnInviteMembers().selectTeacherRole().selectEmailsManually().enterEmailId("test@test.com ")
+		.clickOnAddMembers().clickOnInviteMembers().selectTeacherRole().selectEmailsManually().enterEmailId("test@test.com")
 		.clickOnEmailSendButton().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
-		.clickOnSettingButton().clickOnSignOutButton();;
+		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("test t")
+		.selectMembersEmailId().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
+		.thenVerifyTheToastMessage("Successful! Member removed from this group.").clickOnDoneButton();
+		//.clickOnSettingButton().clickOnSignOutButton();
 	}
 		
 	
@@ -201,6 +204,7 @@ public class BV_TestCases extends BaseTest {
 		// mobile only
 	}
 	
+	
 	// Scroll up and down the Home feed
 	// 7.1 Verify the Teacher (account with multiple posts) is able to scroll up and down the Home screen
 	@Test(groups = { "android", "ios", "web", "BVT0701" })
@@ -262,20 +266,22 @@ public class BV_TestCases extends BaseTest {
 		.clickOnBackButton().clickOnUpdatesTab();		
 	}
 	
-		
+	
 	// Create Announcement in a class
 	// 9.2 Verify the Teacher (existing account which has class created) is able to create an announcement in the class
 	@Test(groups = { "android", "ios", "web", "BVT0902" })
 	public void BVT_09_2_testCreateAnnouncementInClass() throws Exception {
 		System.out.println("BVT_09_2_testCreateAnnouncementInClass");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAnnouncement()
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		.createNewAnnouncement()
 		.enterTitle("test announcement").enterGeneralUpdate("random text for verifying announcement feature")
-		.clickOnPostButton().thenVerifyAnnouncements("(1)").clickOnAnnouncement().clickOnAnnouncementOptions()
-		.clickOnAnnouncementDeleteButton();
+		.clickOnPostButton().thenVerifyAnnouncements("(1)").
+		clickOnAnnouncement().clickOnAnnouncementOptions()
+		.clickOnAnnouncementDeleteButton().clickOnConfirmAnnouncementDeleteButton();
 	}
+	*/
 	
-		
 	// Create Alert in a class
 	// 9.3 Verify the Teacher (existing account which has class created) is able to create an alert in the class	
 	// Checkpoint has to be added
@@ -293,7 +299,7 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae().clickOnOptionsLocator().clickOnDeletePostLocator();		
 	}	
 	
-	
+	/*
 	// Create Event with invitees in a class
 	// 10.1 Verify the Teacher (existing account which has class created) is able to create an event in the class and invite all the class parents
 	@Test(groups = { "android", "ios", "web", "BVT01001" })
@@ -534,6 +540,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	
+	*/
 		
 }

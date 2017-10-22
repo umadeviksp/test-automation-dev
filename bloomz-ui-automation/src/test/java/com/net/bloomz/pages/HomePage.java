@@ -57,7 +57,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By inviteButtonLocator;
 	static By announceOptionsLocator;
 	static By allGroupsMenuLocator;
-
+	static By yesDeleteAnnouncementLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -281,6 +281,12 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 
+	
+	public HomePage clickOnConfirmAnnouncementDeleteButton() {
+		click(yesDeleteAnnouncementLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public HomePage thenVerifyThatPostWasSuccessful(String sText) {
 		successEventMessageLocator = By.id("toast");
 		System.out.println(getText(successEventMessageLocator));
@@ -402,6 +408,7 @@ public class HomePage extends BasePage implements HomePageActions {
 			announceOptionsLocator= By.xpath("//*[@id='postViewControl']//ng-switch[@on='rightButtonIsImage']//*[contains(text(),'Options')]");
 			//deleteAnnouncementLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
 			deleteAnnouncementLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Delete Announcement')]");
+			yesDeleteAnnouncementLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(), 'Yes')]");
 			successEventMessageLocator = By.id("toast");
 			//alertEventLocator = By.xpath("//*[@id='communityContent']/span/section[16]/div[2]/article/p/span[2]");
 			alertEventLocator = By.xpath("//*[@id='posts_updatesHomeSection']//*[contains(text(),'test_alert_message')]");
