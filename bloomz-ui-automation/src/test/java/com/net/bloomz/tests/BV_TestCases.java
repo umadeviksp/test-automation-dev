@@ -259,9 +259,7 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle("Create new post").enterGeneralUpdate("random text")
 		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
-		.clickOnBackButton().clickOnUpdatesTab();
-		
-		
+		.clickOnBackButton().clickOnUpdatesTab();		
 	}
 	
 		
@@ -277,8 +275,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnAnnouncementDeleteButton();
 	}
 	
-	
-	
+		
 	// Create Alert in a class
 	// 9.3 Verify the Teacher (existing account which has class created) is able to create an alert in the class	
 	// Checkpoint has to be added
@@ -295,7 +292,6 @@ public class BV_TestCases extends BaseTest {
 		
 		HomePage.getHomePage(browser).clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae().clickOnOptionsLocator().clickOnDeletePostLocator();		
 	}	
-	
 	
 	
 	// Create Event with invitees in a class

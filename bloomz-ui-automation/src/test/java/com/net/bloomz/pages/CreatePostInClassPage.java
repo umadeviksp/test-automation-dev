@@ -23,6 +23,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	static By postCommentFieldLocator;
 	static By sendCommentButtonLocator;
 	static By selectAllLocator;
+	static By commentsButtonLocator;
+	static By postOptionsLocator;
+	static By deletePostButtonLocator;
+	static By confirmDeletePostLocator;
+
 
 	public CreatePostInClassPage(Browser<?> browser) {
 		super(browser);
@@ -73,7 +78,6 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
-	//Uma added
 	public CreatePostToMyContactsPage clickOnMyContacts() {
 		click(myContactsLocator);
 		return CreatePostToMyContactsPage.getCreatePostToMyContactsPage(browser);
@@ -96,6 +100,26 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 
 	public CreatePostInClassPage clickOnSelectAll() {
 		click(selectAllLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+
+	public CreatePostInClassPage clickOnCommentsButton() {
+		click(commentsButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnPostOptions() {
+		click(postOptionsLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnDeletePost() {
+		click(deletePostButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnConfirmDeletePost() {
+		click(confirmDeletePostLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -121,6 +145,10 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 			postCommentFieldLocator = By.id("post_commentText");
 			sendCommentButtonLocator = By.xpath("//*[@id=\"postViewControl\"]/div[2]/div/form/div[2]/button");
 			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/span");
+			commentsButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Comments']");
+			postOptionsLocator = By.xpath("//*[@id='postViewControl']//ng-switch[@on='rightButtonIsImage']//*[contains(text(),'Options')]");
+			deletePostButtonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains(text(), 'Delete Post')]");
+			confirmDeletePostLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains(text(), 'Yes')]");
 			return new WebCreatePostInClassPage(browser);
 		}
 		return null;
