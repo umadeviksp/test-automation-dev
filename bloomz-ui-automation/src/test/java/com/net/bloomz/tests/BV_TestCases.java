@@ -167,6 +167,7 @@ public class BV_TestCases extends BaseTest {
 		CreateMessagePage.getCreateMessagePage(browser).clickOnBackButton();
 	}
 	
+	
 	// 5.3 Verify an existing Teacher (account with a bunch of messages) is able to load the Messages screen
 	@Test(groups = { "android", "ios", "web", "BVT0503" })
 	public void BVT_05_3_2_testMessagesOnMainFeedForExistingAccount() throws Exception {

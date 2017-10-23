@@ -95,7 +95,8 @@ public class CreateMessagePage extends BasePage implements CreateMessagePageActi
 		} else if (string.equals(".iOS")) {
 			
 		} else {
-			toRecipientFieldLocator = By.xpath("//*[@id=\"recipientHeader\"]/ul/li/div/div");
+			//toRecipientFieldLocator = By.xpath("//*[@id=\"recipientHeader\"]/ul/li/div/div");
+			toRecipientFieldLocator = By.xpath("//*[@id='recipientHeader']//*[contains(text(), 'Select a recipient')]");
 			messageTextFieldLocator = By.className("sendMessage_messageText_content");
 			sendButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div/div[2]/div/form/div[2]/button");
 			messagesTextLocator = By.xpath("//*[@ng-class=\"{time: entry.type && entry.type == 'header'}\"]");
