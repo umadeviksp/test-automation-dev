@@ -297,8 +297,8 @@ public class BV_TestCases extends BaseTest {
 		.clickOnContinueCreateAlertButton().clickOnToFieldLocator().clickOnToClassFieldLocator().clickOnDoneLocator()
 		.enterTitle(sTitle).enterGeneralUpdate("Create alert in class").clickOnPostButton().clickOnAllGroupsButton();
 		
-		HomePage.getHomePage(browser).clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae()
-		.clickOnOptionsLocator().clickOnDeletePostLocator().clickOnConfirmDeleteAlert();		
+//		HomePage.getHomePage(browser).clickOnAlertEventButton().readAlertEventTitle(sTitle).thenVerifyAlertMessgae()
+//		.clickOnOptionsLocator().clickOnDeletePostLocator().clickOnConfirmDeleteAlert();		
 	}	
 	
 	/*
