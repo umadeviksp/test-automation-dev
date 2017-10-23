@@ -58,6 +58,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By announceOptionsLocator;
 	static By allGroupsMenuLocator;
 	static By yesDeleteAnnouncementLocator;
+	static By alertConfirmDeleteLocator;
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -309,6 +310,12 @@ public class HomePage extends BasePage implements HomePageActions {
 		return CreateAlertInClassPage.getCreateAlertInClassPage(browser);
 	}
 
+
+	public HomePage clickOnConfirmDeleteAlert() {
+		click(alertConfirmDeleteLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public InvitationGroupPage clickOnInviteButton() {
 		click(inviteButtonLocator);
 		return InvitationGroupPage.getInvitationGroupPage(browser);
@@ -412,6 +419,7 @@ public class HomePage extends BasePage implements HomePageActions {
 			successEventMessageLocator = By.id("toast");
 			//alertEventLocator = By.xpath("//*[@id='communityContent']/span/section[16]/div[2]/article/p/span[2]");
 			alertEventLocator = By.xpath("//*[@id='posts_updatesHomeSection']//*[contains(text(),'test_alert_message')]");
+			alertConfirmDeleteLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(), 'Yes')]");
 			classNameSecondLocator = By.xpath("//*[@id='posts']/nav[1]/div[2]/ul[4]/li/ul/li[2]/span/a");
 			scrollHomeLocator = By.xpath("//*[@id='posts']/div[7]");
 			scrollDownSupportLocator = By.xpath("//*[@id='postsList']/div[2]/ul/li[2]/a");

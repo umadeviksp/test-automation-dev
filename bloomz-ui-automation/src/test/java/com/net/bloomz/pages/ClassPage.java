@@ -268,7 +268,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			eventTitlenameLocator = By.xpath("//*[@id='calendarViewControl']/div[1]/section/section[1]/article/div[1]/h2/span");	
 			optionsUpcomingEventLocator = By.xpath("//*[@id='calendarViewControl']/nav/a[2]");
 			deleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[4]/span");
-			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[2]/span");
+			//confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']/button[2]/span");
+			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Delete All Future Events')]");
 			editCoverPhotoButton = By.xpath("//*[@id=\"communityScrollView\"]//button[@ng-click=\"editCoverPhoto()\"]");
 			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
 			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Teacher Logo\"]");
