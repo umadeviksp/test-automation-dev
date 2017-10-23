@@ -101,7 +101,9 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 //			generalUpdateFieldLocator = By.xpath("//*[@id=\"addPost_postData\"]");
 //			postButtonLocator = By.xpath("//*[@id=\"addPost\"]/div/nav[1]/a[2]");
 			titleFieldLocator = By.xpath("//*[@id='addPost']//*[@placeholder='Title (optional)...']");
-			generalUpdateFieldLocator = By.xpath("//*[@id='addPost']//*[contains(text(),'Post an urgent message for your community. Recipients will also receive a TEXT alert and an email...')]");
+			//generalUpdateFieldLocator = By.xpath("//*[@id='addPost']//*[contains(text(),'Post an urgent message for your community. Recipients will also receive a TEXT alert and an email...')]");
+
+			generalUpdateFieldLocator = By.xpath("//*[@id='addPost']/div/div[1]/form/section[5]/div[1]");
 			postButtonLocator = By.xpath("//*[@id='addPost']//a[contains(text(),'Post')]");
 			toFieldLocator = By.xpath("//*[@id=\"addPost\"]/div/div[1]/form/section[1]/div");
 			toClassFieldLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav[1]/ul/li/div");
