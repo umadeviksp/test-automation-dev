@@ -61,7 +61,7 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton();
 		SignInPage.getSignInPage(browser).clickOnForgotPassword().enterEmailName("test@test.com").clickOnRequestNewPassword()
-		.thenVerifyTheToastMessage("Password was recently reset for your account. Please also check in your junk/spam folders if it is not in your inbox yet.");
+		.thenVerifyTheToastMessage("Please check your email for your temporary password. In some cases, it may take upto 15 minutes for the email to show up.");
 	}
 	
 	

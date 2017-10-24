@@ -23,7 +23,7 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().clickEmailId().copyPaste(sEmail)
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
-		.clickOnAClassName().clickOnMembersTab().thenVerifyTheInviteMembers("Invited (21)").clickOnMembersManageButton()
+		.clickOnAClassName().clickOnMembersTab().thenVerifyTheInviteMembers("Invited (20)").clickOnMembersManageButton()
 		.enterEmailSearchMembers("testparent").clickOnSelectAll().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
 		.thenVerifyTheToastMessage("Successful! Members removed from this group.").clickOnDoneButton();
 	}

@@ -66,7 +66,7 @@ public class P0Pass_TeacherSignUp extends BaseTest {
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnChildCareRoomGroup()
 		.enterFirstName("test").enterLastName("ChildCare Room")
 		.enterEmailId(sEmail).enterPassword("bloomz999")
-		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test Childcare Room")
+		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test ChildCare Room")
 		.thenVerifyWelcomeScreenTroop("Create a Childcare Room").clickOnSettingButton().clickOnAccountSettingsButton()
 		.clickOnDeleteAccountButton().selectReasonForDeleteButton().selectReasonAsOthersButton()
 		.enterPassword().clickDeletePermanentButton().clickOnYesButton().thenVerifyConfirmMessage().clickOnOkButton()
