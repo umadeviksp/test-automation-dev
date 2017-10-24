@@ -564,6 +564,8 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 			exp.printStackTrace();
 		}
 		
+
+	
 //	public BasePage CopyPaste() {
 //		 
 //		  String string = "Hello Selenium"; 
@@ -588,6 +590,16 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 //		   } 
 //		 
 //		}
+	}
+
+	protected String getColorElement(By locator1) {
+		// TODO Auto-generated method stub
+		String buttonColor = browser.getWebDriver().findElement(locator1).getCssValue("background-color");
+        //String buttonTextColor = browser.getWebDriver().findElement(locator1).getCssValue("color");
+		System.out.println("Button color: " + buttonColor);
+        return buttonColor;
+        
+        //System.out.println("Text color " + buttonTextColor);
 	}
 	
 }

@@ -43,6 +43,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By uploadNewPhotoButtonLocator;
 	static By mascotPhotoLocator;
 	static By postNoCommentsLocator;
+	static By groupSettingsLocator;
+	static By communityMenuLocator;
 
 	
 	public ClassPage(Browser<?> browser) {
@@ -193,6 +195,11 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		click(postNoCommentsLocator);
 		return ClassPage.getClassPage(browser);
 	}
+
+	public GroupSettingPage clickOnGroupSettings() {
+		click(groupSettingsLocator);
+		return GroupSettingPage.getGroupSettingPage(browser);
+	}
 	
 	public ClassPage uploadImage(String pathToTestImage) throws InterruptedException, IOException {
 		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
@@ -202,6 +209,10 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return ClassPage.getClassPage(browser);
 	}
 	
+	public ClassPage getClassThemeColor(String sColor) {
+		Assert.assertEquals(getColorElement(communityMenuLocator), sColor);
+		return ClassPage.getClassPage(browser);
+	}
 	
 	public static String readResponse(Reader rd) throws IOException {
 	    StringBuilder sb = new StringBuilder();
@@ -274,6 +285,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
 			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Teacher Logo\"]");
 			postNoCommentsLocator = By.xpath("//*[@id='posts_updatesHomeSection']//*[contains(text(), 'Create new post no comments')]");
+			groupSettingsLocator = By.xpath("//*[@id='orgHome']//*[contains (text(),'Group Settings')]");
+			communityMenuLocator = By.id("communityMenu_ul");
 						
 			return new WebClassPage(browser);
 		}

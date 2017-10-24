@@ -2,6 +2,7 @@ package com.net.bloomz.tests;
 
 import org.testng.annotations.Test;
 
+import com.net.bloomz.pages.GroupSettingPage;
 import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.SignInPage;
@@ -85,24 +86,17 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 		.clickOnSignOutButton();		
 	}
 	
-//	// Learnability Card
-//	@Test(groups = { "android", "ios", "web", "P0Pass_07" })
-//	public void P0Pass_7_Teacher_Learnability() throws Exception {
-//		System.out.println("P0Pass_7_Teacher_Learnability");
-//		
-//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
-//		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnSettingButton().clickOnAccountSettingsButton()
-//		.clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp_edit@test.com").enterPassword("bloomz999")
-//		.clickOnSaveButton().clickOnSaveSignOutButton();
-//		
-//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp_edit@test.com")
-//		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-//		.clickOnAccountSettingsButton().clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp@test.com")
-//		.enterPassword("bloomz999").clickOnSaveButton().clickOnSaveSignOutButton();
-//		
-//		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
-//		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-//		.clickOnSignOutButton();		
-//	}	
+	// Set the theme for the class - from SETTINGS page
+		@Test(groups = { "android", "ios", "web", "P0Pass_07" })
+		public void P0Pass_7_ProfileSetupAsATeacher_EditName() throws Exception {
+			System.out.println("P0Pass_7_ChangeTheThemeClass");
+			
+			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+			.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnGroupSettings()
+			.clickOnEditSettings().changeTheTheme("#00b530").clickOnDoneButton().getClassThemeColor("rgba(0, 181, 48, 1)")
+			.clickOnGroupSettings().clickOnEditSettings().changeTheTheme("#00b1db").clickOnDoneButton()
+			.getClassThemeColor("rgba(0, 177, 219, 1)");
+		}
+	
 
 }

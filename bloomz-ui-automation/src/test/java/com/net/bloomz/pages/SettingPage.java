@@ -13,6 +13,8 @@ public class SettingPage extends BasePage implements SettingPageActions {
 	static By myProfileButtonLocator = null;
 	static By accountSettingsButtonLocator = null;
 	static By cancelButtonLocator = null;
+	static By themeEditLocator = null;
+	static By doneButtonLocator = null;
 
 	public SettingPage(Browser<?> browser) {
 		super(browser);
@@ -38,8 +40,16 @@ public class SettingPage extends BasePage implements SettingPageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	public SettingPage changeTheTheme(String sValue) {
+		sendText(themeEditLocator, sValue);
+		return SettingPage.getSettingPage(browser);
+	}
 
-
+	public ClassPage clickOnDoneButton() {
+		click(doneButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
 	public static SettingPage getSettingPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -56,6 +66,8 @@ public class SettingPage extends BasePage implements SettingPageActions {
 			myProfileButtonLocator 	= By.xpath("//span[contains(text(), \"My Profile\")]");
 			accountSettingsButtonLocator = By.xpath("//span[contains(text(), \"Account Settings\")]");
 			cancelButtonLocator 	= By.xpath("//span[contains(text(), \"Cancel\")]");
+			themeEditLocator = By.xpath("//*[@id='orgSettings']//input[@theme='theme']");
+			doneButtonLocator = By.xpath("//*[@id='orgSettings']//*[contains (text(),'Done')]");
 			return new WebSettingPage(browser);
 		}
 		return null;
