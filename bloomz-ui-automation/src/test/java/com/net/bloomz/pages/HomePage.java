@@ -59,6 +59,12 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By allGroupsMenuLocator;
 	static By yesDeleteAnnouncementLocator;
 	static By alertConfirmDeleteLocator;
+	static By downloadAppTextLocator;
+	static By verifyYourEmailTextLocator;
+	static By inviteParentsTextLocator;
+	static By startPostingTextLocator;
+	static By dismissCardTextLocator;
+	
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
 	// By homeListViewLocator = By.id("net.bloomz:id/HomeListView");
@@ -433,6 +439,11 @@ public class HomePage extends BasePage implements HomePageActions {
 
 			inviteButtonLocator = By.xpath ("//div[@id='mainPanel']//a[@id='bloomzMainNav_navLeftInvite']");
 			allGroupsMenuLocator = By.xpath("//*[@id='bloomzMainNav_navLeftHome']");
+			downloadAppTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Download App')]");
+			verifyYourEmailTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Verify your email address')]");
+			inviteParentsTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Invite Parents')]");
+			startPostingTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Start Posting')]");
+			dismissCardTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Dismiss This Card')]");
 			
 			
 			return new WebHomePage(browser);

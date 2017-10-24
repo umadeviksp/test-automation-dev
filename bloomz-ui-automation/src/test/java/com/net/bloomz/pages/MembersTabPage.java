@@ -55,7 +55,7 @@ public class MembersTabPage extends BasePage {
 			searchMembersEmailLocator = By.xpath("//*[@id='orgSettings']//*[@ng-model='searchString']");
 			editRoleButtonLocator = By.xpath("//*[@id='orgSettings']//*[@data-abbrtext='Edit Role']");
 			roomParentTextLocator = By.xpath("//*[@id='orgSettings']//span[contains(text(), 'Room Parents (1)')]");
-			inviteMembersTextLocator = By.xpath("//*[@id='communityContent']//*[contains(text(), 'Invited (21)')]");
+			inviteMembersTextLocator = By.xpath("//*[@id='communityContent']//*[contains(text(), 'Invited (20)')]");
 			selectAllLocator = By.xpath("//*[@id='orgSettings']//*[contains(text(), 'Select All')]");
 			return new WebCreateMembersTabPage(browser);
 		}
@@ -140,7 +140,7 @@ public class MembersTabPage extends BasePage {
 	
 	
 	public MembersTabPage thenVerifyTheInviteMembers(String sText) {
-		//System.out.println(getText(successEventMessageLocator));
+		System.out.println(getText(inviteMembersTextLocator));
 		Assert.assertEquals(getText(inviteMembersTextLocator), sText);
 		return MembersTabPage.getMembersTabPage(browser);
 	}
