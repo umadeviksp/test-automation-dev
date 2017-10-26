@@ -27,6 +27,14 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	static By postOptionsLocator;
 	static By deletePostButtonLocator;
 	static By confirmDeletePostLocator;
+	static By scheduleButtonLocator;
+	static By scheduleDateButtonLocator;
+	static By calendarLocator;
+	static By scheduleTimeLocator;
+	static By schedulePostLocator;
+	static By noOfScheduledPostLocator;
+	static By deleteScheduledPostLocator;
+	static By fileButtonLocator;
 
 
 	public CreatePostInClassPage(Browser<?> browser) {
@@ -68,6 +76,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
+	public CreatePostInClassPage uploadFile(String pathToTestImage) {
+		browser.getWebDriver().findElement(fileButtonLocator).sendKeys(pathToTestImage);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
 	public ClassPage clickOnBackButton() {
 		click(backButtonLocator);
 		return ClassPage.getClassPage(browser);
@@ -75,6 +88,21 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	
 	public CreatePostInClassPage thenVerifyThatPostWasSuccessful() {
 		Assert.assertTrue(getElementSize(successIndicatorLocator) > 0, "Post was not successful");
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage thenVerifyThatSchedulePostWasSuccessful() {
+		Assert.assertTrue(getElementSize(noOfScheduledPostLocator) == 1, "Schedule post was not successful");
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnScheduledPost() {
+		click(noOfScheduledPostLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnDeleteScheduledPost() {
+		click(deleteScheduledPostLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -108,6 +136,54 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
+		
+	public CreatePostInClassPage clickOnScheduleButton() {
+		click(scheduleButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickScheduleDate() {
+		click(scheduleDateButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clearScheduleDate() {
+		clearTextBox(scheduleDateButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage enterScheduleDate(Integer iYrs, Integer iMons, Integer iDay) {
+		sendText(scheduleDateButtonLocator,addYearsMonthsDays(iYrs,iMons,iDay));
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickCloseCalendar() {
+		click(calendarLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickStartTime() {
+		click(scheduleTimeLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clearStartTime() {
+		clearTextBox(scheduleTimeLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage enterStartTime(String sTime) {
+		sendText(scheduleTimeLocator,sTime);
+		sendkeyboardEvent(scheduleTimeLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	
+	public CreatePostInClassPage clickOnSchedulePost() {
+		click(schedulePostLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
 	public CreatePostInClassPage clickOnPostOptions() {
 		click(postOptionsLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
@@ -120,6 +196,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	
 	public CreatePostInClassPage clickOnConfirmDeletePost() {
 		click(confirmDeletePostLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnFileAttachPost() {
+		click(fileButtonLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -146,9 +227,17 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 			sendCommentButtonLocator = By.xpath("//*[@id=\"postViewControl\"]/div[2]/div/form/div[2]/button");
 			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/span");
 			commentsButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Comments']");
+			scheduleButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Schedule']");
 			postOptionsLocator = By.xpath("//*[@id='postViewControl']//ng-switch[@on='rightButtonIsImage']//*[contains(text(),'Options')]");
 			deletePostButtonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains(text(), 'Delete Post')]");
 			confirmDeletePostLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains(text(), 'Yes')]");
+			scheduleDateButtonLocator = By.xpath("//*[@id='_addPost']//label[text()='Schedule For']//input[@class='datePicker']");
+			scheduleTimeLocator = By.xpath("//*[@id='_addPost']//label[text()='Schedule For']//div[@date='startDateTimeInput']//div[@class='timePicker']//input");
+			calendarLocator = By.xpath("//*[@id=\"CalendarControl\"]/a");
+			schedulePostLocator = By.xpath("//*[@id='addPost']//a[contains (text(),'Schedule')]");
+			noOfScheduledPostLocator = By.xpath("//*[@id='communityContent']//a[contains(text(), '1 scheduled')]");
+			deleteScheduledPostLocator = By.xpath("//*[@id='postViewControl']//li[contains(text(), 'Delete')]");
+			fileButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Attach Files']");
 			return new WebCreatePostInClassPage(browser);
 		}
 		return null;

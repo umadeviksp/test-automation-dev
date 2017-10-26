@@ -87,16 +87,16 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	}
 	
 	// Set the theme for the class - from SETTINGS page
-		@Test(groups = { "android", "ios", "web", "P0Pass_07" })
-		public void P0Pass_7_ProfileSetupAsATeacher_EditName() throws Exception {
-			System.out.println("P0Pass_7_ChangeTheThemeClass");
-			
-			LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-			.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnGroupSettings()
-			.clickOnEditSettings().changeTheTheme("#00b530").clickOnDoneButton().getClassThemeColor("rgba(0, 181, 48, 1)")
-			.clickOnGroupSettings().clickOnEditSettings().changeTheTheme("#00b1db").clickOnDoneButton()
-			.getClassThemeColor("rgba(0, 177, 219, 1)");
-		}
+	@Test(groups = { "android", "ios", "web", "P0Pass_07" })
+	public void P0Pass_7_ChangeTheThemeClass() throws Exception {
+		System.out.println("P0Pass_7_ChangeTheThemeClass");
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnGroupSettings()
+		.clickOnEditSettings().changeTheTheme("#00b530").clickOnDoneButton().getClassThemeColor("rgba(0, 181, 48, 1)")
+		.clickOnGroupSettings().clickOnEditSettings().changeTheTheme("#00b1db").clickOnDoneButton()
+		.getClassThemeColor("rgba(0, 177, 219, 1)");
+	}
 	
 
 }

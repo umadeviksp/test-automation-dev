@@ -45,6 +45,8 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By postNoCommentsLocator;
 	static By groupSettingsLocator;
 	static By communityMenuLocator;
+	static By readPostNoCommentsTitle;
+	static By readNoCommentsTitle;
 
 	
 	public ClassPage(Browser<?> browser) {
@@ -153,6 +155,19 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	public ClassPage readUpcomingEventTitle(String sText) {
 		System.out.println(getText(eventTitlenameLocator));
 		Assert.assertEquals(getText(eventTitlenameLocator), sText);
+		return ClassPage.getClassPage(browser);
+	}
+	
+
+	public ClassPage readPostNoCommentsTitle(String sText) {
+		System.out.println(getText(readPostNoCommentsTitle));
+		Assert.assertEquals(getText(readPostNoCommentsTitle), sText);
+		return ClassPage.getClassPage(browser);
+	}
+
+	public ClassPage readNoCommentsTitle(String sText) {
+		System.out.println(getText(readNoCommentsTitle));
+		Assert.assertEquals(getText(readNoCommentsTitle), sText);
 		return ClassPage.getClassPage(browser);
 	}
 	
@@ -284,9 +299,11 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			editCoverPhotoButton = By.xpath("//*[@id=\"communityScrollView\"]//button[@ng-click=\"editCoverPhoto()\"]");
 			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
 			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Teacher Logo\"]");
-			postNoCommentsLocator = By.xpath("//*[@id='posts_updatesHomeSection']//*[contains(text(), 'Create new post no comments')]");
+			postNoCommentsLocator = By.xpath("//*[@id='communityContent']//*[contains(text(), 'test_New Post with no comments')]");
 			groupSettingsLocator = By.xpath("//*[@id='orgHome']//*[contains (text(),'Group Settings')]");
 			communityMenuLocator = By.id("communityMenu_ul");
+			readPostNoCommentsTitle = By.xpath("//*[@id='postViewControl']//span[@ng-bind='getRegularPostTitle()']");
+			readNoCommentsTitle = By.xpath("//*[@id='postViewControl']//*[@ng-show='post.disableComments === true']");
 						
 			return new WebClassPage(browser);
 		}
