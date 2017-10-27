@@ -33,7 +33,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post with no comments enabled").clickOnCommentsButton();
 		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Recipients will NOT be able to comment on this post");
 		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostButton();
-		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Posted Successfully").clickOnBackButton();
+		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Posted Successfully");
+		//.clickOnBackButton();
 		//clickOnUpdatesTab();
 //		ClassPage.getClassPage(browser).clickOnPostNoComments().readPostNoCommentsTitle(sPostTitle).readNoCommentsTitle("Comments are disabled");
 //		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostOptions().clickOnDeletePost().clickOnConfirmDeletePost();
@@ -81,9 +82,9 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post with attachment").clickOnFileAttachPost();
 		ClassPage.getClassPage(browser).uploadImage(sUploadapp);
-		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostButton()
+		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostButton();
 		//HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Posted successfully")
-		.clickOnBackButton();	
+		//.clickOnBackButton();	
 	}
 	
 	// Create Announcement in a class with pictures
