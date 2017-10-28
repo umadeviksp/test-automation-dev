@@ -2,7 +2,8 @@ package com.net.bloomz.pages.android;
 
 import org.openqa.selenium.By;
 
-import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.jivesoftware.selenium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.HomePage;
 import com.net.bloomz.pages.SettingPage;
 import com.net.bloomz.pages.interfaces.HomePageActions;
@@ -20,8 +21,12 @@ public class AndroidHomePage extends HomePage implements HomePageActions {
 	public HomePage clickOnBloomzIconForMobileApp() {
 		waitForElement(bloomzIconLocator);
 		click(bloomzIconLocator);
-		return HomePage.getHomePage(browser);
-
+		return this;
+	}
+	@Override
+	public ClassPage clickOnAClassName() {
+		this.clickOnBloomzIconForMobileApp();
+		return super.clickOnAClassName();
 	}
 
 	@Override
