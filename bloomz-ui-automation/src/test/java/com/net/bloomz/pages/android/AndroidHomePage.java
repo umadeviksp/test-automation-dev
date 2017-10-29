@@ -2,7 +2,7 @@ package com.net.bloomz.pages.android;
 
 import org.openqa.selenium.By;
 
-import com.jivesoftware.selenium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.HomePage;
 import com.net.bloomz.pages.SettingPage;
