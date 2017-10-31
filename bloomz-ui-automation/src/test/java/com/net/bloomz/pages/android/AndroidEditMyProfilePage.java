@@ -8,7 +8,6 @@ public class AndroidEditMyProfilePage extends EditMyProfilePage implements EditM
 
 	public AndroidEditMyProfilePage(Browser<?> browser) {
 		super(browser);
-		// TODO Auto-generated constructor stub
 	}
 
 }
