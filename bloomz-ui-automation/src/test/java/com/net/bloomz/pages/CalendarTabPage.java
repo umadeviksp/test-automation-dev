@@ -13,6 +13,7 @@ public class CalendarTabPage extends BasePage {
 	static By calendarTodayLocator;
 	static By calendarSomeDayLocator;
 	static By calendarUpLocator;
+	static By PTCeventLocator;
 
 	public CalendarTabPage(Browser<?> browser) {
 		super(browser);
@@ -30,7 +31,7 @@ public class CalendarTabPage extends BasePage {
 			calendarTodayLocator = By.xpath("//*[@id='communityContent']/div/section[1]/article/h2");
 			calendarUpLocator = By.xpath("//*[@id='calendarList']/section[2]/article/h2");
 			calendarSomeDayLocator = By.xpath("//*[@id='calendarList']/section[12]/article/h2");
-			//*[@id="calendarList"]/section[12]/article/h2
+			PTCeventLocator = By.xpath("//*[@id='communityContent']//span[contains (text(),'test_PTCEvent')]");
 			return new WebMyCalendarTabPage(browser);
 		}
 		return null;
@@ -51,6 +52,10 @@ public class CalendarTabPage extends BasePage {
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
+	public EditEventPage clickOnPTCvent() {
+		click(PTCeventLocator);
+		return EditEventPage.getEditEventPage(browser);
+	}
 	
 	public CalendarTabPage thenVerifyScrollDown(String sText) {
 		

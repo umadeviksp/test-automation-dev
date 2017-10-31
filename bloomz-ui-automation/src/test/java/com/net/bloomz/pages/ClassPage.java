@@ -1,16 +1,11 @@
 package com.net.bloomz.pages;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.Reader;
-import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonIOException;
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.interfaces.ClassPageActions;
 import com.net.bloomz.pages.web.WebClassPage;
@@ -47,6 +42,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By communityMenuLocator;
 	static By readPostNoCommentsTitle;
 	static By readNoCommentsTitle;
+	
 
 	
 	public ClassPage(Browser<?> browser) {
@@ -304,6 +300,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			communityMenuLocator = By.id("communityMenu_ul");
 			readPostNoCommentsTitle = By.xpath("//*[@id='postViewControl']//span[@ng-bind='getRegularPostTitle()']");
 			readNoCommentsTitle = By.xpath("//*[@id='postViewControl']//*[@ng-show='post.disableComments === true']");
+			
 						
 			return new WebClassPage(browser);
 		}

@@ -1,7 +1,6 @@
 package com.net.bloomz.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
@@ -45,6 +44,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	static By upcomingEventsLocator;
 	static By eventButtonLocator;
 	static By eventDropdownLocator;
+	static By notifyAllMembersLocator;
+	static By doNotNotifyAllMembersLocator;
 	
 
 
@@ -191,7 +192,16 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
-
+	public CreateEventInClassPage clickNotifyAllMembersButton() {
+		click(notifyAllMembersLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	public CreateEventInClassPage clickDoNotNotifyAllMembersButton() {
+		click(doNotNotifyAllMembersLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
 	public CreateEventInClassPage clickSendButton() {
 		click(sendButtonLocator);
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
@@ -321,6 +331,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			doneReminderButtonLocator = By.xpath("//*[@id=\"setAlert\"]/div/nav/a[2]");
 			okButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[1]/span");
 			upcomingEventsLocator = By.xpath("//section[@ng-repeat='day in eventsCollection.collection']/section[@id='posts_calendarEventsSection']/article/div");
+			notifyAllMembersLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'Notify All Members')]");
+			doNotNotifyAllMembersLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'Notify Members')]");
 
 	
 			
