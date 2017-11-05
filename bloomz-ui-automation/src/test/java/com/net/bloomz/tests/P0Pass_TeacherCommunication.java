@@ -55,7 +55,7 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post scheduled").clickOnScheduleButton()
 		.clearScheduleDate().enterScheduleDate(0, 0, 1).clickStartTime()
 		.clearStartTime().enterStartTime("10:00 AM").clickOnSchedulePost().thenVerifyThatSchedulePostWasSuccessful()
-		.clickOnScheduledPost().clickOnDeleteScheduledPost();		
+		.clickOnScheduledPost().clickOnDeleteScheduledPost().clickOnConfirmDeletePost();		
 	}
 	
 	// Make a scheduled Post
@@ -102,8 +102,6 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		CreateAnnouncementInClassPage.getCreateAnnouncementInClassPage(browser).clickOnPostButton().thenVerifyAnnouncements("(1)").
 		clickOnAnnouncement().clickOnAnnouncementOptions()
 		.clickOnAnnouncementDeleteButton().clickOnConfirmAnnouncementDeleteButton();
-	}
-	
-	
+	}	
 	
 }

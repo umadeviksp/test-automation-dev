@@ -9,7 +9,7 @@ import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.MembersTabPage;
 
 public class P0Pass_TeacherInvitingToClass extends BaseTest {	
-	/*
+	
 	// Invite 20 parents to the class by copy pasting emails - validate if the invited emails show in invited section
 	@Test(groups = { "android", "ios", "web", "P0Pass_4" })
 	public void P0Pass_4_testInvite20ParentViaCopyPaste() throws InterruptedException, IOException {
@@ -27,6 +27,7 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 		.enterEmailSearchMembers("testparent").clickOnSelectAll().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
 		.thenVerifyTheToastMessage("Successful! Members removed from this group.").clickOnDoneButton();
 	}
+	
 	
 	// Invite another teacher to the class
 	@Test(groups = { "android", "ios", "web", "P0Pass_5" })
@@ -67,7 +68,7 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 		.selectMembersEmailId().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
 		.thenVerifyTheToastMessage("Successful! Member removed from this group.").clickOnDoneButton();
 	}
-	*/
+	
 	
 	// Invite parent to the class and edit the role to room parent
 	@Test(groups = { "android", "ios", "web", "P0Pass_8" })
