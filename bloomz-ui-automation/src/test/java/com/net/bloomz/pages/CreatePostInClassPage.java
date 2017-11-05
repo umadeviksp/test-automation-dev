@@ -35,6 +35,7 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	static By noOfScheduledPostLocator;
 	static By deleteScheduledPostLocator;
 	static By fileButtonLocator;
+	static By scheduleNoPostLocator;
 
 
 	public CreatePostInClassPage(Browser<?> browser) {
@@ -97,7 +98,7 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	}
 	
 	public CreatePostInClassPage clickOnScheduledPost() {
-		click(noOfScheduledPostLocator);
+		click(scheduleNoPostLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -236,6 +237,7 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 			calendarLocator = By.xpath("//*[@id=\"CalendarControl\"]/a");
 			schedulePostLocator = By.xpath("//*[@id='addPost']//a[contains (text(),'Schedule')]");
 			noOfScheduledPostLocator = By.xpath("//*[@id='communityContent']//a[contains(text(), '1 scheduled')]");
+			scheduleNoPostLocator = By.xpath("//*[@id='communityContent']//a[@ng-if='scheduledPostsCount > 0']");
 			deleteScheduledPostLocator = By.xpath("//*[@id='postViewControl']//li[contains(text(), 'Delete')]");
 			fileButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Attach Files']");
 			return new WebCreatePostInClassPage(browser);

@@ -18,7 +18,7 @@ import com.net.bloomz.utils.Config;
 
 public class P0Pass_TeacherCommunication extends BaseTest {	
 	
-	
+	/*
 	// Make Post with No Comments Enabled
 	@Test(groups = { "android", "ios", "web", "P0Pass_01" })
 	public void P0Pass_01_testCreatePostWithNoComments() throws Exception {
@@ -40,24 +40,22 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 //		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostOptions().clickOnDeletePost().clickOnConfirmDeletePost();
 
 	}
-	
+	*/
 	// Make a scheduled Post
 	@Test(groups = { "android", "ios", "web", "P0Pass_02" })
 	public void P0Pass_02_testCreatePostWithSchedule() throws Exception {
 		System.out.println("P0Pass_02_testCreatePostWithSchedule");
 		String sPostTitle = "test_New Post with schedule" + getTimeStamp().replaceAll("-", "_");
 	
-		//Path currentRelativePath = Paths.get("");
-		//String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 	
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post scheduled").clickOnScheduleButton()
 		.clearScheduleDate().enterScheduleDate(0, 0, 1).clickStartTime()
 		.clearStartTime().enterStartTime("10:00 AM").clickOnSchedulePost().thenVerifyThatSchedulePostWasSuccessful()
-		.clickOnScheduledPost().clickOnDeleteScheduledPost().clickOnConfirmDeletePost();		
+		.clickOnScheduledPost().clickOnDeleteScheduledPost().clickOnConfirmDeletePost();
 	}
-	
+	/*
 	// Make a scheduled Post
 	@Test(groups = { "android", "ios", "web", "P0Pass_03" })
 	public void P0Pass_03_testCreatePostWithAttachment() throws Exception {
@@ -103,5 +101,6 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		clickOnAnnouncement().clickOnAnnouncementOptions()
 		.clickOnAnnouncementDeleteButton().clickOnConfirmAnnouncementDeleteButton();
 	}	
+	*/
 	
 }
