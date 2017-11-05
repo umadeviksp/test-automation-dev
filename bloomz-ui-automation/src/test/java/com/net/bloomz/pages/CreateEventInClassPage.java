@@ -46,7 +46,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	static By eventDropdownLocator;
 	static By notifyAllMembersLocator;
 	static By doNotNotifyAllMembersLocator;
-	
+	static By signatureButtonLocator;
+	static By selectSignatureLocator;
 
 
 	public CreateEventInClassPage(Browser<?> browser) {
@@ -280,6 +281,16 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
+	public CreateEventInClassPage pickSignature() {
+		click(signatureButtonLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	public CreateEventInClassPage selectSignature() {
+		click(selectSignatureLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
 	public static CreateEventInClassPage getCreateEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);
@@ -333,6 +344,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			upcomingEventsLocator = By.xpath("//section[@ng-repeat='day in eventsCollection.collection']/section[@id='posts_calendarEventsSection']/article/div");
 			notifyAllMembersLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'Notify All Members')]");
 			doNotNotifyAllMembersLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'Notify Members')]");
+			signatureButtonLocator = By.xpath("//*[@id='addUpdateEvent']//*[@ng-click='openSignaturePicker()']");
+			selectSignatureLocator = By.xpath("//*[@id='calendarPicker']//button[@class='addToMsg']");
 
 	
 			

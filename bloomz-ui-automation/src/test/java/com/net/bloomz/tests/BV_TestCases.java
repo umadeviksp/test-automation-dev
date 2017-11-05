@@ -137,6 +137,7 @@ public class BV_TestCases extends BaseTest {
 		.thenVerifyProfileName("Alpha Teacher").thenVerifyMainFeedPostShouldNotBeNull().
 		clickOnSettingButton().clickOnSignOutButton();
 	}
+	
 		
 	// Calendar screen loading
 	// 5.2 Verify an existing Teacher (account with a bunch of events in the class) is able to load the Calendar screen
@@ -226,6 +227,7 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab().ScrollDownCalendarFeed()
 		.ScrollUpCalendarFeed().thenVerifyScrollUp("Today");
 	}	
+	
 	
 	
 	// Launching the Class from left nav
@@ -347,7 +349,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnUpcomingEvents().readUpcomingEventTitle(sTitle)
 		.clickOnUpcomingEventsOptions().clickOnUpcomingEventDelete().clickOnConfirmUpcomingEventDelete();
 	}	
-	
 	
 	
 	// Create PTC Event in the class 

@@ -265,8 +265,9 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			
 		} else {
 			createButtonLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[1]");
-			//volunteerTabLocator = By.xpath("//*[@id=\"orgHome\"]/div/div[1]/div[1]/div[2]/div/ul/li[10]");
-			volunteerTabLocator = By.xpath("//*[@id='orgHome']//div[@class='menuOptWrapper']//div[@class='clipping']//ul//li[@data-abbr='+ Signup Sheet']");
+			//Nov 5, 2017 changed the locator
+			//volunteerTabLocator = By.xpath("//*[@id='orgHome']//div[@class='menuOptWrapper']//div[@class='clipping']//ul//li[@data-abbr='+ Signup Sheet']");
+			volunteerTabLocator = By.xpath("//*[@id='orgHome']//div[@class='menuOptWrapper']//div[@class='clipping']//ul//li[@data-abbr='+ Volunteer Help']");
 			mediaTabLocator = By.xpath("//*[@ng-click=\"setSelected(menu); \"][@data-coachmark=\"Media\"]");
 			membersTabLocator = By.xpath("//*[@id=\"communityMenu_circles\"]/a");
 			updatesTabLocator = By.xpath("//*[@id=\"communityMenu_home\"]/a");

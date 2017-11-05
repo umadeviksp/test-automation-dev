@@ -47,7 +47,9 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 			emailEditTextLocator = By.id("signup_email");
 			passwordEditTextLocator = By.id("signup_password");
 			signUpButtonLocator = By.xpath("//*[@ng-click=\"verifyAndSignUp(signup)\"]");
-			signUpSheetLocator = By.xpath("//*[@id='volunteer_addEventQuickLink']");
+			//Nov-5-2017 events locator changed
+			//signUpSheetLocator = By.xpath("//*[@id='volunteer_addEventQuickLink']");
+			signUpSheetLocator = By.xpath("//*[@id='volunteer']//*[@ng-repeat='event in calendarFeed.collection']");
 			termsLinkLocator = By.xpath("//*[@ng-click=\"$emit('showAddToStack-terms');\"]");
 			backButtonLocator = By.xpath("//*[@ ng-click=\"leftButtonClickCallback()\"]");
 			roomParentButtonLocator = By.xpath("//*[@id=\"signUpScreen\"]/div/div/form/div[2]/section/div/div[2]");
