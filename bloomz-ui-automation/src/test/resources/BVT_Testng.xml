@@ -41,11 +41,11 @@
 		</groups>
 		<classes>
 			<class name="com.net.bloomz.tests.BV_TestCases" />
-			<class name="com.net.bloomz.tests.P0Pass_TeacherSignUp" />
+			<!-- <class name="com.net.bloomz.tests.P0Pass_TeacherSignUp" />
 			<class name="com.net.bloomz.tests.P0Pass_TeacherProfileSetup" />
 			<class name="com.net.bloomz.tests.P0Pass_TeacherInvitingToClass" />
 			<class name="com.net.bloomz.tests.P0Pass_TeacherCommunication" />
-			<class name="com.net.bloomz.tests.P0Pass_TeacherAddEvent" />
+			<class name="com.net.bloomz.tests.P0Pass_TeacherAddEvent" /> -->
 		</classes>
 	</test> 
 <!-- 	<test name="BVT Web Testcases on safari - Local">
