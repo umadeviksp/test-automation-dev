@@ -1,6 +1,5 @@
 package com.net.bloomz.tests;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -9,16 +8,13 @@ import org.testng.annotations.Test;
 import com.net.bloomz.pages.ClassPage;
 import com.net.bloomz.pages.CreateAnnouncementInClassPage;
 import com.net.bloomz.pages.CreatePostInClassPage;
-import com.net.bloomz.pages.CreatePostToMyContactsPage;
 import com.net.bloomz.pages.HomePage;
-import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
-import com.net.bloomz.pages.MembersTabPage;
 import com.net.bloomz.utils.Config;
 
 public class P0Pass_TeacherCommunication extends BaseTest {	
 	
-	/*
+	
 	// Make Post with No Comments Enabled
 	@Test(groups = { "android", "ios", "web", "P0Pass_01" })
 	public void P0Pass_01_testCreatePostWithNoComments() throws Exception {
@@ -40,7 +36,7 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 //		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostOptions().clickOnDeletePost().clickOnConfirmDeletePost();
 
 	}
-	*/
+	
 	// Make a scheduled Post
 	@Test(groups = { "android", "ios", "web", "P0Pass_02" })
 	public void P0Pass_02_testCreatePostWithSchedule() throws Exception {
@@ -55,7 +51,7 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		.clearStartTime().enterStartTime("10:00 AM").clickOnSchedulePost().thenVerifyThatSchedulePostWasSuccessful()
 		.clickOnScheduledPost().clickOnDeleteScheduledPost().clickOnConfirmDeletePost();
 	}
-	/*
+	
 	// Make a scheduled Post
 	@Test(groups = { "android", "ios", "web", "P0Pass_03" })
 	public void P0Pass_03_testCreatePostWithAttachment() throws Exception {
@@ -101,6 +97,6 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		clickOnAnnouncement().clickOnAnnouncementOptions()
 		.clickOnAnnouncementDeleteButton().clickOnConfirmAnnouncementDeleteButton();
 	}	
-	*/
+	
 	
 }

@@ -17,7 +17,7 @@ import com.net.bloomz.utils.Config;
 
 public class P0Pass_TeacherAddEvent extends BaseTest {	
 	
-	/*
+	
 	// Add event to the class calendar - notify all
 	@Test(groups = { "android", "ios", "web", "P0Pass_01" })
 	public void P0Pass_01_createEventWithNotifyAll() throws Exception {
@@ -89,7 +89,7 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
 	}	
 	
-	*/
+	
 	
 	// Create an Album in the class and add photos to the album
 	// Delete a photo from an album created by the teacher herself
@@ -123,7 +123,7 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		.clickOnDeleteAlbum();
 	}
 	
-	/*
+	
 	//Verification to be added
 	// Delete a photo from All photos
 	@Test(groups = { "android", "ios", "web", "P0Pass_14" })
@@ -177,5 +177,5 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMediaTab().clickOnPhotosTab()
 		.clickOnPhotosTabPhoto().clickOnOptionsPhoto().clickOnPhotosTabDownloadPhoto();
 	}
-	*/
+	
 }
