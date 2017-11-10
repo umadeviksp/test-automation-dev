@@ -14,12 +14,15 @@ import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.EditMyProfilePage;
 import com.net.bloomz.pages.HomePage;
+import com.net.bloomz.pages.InvitePage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
+
 public class BV_TestCases extends BaseTest {
 	
+	String sCCode;
 	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
@@ -152,7 +155,7 @@ public class BV_TestCases extends BaseTest {
 	
 	// Messages screen loading 
 	// Pre-requisite for testcase 5.3 also covers 10.4
-	//Feature Message To - Row 69, message to a personal connection/my contacts
+	//Feature Message To - Row 69, message to a personal connection/my classes
 	@Test(groups = { "android", "ios", "web", "BVT0901" })
 	public void BVT_05_3_1_testCreateMessageToAConnection() throws Exception {
 		System.out.println("BVT_05_3_1_testCreateMessageToAConnection");
@@ -161,7 +164,8 @@ public class BV_TestCases extends BaseTest {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyMessageButton ()
-		.clickOnMessageToField ().clickOnMyContacts ().clickOnToFirstContact ()
+		.clickOnMessageToField ().clickOnMyClasses().clickOnSelectAllClasses()
+		//.clickOnMyContacts ().clickOnToFirstContact ()
 		.clickOnMessageDone ().inputOnMessageField(sinputMessage).clickOnSendButton().clickOnBackButton()
 		.clickOnFirstMessageInTray ();
 		CreateMessagePage.getCreateMessagePage(browser).thenVerifyMessages(sinputMessage,CreateMessagePage.getCreateMessagePage(browser).getFirstMessageLocator());
@@ -489,7 +493,9 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();
 		
 		HomePage.getHomePage(browser).clickOnSettingButton().clickOnMyProfileButton().clickOnEditButton()
-		.uploadProfileImage().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
+		.uploadProfileImage()
+		//.clickOnUploadNewPhotoButton()
+		.uploadImage(sUploadapp);
 		
 		EditMyProfilePage.getEditMyProfilePage(browser).clickOnSaveButton();
 		
@@ -500,6 +506,21 @@ public class BV_TestCases extends BaseTest {
 		HomePage.getHomePage(browser).clickOnSettingButton().clickOnSignOutButton();
 	}
 	
+	// Pre-requisite to run the invitation code testcase
+	@Test(groups = { "android", "ios", "web", "BVT1100" })
+	public void BVT_11_0_ReadClassAccess() throws Exception {
+		System.out.println("BVT_11_0_ReadClassAccess");
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnAClassName().clickOnUpdatesTab();
+		ClassPage.getClassPage(browser).clickOnAccessCodes().clickOnForParentsAccessCodes();
+		
+		sCCode = ClassPage.getClassPage(browser).readClassCode();
+		
+		ClassPage.getClassPage(browser).clickOnDoneButton();		
+		
+	}
 	
 	// Parent sign up with Class Access Code - Class with B/P ON
 	// 11.1 Verify the parent is able to sign up with class access code and is able to pick the student from the list
@@ -510,11 +531,11 @@ public class BV_TestCases extends BaseTest {
 		System.out.println(sEMail);
 		
 		sEMail = sEMail.toLowerCase();
-		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("X6CKVX")
+		
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().selectTestChildName().clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	
 	
 	
 	// Parent sign up with Class Access Code - Class with B/P ON
@@ -533,16 +554,32 @@ public class BV_TestCases extends BaseTest {
 	}
 	
 	
+	// Pre-requisite to run the invitation code testcase
+	@Test(groups = { "android", "ios", "web", "BVT1103" })
+	public void BVT_11_3_ReadClassAccessBOPff() throws Exception {
+		System.out.println("BVT_11_3_ReadClassAccessBPOff");
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnAClassName().clickOnUpdatesTab();
+		ClassPage.getClassPage(browser).clickOnAccessCodes().clickOnForParentsAccessCodes();
+		
+		sCCode = ClassPage.getClassPage(browser).readClassCode();
+		System.out.println(sCCode);
+		ClassPage.getClassPage(browser).clickOnDoneButton();		
+		
+	}
+	
 	// Parent sign up with Class Access Code - Class with no B/P
 	// 11.3 Verify the parent is able to sign up with class access code and is able to add the child info while joining
-	@Test(groups = { "android", "ios", "web", "BVT1103" })
-	public void BVT_11_3_SignUpWithNewChildBPOFF() throws Exception {
-		System.out.println("BVT_11_3_SignUpWithNewChildBPOFF");
+	@Test(groups = { "android", "ios", "web", "BVT1104" })
+	public void BVT_11_4_SignUpWithNewChildBPOFF() throws Exception {
+		System.out.println("BVT_11_4_SignUpWithNewChildBPOFF");
 		String sEMail = "test_" + getTimeStamp() + "@test.com" ;
 		sEMail = sEMail.toLowerCase();
 		System.out.println(sEMail);
 		
-		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("B6SEH9")
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");

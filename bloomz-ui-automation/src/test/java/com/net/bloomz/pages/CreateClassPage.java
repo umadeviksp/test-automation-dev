@@ -17,6 +17,7 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 	static By roomParentButtonLocator;
 	//static By schoolPickLocator;
 	//static By schoolTextLocator;
+	static By behaviorManagementLocator;
 
 	public CreateClassPage(Browser<?> browser) {
 		super(browser);
@@ -38,6 +39,8 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 			roomParentButtonLocator  =By.xpath("//*[@id='createGroup']//div[@class='highlightableRow ng-scope ng-binding']");
 			//schoolTextLocator = By.xpath("//*[@id='pickLocationId']lickOnchooseSchoolButtonLocator");
 			//schoolPickLocator = By.xpath("//*[@id='activityTypes']/div/div/form/section/div/section/section[1]/span/h2");
+			//behaviorManagementLocator = By.xpath("//*[@id='createGroup']//*[@id='behaviorEnabled']");
+			behaviorManagementLocator = By.xpath("//*[@id='createGroup']/div/div/form/div[3]/div/section[1]/div/label");
 			return new WebCreateClassPage(browser);
 		}
 		return null;
@@ -56,6 +59,11 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 	
 	public CreateClassPage clickRoomParentButton() {
 		click(roomParentButtonLocator);
+		return CreateClassPage.getCreateClassPage(browser);
+	}
+	
+	public CreateClassPage clickBehaviorManagementButton() {
+		click(behaviorManagementLocator);
 		return CreateClassPage.getCreateClassPage(browser);
 	}
 	

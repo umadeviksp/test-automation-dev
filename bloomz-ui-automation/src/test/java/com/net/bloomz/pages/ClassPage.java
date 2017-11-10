@@ -42,7 +42,10 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By communityMenuLocator;
 	static By readPostNoCommentsTitle;
 	static By readNoCommentsTitle;
-	
+	static By accessCodeButtonLocator;
+	static By accessCodeParentsLocator;
+	static By classCodeTextLocator;
+	static By doneButtonLocator;
 
 	
 	public ClassPage(Browser<?> browser) {
@@ -68,7 +71,24 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		click(updatesTabLocator);
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
-
+	
+	public ClassPage clickOnAccessCodes() {
+		click(accessCodeButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	
+	public ClassPage clickOnForParentsAccessCodes() {
+		click(accessCodeParentsLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
+	
+	public ClassPage clickOnDoneButton() {
+		click(doneButtonLocator);
+		return ClassPage.getClassPage(browser);
+	}
+	
 	public MembersTabPage clickOnMembersTab() {
 		click(membersTabLocator);
 		return MembersTabPage.getMembersTabPage(browser);
@@ -212,6 +232,12 @@ public class ClassPage extends BasePage implements ClassPageActions {
 		return GroupSettingPage.getGroupSettingPage(browser);
 	}
 	
+	public String readClassCode() {		
+		String sClassCode = getText(classCodeTextLocator);
+		//return ClassPage.getClassPage(browser);	
+		return sClassCode;
+	}
+	
 	public ClassPage uploadImage(String pathToTestImage) throws InterruptedException, IOException {
 		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
 		//return CreatePostInClassPage.getCreatePostInClassPage(browser);
@@ -301,7 +327,10 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			communityMenuLocator = By.id("communityMenu_ul");
 			readPostNoCommentsTitle = By.xpath("//*[@id='postViewControl']//span[@ng-bind='getRegularPostTitle()']");
 			readNoCommentsTitle = By.xpath("//*[@id='postViewControl']//*[@ng-show='post.disableComments === true']");
-			
+			accessCodeButtonLocator = By.xpath("//*[@id='communityScrollView']//*[contains (text(),'Access Codes')]");
+			accessCodeParentsLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'For Parents')]");
+			doneButtonLocator = By.xpath("//*[@id='inviteByGroupCode']//*[contains (text(),'Done')]");
+			classCodeTextLocator = By.xpath("//*[@id='inviteByGroupCode']//*[@ng-bind='code']");
 						
 			return new WebClassPage(browser);
 		}
