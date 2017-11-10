@@ -547,7 +547,7 @@ public class BV_TestCases extends BaseTest {
 		sEMail = sEMail.toLowerCase();
 		System.out.println(sEMail);
 		
-		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode("X6CKVX")
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().selectAddYourChild().enterChildFirstName("testChild" + getTimeStamp()).clickOnAddClass().clickOnJoinClass()
 		.thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
@@ -561,7 +561,7 @@ public class BV_TestCases extends BaseTest {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-		.clickOnAClassName().clickOnUpdatesTab();
+		.clickOnBPOffClassName().clickOnUpdatesTab();
 		ClassPage.getClassPage(browser).clickOnAccessCodes().clickOnForParentsAccessCodes();
 		
 		sCCode = ClassPage.getClassPage(browser).readClassCode();

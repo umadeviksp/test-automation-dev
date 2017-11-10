@@ -65,6 +65,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By startPostingTextLocator;
 	static By dismissCardTextLocator;
 	static By mediaTabLocator = null;
+	static By BPOffClassLocator;
 	
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
@@ -212,6 +213,11 @@ public class HomePage extends BasePage implements HomePageActions {
 	public ClassPage clickOnAClassName() {
 		click(classNameLocator);
 //		ReadJson();
+		return ClassPage.getClassPage(browser);
+	}
+	
+	public ClassPage clickOnBPOffClassName() {
+		click(BPOffClassLocator);
 		return ClassPage.getClassPage(browser);
 	}
 	
@@ -451,6 +457,7 @@ public class HomePage extends BasePage implements HomePageActions {
 			startPostingTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Start Posting')]");
 			dismissCardTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Dismiss This Card')]");
 			mediaTabLocator = By.xpath("//*[@id='bloomzMainNav_navLeftMedia']");
+			BPOffClassLocator = By.xpath("//*[@id='posts']//ul[4]//a[contains (text(),'BPOff')]");
 			
 			
 			return new WebHomePage(browser);
