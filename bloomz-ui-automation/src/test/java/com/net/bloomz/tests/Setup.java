@@ -19,7 +19,7 @@ import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
 public class Setup extends BaseTest {
-		
+	/*	
 	// Pre-requisite testcase to run BVT cases
 	// Create alpha teacher account and Class Alpha Teacher
 	@Test(groups = { "android", "ios", "web", "Setup" })
@@ -51,6 +51,6 @@ public class Setup extends BaseTest {
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickBehaviorManagementButton().clickOnSaveButtonLocator().clickOnSettingButton().clickOnSignOutButton();
 	}
-	
+	*/
 	
 }
