@@ -54,8 +54,7 @@ public class Setup extends BaseTest {
 		.clickBehaviorManagementButton().clickOnSaveButtonLocator().clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-<<<<<<< HEAD
-	
+
 	@Test(groups = { "android", "ios", "web", "BVT0301" })
 	public void BVT_03_testSignInWithValidInputs() throws Exception {
 		System.out.println("BVT_03_testSignInWithValidInputs");
@@ -67,6 +66,5 @@ public class Setup extends BaseTest {
 	}
 	*/	
 }
-=======
-}
->>>>>>> 0c2bdebd57efbd0c56e0b67972d0fdeed4534da6
+
+
