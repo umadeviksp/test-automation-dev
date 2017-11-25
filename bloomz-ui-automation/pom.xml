@@ -22,13 +22,12 @@
 		<maven-compiler-version>3.1</maven-compiler-version>
 		<maven-timestamp-version>1.0</maven-timestamp-version>
 		<maven-resources-version>2.6</maven-resources-version>
-		<maven-surefire-version>2.16</maven-surefire-version>
+		<maven-surefire-version>2.20</maven-surefire-version>
 		<jdk.version>1.7</jdk.version>
 		<resources.encoding>UTF-8</resources.encoding>
 		<sources.encoding>UTF-8</sources.encoding>
-		<allure.version>1.4.16</allure.version>
+		<allure.version>1.5.4</allure.version>
 		<aspectj.version>1.8.10</aspectj.version>
-	    <alluremaven.version>2.5</alluremaven.version>
 	</properties>
 
 	<dependencies>
@@ -42,11 +41,23 @@
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-commons -->
+		<dependency>
+		    <groupId>ru.yandex.qatools.allure</groupId>
+		    <artifactId>allure-commons</artifactId>
+		    <version>${allure.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-model -->
+		<dependency>
+		    <groupId>ru.yandex.qatools.allure</groupId>
+		    <artifactId>allure-model</artifactId>
+		    <version>${allure.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>ru.yandex.qatools.allure</groupId>
 			<artifactId>allure-testng-adaptor</artifactId>
 			<version>${allure.version}</version>
-		        <scope>test</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
@@ -189,6 +200,29 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-version}</version>
+				<configuration>
+					<basedir>/src/main/java/com/net/bloomz/appium/script</basedir>
+					<suiteXmlFiles>
+						<suiteXmlFile>${basedir}/src/test/resources/BVT_Testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<properties>
+						<property>
+							<name>usedefaultlisteners</name>
+							<value>true</value>
+						</property>
+
+						<!-- Setting ReportNG listeners -->
+					<!-- 	<property>
+							<name>listener</name>
+							<value>org.uncommons.reportng.HTMLReporter
+							</value>
+							<value>org.uncommons.reportng.JUnitXMLReporter</value>
+						</property> -->
+					</properties>
+					<reportsDirectory>test-output/</reportsDirectory>
+					<!-- <reportsDirectory>${test.report.path}/${timestamp-with-seconds}</reportsDirectory> -->
+					<testFailureIgnore>false</testFailureIgnore>
+				</configuration>
 				<executions>
 					<execution>
 						<phase>test</phase>
@@ -197,31 +231,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<basedir>/src/main/java/com/net/bloomz/appium/script</basedir>
-					<reportsDirectory>test-output/</reportsDirectory>
-					<suiteXmlFiles>
-						<suiteXmlFile>${basedir}/src/test/resources/BVT_Testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-					<testFailureIgnore>false</testFailureIgnore>
-					<argLine>
-						<!--  Uma added -->
-							<!--javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar-->
-					</argLine>
-					<properties>
-						<property>
-							<name>listener</name>
-							<value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
-						</property>
-					</properties>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjweaver</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -361,6 +370,32 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.14</version>
+					<configuration>
+						<testFailureIgnore>false</testFailureIgnore>
+						<argLine>
+							-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+						</argLine>
+						<!--only for 1.3.* TestNG adapters. Since 1.4.0.RC4, the listener adds 
+							via ServiceLoader -->
+						<properties>
+							<property>
+								<name>listener</name>
+								<value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
+							</property>
+						</properties>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -370,9 +405,8 @@
 			<plugin>
 				<groupId>ru.yandex.qatools.allure</groupId>
 				<artifactId>allure-maven-plugin</artifactId>
-				<version>${alluremaven.version}</version>
+				<version>2.2</version>
 			</plugin>
 		</plugins>
 	</reporting>
 </project>
-
