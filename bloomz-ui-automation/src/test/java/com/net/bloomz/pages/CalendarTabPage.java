@@ -29,7 +29,8 @@ public class CalendarTabPage extends BasePage {
 		} else {
 			//calendarEventsLocator = By.xpath("//*[@ng-show=\"day.calendarEntries.length>=0\"]");
 			//Nov-5-2017 events locator changed
-			calendarEventsLocator = By.xpath("//*[@id='calendarList']//*[@ng-repeat='entry in day.calendarEntries']");
+			//calendarEventsLocator = By.xpath("//*[@id='calendarList']//*[@ng-repeat='entry in day.calendarEntries']");
+			calendarEventsLocator = By.xpath("//*[@id=\"calendarList\"]/div[3]/section[25]/article[2]/div/h2/span");
 			calendarTodayLocator = By.xpath("//*[@id='communityContent']/div/section[1]/article/h2");
 			//calendarUpLocator = By.xpath("//*[@id='calendarList']/section[2]/article/h2");
 			calendarUpLocator = By.xpath("//*[@id='calendarList']//*[contains (text(),'Today')]");

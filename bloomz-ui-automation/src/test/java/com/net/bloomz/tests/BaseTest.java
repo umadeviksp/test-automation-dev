@@ -55,7 +55,7 @@ public class BaseTest {
 
 	}
 
-	private Browser<?> createBrowser(String platformName, String browserType, String environment)
+	public Browser<?> createBrowser(String platformName, String browserType, String environment)
 			throws IWebDriverException {
 		TimeoutsConfig timeouts = TimeoutsConfig.builder().pageLoadTimoutSeconds(80).implicitWaitTimeoutMillis(80000)
 				.build();
@@ -129,6 +129,7 @@ public class BaseTest {
 		}
 		return null;
 	}
+	
 
 	@Parameters({ "platformName", "browserType", "environment" })
 	@BeforeMethod(alwaysRun = true)

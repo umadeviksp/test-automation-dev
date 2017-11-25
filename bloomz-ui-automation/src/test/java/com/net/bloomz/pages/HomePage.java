@@ -368,6 +368,11 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
+	public HomePage thenVerifyEmailAddress(String sEmail) {
+		VerifyEmailAddress(sEmail);
+		return HomePage.getHomePage(browser);
+	}
+	
 	public HomePage thenVerifyWelcomeScreenTroop(String sText) {
 		Assert.assertEquals(getText(welcomeMessageLocator), "Welcome to Bloomz");
 		Assert.assertEquals(getText(createClassLocator), sText);
@@ -398,7 +403,8 @@ public class HomePage extends BasePage implements HomePageActions {
 			settingButtonLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]");
 			createButtonLocator = By.xpath("//*[@data-post=\"+ Create\"]");
 			postUpdateCards = By.xpath("//*[@post-message=\"postMessage\"]");
-			myCalendarTabLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftMy Calendar\"]");
+			//myCalendarTabLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftMy Calendar\"]");
+			myCalendarTabLocator = By.xpath("//*[@id='mainPanel']//*[@id='bloomzMainNav_navLeftMy Calendar']");
 			myContactsTabLocator = By.xpath("//*[@id=\"bloomzMainNav_navLeftMy Contacts\"]");
 			volunteerTabLocator = By.id("bloomzMainNav_navLeftVolunteers");
 			

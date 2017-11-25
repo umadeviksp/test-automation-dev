@@ -10,12 +10,12 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
-
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.awt.AWTException;
+
 
 
 import org.openqa.selenium.By;
@@ -45,6 +45,8 @@ import com.net.bloomz.appium.pagefactory.framework.pages.BaseTopLevelPage;
 
 
 
+
+import com.net.bloomz.utils.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -480,51 +482,42 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		
 	}
 	
-	public BasePage ReadJson()	{
+	public void VerifyEmailAddress(String sEmailID)	{		
+				
+		//String sEmailTknURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=" + sEmailID + "&action=getDetails";//just a string
 		
-		//String sURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=pop@pop.pop&action=getDetails"; //just a string
-		String sURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=test_24-sep-2017-8-03-22-pm@test.com&action=getDetails";
+		String sURL = Config.getConfigData("bloomz_base_test_url");
+		String sEmailTknURL = sURL + "/api/admin/updateuser?email=" + sEmailID + "&action=getDetails";
+		System.out.println(sEmailTknURL);
+		By JsonTextLocator = By.xpath("/html/body/pre");
+		String JsonData ;
 		String myStr ;
-
-		sURL = "https://app-staging.bloomz.net/api/admin/updateuser";
 		
-		try {
-			// Connect to the URL using java's native library
-			String login ="achaks@gmail.com";
-			String password="bloomz999";
-			String loginPassword = login+ ":" + password;
-			
-			String encoded = Base64.getEncoder().encodeToString(loginPassword.getBytes()) ;
-			System.out.println(encoded);
-			URL url = new URL(sURL);
-			HttpURLConnection request = (HttpURLConnection) url.openConnection();
-			request.setRequestProperty ("Authorization", "Basic " + encoded);
-			request.connect();			
-			
-		       InputStream xmlInputStream =request.getInputStream();
-		        byte[] testByteArr = new byte[xmlInputStream.available()];
-		        xmlInputStream.read(testByteArr);
-		        System.out.println(new String(testByteArr)); 
-
-			
-
-			// Convert to a JSON object to print data
-			JsonParser jp = new JsonParser(); //from gson
-			JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
-			JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
-			myStr = rootobj.get("primaryemail").getAsString(); //just grab the text
-			System.out.println(myStr);
-			myStr = rootobj.get("createdtime").getAsString(); //just grab the text
-			System.out.println(myStr);
-			myStr = rootobj.get("invitatio2ncode").getAsString(); //just grab the text
-			System.out.println(myStr);
-			myStr = rootobj.get("userregistrationstatus").getAsString(); //just grab the text
-			System.out.println(myStr);
-		} catch (IOException e) {
-            e.printStackTrace();
-        }
+		browser.getWebDriver().get(sEmailTknURL);
+		JsonData = getText(JsonTextLocator) ;
 		
-		return this ;		
+		// Convert to a JSON object to print data
+		JsonParser jp = new JsonParser(); //from gson
+		JsonObject rootobj = (JsonObject) jp.parse(JsonData); //May be an array, may be an object. 
+		myStr = rootobj.get("primaryemail").getAsString(); //just grab the text
+		System.out.println(myStr);
+		myStr = rootobj.get("createdtime").getAsString(); //just grab the text
+		System.out.println(myStr);
+		//myStr = rootobj.get("invitationcode").getAsString(); //just grab the text
+		//System.out.println(myStr);
+		myStr = rootobj.get("userregistrationstatus").getAsString(); //just grab the text
+		System.out.println(myStr);
+		String myStrEmail = rootobj.get("emlTkn").getAsString(); //just grab the text
+		System.out.println(myStrEmail);
+		
+		//String sVerifyEmail = "https://app-staging.bloomz.net/api/emailvalidation/" + myStrEmail + "?email=" + sEmailID;
+		String sVerifyEmail = sURL + "/api/emailvalidation/" + myStrEmail + "?email=" + sEmailID;
+		System.out.println(sVerifyEmail);
+		
+		browser.getWebDriver().get(sVerifyEmail);
+		
+		return  ;		
+			
 	}
 	
 	public void UploadFileAutoIT(String sFileName) throws InterruptedException, IOException {
@@ -563,33 +556,6 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
         } catch (Exception exp) {
 			exp.printStackTrace();
 		}
-		
-
-	
-//	public BasePage CopyPaste() {
-//		 
-//		  String string = "Hello Selenium"; 
-//		  StringSelection stringSelection = new StringSelection(string);
-//		  Toolkit.getDefaultToolkit().getSystemClipboard()
-//		        .setContents(stringSelection, null);
-//		 
-//		  try {
-//		     Runtime runtime = Runtime.getRuntime();
-//		     runtime.exec("C:\\Windows\\System32\\Notepad.exe");
-//		      
-//		     Robot robot = new Robot();
-//		     robot.keyPress(KeyEvent.VK_CONTROL);
-//		     robot.keyPress(KeyEvent.VK_V); 
-//		     robot.keyRelease(KeyEvent.VK_V); 
-//		     robot.keyRelease(KeyEvent.VK_CONTROL); 
-//		 
-//		     } catch (AWTException e) {
-//		        e.printStackTrace();
-//		     } catch (IOException e1) {
-//		        e1.printStackTrace();
-//		   } 
-//		 
-//		}
 	}
 
 	protected String getColorElement(By locator1) {

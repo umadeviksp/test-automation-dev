@@ -23,7 +23,7 @@ import com.net.bloomz.utils.Config;
 public class BV_TestCases extends BaseTest {
 	
 	String sCCode;
-	
+	/*
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
 	@Test(groups = { "android", "BVT0101" })
@@ -92,7 +92,7 @@ public class BV_TestCases extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMembersTab()
 		.clickOnAddMembers().clickOnInviteMembers().selectTeacherRole().selectEmailsManually().enterEmailId("test@test.com")
 		.clickOnEmailSendButton().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
-		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("test t")
+		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("test@test.com")
 		.selectMembersEmailId().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
 		.thenVerifyTheToastMessage("Successful! Member removed from this group.").clickOnDoneButton();
 		//.clickOnSettingButton().clickOnSignOutButton();
@@ -255,7 +255,7 @@ public class BV_TestCases extends BaseTest {
 		ClassPage.getClassPage(browser).clickOnMediaTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMembersTab().thenVerifyElementExists();
 	}
-	
+	*/
 	
 	// Create Post in a Class - with pictures
 	// 9.1 Verify the Teacher (existing account which has class created) is able to create a post with pictures in the class
@@ -273,7 +273,7 @@ public class BV_TestCases extends BaseTest {
 		.clickOnBackButton().clickOnUpdatesTab();		
 	}
 	
-	
+	/*
 	// Create Announcement in a class
 	// 9.2 Verify the Teacher (existing account which has class created) is able to create an announcement in the class
 	@Test(groups = { "android", "ios", "web", "BVT0902" })
@@ -584,6 +584,6 @@ public class BV_TestCases extends BaseTest {
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
-	
+	*/
 		
 }

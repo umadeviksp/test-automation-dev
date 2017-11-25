@@ -33,7 +33,7 @@ public class LandingPage extends BasePage implements LandingPageActions {
 		click(studentButtonLocator);
 		return StudentSignInPage.getStudentSignInPage(browser);
 	}
-
+	
 	public static LandingPage getLandingPage(Browser<?> browser) {
 		String string = browser.toString();
 		System.out.println(string);

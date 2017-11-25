@@ -35,7 +35,7 @@ public abstract class Browser<D extends WebDriver> {
 		this.baseTestUrl = Preconditions.checkNotNull(baseTestUrl);
 		this.timeouts = timeoutsConfig;
 	}
-
+	
 	public abstract WebBrowserType getBrowserType();
 
 	public abstract SeleniumActions getActions();
@@ -230,3 +230,5 @@ public abstract class Browser<D extends WebDriver> {
 		logger.info("SUCCESS - quit WebDriver: {}", webDriver);
 	}
 }
+
+
