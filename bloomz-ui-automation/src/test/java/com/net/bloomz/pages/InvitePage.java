@@ -147,7 +147,8 @@ public class InvitePage extends BasePage implements InvitePageActions {
 			emailTextLocator = By.xpath("//*[@id=\"signup_email\"]");
 			passwordTextLocator = By.xpath("//*[@id=\"signupGroupCode_password\"]");
 			addYourChildLocator = By.xpath("//*[@id='signUpScreenChildren']//label[@for='anotherChildFromMyList']");
-			testChildNameLocator = By.xpath("//*[@id='signUpScreenChildren']//label[@for='testChild1_0']");
+			//testChildNameLocator = By.xpath("//*[@id='signUpScreenChildren']//label[@for='testChild1_0']");
+			testChildNameLocator = By.xpath("//*[@id='signUpScreenChildren']//label[@for='test student_0']");
 			joinClassLocator = By.xpath("//*[@id='signUpScreenChildren']/div/div/form/footer/button");
 			emailVerifyTextLocator = By.xpath("//*[@id='_verifyUserIdentity']/div/div/div/section/section/div[1]/div/span[1]");
 			verifyTextLocator = By.xpath("//*[@id='_verifyUserIdentity']/div/div/div/section/section/div[1]/div/span[2]");
