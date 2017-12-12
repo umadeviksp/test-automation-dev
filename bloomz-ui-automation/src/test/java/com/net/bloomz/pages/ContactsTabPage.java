@@ -10,6 +10,7 @@ import com.net.bloomz.pages.web.WebContactsTabPage;
 public class ContactsTabPage extends BasePage implements ContactsTabPageActions {
 	
 	static By contactsLocator;
+	static By inviteOtherParentsLocator;
 
 	public ContactsTabPage(Browser<?> browser) {
 		super(browser);
@@ -24,7 +25,8 @@ public class ContactsTabPage extends BasePage implements ContactsTabPageActions 
 			
 		} else {
 			contactsLocator = By.xpath("//*[@ng-repeat=\"person in contactGroup.collection\"]");
-			
+			inviteOtherParentsLocator = By.xpath("//*[@id='groups']//a[contains (text(),'Invite other parents')]");
+						
 			return new WebContactsTabPage(browser);
 		}
 		return null;
@@ -34,4 +36,10 @@ public class ContactsTabPage extends BasePage implements ContactsTabPageActions 
 		Assert.assertTrue(getElementSize(contactsLocator) > 0, "No contacts are displayed");
 		return ContactsTabPage.getContactsTabPage(browser);
 	}
+	
+	public InvitationGroupPage clickOnInviteOtherParents() {
+		click(inviteOtherParentsLocator);
+		return InvitationGroupPage.getInvitationGroupPage(browser);
+	}
+	
 }
