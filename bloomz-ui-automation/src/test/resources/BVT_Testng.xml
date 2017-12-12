@@ -40,7 +40,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.net.bloomz.tests.Setup" />
+			<!-- <class name="com.net.bloomz.tests.Setup" /> -->
 			<class name="com.net.bloomz.tests.BV_TestCases" />
 			<!-- <class name="com.net.bloomz.tests.P0Pass_TeacherSignUp" />
 			<class name="com.net.bloomz.tests.P0Pass_TeacherProfileSetup" />
