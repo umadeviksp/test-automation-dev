@@ -20,10 +20,10 @@ import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
 
 public class Setup extends BaseTest {
-	/*	
+	
 	// Pre-requisite testcase to run BVT cases
 	// Create alpha teacher account and Class Alpha Teacher
-	@Test(groups = { "android", "ios", "web", "Setup" })
+	@Test(groups = { "android", "ios", "web", "Setup_1" })
 	public void setup_1_CreateTestAccount() {
 		String sEmail = "alphateacher@test.com";
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
@@ -35,7 +35,7 @@ public class Setup extends BaseTest {
 	}
 	
 	// Create a class with BP ON
-	@Test(groups = { "android", "ios", "web", "Setup" })
+	@Test(groups = { "android", "ios", "web", "Setup_2" })
 	public void setup_2_CreateTestClass() {
 
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
@@ -45,7 +45,7 @@ public class Setup extends BaseTest {
 	}
 		
 	// Create an account with BP off
-	@Test(groups = { "android", "ios", "web", "Setup" })
+	@Test(groups = { "android", "ios", "web", "Setup_3" })
 	public void setup_3_CreateTestClassBPOFF() {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
@@ -54,17 +54,21 @@ public class Setup extends BaseTest {
 		.clickBehaviorManagementButton().clickOnSaveButtonLocator().clickOnSettingButton().clickOnSignOutButton();
 	}
 	
-
-	@Test(groups = { "android", "ios", "web", "BVT0301" })
-	public void BVT_03_testSignInWithValidInputs() throws Exception {
-		System.out.println("BVT_03_testSignInWithValidInputs");
+	
+	//Add a contact
+	@Test(groups = { "android", "ios", "web", "Setup_4" })
+	public void setup_4_testAddContact() throws Exception {
+		System.out.println("setup_5_testAddContact");
 		String sEmail = "alphateacher@test.com";
 
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(sEmail)
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-		.thenVerifyProfileName("Alpha Teacher").thenVerifyEmailAddress(sEmail);
+		.clickOnInviteButton().selectAnyOneClass().selectTeacherRole().selectEmailsManually().enterEmailId("sample@sample.com")
+		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!");
 	}
-	*/	
+	
 }
 
 
+
+u
