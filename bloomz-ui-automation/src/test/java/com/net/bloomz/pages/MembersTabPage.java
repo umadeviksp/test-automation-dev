@@ -27,6 +27,10 @@ public class MembersTabPage extends BasePage {
 	static By roomParentTextLocator;
 	static By inviteMembersTextLocator;
 	static By selectAllLocator;
+	static By membersStudentButtonLocator;
+	static By addStudentTextLocator;
+	static By addButtonLocator;
+	static By addStudentDoneButtonLocator;
 	
 	public MembersTabPage(Browser<?> browser) {
 		super(browser);
@@ -57,6 +61,10 @@ public class MembersTabPage extends BasePage {
 			roomParentTextLocator = By.xpath("//*[@id='orgSettings']//span[contains(text(), 'Room Parents (1)')]");
 			inviteMembersTextLocator = By.xpath("//*[@id='communityContent']//*[contains(text(), 'Invited (20)')]");
 			selectAllLocator = By.xpath("//*[@id='orgSettings']//*[contains(text(), 'Select All')]");
+			membersStudentButtonLocator = By.xpath("//*[@id='orgSettings']//a[contains (text(),'Students')]");
+			addStudentTextLocator = By.xpath("//*[@id=\"student_name\"]");
+			addButtonLocator = By.xpath("//*[@id='addStudents']//button[@ng-click='addStudent()']");
+			addStudentDoneButtonLocator = By.xpath("//*[@id='addStudents']//a[@ng-click='done() ']");
 			return new WebCreateMembersTabPage(browser);
 		}
 		return null;
@@ -74,6 +82,26 @@ public class MembersTabPage extends BasePage {
 	
 	public MembersTabPage clickOnMembersManageButton() {
 		click(membersManageButtonLocator);
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+	
+	public MembersTabPage clickOnMembersStudentButton() {
+		click(membersStudentButtonLocator);
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+		
+	public MembersTabPage enterAddStudentName(String sName) {
+		sendText(addStudentTextLocator,sName);
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+		
+	public MembersTabPage clickOnAddButton() {
+		click(addButtonLocator);
+		return MembersTabPage.getMembersTabPage(browser);
+	}
+	
+	public MembersTabPage clickOnAddMembersDoneButton() {
+		click(addStudentDoneButtonLocator);
 		return MembersTabPage.getMembersTabPage(browser);
 	}
 	
