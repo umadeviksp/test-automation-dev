@@ -72,7 +72,8 @@ public class CreateMessageToMyContactsPage extends BasePage implements CreateMes
 			toButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/nav[1]/ul/li/div");
 			myContactsButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/nav[1]/div/ul/li[1]/a");
 			//toFirstContactLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/div/section/div[2]/section[1]/div/h2/a/span");
-			toFirstContactLocator = By.xpath("//*[@id='sendMessage']//*[contains(text(), 'Parent of testchild1 and testchild2')]");
+			//toFirstContactLocator = By.xpath("//*[@id='sendMessage']//*[contains(text(), 'Parent of testchild1 and testchild2')]");
+			toFirstContactLocator = By.xpath("//*[@id='sendMessage']//span[@data-displayname='sample@sample.com']");
 			toSecondContactLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/div/section/div[2]/section[2]/div/h2/a/span");
 			classesButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/nav[1]/div/ul/li[2]/a");
 			doneButtonLocator = By.xpath("//*[@id=\"sendMessage\"]/div/div[1]/nav[1]/a");
