@@ -44,7 +44,7 @@ public class CalendarTabPage extends BasePage {
 	}
 
 	public CalendarTabPage thenVerifyCalendarEventsShouldNotBeNull() {
-		Assert.assertTrue(getElementSize(calendarEventsLocator) > 1, "Day events are not displayed");
+		Assert.assertTrue(getElementSize(calendarEventsLocator) > 0, "Day events are not displayed");
 		return CalendarTabPage.getCalendarTabPage(browser);
 	}
 	
