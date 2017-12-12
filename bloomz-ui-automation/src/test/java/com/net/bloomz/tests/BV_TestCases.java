@@ -14,7 +14,6 @@ import com.net.bloomz.pages.CreateEventInClassPage;
 import com.net.bloomz.pages.CreateMessagePage;
 import com.net.bloomz.pages.EditMyProfilePage;
 import com.net.bloomz.pages.HomePage;
-import com.net.bloomz.pages.InvitePage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.MyProfilePage;
 import com.net.bloomz.utils.Config;
@@ -164,8 +163,7 @@ public class BV_TestCases extends BaseTest {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyMessageButton ()
-		.clickOnMessageToField ().clickOnMyClasses().clickOnSelectAllClasses()
-		//.clickOnMyContacts ().clickOnToFirstContact ()
+		.clickOnMessageToField ().clickOnMyContacts ().clickOnToFirstContact ()
 		.clickOnMessageDone ().inputOnMessageField(sinputMessage).clickOnSendButton().clickOnBackButton()
 		.clickOnFirstMessageInTray ();
 		CreateMessagePage.getCreateMessagePage(browser).thenVerifyMessages(sinputMessage,CreateMessagePage.getCreateMessagePage(browser).getFirstMessageLocator());
@@ -583,5 +581,7 @@ public class BV_TestCases extends BaseTest {
 		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
-	}	
+	}
+	
+		
 }
