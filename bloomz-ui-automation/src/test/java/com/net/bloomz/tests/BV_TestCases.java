@@ -129,16 +129,7 @@ public class BV_TestCases extends BaseTest {
 	}
 	
 	
-	// Home screen loading
-	// 5.1 Verify an existing Teacher (account with a bunch of posts to the class) is able to load the Home screen
-	@Test(groups = { "android", "ios", "web", "BVT0501" })
-	public void BVT_05_1_testPostsOnMainFeedForExistingAccount() throws Exception {
-		System.out.println("BVT_05_1_testPostsOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
-		.thenVerifyProfileName("Alpha Teacher").thenVerifyMainFeedPostShouldNotBeNull().
-		clickOnSettingButton().clickOnSignOutButton();
-	}
+	
 	
 		
 	// Calendar screen loading
@@ -181,13 +172,6 @@ public class BV_TestCases extends BaseTest {
 	}
 	
 	
-	// 5.4 Verify an existing Teacher (account with Volunteer Asks in the class) is able to load the Volunteer Asks screen
-	@Test(groups = { "android", "ios", "web", "BVT0504" })
-	public void BVT_05_4_testSignupssOnMainFeedForExistingAccount() throws Exception {
-		System.out.println("BVT_05_4_testSignupssOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMySignupsTab().thenVerifySignupButton();
-	}
 	
 	
 	// Contacts screen loading
@@ -583,5 +567,22 @@ public class BV_TestCases extends BaseTest {
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
 	
-		
+	// Home screen loading
+	// 5.1 Verify an existing Teacher (account with a bunch of posts to the class) is able to load the Home screen
+	@Test(groups = { "android", "ios", "web", "BVT0501" })
+	public void BVT_05_1_testPostsOnMainFeedForExistingAccount() throws Exception {
+		System.out.println("BVT_05_1_testPostsOnMainFeedForExistingAccount");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.thenVerifyProfileName("Alpha Teacher").thenVerifyMainFeedPostShouldNotBeNull().
+		clickOnSettingButton().clickOnSignOutButton();
+	}	
+	
+	// 5.4 Verify an existing Teacher (account with Volunteer Asks in the class) is able to load the Volunteer Asks screen
+	@Test(groups = { "android", "ios", "web", "BVT0504" })
+	public void BVT_05_4_testSignupssOnMainFeedForExistingAccount() throws Exception {
+		System.out.println("BVT_05_4_testSignupssOnMainFeedForExistingAccount");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMySignupsTab().thenVerifySignupButton();
+	}
 }
