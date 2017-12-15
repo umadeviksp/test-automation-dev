@@ -1,23 +1,9 @@
 package com.net.bloomz.tests;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-import io.appium.java_client.android.AndroidDriver;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException;
-import com.net.bloomz.pages.ClassPage;
-import com.net.bloomz.pages.CreateEventInClassPage;
-import com.net.bloomz.pages.CreateMessagePage;
-import com.net.bloomz.pages.EditMyProfilePage;
-import com.net.bloomz.pages.HomePage;
 import com.net.bloomz.pages.LandingPage;
-import com.net.bloomz.pages.MyProfilePage;
-import com.net.bloomz.utils.Config;
+
 
 public class Setup extends BaseTest {
 	
@@ -65,6 +51,17 @@ public class Setup extends BaseTest {
 		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectTeacherRole().selectEmailsManually().enterEmailId("sample@sample.com")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!");
+	}
+	
+	//Add a student/child
+	@Test(groups = { "android", "ios", "web", "Setup_5" })
+	public void setup_5_testAddChild() throws Exception {
+		System.out.println("setup_5_testAddChild");
+		String sEmail = "alphateacher@test.com";
+
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(sEmail)
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnAddStudents().enterStudentName().clickOnAddStudentButton().clickOnDoneButton();
 	}
 	
 }
