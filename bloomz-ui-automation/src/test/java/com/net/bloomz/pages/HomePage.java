@@ -66,6 +66,10 @@ public class HomePage extends BasePage implements HomePageActions {
 	static By dismissCardTextLocator;
 	static By mediaTabLocator = null;
 	static By BPOffClassLocator;
+	static By addStudentsLocator;
+	static By studentNameTextLocator;
+	static By addButtonLocator;
+	static By doneButtonLocator;
 	
 
 	// By textEventLocator = By.id("net.bloomz:id/txtEventCalender");
@@ -176,7 +180,7 @@ public class HomePage extends BasePage implements HomePageActions {
 	}
 	
 	public HomePage thenVerifyMainFeedPostShouldNotBeNull() {
-		Assert.assertTrue(getElementSize(postUpdateCards) > 3, "This account doesn't contain posts");
+		Assert.assertTrue(getElementSize(postUpdateCards) > 1, "This account doesn't contain posts");
 		return HomePage.getHomePage(browser);
 	}
 	
@@ -386,6 +390,26 @@ public class HomePage extends BasePage implements HomePageActions {
 		System.out.println("Clicked on All groups");
 		return HomePage.getHomePage(browser);
 	}
+		
+	public HomePage clickOnAddStudents()	{
+		click(addStudentsLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage enterStudentName()	{
+		sendText(studentNameTextLocator,"test Child");
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnAddStudentButton()	{
+		click(addButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
+	
+	public HomePage clickOnDoneButton()	{
+		click(doneButtonLocator);
+		return HomePage.getHomePage(browser);
+	}
 	
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
@@ -464,6 +488,10 @@ public class HomePage extends BasePage implements HomePageActions {
 			dismissCardTextLocator = By.xpath("//*[@id='welcomeTeacherCard']//*[contains (text(),'Dismiss This Card')]");
 			mediaTabLocator = By.xpath("//*[@id='bloomzMainNav_navLeftMedia']");
 			BPOffClassLocator = By.xpath("//*[@id='posts']//ul[4]//a[contains (text(),'BPOff')]");
+			addStudentsLocator = By.xpath("//*[@id='welcomeTeacherCard']//a[contains (text(), 'Add Students')]");
+			studentNameTextLocator = By.xpath("//*[@id='student_name']");
+			addButtonLocator = By.xpath("//*[@id='addStudents']//button");
+			doneButtonLocator = By.xpath("//*[@id='addStudents']//a[contains (text(),'Done')]");
 			
 			
 			return new WebHomePage(browser);
