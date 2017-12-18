@@ -22,7 +22,7 @@ import com.net.bloomz.utils.Config;
 public class BV_TestCases extends BaseTest {
 	
 	String sCCode;
-	static String my_email = "alphateacher@test.com";
+	static String my_email = "alphateacher1@test.com";
 	static String my_pwd = "bloomz999" ;
 	
 	// Installation
