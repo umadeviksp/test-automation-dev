@@ -413,13 +413,46 @@ public class HomePage extends BasePage implements HomePageActions {
 	
 	public static HomePage getHomePage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			settingButtonLocator = By.id("net.bloomz:id/txtSetting");
-			createButtonLocator = By.id("net.bloomz:id/btnStart");
-			postUpdateCards = By.id("");
-			myCalendarTabLocator = By.name("calendar");
-			volunteerTabLocator = By.name("volunteer");
+
+//			settingButtonLocator 	= By.id("net.bloomz:id/txtSetting");
+//			postUpdateCards 		= By.id("");
+//			myCalendarTabLocator 	= By.name("calendar");
+//			volunteerTabLocator 	= By.name("volunteer");
+
+			settingButtonLocator 	= By.id("net.bloomz:id/imgDrawerProfile");
+			createButtonLocator 	= By.id("net.bloomz:id/btnStart");
+			classNameLocator 		= By.xpath("//android.widget.TextView[contains(@text,'sample1')]") ;
+
+			inviteButtonLocator 	= By.id ("net.bloomz:id/txtHeaderInvite");
+
+			myCalendarTabLocator 	= By.xpath("//android.widget.ImageView[@content-desc='My Calendar']");
+			myContactsTabLocator 	= By.xpath("//android.widget.ImageView[@content-desc='My Contacts']");
+			signupsTabLocator 		= By.xpath("//android.widget.ImageView[@content-desc='Signups']");
+
+			volunteerTabLocator 	= By.xpath("//android.widget.ImageView[@content-desc='Signups']");
+
+			allGroupsMenuLocator 	= By.id("net.bloomz:id/menuBtn");
+
+			createClassLocator 		= By.xpath("//android.widget.TextView[@text='Create a Class']");
+	
+			membersTabLocator 		= By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Members']");
+			
+			messageButtonLocator 	= By.id("net.bloomz:id/btnStart") ;
+
+			firstMessageInTrayLocator = By.id("net.bloomz:id/txtmessage");
+			
+			
+			announcementSectionLocator = By.xpath("//*[@id=\"posts_announcementsSection\"]/h1/span");
+			announcementLocator 	= By.xpath("//*[@id='posts_announcementsSection']//*[contains(text(),'test announcement')]");
+			announceOptionsLocator	= By.xpath("//*[@id='postViewControl']//ng-switch[@on='rightButtonIsImage']//*[contains(text(),'Options')]");
+			deleteAnnouncementLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Delete Announcement')]");
+			yesDeleteAnnouncementLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(), 'Yes')]");
+
+			profileNameTextLocator 	= By.xpath("//*[@id=\"bloomzMainNav_navLeftProfile\"]/span");
+			//deleteAnnouncementLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]/button[2]/span");
+
 			return new AndroidHomePage(browser);
 		} else if (string.contains(".iOS")) {
 			settingButtonLocator = By.id("");

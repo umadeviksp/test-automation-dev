@@ -27,17 +27,22 @@ public class SignUpPage extends BasePage implements SignUpPageActions {
 
 	public static SignUpPage getSignUpPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 
-			firstNameEditTextLocator = By.id("net.bloomz:id/editFirstNameValue");
-			lastNameEditTextLocator = By.id("net.bloomz:id/editLastNameValue");
-			emailEditTextLocator = By.id("net.bloomz:id/editEmailValue");
-			passwordEditTextLocator = By.id("net.bloomz:id/editPassword");
-			signUpButtonLocator = By.id("net.bloomz:id/btnSignUp");
-			termsLinkLocator = By.id("net.bloomz:id/txtterms");
-			backButtonLocator = By.id("net.bloomz:id/backarrow");
-			//roomParentButtonLocator = By.id("");
+			firstNameEditTextLocator 	= By.id("net.bloomz:id/editFirstNameValue");
+			lastNameEditTextLocator 	= By.id("net.bloomz:id/editLastNameValue");
+			emailEditTextLocator 		= By.id("net.bloomz:id/editEmailValue");
+			passwordEditTextLocator 	= By.id("net.bloomz:id/editPassword");
+			signUpButtonLocator 		= By.id("net.bloomz:id/btnSignUp");
+			termsLinkLocator 			= By.id("net.bloomz:id/txtterms");
+			backButtonLocator 			= By.id("net.bloomz:id/backarrow");
+
+//			roomParentButtonLocator = By.xpath("//android.widget.RadioButton[@text='I\'m a Room Parent']");
+			roomParentButtonLocator = By.xpath("//android.widget.RadioButton[contains(@text,'a Room Parent')]");
+
+			signUpSheetLocator = By.id("net.bloomz:id/btnStart");
+			
 			return new AndroidSignUpPage(browser);
 		} else if (string.contains(".iOS")) {
 		} else {

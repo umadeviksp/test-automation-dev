@@ -18,6 +18,7 @@ public class CreatePage extends BasePage implements CreatePageActions {
 	static By eventLocator;
 	static By volunteerLocator;
 	static By parentTeacherLocator;
+	static By postButtonLocator;
 
 	public CreatePage(Browser<?> browser) {
 		super(browser);
@@ -30,6 +31,11 @@ public class CreatePage extends BasePage implements CreatePageActions {
 	
 	public CreatePostInClassPage clickOnCreatePostButton() {
 		click(createPostButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage clickOnPostButton() {
+		click(postButtonLocator);
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -80,6 +86,7 @@ public class CreatePage extends BasePage implements CreatePageActions {
 			createButtonLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[2]");
 			yearEndVideoLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[1]/div");
 			createPostButtonLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[2]/span");
+			postButtonLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[1]/div");
 			studentWorkLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[3]/div");
 			awardsLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[4]/div");
 			announcementLocator = By.xpath("//*[@id=\"posts\"]/div[3]/div[1]/div[3]/div/ul/li[5]/div");

@@ -24,7 +24,8 @@ import com.net.bloomz.appium.pagefactory.framework.exception.InvalidPageUrlExcep
 public class BaseTopLevelPage<S extends SeleniumActions> implements TopLevelPage {
 	private static final PageUtils PAGE_UTILS = new PageUtils();
 	@SuppressWarnings("unused")
-	private static Logger logger = LoggerFactory.getLogger(BaseTopLevelPage.class);
+	protected
+	static Logger logger = LoggerFactory.getLogger(BaseTopLevelPage.class);
 	protected S a;
 	private long pageLoadTime;
 

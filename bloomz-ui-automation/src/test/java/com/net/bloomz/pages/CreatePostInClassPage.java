@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreatePostInClassPage;
 import com.net.bloomz.pages.interfaces.CreatePostInClassPageActions;
 import com.net.bloomz.pages.web.WebCreatePostInClassPage;
 
@@ -36,6 +37,10 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 	static By deleteScheduledPostLocator;
 	static By fileButtonLocator;
 	static By scheduleNoPostLocator;
+	static By seeMembersOfAClassLocator;
+	static By searchStringInputLocator;
+	static By selectEmailIDLocator;
+	static By done2ButtonLocator;
 
 
 	public CreatePostInClassPage(Browser<?> browser) {
@@ -72,13 +77,26 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
-	public CreatePostInClassPage uploadImage(String pathToTestImage) {
-		browser.getWebDriver().findElement(uploadPhotoInputLocator).sendKeys(pathToTestImage);
+	public CreatePostInClassPage uploadImage(String pathToTestImage) throws InterruptedException {
+		if (browser.toString().contains("AndroidMobile")) {
+			//do nothing
+		}
+		else
+		{
+			browser.getWebDriver().findElement(uploadPhotoInputLocator).sendKeys(pathToTestImage);
+			Thread.sleep(30);
+		}
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
 	public CreatePostInClassPage uploadFile(String pathToTestImage) {
-		browser.getWebDriver().findElement(fileButtonLocator).sendKeys(pathToTestImage);
+		if (browser.toString().contains("AndroidMobile")) {
+			//do nothing
+		}
+		else
+		{
+			browser.getWebDriver().findElement(fileButtonLocator).sendKeys(pathToTestImage);
+		}
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
@@ -205,11 +223,58 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 		return CreatePostInClassPage.getCreatePostInClassPage(browser);
 	}
 	
+
+	public CreatePostInClassPage clickOnSeeMembersOfAClass() {
+		click(seeMembersOfAClassLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	
+	public CreatePostInClassPage clickOnSearchString() {
+		click(searchStringInputLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	public CreatePostInClassPage enterEmailID(String sText) {
+		sendText(searchStringInputLocator,sText);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
+	
+	public CreatePostInClassPage selectEmailID() {
+		click(selectEmailIDLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+		
+	public CreatePostInClassPage ClickOnDoneLocator() {
+		click(done2ButtonLocator);
+		return CreatePostInClassPage.getCreatePostInClassPage(browser);
+	}
+	
 	public static CreatePostInClassPage getCreatePostInClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+	//	System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			
+			toButtonLocator = By.id("net.bloomz:id/llSetPostTo");
+			titleFieldLocator = By.id("net.bloomz:id/edittitle");
+			generalUpdateFieldLocator = By.id("net.bloomz:id/editdiscreption");
+			postButtonLocator = By.id("net.bloomz:id/btnDone");
+			backButtonLocator = By.id("net.bloomz:id/backarrow");
+
+			doneButtonLocator 	= By.id("net.bloomz:id/DoneBtn");
+			toFirstClassLocator = By.xpath("//android.widget.LinearLayout[@index='1']") ;
+
+			uploadPhotoInputLocator = By.id("net.bloomz:id/llinsertphoto");
+			myContactsLocator 		= By.id("net.bloomz:id/btnDone");
+			myCommunitiesLocator 	= By.id("net.bloomz:id/btnDone");
+			postCommentFieldLocator = By.id("net.bloomz:id/txtEnterComment");
+			sendCommentButtonLocator = By.id("net.bloomz:id/sendbtn");
+
+			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/span");
+			successIndicatorLocator = By.xpath("//*[@id=\"postViewControl\"]/div[1]/div[1]/section/p[1]");
+
+			return new AndroidCreatePostInClassPage(browser);
 		} else if (string.equals(".iOS")) {
 			
 		} else {
@@ -240,6 +305,11 @@ public class CreatePostInClassPage extends BasePage implements CreatePostInClass
 			scheduleNoPostLocator = By.xpath("//*[@id='communityContent']//a[@ng-if='scheduledPostsCount > 0']");
 			deleteScheduledPostLocator = By.xpath("//*[@id='postViewControl']//li[contains(text(), 'Delete')]");
 			fileButtonLocator = By.xpath("//*[@id='addPostFooterForm']//*[@data-fulltext='Attach Files']");
+			seeMembersOfAClassLocator = By.xpath("//*[@id='recipientPicker']//section[1]//*[contains (text(),'See Members')]");
+			searchStringInputLocator = By.xpath("//*[@id='_recipientControl_1']//*[@id='addRecipientsSearchInput_recipientControl_1']");
+			selectEmailIDLocator = By.xpath("//*[@id='recipientPicker']//*[contains (text(),'Add')]");
+			done2ButtonLocator = By.xpath("//*[@id='_recipientControl_1']//*[@id='recipientPicker']/div/div/nav[2]/a[2]");
+
 			return new WebCreatePostInClassPage(browser);
 		}
 		return null;

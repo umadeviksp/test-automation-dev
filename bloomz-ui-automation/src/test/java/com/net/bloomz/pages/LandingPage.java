@@ -33,10 +33,10 @@ public class LandingPage extends BasePage implements LandingPageActions {
 		click(studentButtonLocator);
 		return StudentSignInPage.getStudentSignInPage(browser);
 	}
-	
+
 	public static LandingPage getLandingPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+	//	System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			signInButtonLocator = By.id("net.bloomz:id/SignIn");
 			createAccountButtonLocator = By.id("net.bloomz:id/IAmNew");

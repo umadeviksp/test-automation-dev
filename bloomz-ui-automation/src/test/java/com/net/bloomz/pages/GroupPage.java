@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidGroupPage;
 import com.net.bloomz.pages.interfaces.ExampleTemplatePageActions;
 import com.net.bloomz.pages.interfaces.GroupPageActions;
 import com.net.bloomz.pages.web.WebCreateAccountPage;
@@ -24,9 +25,15 @@ public class GroupPage extends BasePage implements GroupPageActions {
 
 	public static GroupPage getGroupPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			return null; // TO DO FIX THIS
+
+			createNewClassLocator 		= By.xpath("//android.widget.TextView[@text='Class']");
+			createNewBScoutsLocator 	= By.xpath("//android.widget.TextView[@text='Troop - Boy Scouts']");
+			createNewGScoutsLocator 	= By.xpath("//android.widget.TextView[@text='Troop - Girl Scouts']");
+			createNewSportsTeamLocator 	= By.xpath("//android.widget.TextView[@text='Sports Team']");
+			createChildCareRoomLocator 	= By.xpath("//android.widget.TextView[@text='Childcare Room']");
+			return new AndroidGroupPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

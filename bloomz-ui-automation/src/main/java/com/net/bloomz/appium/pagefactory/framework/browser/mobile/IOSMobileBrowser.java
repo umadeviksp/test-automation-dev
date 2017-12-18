@@ -1,5 +1,6 @@
 package com.net.bloomz.appium.pagefactory.framework.browser.mobile;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class IOSMobileBrowser extends MobileBrowser {
 
 	public IOSMobileBrowser(String baseTestUrl, String browserName, String platform, String platformName,
 			String platformVersion, String deviceName, String newCommandTimeout, String automationName, String version,
-			String autoLaunch, String app, TimeoutsConfig timeouts, @Optional Map<String, String> optionalValues)
+			boolean autoLaunch, String app, TimeoutsConfig timeouts, @Optional Map<String, String> optionalValues)
 			throws IWebDriverException {
 		super(baseTestUrl, timeouts, browserName, platform, platformName, platformVersion, deviceName,
 				newCommandTimeout, automationName, version, autoLaunch, app, optionalValues);
@@ -89,7 +90,9 @@ public class IOSMobileBrowser extends MobileBrowser {
 	 */
 	public void dragDown() {
 		int midScreen = getScreenWidth() / 2;
-		webDriver.swipe(midScreen, 140, midScreen, getScreenHeight() - 140, 1500);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, 140).moveTo(midScreen, getScreenHeight() - 140).release().perform();
+//		webDriver.swipe(midScreen, 140, midScreen, getScreenHeight() - 140, 1500);
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
 		scrollObject.put("direction", "up");
 		webDriver.executeScript("mobile: scroll", scrollObject);
@@ -100,7 +103,9 @@ public class IOSMobileBrowser extends MobileBrowser {
 	 */
 	public void dragUp() {
 		int midScreen = getScreenWidth() / 2;
-		webDriver.swipe(midScreen, getScreenHeight() - 140, midScreen, 140, 1500);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, getScreenHeight() - 140).moveTo(midScreen, 140).release().perform();
+//		webDriver.swipe(midScreen, getScreenHeight() - 140, midScreen, 140, 1500);
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
 		scrollObject.put("direction", "down");
 		webDriver.executeScript("mobile: scroll", scrollObject);
@@ -121,7 +126,9 @@ public class IOSMobileBrowser extends MobileBrowser {
 	 *            - in milliseconds
 	 */
 	public void swipe(int startX, int endX, int startY, int endY, int duration) {
-		webDriver.swipe(startX, startY, endX, endY, duration);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(startX, startY).moveTo(endX, endY).release().perform();
+//		webDriver.swipe(startX, startY, endX, endY, duration);
 	}
 
 	/**
@@ -133,8 +140,10 @@ public class IOSMobileBrowser extends MobileBrowser {
 	}
 
 	public void openNotifications() {
-		int midScreenWidth = getScreenWidth() / 2;
-		webDriver.swipe(midScreenWidth, 0, midScreenWidth, getScreenHeight(), 1000);
+		int midScreenWidth = getScreenWidth() / 2 ;
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreenWidth, 0).moveTo(midScreenWidth, getScreenHeight()).release().perform();
+//		webDriver.swipe(midScreenWidth, 0, midScreenWidth, getScreenHeight(), 1000);
 		webDriver.quit();
 	}
 }

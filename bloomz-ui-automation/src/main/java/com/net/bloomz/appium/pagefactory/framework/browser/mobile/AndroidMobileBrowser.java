@@ -14,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Optional;
 
+import io.appium.java_client.TouchAction ;
+
 import com.net.bloomz.appium.pagefactory.framework.actions.AndroidSeleniumActions;
 import com.net.bloomz.appium.pagefactory.framework.config.TimeoutsConfig;
 import com.net.bloomz.appium.pagefactory.framework.exception.IWebDriverException;
@@ -27,7 +29,7 @@ public class AndroidMobileBrowser extends MobileBrowser {
 
 	public AndroidMobileBrowser(String baseTestUrl, String browserName, String platform, String platformName,
 			String platformVersion, String deviceName, String newCommandTimeout, String automationName, String version,
-			String autoLaunch, String app, String appPackage, String appActivity, TimeoutsConfig timeouts,
+			boolean autoLaunch, String app, String appPackage, String appActivity, TimeoutsConfig timeouts,
 			boolean touchMode, @Optional Map<String, String> optionalValues) throws IWebDriverException {
 		super(baseTestUrl, timeouts, browserName, platform, platformName, platformVersion, deviceName,
 				newCommandTimeout, automationName, version, autoLaunch, app, optionalValues);
@@ -41,13 +43,13 @@ public class AndroidMobileBrowser extends MobileBrowser {
 	public DesiredCapabilities getDesiredCapabilities() {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
-		desiredCapabilities.setCapability("platform", platform);
+//		desiredCapabilities.setCapability("platform", platform);
 		desiredCapabilities.setCapability("platformName", platformName);
 		desiredCapabilities.setCapability("platformVersion", platformVersion);
 		desiredCapabilities.setCapability("deviceName", deviceName);
 		desiredCapabilities.setCapability("newCommandTimeout", newCommandTimeout);
 		desiredCapabilities.setCapability("automationName", automationName);
-		desiredCapabilities.setCapability("version", version);
+//		desiredCapabilities.setCapability("version", version);
 		desiredCapabilities.setCapability("autoLaunch", autoLaunch);
 		desiredCapabilities.setCapability("app", app);
 		desiredCapabilities.setCapability("appPackage", appPackage);
@@ -60,7 +62,7 @@ public class AndroidMobileBrowser extends MobileBrowser {
 			}
 		}
 
-		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+//		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 		return desiredCapabilities;
 	}
 
@@ -112,7 +114,9 @@ public class AndroidMobileBrowser extends MobileBrowser {
 			TouchActions action = new TouchActions(webDriver);
 			action.down(midScreen, 360).move(midScreen, 300).up(midScreen, 300).perform();
 		} else {
-			webDriver.swipe(midScreen, 450, midScreen, getScreenHeight() - 250, 1500);
+			TouchAction action = new TouchAction(webDriver);
+			action.press(midScreen, 450).moveTo(midScreen, getScreenHeight() - 250).release().perform();
+///			webDriver.swipe(midScreen, 450, midScreen, getScreenHeight() - 250, 1500);
 		}
 	}
 
@@ -126,7 +130,9 @@ public class AndroidMobileBrowser extends MobileBrowser {
 			TouchActions action = new TouchActions(webDriver);
 			action.down(midScreen, 300).move(midScreen, 250).up(midScreen, 250).perform();
 		} else {
-			webDriver.swipe(midScreen, getScreenHeight() - 250, midScreen, 250, 2500);
+			TouchAction action = new TouchAction(webDriver);
+			action.press(midScreen, getScreenHeight() - 250).moveTo(midScreen, 250).release().perform();
+//			webDriver.swipe(midScreen, getScreenHeight() - 250, midScreen, 250, 2500);
 		}
 	}
 
@@ -145,7 +151,9 @@ public class AndroidMobileBrowser extends MobileBrowser {
 			TouchActions action = new TouchActions(webDriver);
 			action.down(midScreen, yStart).move(midScreen, yEnd).up(midScreen, yEnd).perform();
 		} else {
-			webDriver.swipe(midScreen, yStart, midScreen, yEnd, 2500);
+			TouchAction action = new TouchAction(webDriver);
+			action.press(midScreen, yStart).moveTo(midScreen, yEnd).release().perform();
+//			webDriver.swipe(midScreen, yStart, midScreen, yEnd, 2500);
 		}
 	}
 
@@ -165,7 +173,9 @@ public class AndroidMobileBrowser extends MobileBrowser {
 			TouchActions action = new TouchActions(webDriver);
 			action.down(midScreen, yStart).move(midScreen, yEnd).up(midScreen, yEnd).perform();
 		} else {
-			webDriver.swipe(midScreen, yStart, midScreen, yEnd, duration);
+			TouchAction action = new TouchAction(webDriver);
+			action.press(midScreen, yStart).moveTo(midScreen, yEnd).release().perform();
+//			webDriver.swipe(midScreen, yStart, midScreen, yEnd, duration);
 		}
 	}
 
@@ -180,7 +190,9 @@ public class AndroidMobileBrowser extends MobileBrowser {
 
 			}
 		} else {
-			webDriver.tap(fingersNum, webElement, duration);
+			TouchAction action = new TouchAction(webDriver);
+			action.tap(webElement);
+//			webDriver.tap(fingersNum, webElement, duration);
 		}
 	}
 
@@ -194,7 +206,10 @@ public class AndroidMobileBrowser extends MobileBrowser {
 				logger.error("Failed To Tap due to NullPointerException", e.getStackTrace());
 			}
 		} else {
-			webDriver.tap(fingersNum, xLocation, yLocation, duration);
+			TouchAction action = new TouchAction(webDriver);
+			action.tap(xLocation, yLocation);
+//			webDriver.tap(fingersNum, xLocation, yLocation, duration);
+			action.tap(xLocation, yLocation);
 		}
 	}
 

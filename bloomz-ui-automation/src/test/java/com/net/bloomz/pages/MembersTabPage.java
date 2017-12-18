@@ -40,7 +40,22 @@ public class MembersTabPage extends BasePage {
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			searchMembersLocator = By.id("net.bloomz:id/llMainView");
+			
+			searchMembersLocator 		= By.id("net.bloomz:id/llMainView");
+			membersManageButtonLocator 	= By.id("net.bloomz:id/txtAllClasses");
+			membersGeneralTabLocator 	= By.id("net.bloomz:id/txtGeneral");
+			deleteClassLocator 			= By.id("net.bloomz:id/txtDelete");
+			deleteClassConfirmLocator	= By.id("net.bloomz:id/deleteBtn");
+			
+			addMembersIconLocator 		= By.id("net.bloomz:id/btnStart") ;
+			
+			membersButtonLocator 		= By.id("net.bloomz:id/txtMember");
+			searchMembersEmailLocator 	= By.id("net.bloomz:id/searchtext");
+			memberEmailTextLocator 		= By.id("net.bloomz:id/ivchecked");
+			removeMemberButtonLocator 	= By.id("net.bloomz:id/llRemove");
+			confirmRemoveButtonLocator 	= By.id("net.bloomz:id/btnContinue");
+
+			
 			return new AndroidMembersTabPage(browser);
 		} else if (string.contains(".iOS")) {
 		} else {

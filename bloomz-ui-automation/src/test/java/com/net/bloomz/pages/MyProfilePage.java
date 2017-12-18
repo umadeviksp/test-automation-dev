@@ -46,7 +46,6 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 		click(goBackButtonLocator);
 		return HomePage.getHomePage(browser) ;
 	}
-	
 	public EditMyProfilePage clickOnEditButton() {
 		click(editButtonLocator);
 		return EditMyProfilePage.getEditMyProfilePage(browser);
@@ -72,7 +71,7 @@ public class MyProfilePage extends BasePage implements MyProfilePageActions {
 
 	public static MyProfilePage getMyProfilePage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			addSpouseButtonLocator 	= By.id("net.bloomz:id/txtSignOut");
 			removeSpouseButtonLocator 	= By.id("net.bloomz:id/txtSignOut");

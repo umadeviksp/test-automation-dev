@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateEventInClassPage;
 import com.net.bloomz.pages.interfaces.CreateEventInClassPageActions;
 import com.net.bloomz.pages.web.WebCreateEventInClassPage;
 
@@ -293,9 +294,38 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	
 	public static CreateEventInClassPage getCreateEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			
+			titleBoxLocator 		= By.id("net.bloomz:id/editeventdetails") ;
+			locationBoxLocator 		= By.id("net.bloomz:id/editlocation") ;
+			notesBoxLocator 		= By.id("net.bloomz:id/editnotes") ;
+			startDateBoxLocator 	= By.id("net.bloomz:id/txtstartdate") ;
+			startDateButtonLocator 	= By.id("net.bloomz:id/txtstartdate") ;
+			endDateBoxLocator 		= By.id("net.bloomz:id/txtenddate") ;
+			endDateButtonLocator 	= By.id("net.bloomz:id/txtenddate") ;
+			inviteButtonLocator 	= By.id("net.bloomz:id/txtInvite") ;
+			inviteAllButtonLocator 	= By.id("net.bloomz:id/imgGroupIcon") ;
+			doneButtonLocator 		= By.id("net.bloomz:id/DoneBtn1") ;
+			rsvpButtonLocator 		= By.id("net.bloomz:id/txtRSPV") ;
+			saveButtonLocator 		= By.id("net.bloomz:id/BtnSave") ;
+
+			startTimeButtonLocator = By.id("net.bloomz:id/txtstarttime") ;
+			endTimeButtonLocator = By.id("net.bloomz:id/txtendtime") ;
+
+			eventButtonLocator 		= By.id("net.bloomz:id/btnStart");
+			eventDropdownLocator 	= By.xpath("//android.widget.TextView[contains(@text,'Event')]") ;
+			
+			reminderSelectionLocator 	= By.id("net.bloomz:id/txtaleartheader");
+			fifteenminsReminderLocator 	= By.id("net.bloomz:id/radio15M");
+			doneReminderButtonLocator 	= By.id("net.bloomz:id/btnDone");
+			
+			calendarLocator = By.xpath("//android.widget.Button[contains(@text,'OK')]") ;
+
+			okButtonLocator = By.xpath("//android.widget.Button[contains(@text,'OK')]") ;
+			
+
+			return new AndroidCreateEventInClassPage(browser);
 		} else if (string.equals(".iOS")) {
 			
 		} else {

@@ -22,6 +22,8 @@ import com.net.bloomz.utils.Config;
 public class BV_TestCases extends BaseTest {
 	
 	String sCCode;
+	static String my_email = "alphateacher@test.com";
+	static String my_pwd = "bloomz999" ;
 	
 	// Installation
 	// 1.1 Verify that the Bloomz apk Installation succeeds
@@ -46,8 +48,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0301" })
 	public void BVT_03_testSignInWithValidInputs() throws Exception {
 		System.out.println("BVT_03_testSignInWithValidInputs");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.thenVerifyProfileName("Alpha Teacher").clickOnSettingButton().clickOnSignOutButton();
 	}
 	
@@ -61,7 +63,7 @@ public class BV_TestCases extends BaseTest {
 		System.out.println(sEmail);
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
 		.enterFirstName("test").enterLastName("bloomz")
-		.enterEmailId(sEmail).enterPassword("bloomz999")
+		.enterEmailId(sEmail).enterPassword(my_pwd)
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test bloomz")
 		.thenVerifyWelcomeScreen().clickOnSettingButton().clickOnSignOutButton();
 	}
@@ -74,8 +76,8 @@ public class BV_TestCases extends BaseTest {
 		System.out.println("BVT_04_2_testSignUpAsATeacherFRE");
 		String sClassName = "test_" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sClassName);
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
 		.clickOnMembersGeneralTab().clickOnDeleteClass().clickOnDeleteClassConfirm();	
@@ -87,8 +89,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0403" })
 	public void BVT_04_3_testInviteteacherToAClass() throws Exception {
 		System.out.println("BVT_04_3_testInviteteacherToAClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMembersTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnMembersTab()
 		.clickOnAddMembers().clickOnInviteMembers().selectTeacherRole().selectEmailsManually().enterEmailId("test@test.com")
 		.clickOnEmailSendButton().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("test@test.com")
@@ -107,7 +109,7 @@ public class BV_TestCases extends BaseTest {
 		System.out.println(sEmail);
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
 		.enterFirstName("test").enterLastName("bloomz")
-		.enterEmailId(sEmail).enterPassword("bloomz999").clickOnRoomParent()
+		.enterEmailId(sEmail).enterPassword(my_pwd).clickOnRoomParent()
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("test bloomz")
 		.clickOnSettingButton().clickOnSignOutButton();
 	}
@@ -120,8 +122,8 @@ public class BV_TestCases extends BaseTest {
 		System.out.println("BVT_04_5_testSignUpAsARoomParentFRE");
 		String sClassName = "test_" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sClassName);
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnCreateClass().enterClassName(sClassName)
 		.clickRoomParentButton()
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().thenVerifyMainFeed().clickOnMembersTab().clickOnMembersManageButton()
@@ -137,8 +139,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0502" })
 	public void BVT_05_2_testCalendarEventsOnMainFeedForExistingAccount() throws Exception {
 		System.out.println("BVT_05_2_testCalendarEventsOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMyCalendarTab()
 		.thenVerifyCalendarEventsShouldNotBeNull();
 	}	
 	
@@ -152,8 +154,8 @@ public class BV_TestCases extends BaseTest {
 		String sinputMessage = "Message to a contact_" + getTimeStamp();
 		System.out.println(sinputMessage);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyMessageButton ()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMyMessageButton ()
 		.clickOnMessageToField ().clickOnMyContacts ().clickOnToFirstContact ()
 		.clickOnMessageDone ().inputOnMessageField(sinputMessage).clickOnSendButton().clickOnBackButton()
 		.clickOnFirstMessageInTray ();
@@ -166,8 +168,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0503" })
 	public void BVT_05_3_2_testMessagesOnMainFeedForExistingAccount() throws Exception {
 		System.out.println("BVT_05_3_2_testMessagesOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyMessagesShouldNotBeNull()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyMessagesShouldNotBeNull()
 		.clickOnFirstMessageInTray().clickOnOptionsButton().clickOnDeleteMessageButton().clickOnDeleteMessageButton();
 	}
 	
@@ -179,8 +181,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0505" })
 	public void BVT_05_5_testContactsOnMainFeedForExistingAccount() throws Exception {
 		System.out.println("BVT_05_5_testContactsOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyContactsTab().thenVerifyContactsShouldNotBeNull();
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMyContactsTab().thenVerifyContactsShouldNotBeNull();
 	}	
 	
 	
@@ -198,8 +200,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0701" })
 	public void BVT_07_1_testScrollUpDownHomeFeed() throws Exception {
 		System.out.println("BVT_07_1_testScrollUpDownHomeFeed");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().ScrollDownHomeFeed().thenVerifyScrollDown("support site")
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().ScrollDownHomeFeed().thenVerifyScrollDown("support site")
 		.ScrollUpHomeFeed().thenVerifyScrollUp("Welcome to Bloomz");
 	}
 	
@@ -209,8 +211,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0702" })
 	public void BVT_07_2_testScrollUpDownCalendarFeed() throws Exception {
 		System.out.println("BVT_07_2_testScrollUpDownCalendarFeed");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyCalendarTab().ScrollDownCalendarFeed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMyCalendarTab().ScrollDownCalendarFeed()
 		.ScrollUpCalendarFeed().thenVerifyScrollUp("Today");
 	}	
 	
@@ -221,8 +223,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0801" })
 	public void BVT_08_1_testLaunchingClassFromLeftNav() throws Exception {
 		System.out.println("BVT_08_1_testLaunchingClassFromLeftNav");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher");
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher");
 	}	
 	
 		
@@ -231,8 +233,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0802" })
 	public void BVT_08_2_testSwitchTabsInClass() throws Exception {
 		System.out.println("BVT_08_2_testSwitchTabsInClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher")
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher")
 		.clickOnCalendarTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMediaTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMembersTab().thenVerifyElementExists();
@@ -248,8 +250,8 @@ public class BV_TestCases extends BaseTest {
 		Path currentRelativePath = Paths.get("");
 		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 	
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle("Create new post").enterGeneralUpdate("random text")
 		.uploadImage(testImageFilePath).clickOnPostButton().thenVerifyThatPostWasSuccessful()
 		.clickOnBackButton().clickOnUpdatesTab();		
@@ -261,8 +263,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0902" })
 	public void BVT_09_2_testCreateAnnouncementInClass() throws Exception {
 		System.out.println("BVT_09_2_testCreateAnnouncementInClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName()
 		.createNewAnnouncement()
 		.enterTitle("test announcement").enterGeneralUpdate("random text for verifying announcement feature")
 		.clickOnPostButton().thenVerifyAnnouncements("(1)").
@@ -280,8 +282,8 @@ public class BV_TestCases extends BaseTest {
 		String sTitle = "test_alert_message" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewAlert()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().createNewAlert()
 		.clickOnContinueCreateAlertButton().clickOnToFieldLocator().clickOnToClassFieldLocator().clickOnDoneLocator()
 		.enterTitle(sTitle).enterGeneralUpdate("Create alert in class").clickOnPostButton().clickOnAllGroupsButton();
 		
@@ -298,8 +300,8 @@ public class BV_TestCases extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab();
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnCalendarTab();
 		
 		CreateEventInClassPage.getCreateEventInClassPage(browser).createNewEvent()		
 		.enterTitle(sTitle).enterLocation("random location").enterNotes("some notes")
@@ -325,8 +327,8 @@ public class BV_TestCases extends BaseTest {
 		String sTitle = "test_VRRecurringevent" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName()
 		.clickCreateButton().createVolunteerAsk().clickNeedItemsButton().typeItems().clickNeedPeopleButton()
 		.enterTask().clickNextButton().enterTitleText(sTitle).enterLocationText("some location").enterNotesText("random notes")
 		.clickRepeatButton().clickRepeatWeeklyButton().clickExitRepeatScreenButton().clickEndRepeatButton()
@@ -345,8 +347,8 @@ public class BV_TestCases extends BaseTest {
 		String sTitle = "test_PTCEvent" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPTCEvent()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().createNewPTCEvent()
 		.enterTitle(sTitle).enterLocation("random location").enterDate().enterNotes("some notes").clickNextButton().clickNext2Button()
 		.selectFirstClassButton().clickDoneButton().clickSendButton().thenVerifyThatPTCEventWasSuccessful("Successfully added to Calendar!");
 	}
@@ -360,8 +362,8 @@ public class BV_TestCases extends BaseTest {
 		String sinputMessage = "Message to a class_" + getTimeStamp();
 		System.out.println(sinputMessage);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMyMessageButton ()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMyMessageButton ()
 		.clickOnMessageToField ().clickOnMyClasses().clickOnToFirstClass().clickOnMessageDone ()
 		.inputOnMessageField(sinputMessage).clickOnReplyAllButton().clickOnSendToEveryoneButton()
 		.clickOnBackButton().clickOnFirstMessageInTray ();
@@ -376,8 +378,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT1005" })
 	public void BVT_10_5_testInviteParentsToClassCopyAndPaste() {
 		System.out.println("BVT_10_5_testInviteParentsToClassCopyAndPaste");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().enterEmailId("test@test.com ")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("test")
@@ -392,8 +394,8 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_10_6_testInviteParentsToClassSmartInvite() {
 		System.out.println("BVT_10_6_testInviteParentsToClassSmartInvite");
 		LandingPage.getLandingPage(browser).clickOnSignInButton()
-				.enterEmailIdOnTextBox("alphateacher@test.com")
-				.enterPasswordOnTextBox("bloomz999").clickOnSignInButton()
+				.enterEmailIdOnTextBox(my_email)
+				.enterPasswordOnTextBox(my_pwd).clickOnSignInButton()
 				.thenVerifyCreateButtonShouldBeDisplayed()
 				.clickOnInviteButton().selectAnyOneClass().selectParentRole()
 				.selectSmartInviteUseGmail().clickOnGmailOption().clickOnContinue();
@@ -419,8 +421,8 @@ public class BV_TestCases extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnEditCoverPhotoButton().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
 		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Updated cover photo successfully").clickOnSettingButton().clickOnSignOutButton();
 	}
@@ -445,8 +447,8 @@ public class BV_TestCases extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnAClassName()
 		.clickOnMascotPhoto().clickOnUploadNewPhotoButton().uploadImage(sUploadapp);
 			
 		HomePage.getHomePage(browser).thenVerifyThatUploadWasSuccessful("Group Logo updated successfully").clickOnSettingButton().clickOnSignOutButton();
@@ -471,8 +473,8 @@ public class BV_TestCases extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed();
 		
 		HomePage.getHomePage(browser).clickOnSettingButton().clickOnMyProfileButton().clickOnEditButton()
 		.uploadProfileImage()
@@ -493,8 +495,8 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_11_0_ReadClassAccess() throws Exception {
 		System.out.println("BVT_11_0_ReadClassAccess");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnAClassName().clickOnUpdatesTab();
 		ClassPage.getClassPage(browser).clickOnAccessCodes().clickOnForParentsAccessCodes();
 		
@@ -515,7 +517,7 @@ public class BV_TestCases extends BaseTest {
 		sEMail = sEMail.toLowerCase();
 		
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
-		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword(my_pwd)
 		.clickOnNext().selectTestChildName().clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
 	
@@ -530,7 +532,7 @@ public class BV_TestCases extends BaseTest {
 		System.out.println(sEMail);
 		
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
-		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword(my_pwd)
 		.clickOnNext().selectAddYourChild().enterChildFirstName("testChild" + getTimeStamp()).clickOnAddClass().clickOnJoinClass()
 		.thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
@@ -541,8 +543,8 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_11_3_ReadClassAccessBOPff() throws Exception {
 		System.out.println("BVT_11_3_ReadClassAccessBPOff");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnBPOffClassName().clickOnUpdatesTab();
 		ClassPage.getClassPage(browser).clickOnAccessCodes().clickOnForParentsAccessCodes();
 		
@@ -562,7 +564,7 @@ public class BV_TestCases extends BaseTest {
 		System.out.println(sEMail);
 		
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnJoinAClassGroup().enterInvitationCode(sCCode)
-		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword("bloomz999")
+		.clickInviteNext().enterFirstName("test").enterLastName("automation").enterEmailID(sEMail).enterPassword(my_pwd)
 		.clickOnNext().addChildFirstName("test child")//.thenVerifyLastName("automation")
 		.clickOnJoinClass().thenVerifyJoinClass(sEMail, "Click on the \"Verify\" button in the email we sent you.");
 	}
@@ -572,8 +574,8 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0501" })
 	public void BVT_12_05_1_testPostsOnMainFeedForExistingAccount() throws Exception {
 		System.out.println("BVT_05_1_testPostsOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.thenVerifyProfileName("Alpha Teacher").thenVerifyMainFeedPostShouldNotBeNull().
 		clickOnSettingButton().clickOnSignOutButton();
 	}	
@@ -582,7 +584,7 @@ public class BV_TestCases extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "BVT0504" })
 	public void BVT_12_05_4_testSignupssOnMainFeedForExistingAccount() throws Exception {
 		System.out.println("BVT_05_4_testSignupssOnMainFeedForExistingAccount");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnMySignupsTab().thenVerifySignupButton();
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMySignupsTab().thenVerifySignupButton();
 	}
 }

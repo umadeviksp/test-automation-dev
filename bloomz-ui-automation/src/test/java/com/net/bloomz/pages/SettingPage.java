@@ -52,11 +52,11 @@ public class SettingPage extends BasePage implements SettingPageActions {
 	
 	public static SettingPage getSettingPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			signOutButtonLocator 	= By.id("net.bloomz:id/txtSignOut");
+			signOutButtonLocator 	= By.id("net.bloomz:id/txtSignout");
 			myProfileButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			accountSettingsButtonLocator = By.id("net.bloomz:id/txtAccountSettings");
+			accountSettingsButtonLocator = By.id("net.bloomz:id/txtAccountSetting");
 			cancelButtonLocator 	= By.id("net.bloomz:id/txtCancel");
 			return new AndroidSettingPage(browser);
 		} else if (string.contains(".iOS")) {

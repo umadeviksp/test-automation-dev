@@ -733,6 +733,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 
 	@Nonnull
 	public List<WebElement> getElements(By locator) {
+		logger.info("Get '{}' ", locator);
 		return findElements(locator, null);
 	}
 
@@ -753,7 +754,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 
 	@Nonnull
 	public WebElement inputText(By locator, String text) {
-		logger.info("Inputting text '{}' into element with locator '{}'", text, locator);
+		logger.info("[{}][{}]", text, locator);
 		WebElement el = getElementWithWait(locator);
 		try {
 			el.sendKeys(text);
@@ -1173,7 +1174,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 
 	public void waitForWebPageReadyStateToBeComplete() {
 		final int waitSeconds = timeoutsConfig.getPageLoadTimeoutSeconds();
-		waitOnPredicate(new Predicate() {
+/*		waitOnPredicate(new Predicate() {
 
 			public boolean apply(@Nullable Object o) {
 				try {
@@ -1186,7 +1187,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 		},
 				String.format("Error - web page never reached document.readyState='complete' after %d seconds",
 						waitSeconds), TimeoutType.PAGE_LOAD_TIMEOUT);
-		logger.info("Success - Waited for document.readyState to be 'complete' on page: " + webDriver().getCurrentUrl());
+*/		logger.info("Success - Waited for document.readyState to be 'complete' on page: " + webDriver().getCurrentUrl());
 	}
 
 	public <T> T waitOnExpectedCondition(ExpectedCondition<T> expectedCondition, String message, TimeoutType timeout) {
@@ -1198,7 +1199,8 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 		// timeout
 		WebDriverWait wait = new WebDriverWait(webDriver(), waitSeconds, DEFAULT_POLL_MILLIS);
 		wait.withMessage(message).ignoring(StaleElementReferenceException.class);
-		logger.info("Waiting on expected condition, using timeout of {} seconds", waitSeconds);
+//		logger.info("Waiting on expected condition, using timeout of {} seconds", waitSeconds);
+		logger.info("[{}] {} s", expectedCondition.toString(), waitSeconds);
 		return wait.until(expectedCondition);
 	}
 
@@ -1236,7 +1238,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 		FluentWait<T> fluentWait = new FluentWait<T>(input).withTimeout(waitSeconds, TimeUnit.SECONDS)
 				.pollingEvery(DEFAULT_POLL_MILLIS, TimeUnit.MILLISECONDS).withMessage(message)
 				.ignoring(NotFoundException.class).ignoring(StaleElementReferenceException.class);
-		fluentWait.until(predicate);
+	//	fluentWait.until(predicate);
 	}
 
 	public void waitOnPredicate(Predicate predicate, String message, TimeoutType timeout) {
@@ -1250,7 +1252,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 		wait.withMessage(message).ignoring(StaleElementReferenceException.class);
 
 		logger.info("Waiting on expected condition, using timeout of {} seconds", waitSeconds);
-		wait.until(new Predicate<WebDriver>() {
+/*		wait.until(new Predicate<WebDriver>() {
 
 			public boolean apply(@Nullable WebDriver webDriver) {
 				if (predicate.apply(input)) {
@@ -1260,6 +1262,7 @@ public abstract class BaseSeleniumActions<B extends Browser> implements Selenium
 				return false;
 			}
 		});
+*/
 	}
 
 	public void waitOnPredicateWithRefresh(final Predicate predicate, String message, TimeoutType timeout) {

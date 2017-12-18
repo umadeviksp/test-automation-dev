@@ -35,6 +35,15 @@ public class MediaTabPage extends BasePage {
 	static By selectClassParentLocator = null;
 	static By albumOptionsParentLocator = null;
 	static By setAsAlbumCoverPhotoLocator = null;
+	static By documentsMediaLocator = null;
+	static By uploadDocumentsLinkLocator = null;
+	static By uploadDocumentsTitleLocator = null;
+	static By uploadDocumentsDescriptionLocator = null;
+	static By attachFilesLocator = null;
+	static By saveButtonLocator = null;
+	static By uploadDocumentsDescriptionInput = null;
+	static By udDesc;
+	static By udDesc1;
 	
 	public MediaTabPage(Browser<?> browser) {
 		super(browser);
@@ -54,7 +63,7 @@ public class MediaTabPage extends BasePage {
 			createAlbumMediaLocator = By.xpath("//*[@id='media']//a[contains (text(),'Create Album')]");
 			albumTitleTextLocator = By.xpath("//*[@id='contentDiv']//input[@name='AlbumTitle']");
 			pickClassGroupLocator = By.xpath("//*[@id='contentDiv']//input[@placeholder='Pick Class/Group']");
-			selectClassLocator = By.xpath("//*[@id='recipientPicker']//*[contains (text(),'Alpha Teacher')]");
+			selectClassLocator = By.xpath("//*[@id='recipientPicker']//*[contains (text(),'Alpha Class')]");
 			selectClassParentLocator = By.xpath("//*[@id='recipientPicker']//*[contains (text(),'dummy')]");
 			doneClassLocator = By.xpath("//*[@id='recipientPicker']//*[@ng-if='showNextButton()']");
 			createButtonLocator = By.xpath("//*[@id='contentDiv']//button[contains (text(),'Create')]");
@@ -71,6 +80,15 @@ public class MediaTabPage extends BasePage {
 			photosTabDeletePhotoLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains (text(),'Delete Photo Permanently')]");
 			photosTabDownloadLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//span[contains (text(),'Download')]");
 			albumOptionsParentLocator = By.xpath("//*[@id='media']/div[7]/div/section/div[3]/article/footer/ul/li[2]");
+			documentsMediaLocator = By.xpath("//*[@id='communityContent']//span[contains(text(),'Documents')]");
+			uploadDocumentsLinkLocator = By.xpath("//*[@id='communityContent']//a[contains(text(),'Upload documents')]");
+			uploadDocumentsTitleLocator = By.xpath("//*[@id='communityInfoCardEdit']//input[@placeholder='Title']");
+			uploadDocumentsDescriptionLocator = By.xpath("//*[@id='communityInfoCardEdit']//div[contains(text(),'Please provide information you would like to share on Info page.')]");
+			uploadDocumentsDescriptionInput = By.xpath("//*[@id=\"communityInfoCard_detail\"]");
+			attachFilesLocator = By.xpath("//*[@id='communityInfoCardAddForm']//label[contains(text(),'Attach Files')]");
+			saveButtonLocator = By.xpath("//*[@id='communityInfoCardEdit']//a[contains(text(),'Save')]");
+			udDesc = By.xpath("//*[@id=\"communityInfoCardEdit\"]/div/div[1]/form/section[2]");
+			udDesc1 = By.xpath("//*[@id=\"communityInfoCardEdit\"]/div/div[1]/form/section[2]/div[1]");
 			return new WebCreateMediaTabPage(browser);
 		}
 		return null;
@@ -88,6 +106,11 @@ public class MediaTabPage extends BasePage {
 	
 	public MediaTabPage clickOnAlbumsTab() {
 		click(albumsMediaLocator);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	
+	public MediaTabPage clickOnDocumentsTab() {
+		click(documentsMediaLocator);	
 		return MediaTabPage.getMediaTabPage(browser);
 	}
 	
@@ -196,6 +219,49 @@ public class MediaTabPage extends BasePage {
 		
 	public MediaTabPage clickOnSetAsAlbumCover() {
 		click(setAsAlbumCoverPhotoLocator);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+		
+	public MediaTabPage clickOnUploadDocuments() {
+		click(uploadDocumentsLinkLocator);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	
+	public MediaTabPage enterTitleUploadDocuments(String sTitle) {
+		sendText(uploadDocumentsTitleLocator,sTitle);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	
+	public MediaTabPage enterDescriptionUploadDocuments(String sDescription) {
+		//click(uploadDocumentsDescriptionLocator);
+		//sendkeyboardEvent(uploadDocumentsDescriptionLocator);
+		//udDesc
+		select(uploadDocumentsDescriptionLocator);
+		//sendkeyboardEvent(udDesc1);
+		sendText(uploadDocumentsDescriptionInput,sDescription);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	
+	public MediaTabPage clickOnAttachFiles() {
+		click(attachFilesLocator);	
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	/*
+	public MediaTabPage uploadFile(String pathToTestImage) {
+		browser.getWebDriver().findElement(attachFilesLocator).sendKeys(pathToTestImage);
+		return MediaTabPage.getMediaTabPage(browser);
+	}*/
+	
+	public MediaTabPage uploadFile(String pathToTestImage) throws InterruptedException, IOException {
+		//browser.getWebDriver().findElement(uploadNewPhotoButtonLocator).sendKeys(pathToTestImage);
+		//return CreatePostInClassPage.getCreatePostInClassPage(browser);
+
+		UploadFileAutoIT(pathToTestImage);
+		return MediaTabPage.getMediaTabPage(browser);
+	}
+	
+	public MediaTabPage clickOnSave() {
+		click(saveButtonLocator);	
 		return MediaTabPage.getMediaTabPage(browser);
 	}
 	

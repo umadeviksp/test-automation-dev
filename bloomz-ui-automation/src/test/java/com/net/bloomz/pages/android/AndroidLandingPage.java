@@ -13,9 +13,9 @@ public class AndroidLandingPage extends LandingPage implements LandingPageAction
 
 	@Override
 	public CreateAccountPage clickOnCreateAccount() {
-		super.clickOnSignInButton();
-		AndroidSignInPage.getSignInPage(browser).setEnviroment();
-		super.clickBack();
+//		super.clickOnSignInButton();
+//		AndroidSignInPage.getSignInPage(browser).setEnviroment();
+//		super.clickBack();
 		return super.clickOnCreateAccount();
 	}
 }

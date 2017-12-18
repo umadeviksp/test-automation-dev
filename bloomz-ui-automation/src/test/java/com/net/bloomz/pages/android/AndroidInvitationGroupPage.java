@@ -10,5 +10,9 @@ public class AndroidInvitationGroupPage extends InvitationGroupPage implements I
 		super(browser);
 		// TODO Auto-generated constructor stub
 	}
+	public InvitationGroupPage enterEmailId(String emailId) {
+		super.enterEmailId(emailId+",");	//android needs extra comma to enable the send button.
+		return InvitationGroupPage.getInvitationGroupPage(browser) ;
+	}
 
 }

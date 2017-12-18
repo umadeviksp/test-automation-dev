@@ -6,7 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.net.bloomz.appium.pagefactory.framework.browser.mobile.AndroidMobileBrowser;
 import com.net.bloomz.appium.pagefactory.framework.browser.mobile.IOSMobileBrowser;
@@ -50,7 +50,7 @@ public class MobileBrowserBuilder {
 	private String newCommandTimeout;
 	private String automationName;
 	private String version;
-	private String autoLaunch;
+	private boolean autoLaunch;
 	private boolean touchMode;
 	private Map<String, String> optionalValues = new HashMap<String, String>();
 
@@ -126,7 +126,7 @@ public class MobileBrowserBuilder {
 		return version;
 	}
 
-	public String getAutoLaunch() {
+	public boolean getAutoLaunch() {
 		return autoLaunch;
 	}
 
@@ -242,7 +242,7 @@ public class MobileBrowserBuilder {
 		return this;
 	}
 
-	public MobileBrowserBuilder withAutoLaunch(String autoLaunch) {
+	public MobileBrowserBuilder withAutoLaunch(boolean autoLaunch) {
 		this.autoLaunch = autoLaunch;
 		return this;
 	}
@@ -260,7 +260,7 @@ public class MobileBrowserBuilder {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("baseTestUrl", baseTestUrl).add("browserName", browserName)
+		return MoreObjects.toStringHelper(this).add("baseTestUrl", baseTestUrl).add("browserName", browserName)
 				.add("platformName", platformName.getPlatformName()).add("platform", platform)
 				.add("platformVersion", platformVersion).add("deviceName", deviceName).add("app", app)
 				.add("appPackage", appPackage).add("appActivity", appActivity)

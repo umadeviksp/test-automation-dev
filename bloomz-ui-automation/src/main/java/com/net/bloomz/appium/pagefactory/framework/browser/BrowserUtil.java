@@ -10,19 +10,23 @@ import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CommandExecutor;
 import org.openqa.selenium.remote.HttpCommandExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Throwables;
 import com.net.bloomz.appium.pagefactory.framework.browser.web.RemoteBrowser;
-import com.thoughtworks.selenium.Wait;
-import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
 
 public class BrowserUtil {
 	public static final int DEFAULT_TIMEOUT_SECONDS = 30;
@@ -38,7 +42,7 @@ public class BrowserUtil {
 	 *            - this will probably only be useful for a
 	 *            {@link com.net.bloomz.appium.pagefactory.framework.browser.web.WebBrowser}
 	 */
-	public static void waitForPageHtmlToBeStable(Browser browser, int timeoutSeconds) {
+/*	public static void waitForPageHtmlToBeStable(Browser browser, int timeoutSeconds) {
 		final long TIMEOUT_MILLIS = TimeUnit.SECONDS.toMillis(timeoutSeconds);
 		final long START = System.currentTimeMillis();
 		WaitForPageToLoad waitForPageToLoad = new WaitForPageToLoad();
@@ -47,11 +51,31 @@ public class BrowserUtil {
 		final long END = System.currentTimeMillis();
 		logger.info("Success - waited for the page HTML to be stable! Took {} ms", END - START);
 	}
-
+*/
 	public static void waitForPageHtmlToBeStable(Browser browser) {
 		waitForPageHtmlToBeStable(browser, DEFAULT_TIMEOUT_SECONDS);
 	}
 
+	
+	public static void waitForPageHtmlToBeStable(Browser browser, int timeoutSeconds) {
+        final WebDriver driver = browser.getWebDriver();
+        ExpectedCondition<Boolean> javascriptDone = new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                try
+                {
+                    return  ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+                }
+                catch (Exception e)
+                {
+                    return Boolean.FALSE;
+                }
+            }
+        };
+
+        WebDriverWait wait = new WebDriverWait(driver,timeoutSeconds);
+        wait.until(javascriptDone);
+    }	
+	
 	/**
 	 * Helper to determine the Selenium Node we're running on via the Selenium
 	 * API

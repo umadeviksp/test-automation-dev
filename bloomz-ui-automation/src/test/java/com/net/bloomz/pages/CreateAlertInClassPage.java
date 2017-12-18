@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateAlertInClassPage;
 import com.net.bloomz.pages.interfaces.CreateAlertInClassPageActions;
 import com.net.bloomz.pages.web.WebCreateAlertInClassPage;
 
@@ -90,8 +91,26 @@ public class CreateAlertInClassPage extends BasePage implements CreateAlertInCla
 	
 	public static CreateAlertInClassPage getCreateAlertInClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+
+			continueCreateAlertButtonLocator = By.id("net.bloomz:id/btnContinue");
+			titleFieldLocator 				 = By.id("net.bloomz:id/edittitle");
+			generalUpdateFieldLocator 		 = By.id("net.bloomz:id/editdiscreption");
+			postButtonLocator 				 = By.id("net.bloomz:id/btnDone");
+
+			toFieldLocator 		= By.id("net.bloomz:id/llSetPostTo");
+			toClassFieldLocator = By.id("net.bloomz:id/searchtext1");
+			doneButtonLocator 	= By.id("net.bloomz:id/DoneBtn1");
+			alertTitleLocator 	= By.id("net.bloomz:id/edittitle");
+			//alertIndicatorLocator = By.xpath("//*[@id='postViewControl']/div[1]/div/div/article/div[3]/span[1]");
+			alertIndicatorLocator 	= By.xpath("//*[@id='postViewControl']//span[@class='tags tagUrgent']");
+			optionsButtonLocator 	= By.xpath("//*[@id='postViewControl']/nav/ng-switch[3]/a");
+			deletePostButonLocator 	= By.xpath("//*[@id='actionSheet_optionsDiv']/button[1]/span");
+			
+			
+			
+			return new AndroidCreateAlertInClassPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

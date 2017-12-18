@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidClassPage;
 import com.net.bloomz.pages.interfaces.ClassPageActions;
 import com.net.bloomz.pages.web.WebClassPage;
 
@@ -46,6 +47,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	static By accessCodeParentsLocator;
 	static By classCodeTextLocator;
 	static By doneButtonLocator;
+	static By signupSheetButtonLocator;
 
 	
 	public ClassPage(Browser<?> browser) {
@@ -284,8 +286,38 @@ public class ClassPage extends BasePage implements ClassPageActions {
 	
 	public static ClassPage getClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+	//	System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+			createButtonLocator = By.id("net.bloomz:id/btnStart");
+
+			createPostButtonLocator = By.xpath("//android.widget.TextView[@text='Post']");
+			createAnnouncementButtonLocator = By.xpath("//android.widget.TextView[@text='Announcement']");
+			createAlertButtonLocator 	= By.xpath("//android.widget.TextView[@text='Alert']");
+			createPTCEventButtonLocator = By.xpath("//android.widget.TextView[@text='Parent Teacher Conference']");
+			signupSheetButtonLocator = By.xpath("//android.widget.TextView[@text='Signup Sheet']");
+			
+			updatesTabLocator 	= By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Updates']");
+			calendarTabLocator 	= By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Calendar']");
+//			volunteerTabLocator	= By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Signups']");
+			volunteerTabLocator = By.xpath("//android.widget.TextView[@text='Signup Sheet']");
+			mediaTabLocator 	= By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Media']");
+			membersTabLocator 	= By.xpath("//android.widget.TextView[@text='Members']");
+			
+			eventButtonLocator 	= By.id("net.bloomz:id/btnStart");
+			eventDropdownLocator= By.id("net.bloomz:id/llQuickPost");
+
+			upcomingEventsLocator = By.xpath("//android.widget.LinearLayout[@content-desc='In Group - Signups']");
+			eventTitlenameLocator = By.id("net.bloomz:id/txtTitle");	
+			optionsUpcomingEventLocator = By.xpath("//android.widget.LinearLayout[@name='sda1']");
+			deleteUpcomingEventLocator = By.xpath("asas");
+			confirmDeleteUpcomingEventLocator = By.xpath("dfdf");
+
+			
+			likeButtonLocator 		= By.xpath("//[@id='android.widget.LinearLayout'][@index='0']/[@id='net.bloomz:id/ivLike']");
+			commentButtonLocator 	= By.xpath("//[@id='android.widget.LinearLayout'][@index='0']/[@id='net.bloomz:id/llComments']");
+			likeTextLocator 		= By.id("net.bloomz:id/txtEnterComment");
+			
+			return new AndroidClassPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

@@ -21,9 +21,15 @@ public class CalendarTabPage extends BasePage {
 
 	public static CalendarTabPage getCalendarTabPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			calendarEventsLocator = By.id("net.bloomz:id/llMainView");
+
+			calendarEventsLocator = By.xpath("//*[@ng-show=\"day.calendarEntries.length>=0\"]");
+			calendarTodayLocator = By.xpath("//*[@id='communityContent']/div/section[1]/article/h2");
+			calendarUpLocator = By.xpath("//*[@id='calendarList']/section[2]/article/h2");
+			calendarSomeDayLocator = By.xpath("//*[@id='calendarList']/section[12]/article/h2");
+
 			return new AndroidMyCalendarTabPage(browser);
 		} else if (string.contains(".iOS")) {
 		} else {

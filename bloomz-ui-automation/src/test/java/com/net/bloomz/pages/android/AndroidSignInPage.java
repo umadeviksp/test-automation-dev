@@ -7,14 +7,11 @@ import com.net.bloomz.pages.SignInPage;
 import com.net.bloomz.pages.interfaces.SignPageActions;
 
 public class AndroidSignInPage extends SignInPage implements SignPageActions {
-	By settingButtonLocator = By.id("net.bloomz:id/settingsBtn");
-	By editNewUrlEditTextLocator = By.id("net.bloomz:id/editNewURL");
-	By saveButtonLocator = By.id("net.bloomz:id/SaveBtn");
 
 	public AndroidSignInPage(Browser<?> browser) {
 		super(browser);
 	}
-
+/*
 	@Override
 	public SignInPage enterEmailIdOnTextBox(String emailId) {
 		this.setEnviroment();
@@ -30,5 +27,5 @@ public class AndroidSignInPage extends SignInPage implements SignPageActions {
 		}
 		return new SignInPage(browser);
 	}
-
+*/
 }

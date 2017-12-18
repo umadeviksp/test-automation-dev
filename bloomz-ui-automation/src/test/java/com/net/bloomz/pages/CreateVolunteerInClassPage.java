@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateVolunteerInClassPage;
 import com.net.bloomz.pages.interfaces.CreateVolunteerInClassPageActions;
 import com.net.bloomz.pages.web.WebCreateVolunteerInClassPage;
 
@@ -169,8 +170,36 @@ public class CreateVolunteerInClassPage extends BasePage implements CreateVolunt
 	
 	public static CreateVolunteerInClassPage getCreateVolunteerInClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+			
+			needItemsButtonLocator					= By.id("net.bloomz:id/btnAddItem") ;
+			itemNameBoxLocator						= By.id("net.bloomz:id/enteritem") ;
+			itemNameBoxLocator 		= By.xpath("//android.widget.EditText[contains(@text,'Enter Item')]") ;
+			needPeopleButtonLocator					= By.id("net.bloomz:id/btnAddTask") ;
+			taskBoxLocator 			= By.xpath("//android.widget.EditText[contains(@text,'Enter Task')]") ;
+			titleBoxLocator							= By.id("net.bloomz:id/editeventdetails") ;
+			locationBoxLocator						= By.id("net.bloomz:id/editlocation") ;
+			notesBoxLocator							= By.id("net.bloomz:id/editnotes") ;
+			startDateBoxLocator						= By.id("net.bloomz:id/txtstartdate") ;
+			startDateButtonLocator					= By.id("") ;
+			endDateBoxLocator						= By.id("net.bloomz:id/txtenddate") ;
+			endDateButtonLocator					= By.id("") ;
+			repeatButtonLocator						= By.id("net.bloomz:id/llrepeatedit") ;
+			repeatWeeklyButtonLocator				= By.id("net.bloomz:id/radioWeekly") ;
+			exitRepeatScreenButtonLocator			= By.id("net.bloomz:id/backarrow") ;
+			endRepeatButtonLocator					= By.id("net.bloomz:id/llnorepeatedit") ;
+			afterNumberOfTimesButtonLocator			= By.id("net.bloomz:id/radioTimes") ;
+			numberOfTimesBoxLocator					= By.id("net.bloomz:id/editNoRepeatTimes") ;
+			exitNumberOfTimesScreenButtonLocator	= By.id("net.bloomz:id/backarrow") ;
+			rsvpButtonLocator						= By.id("net.bloomz:id/llRSPV") ;
+			saveButtonLocator						= By.id("net.bloomz:id/BtnSave") ;
+			sendButtonLocator 						= By.id("net.bloomz:id/BtnSave") ;
+
+			nextButtonLocator = By.xpath("//*[@id=\"addUpdateEvent\"]/div/nav[1]/a[2]");
+			
+			
+			return new AndroidCreateVolunteerInClassPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

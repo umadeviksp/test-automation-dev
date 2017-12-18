@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateAnnouncementInClassPage;
 import com.net.bloomz.pages.interfaces.CreateAnnouncementInClassPageActions;
 import com.net.bloomz.pages.web.WebCreateAnnouncementInClassPage;
 
@@ -34,8 +35,12 @@ public class CreateAnnouncementInClassPage extends BasePage implements CreateAnn
 
 	public static CreateAnnouncementInClassPage getCreateAnnouncementInClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+			titleFieldLocator = By.id("net.bloomz:id/edittitle");
+			generalUpdateFieldLocator = By.id("net.bloomz:id/editdiscreption");
+			postButtonLocator = By.id("net.bloomz:id/btnDone");
+			return new AndroidCreateAnnouncementInClassPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

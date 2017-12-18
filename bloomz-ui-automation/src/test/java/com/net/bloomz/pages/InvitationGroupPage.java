@@ -176,10 +176,19 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 	
 	public static InvitationGroupPage getInvitationGroupPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			yesButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			backButtonLocator 	= By.id("net.bloomz:id/txtCancel");
+
+			yesButtonLocator 				= By.id("net.bloomz:id/txtMyProfile");
+			backButtonLocator 				= By.id("net.bloomz:id/txtCancel");
+//			inviteMembersSectionLocator 	= By.id("net.bloomz:id/llInvite");
+			inviteMembersSectionLocator 	= By.id("net.bloomz:id/txtAddMember");
+
+			teacherRoleTextLocator 			= By.xpath("//android.widget.TextView[@text='Parent']") ;
+			typeEmailsManuallyTextLocator 	= By.id("net.bloomz:id/llManually") ;
+			emailIdTextBoxLocator 			= By.id("net.bloomz:id/searchView");
+			emailSendButtonLocator 			= By.id("net.bloomz:id/inviteBtn");
+
 			return new AndroidInvitationGroupPage(browser);
 		} else if (string.contains(".iOS")) {
 
@@ -204,7 +213,7 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 			smartInviteButtonLocator = By.xpath("//*[contains(text(),\"Use your phone's email app or Gmail\")]");
 			gmailButtonLocator = By.xpath("//*[@id=\"mailClients\"]//a[@class=\"clientGmail\"]");
 			continueButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Continue\")]");
-			inviteMembersSectionLocator = By.xpath("//*[@id=\"groupCreateOptions\"]//*[contains(text(),\"Invite people to join Alpha Teacher on Bloomz.\")]");
+			inviteMembersSectionLocator = By.xpath("//*[@id=\"groupCreateOptions\"]//*[contains(text(),\"Invite people to join Alpha Class on Bloomz.\")]");
 			teacherRoleTextLocator = By
 					.xpath("//*[@id=\"rolePicker\"]//*[contains(text(),\"Teacher\")]"); 
 			inviteSpouseEmailTextLocator = By.xpath("//*[@id='inviteSpouse_searchEmail']");

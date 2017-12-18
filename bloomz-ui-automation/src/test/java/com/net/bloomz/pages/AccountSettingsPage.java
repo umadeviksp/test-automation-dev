@@ -19,11 +19,10 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 	static By profileTimezoneButtonLocator = null;
 	static By changePasswordButtonLocator = null;
 	static By changeEmailAddressButtonLocator = null;
+
 	static By signOutButtonLocator = null;
 	static By deleteAccountButtonLocator = null;
 	static By saveSignOutButtonLocator = null;
-	
-	
 	public AccountSettingsPage(Browser<?> browser) {
 		super(browser);
 
@@ -63,7 +62,7 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 		click(changeEmailAddressButtonLocator);
 		return ChangeEmailAddressPage.getChangeEmailAddressPage(browser);
 	}
-	
+
 	public DeleteAccountPage clickOnDeleteAccountButton() {
 		click(deleteAccountButtonLocator);
 		return DeleteAccountPage.getDeleteAccountPage(browser);
@@ -73,25 +72,27 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 		click(signOutButtonLocator);
 		return SignOutConfirmationPage.getSignOutConfirmationPage(browser);
 	}
-	
+
 	public LandingPage clickOnSaveSignOutButton() {
 		click(saveSignOutButtonLocator);
 		return LandingPage.getLandingPage(browser);
 	}
-	
 	public static AccountSettingsPage getAccountSettingsPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			goBackButtonLocator 	= By.id("net.bloomz:id/txtCancel");
-			signOutButtonLocator 	= By.id("net.bloomz:id/txtSignOut");
-			calendarSettingsButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			notificationsButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			profileSettingsButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			preferredLanguageButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			profileTimezoneButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			changePasswordButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
-			changeEmailAddressButtonLocator 	= By.id("net.bloomz:id/txtMyProfile");
+			goBackButtonLocator 			= By.id("net.bloomz:id/backarrow");
+			signOutButtonLocator 			= By.id("net.bloomz:id/txtSignOut");
+			calendarSettingsButtonLocator 	= By.id("net.bloomz:id/txtCalendarSettings");
+			notificationsButtonLocator 		= By.id("net.bloomz:id/txtNotification");
+			profileSettingsButtonLocator 	= By.id("net.bloomz:id/txtProfileSettings");
+			preferredLanguageButtonLocator 	= By.id("net.bloomz:id/txtPreferredLanguage");
+			profileTimezoneButtonLocator 	= By.id("net.bloomz:id/txtPreferredTimeZone");
+			changePasswordButtonLocator 	= By.id("net.bloomz:id/txtChangePassword");
+			changeEmailAddressButtonLocator	= By.id("net.bloomz:id/txtChangeEmail");
+			deleteAccountButtonLocator 		= By.id("net.bloomz:id/txtDeleteAccount");
+			saveSignOutButtonLocator 		= By.xpath("saveSignOutButtonLocator");
+			
 			return new AndroidAccountSettingsPage(browser);
 		} else if (string.contains(".iOS")) {
 
@@ -108,7 +109,7 @@ public class AccountSettingsPage extends HomePage implements AccountSettingsPage
 			changeEmailAddressButtonLocator = By.xpath("//label[contains(text(), 'Change Email Address')]");
 			deleteAccountButtonLocator = By.xpath("//*[@id='accountSettings']//*[contains(text(),'Delete Account')]");
 			saveSignOutButtonLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Save & Sign Out')]");
-					
+			
 			return new WebAccountSettingsPage(browser);
 		}
 		return null;

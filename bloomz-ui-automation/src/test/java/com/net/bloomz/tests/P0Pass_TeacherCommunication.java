@@ -82,9 +82,9 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 	}
 	
 	// Create Announcement in a class with pictures
-	@Test(groups = { "android", "ios", "web", "P0Pass_07" })
-	public void P0Pass_07_testCreateAnnouncementWithPicture() throws Exception {
-		System.out.println("P0Pass_07_testCreateAnnouncementWithPicture");
+	@Test(groups = { "android", "ios", "web", "P0Pass_09" })
+	public void P0Pass_09_testCreateAnnouncementWithPicture() throws Exception {
+		System.out.println("P0Pass_09_testCreateAnnouncementWithPicture");
 		Path currentRelativePath = Paths.get("");
 		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 		
@@ -96,7 +96,53 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		CreateAnnouncementInClassPage.getCreateAnnouncementInClassPage(browser).clickOnPostButton().thenVerifyAnnouncements("(1)").
 		clickOnAnnouncement().clickOnAnnouncementOptions()
 		.clickOnAnnouncementDeleteButton().clickOnConfirmAnnouncementDeleteButton();
-	}	
+	}
 	
-	
+	// Make posts to the parents individually with pictures
+	@Test(groups = { "android", "ios", "web", "P0Pass_10" })
+	public void P0Pass_10_testMakePostToParents() throws Exception {
+		System.out.println("P0Pass_10_testMakePostToParents");
+		Path currentRelativePath = Paths.get("");
+		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
+		String sEmailID = "test_addParent" + getTimeStamp().replaceAll("-", "_") + "@test.com";
+		//Pre-requisite to add parent to the class
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().enterEmailId(sEmailID)
+		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
+		.clickCreateButton().clickOnPostButton().clickOnPostToField().clickOnSeeMembersOfAClass().clickOnSearchString()
+		.enterEmailID(sEmailID).selectEmailID().ClickOnDoneLocator().clickOnToDoneButton().enterTitle("Make posts to the parents individually with pictures")
+		.enterGeneralUpdate("Make posts to the parents individually with pictures").uploadImage(testImageFilePath).clickOnPostButton()
+		.thenVerifyThatPostWasSuccessful().clickOnBackButton();
+		
+		HomePage.getHomePage(browser).clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers(sEmailID)
+		.selectMembersEmailId().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
+		.thenVerifyTheToastMessage("Successful! Member removed from this group.").clickOnDoneButton();
+	}
+		
+	// Add files/ insert pictures, input hyper links to the class Info section
+	@Test(groups = { "android", "ios", "web", "P0Pass_13" })
+	public void P0Pass_13_testUploadDocumentsToClass() throws Exception {
+		System.out.println("P0Pass_13_testUploadDocumentsToClass");
+		Path currentRelativePath = Paths.get("");
+		String sCurrentPath = currentRelativePath.toAbsolutePath().toString() ;
+		String sUploadapp = sCurrentPath + Config.getConfigData("test_cover_image");
+		if (sCurrentPath.contains("/"))
+		{
+			System.out.println ("this is not windows") ;
+		}
+		else
+		{
+			sUploadapp = sUploadapp.replaceAll("/","\\\\");
+			System.out.println ("this is windows") ;
+		}
+		System.out.println(sUploadapp);
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMediaTab().clickOnDocumentsTab()
+		.clickOnUploadDocuments().enterTitleUploadDocuments("Upload documents to a class")
+		.enterDescriptionUploadDocuments("upload documents to a class")
+		.clickOnAttachFiles().uploadFile(sUploadapp).clickOnSave().thenVerifyThatEventWasSuccessful("Successfuly saved the information");		
+	}
+		
 }

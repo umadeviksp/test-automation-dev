@@ -1,7 +1,9 @@
 package com.net.bloomz.appium.pagefactory.framework.browser.mobile;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -33,13 +35,13 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	protected String newCommandTimeout;
 	protected String automationName;
 	protected String version;
-	protected String autoLaunch;
+	protected boolean autoLaunch;
 	protected String app;
 	protected Map<String, String> optionalValues;
 
 	protected MobileBrowser(String baseTestUrl, TimeoutsConfig timeoutsConfig, String browserName, String platform,
 			String platformName, String platformVersion, String deviceName, String newCommandTimeout,
-			String automationName, String version, String autoLaunch, String app, Map<String, String> optionalValues)
+			String automationName, String version, boolean autoLaunch, String app, Map<String, String> optionalValues)
 			throws IWebDriverException {
 		super(baseTestUrl, timeoutsConfig);
 		this.browserName = browserName;
@@ -149,14 +151,18 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	 * Swipe from the right to left for a second
 	 */
 	public void swipeLeft() {
-		webDriver.swipe(getScreenWidth() - 5, getScreenHeight() / 2, 5, getScreenHeight() / 2, 1000);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(getScreenWidth() - 5, getScreenHeight() / 2).moveTo(5, getScreenHeight() / 2).release().perform();
+//		webDriver.swipe(getScreenWidth() - 5, getScreenHeight() / 2, 5, getScreenHeight() / 2, 1000);
 	}
 
 	/**
 	 * Swipe from the left to right for a second
 	 */
 	public void swipeRight() {
-		webDriver.swipe(5, getScreenHeight() / 2, getScreenWidth() - 5, getScreenHeight() / 2, 1000);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(5, getScreenHeight() / 2).moveTo(getScreenWidth() - 5, getScreenHeight() / 2).release().perform();
+//		webDriver.swipe(5, getScreenHeight() / 2, getScreenWidth() - 5, getScreenHeight() / 2, 1000);
 	}
 
 	/**
@@ -164,7 +170,9 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	 */
 	public void dragDown() {
 		int midScreen = getScreenWidth() / 2;
-		webDriver.swipe(midScreen, 250, midScreen, getScreenHeight() - 250, 1500);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, 250).moveTo(midScreen, getScreenHeight() - 250).release().perform();
+//		webDriver.swipe(midScreen, 250, midScreen, getScreenHeight() - 250, 1500);
 	}
 
 	/**
@@ -172,7 +180,9 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	 */
 	public void dragUp() {
 		int midScreen = webDriver.manage().window().getSize().getWidth() / 2;
-		webDriver.swipe(midScreen, getScreenHeight() - 250, midScreen, 250, 2500);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, getScreenHeight() - 250).moveTo(midScreen, 250).release().perform();
+//		webDriver.swipe(midScreen, getScreenHeight() - 250, midScreen, 250, 2500);
 	}
 
 	/**
@@ -185,12 +195,16 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	 */
 	public void drag(int yStart, int yEnd) {
 		int midScreen = getScreenWidth() / 2;
-		webDriver.swipe(midScreen, yStart, midScreen, yEnd, 2500);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, yStart).moveTo(midScreen, yEnd).release().perform();
+//		webDriver.swipe(midScreen, yStart, midScreen, yEnd, 2500);
 	}
 
 	public void drag(int yStart, int yEnd, int duration) {
 		int midScreen = getScreenWidth() / 2;
-		webDriver.swipe(midScreen, yStart, midScreen, yEnd, duration);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(midScreen, yStart).moveTo(midScreen, yEnd).release().perform();
+//		webDriver.swipe(midScreen, yStart, midScreen, yEnd, duration);
 	}
 
 	/**
@@ -206,23 +220,29 @@ public abstract class MobileBrowser extends Browser<AppiumDriver> {
 	 *            - in milliseconds
 	 */
 	public void swipe(int startX, int endX, int startY, int endY, int duration) {
-		webDriver.swipe(startX, startY, endX, endY, duration);
+		TouchAction action = new TouchAction(webDriver);
+		action.press(startX, startY).moveTo(endX, endY).release().perform();
+//		webDriver.swipe(startX, startY, endX, endY, duration);
 	}
 
 	public void putApplicationToBackground(int duration) {
-		webDriver.runAppInBackground(duration);
+		webDriver.runAppInBackground(Duration.ofSeconds(duration));
 	}
-
+/*
 	public void lockMobile(int duration) {
-		webDriver.lockScreen(duration);
+		webDriver.lockScreen(duration); //Deprecated
 	}
-
+*/
 	public void tap(int fingersNum, WebElement webElement, int duration) {
-		webDriver.tap(fingersNum, webElement, duration);
+		TouchAction action = new TouchAction(webDriver);
+		action.tap(webElement);
+//		webDriver.tap(fingersNum, webElement, duration);
 	}
 
 	public void tap(int fingersNum, int xLocation, int yLocation, int duration) {
-		webDriver.tap(fingersNum, xLocation, yLocation, duration);
+		TouchAction action = new TouchAction(webDriver);
+		action.tap(xLocation, yLocation);
+//		webDriver.tap(fingersNum, xLocation, yLocation, duration);
 	}
 
 	public void initApp() {

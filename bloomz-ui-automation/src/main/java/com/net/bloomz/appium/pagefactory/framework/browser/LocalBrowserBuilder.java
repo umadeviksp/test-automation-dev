@@ -7,7 +7,7 @@ import org.openqa.selenium.Platform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.net.bloomz.appium.pagefactory.framework.browser.web.ChromeBrowser;
 import com.net.bloomz.appium.pagefactory.framework.browser.web.FirefoxBrowser;
@@ -259,7 +259,7 @@ public class LocalBrowserBuilder {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("browserType", browserType).add("baseTestUrl", baseTestUrl)
+		return MoreObjects.toStringHelper(this).add("browserType", browserType).add("baseTestUrl", baseTestUrl)
 				.add("webDriverPath", webDriverPath).add("browserBinaryPath", browserBinaryPath)
 				.add("browserLocale", browserLocale).add("startWindowWidth", startWindowWidth)
 				.add("startWindowHeight", startWindowHeight).add("browserLogLevel", browserLogLevel)

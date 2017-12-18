@@ -47,7 +47,7 @@ public class CalendarSettingsImportCalendarPage extends BasePage implements Cale
 
 	public static CalendarSettingsImportCalendarPage getCalendarSettingsImportCalendarPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+	//	System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			
 			return new AndroidCalendarSettingsImportCalendarPage(browser);

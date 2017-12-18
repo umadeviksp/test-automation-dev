@@ -49,7 +49,7 @@ public class FirefoxBrowser extends WebBrowser {
 		desiredCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
 		FirefoxProfile profile = new FirefoxProfile();
-		profile.setEnableNativeEvents(true);
+//		profile.setEnableNativeEvents(true);
 		desiredCapabilities.setCapability(FirefoxDriver.PROFILE, profile);
 
 		// If the browerBinaryPath is present, and it points to a real file,

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateClassPage;
 import com.net.bloomz.pages.interfaces.CreateClassPageActions;
 import com.net.bloomz.pages.interfaces.ExampleTemplatePageActions;
 import com.net.bloomz.pages.web.WebCreateClassPage;
@@ -25,9 +26,15 @@ public class CreateClassPage extends BasePage implements CreateClassPageActions 
 
 	public static CreateClassPage getCreateClassPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+
+			chooseSchoolButtonLocator 	= By.id("net.bloomz:id/lnrAssociate");
+			saveButtonLocator 			= By.id("net.bloomz:id/btnDone");
+			classNameEditTextLocator 	= By.id("net.bloomz:id/editName");			
+			roomParentButtonLocator  	= By.xpath("//android.widget.RadioButton[@text='I\'m a Room Parent']");
 			
+			return new AndroidCreateClassPage(browser);
 		} else if (string.equals(".iOS")) {
 			
 		} else {

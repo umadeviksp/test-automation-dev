@@ -3,6 +3,7 @@ package com.net.bloomz.pages;
 import org.openqa.selenium.By;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidSchoolLocationPage;
 import com.net.bloomz.pages.interfaces.SchoolLocationPageActions;
 import com.net.bloomz.pages.web.WebSchoolLocationPage;
 
@@ -22,6 +23,14 @@ public class SchoolLocationPage extends BasePage implements SchoolLocationPageAc
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
+
+			schoolLocator 				= By.id("net.bloomz:id/backarrow");
+			schoolSearchEditTextLocator = By.id("net.bloomz:id/txtSearch");
+			selectCommunityLocator 		= By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div/section/div/button");
+			selectSchoolLocator 		= By.xpath("//*[@id='activityTypes']/div/div/form/section/div/section/section[1]/span/h2");
+			doneButtonLocator 			= By.xpath("//*[@id=\"recipientPicker\"]/div/div/nav/a[2]");
+
+			return new AndroidSchoolLocationPage(browser);
 			
 		} else if (string.equals(".iOS")) {
 			

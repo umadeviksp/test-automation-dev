@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateMessagePage;
 import com.net.bloomz.pages.interfaces.CreateMessagePageActions;
 import com.net.bloomz.pages.web.WebCreateMessagePage;
 
@@ -91,7 +92,16 @@ public class CreateMessagePage extends BasePage implements CreateMessagePageActi
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			
-			return null; // TO DO FIX THIS
+			toRecipientFieldLocator = By.id("net.bloomz:id/llAdd");
+			messageTextFieldLocator = By.id("net.bloomz:id/txtEnterMsg");
+			sendButtonLocator 		= By.id("net.bloomz:id/sendbtn");
+			backButtonLocator 		= By.id("net.bloomz:id/backarrow");
+						
+			optionsButtonLocator 	= By.id("net.bloomz:id/txtOptions");
+			deleteMessageButtonLocator = By.id("net.bloomz:id/txtRemoveProfilePic");
+
+			return new AndroidCreateMessagePage(browser);
+
 		} else if (string.equals(".iOS")) {
 			
 		} else {

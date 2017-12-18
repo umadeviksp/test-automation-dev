@@ -28,7 +28,6 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 		.thenVerifyTheToastMessage("Successful! Members removed from this group.").clickOnDoneButton();
 	}
 	
-	
 	// Invite another teacher to the class
 	@Test(groups = { "android", "ios", "web", "P0Pass_5" })
 	public void P0Pass_5_testInviteTeacherToClass() {

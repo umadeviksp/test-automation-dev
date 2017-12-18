@@ -34,6 +34,7 @@
 		<parameter name="platformName" value="Web"></parameter>
 		<parameter name="browserType" value="CHROME"></parameter>
 		<parameter name="environment" value="local"></parameter>
+		<parameter name="urltype" value="staging"></parameter>
 		<groups>
 			<run>
 				<include name="web" />

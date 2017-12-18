@@ -76,7 +76,7 @@ public class SignInPage extends BasePage implements SignPageActions {
 	
 	public static SignInPage getSignInPage(Browser<?> browser) {
 		String string = browser.toString();
-		System.out.println(string);
+//		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			backArrowButtonLocator = By.id("net.bloomz:id/llback");
 			emailEditTextLocator = By.id("net.bloomz:id/editEmail");

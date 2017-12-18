@@ -35,8 +35,9 @@ public class AndroidSignUpPage extends SignUpPage implements SignUpPageActions {
 	@Override
 	public HomePage clickOnSignUpButton() {
 		String signUpType = getText(signUpPageTitleLocator);
-		super.clickOnSignUpButton();
-		click(createClassButtonLocator);
+		return super.clickOnSignUpButton();
+		
+/*		click(createClassButtonLocator);
 		sendText(classNameEditTextLocator, signUpType);
 		if (signUpType.equals("Room Parent")) {
 			if (((AndroidDriver) browser.getWebDriver()).findElements(childNameEditTextLocator).size() < 1) {
@@ -50,5 +51,7 @@ public class AndroidSignUpPage extends SignUpPage implements SignUpPageActions {
 		click(skipAddImageLocator);
 		click(backButtonLocator);
 		return HomePage.getHomePage(browser);
-	}
+*/
+		}
+	
 }

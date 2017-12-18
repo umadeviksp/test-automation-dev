@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 
 
 
+
+import com.net.bloomz.pages.HomePage;
 //import com.net.bloomz.pages.CreateEventInClassPage;
 //import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
@@ -46,6 +48,26 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
 	}	
 	
+	// Add event to the class calendar and invite few parents
+	@Test(groups = { "android", "ios", "web", "P0Pass_03" })
+	public void P0Pass_03_testCreateEventInviteParents() throws Exception {
+		System.out.println("P0Pass_03_testCreateEventInviteParents");
+		String sEmail = "parent1@test.com,parent2@test.com,parent3@test.com,parent4@test.com,parent5@test.com";
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().clickEmailId().copyPaste(sEmail)
+		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
+		.clickOnAClassName().clickCreateButton().clickOnEventOption().enterTitle("Create event and invite parents").enterNotes("Create event and invite parents")
+		.clickInviteButton().clickSelectAll().clickDoneButton().clickSendButton().clickOnOKButton()
+		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
+		//.enterSearchText("parent")
+		
+		HomePage.getHomePage(browser).clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton()
+		.enterEmailSearchMembers("parent").clickOnSelectAll().clickOnRemoveMembersEmailId().clickOnConfirmRemoveEmailId()
+		.thenVerifyTheToastMessage("Successful! Members removed from this group.").clickOnDoneButton();
+	}
+		
 	// Add event to the class calendar and invite the entire class
 	@Test(groups = { "android", "ios", "web", "P0Pass_04" })
 	public void P0Pass_04_createEventInviteAllClass() throws Exception {

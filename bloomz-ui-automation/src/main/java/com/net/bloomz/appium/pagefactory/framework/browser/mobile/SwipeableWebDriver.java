@@ -22,7 +22,7 @@ public class SwipeableWebDriver extends AndroidDriver implements HasTouchScreen 
 	public TouchScreen getTouch() {
 		return touch;
 	}
-
+/*
 	@Override
 	public MobileElement scrollTo(String s) {
 		return null;
@@ -32,4 +32,5 @@ public class SwipeableWebDriver extends AndroidDriver implements HasTouchScreen 
 	public MobileElement scrollToExact(String s) {
 		return null;
 	}
+*/
 }

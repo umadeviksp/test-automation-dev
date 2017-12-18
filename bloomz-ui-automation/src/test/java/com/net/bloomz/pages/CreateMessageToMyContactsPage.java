@@ -3,6 +3,7 @@ package com.net.bloomz.pages;
 import org.openqa.selenium.By;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateMessageToMyContactsPage;
 import com.net.bloomz.pages.interfaces.CreateMessageToMyContactsPageActions;
 import com.net.bloomz.pages.web.WebCreateMessageToMyContactsPage;
 
@@ -65,6 +66,16 @@ public class CreateMessageToMyContactsPage extends BasePage implements CreateMes
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
 			
+//			myContactsButtonLocator = By.xpath("");
+
+			doneButtonLocator = By.xpath("net.bloomz:id/DoneBtn");
+			
+			toFirstContactLocator 	= By.xpath("//android.widget.TextView[@text = 'sample1']");
+			toSecondContactLocator 	= By.xpath("//android.widget.TextView[@text = 'test class 3']");
+			toFirstClassLocator 	= By.xpath("//android.widget.TextView[@text = 'sample1']");
+//			toSelectAllClassLocator = By.xpath("//android.widget.TextView[@text = '']");
+			
+			return new AndroidCreateMessageToMyContactsPage(browser);
 		} else if (string.equals(".iOS")) {
 			
 		} else {

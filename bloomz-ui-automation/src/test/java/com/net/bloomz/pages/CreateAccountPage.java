@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
+import com.net.bloomz.pages.android.AndroidCreateAccountPage;
 import com.net.bloomz.pages.android.AndroidLandingPage;
 import com.net.bloomz.pages.interfaces.CreateAccountPageActions;
 import com.net.bloomz.pages.interfaces.LandingPageActions;
@@ -33,8 +34,9 @@ public class CreateAccountPage extends BasePage implements CreateAccountPageActi
 		String string = browser.toString();
 		System.out.println(string);
 		if (string.contains("AndroidMobile")) {
-			
-			return null; // TO DO FIX THIS
+			createNewClassGroupLocator 	= By.id("net.bloomz:id/llJoinNew");
+			JoinAClassGroupLocator 		= By.id("net.bloomz:id/llJoinExisting");			
+			return new AndroidCreateAccountPage(browser);
 		} else if (string.equals(".iOS")) {
 			
 		} else {
