@@ -49,7 +49,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 	static By doNotNotifyAllMembersLocator;
 	static By signatureButtonLocator;
 	static By selectSignatureLocator;
-
+	static By searchTextLocator;
+	static By selectAllLocator;
 
 	public CreateEventInClassPage(Browser<?> browser) {
 		super(browser);
@@ -292,6 +293,19 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 		return CreateEventInClassPage.getCreateEventInClassPage(browser);
 	}
 	
+	
+	public CreateEventInClassPage enterSearchText(String sEmailID) {
+		click(searchTextLocator);
+		sendText(searchTextLocator,sEmailID);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
+	
+	public CreateEventInClassPage clickSelectAll() {
+		click(selectAllLocator);
+		return CreateEventInClassPage.getCreateEventInClassPage(browser);
+	}
+	
 	public static CreateEventInClassPage getCreateEventInClassPage(Browser<?> browser) {
 		String string = browser.toString();
 //		System.out.println(string);
@@ -376,6 +390,8 @@ public class CreateEventInClassPage extends BasePage implements CreateEventInCla
 			doNotNotifyAllMembersLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains (text(),'Notify Members')]");
 			signatureButtonLocator = By.xpath("//*[@id='addUpdateEvent']//*[@ng-click='openSignaturePicker()']");
 			selectSignatureLocator = By.xpath("//*[@id='calendarPicker']//button[@class='addToMsg']");
+			searchTextLocator = By.xpath("//*[@id='recipientPicker']//*[@class='recipients']");
+			selectAllLocator = By.xpath("//*[@id=\"recipientPicker\"]/div/div/div/section/div[3]/label/span");
 
 	
 			
