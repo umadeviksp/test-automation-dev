@@ -1,6 +1,7 @@
 package com.net.bloomz.tests;
 
 import org.testng.annotations.Test;
+
 import com.net.bloomz.pages.LandingPage;
 
 public class P0Pass_TeacherSignUp extends BaseTest {

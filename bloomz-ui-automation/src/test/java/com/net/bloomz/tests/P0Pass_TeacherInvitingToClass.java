@@ -10,6 +10,9 @@ import com.net.bloomz.pages.MembersTabPage;
 
 public class P0Pass_TeacherInvitingToClass extends BaseTest {	
 	
+	static String my_email = "alphateacher1@test.com";
+	static String my_pwd = "bloomz999" ;
+	
 	// Invite 20 parents to the class by copy pasting emails - validate if the invited emails show in invited section
 	@Test(groups = { "android", "ios", "web", "P0Pass_4" })
 	public void P0Pass_4_testInvite20ParentViaCopyPaste() throws InterruptedException, IOException {
@@ -19,8 +22,8 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 				+ "testparent11@test.com,testparent12@test.com,testparent13@test.com,testparent14@test.com,testparent15@test.com,"
 				+ "testparent16@test.com,testparent17@test.com,testparent18@test.com,testparent19@test.com,testparent20@test.com";
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().clickEmailId().copyPaste(sEmail)
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().thenVerifyTheInviteMembers("Invited (20)").clickOnMembersManageButton()
@@ -32,8 +35,8 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "P0Pass_5" })
 	public void P0Pass_5_testInviteTeacherToClass() {
 		System.out.println("P0Pass_5_testInviteTeacherToClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectTeacherRole().selectEmailsManually().enterEmailId("testteacher@test.com")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("testteacher@test.com")
@@ -45,8 +48,8 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "P0Pass_6" })
 	public void P0Pass_6_testInviteClassAdminToClass() {
 		System.out.println("P0Pass_6_testInviteClassAdminToClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectClassAdminRole().selectEmailsManually().enterEmailId("testclassadmin@test.com")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("testclassadmin@test.com")
@@ -59,8 +62,8 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "P0Pass_7" })
 	public void P0Pass_7_testInviteClassAdminToClass() {
 		System.out.println("P0Pass_7_testInviteRoomParentToClass");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectRoomParentRole().selectEmailsManually().enterEmailId("testroomparent@test.com")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("testroomparent@test.com")
@@ -73,8 +76,8 @@ public class P0Pass_TeacherInvitingToClass extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "P0Pass_8" })
 	public void P0Pass_8_testInviteParentAndEditRole() {
 		System.out.println("P0Pass_8_testInviteParentAndEditRole");
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().enterEmailId("testparent@test.com")
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickOnMembersTab().clickOnMembersManageButton().clickOnMembersButton().enterEmailSearchMembers("testparent@test.com")

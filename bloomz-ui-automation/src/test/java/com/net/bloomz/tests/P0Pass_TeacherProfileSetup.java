@@ -2,13 +2,14 @@ package com.net.bloomz.tests;
 
 import org.testng.annotations.Test;
 
-import com.net.bloomz.pages.GroupSettingPage;
 import com.net.bloomz.pages.InvitationGroupPage;
 import com.net.bloomz.pages.LandingPage;
 import com.net.bloomz.pages.SignInPage;
 
 public class P0Pass_TeacherProfileSetup extends BaseTest {
 	
+	static String my_email = "alphateacher1@test.com";
+	static String my_pwd = "bloomz999" ;
 	
 	// Teacher - profile setup
 	// Edit name
@@ -16,8 +17,8 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	public void P0Pass_1_ProfileSetupAsATeacher_EditName() throws Exception {
 		System.out.println("P0Pass_1_ProfileSetupAsATeacher_EditName");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnSettingButton().clickOnMyProfileButton().clickOnEditButton().enterFirstName("Alpha edit")
 		.enterLastName("Teacher edit").clickOnSaveButton().thenVerifyThatUploadWasSuccessful("Profile updated successfully")
 		.clickOnGoBackButton().thenVerifyProfileName("Alpha edit Teacher edit")
@@ -33,8 +34,8 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	public void P0Pass_2_ProfileSetupAsATeacher_InviteSpouse() throws Exception {
 		System.out.println("P0Pass_2_ProfileSetupAsATeacher_InviteSpouse");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().clickOnInviteSpouseButton().enterInviteSpouseEmail("test@test.com")
 		.clickOnDoneButton().thenVerifyTheToastMessage("Spouse Invited Successfully!").clickOnCancelButton()
 		.clickOnSettingButton().clickOnMyProfileButton().clickOnSpouseInvited().clickOnYesButton();
@@ -49,7 +50,7 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	public void P0Pass_4_Teacher_InvalidLogin() throws Exception {
 		System.out.println("P0Pass_4_Teacher_InvalidLogin");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
 		.enterPasswordOnTextBox("bloomz").clickOnSignInButton();
 		
 		SignInPage.getSignInPage(browser).thenVerifyTheToastMessage("Invalid username or password");	
@@ -72,17 +73,17 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 		System.out.println("P0Pass_6_Teacher_EditEmailAddress");
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnSettingButton().clickOnAccountSettingsButton()
-		.clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp_edit@test.com").enterPassword("bloomz999")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnSettingButton().clickOnAccountSettingsButton()
+		.clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp_edit@test.com").enterPassword("my_pwd")
 		.clickOnSaveButton().clickOnSaveSignOutButton();
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp_edit@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
 		.clickOnAccountSettingsButton().clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp@test.com")
-		.enterPassword("bloomz999").clickOnSaveButton().clickOnSaveSignOutButton();
+		.enterPassword("my_pwd").clickOnSaveButton().clickOnSaveSignOutButton();
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
 		.clickOnSignOutButton();		
 	}
 	
@@ -91,8 +92,8 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	public void P0Pass_7_ChangeTheThemeClass() throws Exception {
 		System.out.println("P0Pass_7_ChangeTheThemeClass");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnGroupSettings()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnGroupSettings()
 		.clickOnEditSettings().changeTheTheme("#00b530").clickOnDoneButton().getClassThemeColor("rgba(0, 181, 48, 1)")
 		.clickOnGroupSettings().clickOnEditSettings().changeTheTheme("#00b1db").clickOnDoneButton()
 		.getClassThemeColor("rgba(0, 177, 219, 1)");

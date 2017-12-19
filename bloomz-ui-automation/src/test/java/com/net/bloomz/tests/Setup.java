@@ -27,7 +27,7 @@ public class Setup extends BaseTest {
 	public void setup_2_CreateTestClass() {
 
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
-		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnCreateClass().enterClassName("Alpha Teacher")
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnCreateClass().enterClassName("Alpha Class")
 		.clickOnchooseSchoolButtonLocator().enterSchoolSearch("1050 ADAIR CO. HIGH").clickOnSchoolCommunity()
 		.clickOnSaveButtonLocator().clickOnSettingButton().clickOnSignOutButton();
 	}

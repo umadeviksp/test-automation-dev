@@ -14,6 +14,8 @@ import com.net.bloomz.utils.Config;
 
 public class P0Pass_TeacherCommunication extends BaseTest {	
 	
+	static String my_email = "alphateacher1@test.com";
+	static String my_pwd = "bloomz999" ;
 	
 	// Make Post with No Comments Enabled
 	@Test(groups = { "android", "ios", "web", "P0Pass_01" })
@@ -24,8 +26,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		//Path currentRelativePath = Paths.get("");
 		//String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 	
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post with no comments enabled").clickOnCommentsButton();
 		HomePage.getHomePage(browser).thenVerifyThatPostWasSuccessful("Recipients will NOT be able to comment on this post");
 		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostButton();
@@ -44,8 +46,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		String sPostTitle = "test_New Post with schedule" + getTimeStamp().replaceAll("-", "_");
 	
 	
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post scheduled").clickOnScheduleButton()
 		.clearScheduleDate().enterScheduleDate(0, 0, 1).clickStartTime()
 		.clearStartTime().enterStartTime("10:00 AM").clickOnSchedulePost().thenVerifyThatSchedulePostWasSuccessful()
@@ -72,8 +74,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 	
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().createNewPost()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().createNewPost()
 		.enterTitle(sPostTitle).enterGeneralUpdate("New post with attachment").clickOnFileAttachPost();
 		ClassPage.getClassPage(browser).uploadImage(sUploadapp);
 		CreatePostInClassPage.getCreatePostInClassPage(browser).clickOnPostButton();
@@ -88,8 +90,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		Path currentRelativePath = Paths.get("");
 		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName()
 		.createNewAnnouncement()
 		.enterTitle("test announcement").enterGeneralUpdate("random text for verifying announcement feature with picture");
 		CreatePostInClassPage.getCreatePostInClassPage(browser).uploadImage(testImageFilePath);
@@ -106,8 +108,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		String testImageFilePath = currentRelativePath.toAbsolutePath().toString() + Config.getConfigData("test_image_location");
 		String sEmailID = "test_addParent" + getTimeStamp().replaceAll("-", "_") + "@test.com";
 		//Pre-requisite to add parent to the class
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().enterEmailId(sEmailID)
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickCreateButton().clickOnPostButton().clickOnPostToField().clickOnSeeMembersOfAClass().clickOnSearchString()
@@ -138,8 +140,8 @@ public class P0Pass_TeacherCommunication extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher@test.com")
-		.enterPasswordOnTextBox("bloomz999").clickOnSignInButton().clickOnAClassName().clickOnMediaTab().clickOnDocumentsTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
+		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnMediaTab().clickOnDocumentsTab()
 		.clickOnUploadDocuments().enterTitleUploadDocuments("Upload documents to a class")
 		.enterDescriptionUploadDocuments("upload documents to a class")
 		.clickOnAttachFiles().uploadFile(sUploadapp).clickOnSave().thenVerifyThatEventWasSuccessful("Successfuly saved the information");		
