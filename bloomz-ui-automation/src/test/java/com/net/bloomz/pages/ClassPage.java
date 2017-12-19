@@ -360,7 +360,7 @@ public class ClassPage extends BasePage implements ClassPageActions {
 			confirmDeleteUpcomingEventLocator = By.xpath("//*[@id='actionSheet_optionsDiv']//*[contains(text(),'Delete All Future Events')]");
 			editCoverPhotoButton = By.xpath("//*[@id=\"communityScrollView\"]//button[@ng-click=\"editCoverPhoto()\"]");
 			uploadNewPhotoButtonLocator = By.xpath("//*[@id=\"actionSheet_optionsDiv\"]//*[contains(text(),\"Upload New Photo\")]");
-			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Teacher Logo\"]");
+			mascotPhotoLocator = By.xpath("//*[@id=\"communityScrollView\"]//img[@alt=\"Alpha Class Logo\"]");
 			postNoCommentsLocator = By.xpath("//*[@id='communityContent']//*[contains(text(), 'test_New Post with no comments')]");
 			groupSettingsLocator = By.xpath("//*[@id='orgHome']//*[contains (text(),'Group Settings')]");
 			communityMenuLocator = By.id("communityMenu_ul");

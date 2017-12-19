@@ -224,7 +224,7 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_08_1_testLaunchingClassFromLeftNav() throws Exception {
 		System.out.println("BVT_08_1_testLaunchingClassFromLeftNav");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
-		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher");
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Class");
 	}	
 	
 		
@@ -234,7 +234,7 @@ public class BV_TestCases extends BaseTest {
 	public void BVT_08_2_testSwitchTabsInClass() throws Exception {
 		System.out.println("BVT_08_2_testSwitchTabsInClass");
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
-		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Teacher")
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().thenVerifyClassname("Alpha Class")
 		.clickOnCalendarTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMediaTab().thenVerifyElementExists();
 		ClassPage.getClassPage(browser).clickOnMembersTab().thenVerifyElementExists();

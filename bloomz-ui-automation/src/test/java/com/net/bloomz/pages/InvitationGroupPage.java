@@ -202,7 +202,7 @@ public class InvitationGroupPage extends BasePage implements InvitationGroupPage
 			inviteSpouseButtonLocator 	= By.xpath("//*[@id='inviteToPicker']//span[contains(text(), 'Invite Your Spouse')]");
 			invitePersonalConnectionButtonLocator	= By.xpath("//div[@id='inviteToPicker']//section[contains(@ng-click,'invitePersonalConnections')]");
 			//classNameTextLocator = By.xpath("//*[@ng-bind=\"groupEntry.displayName\"]");
-			classNameTextLocator = By.xpath("//span[contains (text(),\"Alpha Teacher\") and @ng-bind=\"groupEntry.displayName\"]");
+			classNameTextLocator = By.xpath("//span[contains (text(),\"Alpha Class\") and @ng-bind=\"groupEntry.displayName\"]");
 			parentRoleTextLocator = By
 					.xpath("//*[@id=\"rolePicker\"]/div/div/section/section[1]/h2");
 			typeEmailsManuallyTextLocator = By
