@@ -14,11 +14,12 @@ public class Setup extends BaseTest {
 	// Create alpha teacher account and Class Alpha Teacher
 	@Test(groups = { "android", "ios", "web", "Setup_1" })
 	public void setup_1_CreateTestAccount() {
+		
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
 		.enterFirstName("Alpha").enterLastName("Teacher")
 		.enterEmailId(my_email).enterPassword(my_pwd)
 		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("Alpha Teacher")
-		.thenVerifyWelcomeScreen().thenVerifyEmailAddress(my_email);
+		.thenVerifyWelcomeScreen().thenVerifyEmailAddress(my_email,baseTestUrl);
 		//clickOnSettingButton().clickOnSignOutButton();
 	}
 	

@@ -541,11 +541,11 @@ public abstract class BasePage extends BaseTopLevelPage<SeleniumActions> {
 		
 	}
 	
-	public void VerifyEmailAddress(String sEmailID)	{		
+	public void VerifyEmailAddress(String sEmailID, String sURL)	{		
 				
 		//String sEmailTknURL = "https://app-staging.bloomz.net/api/admin/updateuser?email=" + sEmailID + "&action=getDetails";//just a string
 		
-		String sURL = Config.getConfigData("bloomz_base_test_url");
+		//String sURL = Config.getConfigData("bloomz_base_test_url");
 		String sEmailTknURL = sURL + "/api/admin/updateuser?email=" + sEmailID + "&action=getDetails";
 		System.out.println(sEmailTknURL);
 		By JsonTextLocator = By.xpath("/html/body/pre");

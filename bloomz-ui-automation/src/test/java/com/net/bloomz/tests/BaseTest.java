@@ -52,6 +52,8 @@ public class BaseTest {
 //	public static final String androidStagingApp = "C:/Users/user/staging/net.bloomz-Signed.apk";
 //	public static final String androidStagingApp = "C:/Users/user/staging/net.bloomz.apk";
 	public static final String androidStagingApp = "C:/Users/user/staging/net.bloomz-Android-1.apk";
+	
+	public static String baseTestUrl = null;
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws IWebDriverException, MalformedURLException {
@@ -174,7 +176,7 @@ public class BaseTest {
 
 		} else if (platformName.equals("Web")) {
 			WebBrowser browser;
-			String baseTestUrl ;
+			//String baseTestUrl ;
 			
 			if(urltype.equals("staging"))
 			{
@@ -219,7 +221,7 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void startMethod(Method method, String platformName, String browserType, String environment, String urltype)
 			throws IWebDriverException {
-
+				
 		if(browser==null)
 		{
 			browser = createBrowser(platformName, browserType, environment,urltype);

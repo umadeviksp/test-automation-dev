@@ -7,6 +7,7 @@ import com.net.bloomz.appium.pagefactory.framework.browser.Browser;
 import com.net.bloomz.pages.android.AndroidHomePage;
 import com.net.bloomz.pages.interfaces.HomePageActions;
 import com.net.bloomz.pages.web.WebHomePage;
+import com.net.bloomz.utils.Config;
 
 public class HomePage extends BasePage implements HomePageActions {
 
@@ -372,8 +373,8 @@ public class HomePage extends BasePage implements HomePageActions {
 		return HomePage.getHomePage(browser);
 	}
 	
-	public HomePage thenVerifyEmailAddress(String sEmail) {
-		VerifyEmailAddress(sEmail);
+	public HomePage thenVerifyEmailAddress(String sEmail, String sAppURL) {
+		VerifyEmailAddress(sEmail,sAppURL);
 		return HomePage.getHomePage(browser);
 	}
 	
