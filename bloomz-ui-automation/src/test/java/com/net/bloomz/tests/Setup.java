@@ -10,10 +10,11 @@ public class Setup extends BaseTest {
 	static String my_email = "alphateacher1@test.com";
 	static String my_pwd = "bloomz999" ;
 	
+	/*
 	// Pre-requisite testcase to run BVT cases
 	// Create alpha teacher account and Class Alpha Teacher
 	@Test(groups = { "android", "ios", "web", "Setup_1" })
-	public void setup_1_CreateTestAccount() {
+	public void setup_1_CreateAlphaAccount() {
 		
 		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
 		.enterFirstName("Alpha").enterLastName("Teacher")
@@ -64,7 +65,18 @@ public class Setup extends BaseTest {
 		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnAddStudents().enterStudentName().clickOnAddStudentButton().clickOnDoneButton();
 	}
-	
+	*/
+	// Create alpha teacher account and Class Alpha Teacher
+	@Test(groups = { "android", "ios", "web", "Setup_1" })
+	public void setup_6_CreateTestAccount() {
+		
+		LandingPage.getLandingPage(browser).clickOnCreateAccount().clickOnCreateNewClassGroup().clickOnClassGroup()
+		.enterFirstName("Test").enterLastName("Test")
+		.enterEmailId("test@test.com").enterPassword(my_pwd)
+		.clickOnSignUpButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyProfileName("Test Test")
+		.thenVerifyWelcomeScreen().thenVerifyEmailAddress(my_email,baseTestUrl);
+		//clickOnSettingButton().clickOnSignOutButton();
+	}
 }
 
 

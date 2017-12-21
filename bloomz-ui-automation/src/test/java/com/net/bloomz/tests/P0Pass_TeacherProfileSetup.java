@@ -70,7 +70,7 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 	@Test(groups = { "android", "ios", "web", "P0Pass_06" })
 	public void P0Pass_6_Teacher_EditEmailAddress() throws Exception {
 		System.out.println("P0Pass_6_Teacher_EditEmailAddress");
-		
+		/*
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
 		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnSettingButton().clickOnAccountSettingsButton()
 		.clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateachernobp_edit@test.com").enterPassword(my_pwd)
@@ -83,7 +83,22 @@ public class P0Pass_TeacherProfileSetup extends BaseTest {
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateachernobp@test.com")
 		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
-		.clickOnSignOutButton();		
+		.clickOnSignOutButton();
+		*/
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnSettingButton().clickOnAccountSettingsButton()
+		.clickOnChangeEmailAddressButton().enterNewEmailAddress("alphateacher1_edit@test.com").enterPassword(my_pwd)
+		.clickOnSaveButton().clickOnSaveSignOutButton();
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alphateacher1_edit@test.com")
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
+		.clickOnAccountSettingsButton().clickOnChangeEmailAddressButton().enterNewEmailAddress(my_email)
+		.enterPassword(my_pwd).clickOnSaveButton().clickOnSaveSignOutButton();
+		
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed().clickOnSettingButton()
+		.clickOnSignOutButton();
 	}
 	
 	// Set the theme for the class - from SETTINGS page
