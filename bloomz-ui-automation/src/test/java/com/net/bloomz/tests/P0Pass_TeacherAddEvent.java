@@ -30,8 +30,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
 		.createNewEvent().enterTitle(sTitle).enterLocation("random location").enterNotes("Add event to the class calendar - notify all")
 		.clickSaveButton().clickNotifyAllMembersButton()
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
@@ -44,8 +44,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
 		.createNewEvent().enterTitle(sTitle).enterLocation("random location").enterNotes("Add event to the class calendar - Do not notify all")
 		.clickSaveButton().clickDoNotNotifyAllMembersButton()
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
@@ -57,8 +57,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		System.out.println("P0Pass_03_testCreateEventInviteParents");
 		String sEmail = "parent1@test.com,parent2@test.com,parent3@test.com,parent4@test.com,parent5@test.com";
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().thenVerifyCreateButtonShouldBeDisplayed()
 		.clickOnInviteButton().selectAnyOneClass().selectParentRole().selectEmailsManually().clickEmailId().copyPaste(sEmail)
 		.clickOnEmailSendButton().thenVerifyCreateButtonShouldBeDisplayed().thenVerifyThatPostWasSuccessful("Member(s) Added Successfully!")
 		.clickOnAClassName().clickCreateButton().clickOnEventOption().enterTitle("Create event and invite parents").enterNotes("Create event and invite parents")
@@ -78,8 +78,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
 		.createNewEvent().enterTitle(sTitle).enterLocation("random location").enterNotes("Add event to the class calendar and invite the entire class")
 		.clickInviteButton().clickInviteAllButton().clickDoneButton().clickSaveButton().clickOnOKButton()
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
@@ -93,8 +93,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnCalendarTab().clickOnPTCvent()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnCalendarTab().clickOnPTCvent()
 		.clickOnOptionsEditEvent().clickOnInviteMorePeople().clickOnAllMembers().clickOnDoneButton().clickOnSendButton()
 		.thenVerifyEmailUpdate();
 	}	
@@ -107,8 +107,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		String sTitle = "test_event" + getTimeStamp().replaceAll("-", "_");
 		System.out.println(sTitle);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnAClassName().clickOnUpdatesTab()
 		.createNewEvent().enterTitle(sTitle).enterLocation("random location").enterNotes("Add event to the class calendar - different signature")
 		.pickSignature().selectSignature().clickSaveButton().clickNotifyAllMembersButton()
 		.thenVerifyThatEventWasSuccessful("Event successfully added to calendar!");
@@ -138,8 +138,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		}
 		System.out.println(sUploadapp);
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnMediaTab().clickOnAlbumsTab().clickOnCreateAlbumTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMediaTab().clickOnAlbumsTab().clickOnCreateAlbumTab()
 		.enterAlbumTitle(sTitle).clickOnPickClassGroup().selectClass().clickOnDoneButton().clickOnCreateButton()
 		.thenVerifyThatEventWasSuccessful("Album created successfully.").clickOnAddPhotoButton()
 		.uploadImage(sUploadapp).thenVerifyThatEventWasSuccessful("1 photo added.").clickOnPhoto().clickOnOptionsPhoto()
@@ -155,8 +155,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 	public void P0Pass_14_DeletePhotosFromAllPhotos() throws Exception {
 		System.out.println("P0Pass_14_DeletePhotosFromAllPhotos");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnMediaTab().clickOnPhotosTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMediaTab().clickOnPhotosTab()
 		.clickOnPhotosTabPhoto().clickOnOptionsPhoto().clickOnPhotosTabDeletePhoto();
 		//.clickOnPhotosTabDownloadPhoto();
 	}
@@ -183,7 +183,7 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 		System.out.println(sUploadapp);
 		
 		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("alpharoomparent@test.com")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnMediaTab().clickOnAlbumsTab().clickOnCreateAlbumTab()
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMediaTab().clickOnAlbumsTab().clickOnCreateAlbumTab()
 		.enterAlbumTitle(sTitle).clickOnPickClassGroup().SelectClassParent().clickOnDoneButton().clickOnCreateButton()
 		.thenVerifyThatEventWasSuccessful("Album created successfully.").clickOnAddPhotoButton()
 		.uploadImage(sUploadapp).thenVerifyThatEventWasSuccessful("1 photo added.").clickOnPhoto().clickOnOptionsPhoto()
@@ -198,8 +198,8 @@ public class P0Pass_TeacherAddEvent extends BaseTest {
 	public void P0Pass_16_DownloadPhotosFromAllPhotos() throws Exception {
 		System.out.println("P0Pass_16_DownloadPhotosFromAllPhotos");
 		
-		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox("my_email")
-		.enterPasswordOnTextBox("my_pwd").clickOnSignInButton().clickOnMediaTab().clickOnPhotosTab()
+		LandingPage.getLandingPage(browser).clickOnSignInButton().enterEmailIdOnTextBox(my_email)
+		.enterPasswordOnTextBox(my_pwd).clickOnSignInButton().clickOnMediaTab().clickOnPhotosTab()
 		.clickOnPhotosTabPhoto().clickOnOptionsPhoto().clickOnPhotosTabDownloadPhoto();
 	}
 	
